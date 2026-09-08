@@ -74,3 +74,23 @@ par une formule académique reconnue (comptage de syllabes heuristique, ~90% de 
 dictionnaire phonétique complet, validé sur 8 mots-tests avant le réel : 7/8 corrects). Testé
 réel : communiqué Reading Ease=48,6 (niveau université) vs minutes=28,8 (nettement plus
 difficile).
+
+## `modele_frequence_mots_cles_minutes.py` (2026-09-08, vague 7)
+
+Parallèle de `modele_frequence_mots_cles_fomc.py` (comptage de mots-clés thématiques),
+appliqué aux minutes plutôt qu'au communiqué — même lexique, texte ~30x plus long. Testé réel
+avec succès sur les minutes disponibles.
+
+## `modele_langage_prudence.py` (2026-09-08, vague 7)
+
+Indice de langage prudent/qualificatif ("hedging language" : however, likely, may, could,
+appeared...) dans les minutes — distinct du score de ton (positif/négatif) et des mots-clés
+thématiques : ici le DEGRÉ DE CERTITUDE du langage, indépendant de sa charge. Testé réel : 74
+mots de prudence sur 4780 (15,48 pour mille).
+
+## `modele_intensite_desaccord.py` (2026-09-08, vague 7)
+
+Combine le nombre de dissidents formels au vote (déjà extrait du communiqué) avec la fréquence
+de vocabulaire de désaccord dans les minutes ("disagreed", "preferred", "some participants"...)
+— un désaccord peut exister sans dissidence formelle au vote. Testé réel : 3 dissident(s) au
+vote, 20 mention(s) de désaccord dans le texte des minutes.

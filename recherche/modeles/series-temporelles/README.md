@@ -83,3 +83,20 @@ jours — pas de cycle mensuel/trimestriel net détecté, résultat honnête.
 ARIMA(1,1,1) sur le VIX, prévision walk-forward 1-jour (statsmodels, ré-ajusté à chaque pas,
 pas un fit unique). Testé réel : RMSE=2,259 vs MSE naïf=5,283 — ARIMA bat la persistance
 simple.
+
+## `modele_decomposition_stl.py` (2026-09-08, vague 7)
+
+Décomposition STL (Seasonal-Trend decomposition using Loess) du VIX, période=5 (semaine
+boursière) — sépare tendance, composante saisonnière hebdomadaire et résidu, distinct du
+spectre FFT déjà mesuré (ici on isole spécifiquement une saisonnalité connue a priori, pas une
+recherche de cycle inconnu). Testé réel : tendance=15,01, composante saisonnière=+0,627,
+résidu=-0,107 — la saisonnalité hebdomadaire explique 0,69% de la variance totale du VIX
+(négligeable), résultat honnête.
+
+## `modele_ornstein_uhlenbeck_credit.py` (2026-09-08, vague 7)
+
+Retour à la moyenne (Ornstein-Uhlenbeck) appliqué au spread de crédit high-yield
+(`BAMLH0A0HYM2`), même estimateur que `modele_ornstein_uhlenbeck_vix.py` mais sur une série
+économiquement différente (spread de crédit vs volatilité implicite). Testé réel : spread HY
+actuel=2,68, niveau moyen estimé=3,03, demi-vie=48,0 jours, écart actuel=-0,35 (spread
+actuellement en-dessous de sa moyenne long terme).

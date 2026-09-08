@@ -75,3 +75,17 @@ Immobilier).
 Facteur "qualité" appliqué au régime macro (stabilité du taux directeur + VIX, pas un
 fondamental d'entreprise faute de données) — distinct du niveau (déjà mesuré par
 `modele_conditions_financieres.py`). Testé réel : score=-0,0338 (instabilité VIX dominante).
+
+## `modele_momentum_credit.py` (2026-09-08, vague 7)
+
+Momentum 12-1 mois (technique académique standard, déjà appliquée au prix dans
+`modele_momentum_prix.py`) appliquée au spread de crédit high-yield plutôt qu'à un prix
+d'action — teste si la même logique de continuation existe sur le crédit. Testé réel : momentum
+crédit 12-1 mois=-0,13pt (spread qui se resserre, tendance de fond).
+
+## `modele_correlation_facteurs.py` (2026-09-08, vague 7)
+
+Corrélation entre deux facteurs déjà construits séparément (momentum sectoriel 3 mois et
+beta-VIX sectoriel) — un facteur momentum et un facteur défensif/beta sont-ils redondants ou
+orthogonaux sur cet échantillon de secteurs. Testé réel : corrélation momentum 3m / beta-VIX,
+10 secteurs = +0,342 (relation positive modérée, pas de redondance forte).

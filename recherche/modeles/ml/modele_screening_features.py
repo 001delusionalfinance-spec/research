@@ -1,4 +1,4 @@
-"""Modele -- screening de features (correlation point-bisериale avec la direction J+1 du
+"""Modele -- screening de features (correlation point-bisériale avec la direction J+1 du
 S&P 500), etape prealable a tout modele ML -- savoir quelles features ont ne serait-ce qu'un
 lien univarie avant d'en construire un modele combine.
 
@@ -8,6 +8,19 @@ fonction que _lib.correlation_avec_p_valeur, appliquee ici a une variable binair
 point-biserial, cas particulier valide du Pearson standard). Walk-forward NON applicable ici
 (ce n'est pas une prediction, un screening descriptif sur tout l'echantillon) -- a associer a
 modele_walkforward_direction.py si une feature ressort comme prometteuse.
+
+**Bug reel de fuite temporelle trouve et corrige le 2026-09-08 (vague 7), apres que le
+resultat original de ce fichier (deja merge, vague 2) ait ete cite comme "fortement
+significatif" dans plusieurs modeles derives** (modele_ensemble_signaux.py,
+modele_regression_multifeatures.py -- ces deux-la implementaient CORRECTEMENT le decalage
+temporel de leur propre cote, seul ce fichier de screening avait le bug). `variation_vix`
+utilisait `niveaux_vix[i+1] - niveaux_vix[i]` pour "predire" `dirs[i]` (direction entre
+prix[i] et prix[i+1]) -- LE MEME INTERVALLE, pas une information passee. Trouve en construisant
+modele_decision_stump.py (vague 7) : un seuil sur cette feature donnait 78,9% d'accuracy en
+walk-forward, bien au-dela de tout ce qui est plausible sans fuite -- diagnostic remonte
+jusqu'ici. Corrige : `variation_vix[i]` = `niveaux_vix[i] - niveaux_vix[i-1]` (mouvement de la
+veille, connu avant de predire le mouvement du jour). Resultat corrige documente dans le
+README -- la significativite d'origine (r=-0,51) etait un artefact, pas un signal reel.
 """
 
 import sys
@@ -59,7 +72,10 @@ def main() -> int:
     mom5 = momentum_n_jours(prix_sp500, 5)
     mom20 = momentum_n_jours(prix_sp500, 20)
     vix_niveau = niveaux_vix[:-1]
-    vix_variation = [b - a for a, b in zip(niveaux_vix[:-1], niveaux_vix[1:])]
+    # variation_vix[i] = niveaux_vix[i] - niveaux_vix[i-1] (mouvement de la veille, connu avant
+    # de predire dirs[i]) -- PAS niveaux_vix[i+1]-niveaux_vix[i] (meme intervalle que dirs[i],
+    # fuite temporelle -- bug reel corrige ici, cf. docstring)
+    vix_variation = [None] + [b - a for a, b in zip(niveaux_vix[:-2], niveaux_vix[1:-1])]
 
     features = {
         "momentum_5j": mom5,
