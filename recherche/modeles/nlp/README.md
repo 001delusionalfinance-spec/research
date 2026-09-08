@@ -35,3 +35,18 @@ parfois plus de portée qu'un score global. Testé réel : "uncertainty"×1, "el
 Longueur/complexité du texte (mots, phrases, part de mots longs) comme proxy d'incertitude
 rédactionnelle du comité — hypothèse testable, pas une certitude. Testé réel : 149 mots,
 10 phrases, 14,9 mots/phrase, 32,9% de mots longs (>6 lettres).
+
+## `modele_ton_minutes_fomc.py` (2026-09-08)
+
+Même méthode que `ton_fomc.py`, appliquée aux **minutes** (pas le communiqué) — un document
+~30x plus long (~4700 mots vs ~150), la discussion interne relativement moins polie que le
+message public choisi mot à mot. Nouvelle source : `ingestion_fomc_minutes.py`
+(`/monetarypolicy/fomcminutes<date>.htm`, marqueurs de début/fin vérifiés sur les 2 dernières
+minutes réelles). Testé réel : ton +2,49‰ → +3,97‰ (diff +1,49‰).
+
+## `modele_ecart_communique_minutes.py` (2026-09-08)
+
+Écart de ton entre le communiqué (public) et les minutes (interne) de la MÊME réunion — aucune
+nouvelle ingestion, réutilise les deux sources déjà en place. Testé réel, résultat marquant :
+communiqué +13,42‰ vs minutes +3,97‰ (écart +9,45‰) — le message public est nettement plus
+positif que la discussion interne de la même réunion.
