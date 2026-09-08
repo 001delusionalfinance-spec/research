@@ -69,3 +69,20 @@ autres).
 Depuis combien de semaines consécutives le z-score reste extrême, 13 marchés (nécessite
 `SILVER`/`PLATINUM`/`NASDAQ_MINI`/`COPPER`, tous ajoutés récemment). Testé réel : USD_INDEX
 extrême depuis 12 semaines consécutives, la plus longue persistance actuelle.
+
+## `modele_dollar_smile.py` (2026-09-08)
+
+Cohérence du positionnement dollar (USD_INDEX) avec le positionnement net des 3 devises non-USD
+combinées. Testé réel : positionnement cohérent (USD long, 3/3 devises nettes courtes).
+
+## `modele_extremes_historiques.py` (2026-09-08)
+
+Proximité au record directionnel de TOUTE l'histoire ingérée (pas un z-score glissant) —
+nécessite RUSSELL_MINI/PALLADIUM, ajoutés à `ingestion_cftc.py` (15 marchés au total
+désormais). Testé réel : COPPER le plus proche de son record (95%).
+
+## `modele_correlation_cot_prix.py` (2026-09-08)
+
+Corrélation glissante (26 semaines) entre positionnement COT et prix SP500 — complète
+`modele_divergence_cot_prix.py` (un instant) avec la relation dans le temps. Testé réel :
+corrélation faible (+0,094) — le positionnement suit peu le prix sur cette fenêtre, honnête.

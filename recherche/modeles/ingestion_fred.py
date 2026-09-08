@@ -56,6 +56,7 @@ SERIES = [
     "PERMIT",    # Permis de construire (mensuel) -- cycle immobilier
     "BAMLH0A0HYM2",  # Spread credit high-yield US (quotidien) -- facteur qualite credit
     "BAMLC0A0CM",    # Spread credit investment-grade US (quotidien) -- facteur qualite credit
+    "BOPGSTB",       # Balance commerciale biens+services US (mensuel) -- verifie frais 2026-09-08
     # --- Zone euro (BCE + Allemagne comme proxy emploi -- l'agregat zone euro officiel a
     #     plusieurs mois de retard, l'Allemagne est fraiche et pese ~29% du PIB de la zone) ---
     "ECBDFR",             # Taux de la facilite de depot BCE (quotidien)

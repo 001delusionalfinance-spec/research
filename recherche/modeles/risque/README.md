@@ -74,3 +74,8 @@ Sensibilité SP500 à un choc de ±100pb (taux 10 ans), via le beta de
 `modele_beta_facteur_macro.py` — **même bug DFF→DGS10 corrigé ici en parallèle** (la version
 initiale extrapolait un beta DFF instable à +68,8%/-68,8%, absurde). Testé réel après
 correction : +100pb → -7,71% (SP500 7748→7150), économiquement plausible.
+
+## `modele_var_conditionnelle_regime.py` (2026-09-08)
+
+VaR conditionnelle au régime de volatilité actuel (VIX haut vs bas), pas une VaR globale unique.
+Testé réel : régime bas actuellement, VaR95 applicable=-1,14% (vs -1,84% non-conditionnelle).

@@ -84,6 +84,19 @@ MODELES = [
     ("ml", "modele_screening_features"),
     ("ml", "modele_couts_transaction"),
     ("ml", "modele_regression_multifeatures"),
+    ("macro", "modele_surprise_macro_composite"),
+    ("macro", "modele_balance_commerciale"),
+    ("macro", "modele_surprise_inflation"),
+    ("positionnement-comportemental", "modele_dollar_smile"),
+    ("positionnement-comportemental", "modele_extremes_historiques"),
+    ("positionnement-comportemental", "modele_correlation_cot_prix"),
+    ("statistique", "modele_decomposition_variance"),
+    ("statistique", "modele_test_chow"),
+    ("statistique", "modele_cointegration_secteurs"),
+    ("series-temporelles", "modele_arima"),
+    ("factorielle", "modele_qualite_regime_macro"),
+    ("risque", "modele_var_conditionnelle_regime"),
+    ("ml", "modele_stacking"),
 ]
 
 

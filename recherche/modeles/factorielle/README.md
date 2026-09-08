@@ -69,3 +69,9 @@ gagnant et le tercile perdant des 10 secteurs, au même instant — complète
 `modele_rotation_sectorielle.py` (classement) en construisant le facteur lui-même. Testé réel :
 spread=+11,85pt (Énergie/Finance/Santé vs Services collectifs/Consommation discrétionnaire/
 Immobilier).
+
+## `modele_qualite_regime_macro.py` (2026-09-08)
+
+Facteur "qualité" appliqué au régime macro (stabilité du taux directeur + VIX, pas un
+fondamental d'entreprise faute de données) — distinct du niveau (déjà mesuré par
+`modele_conditions_financieres.py`). Testé réel : score=-0,0338 (instabilité VIX dominante).

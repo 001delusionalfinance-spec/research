@@ -77,3 +77,9 @@ obtenus.
 Périodogramme (FFT) sur les rendements du VIX — cherche des cycles dominants au-delà du retour
 à la moyenne déjà mesuré (Ornstein-Uhlenbeck). Testé réel : 3 périodes dominantes à 2,2/5,4/4,0
 jours — pas de cycle mensuel/trimestriel net détecté, résultat honnête.
+
+## `modele_arima.py` (2026-09-08)
+
+ARIMA(1,1,1) sur le VIX, prévision walk-forward 1-jour (statsmodels, ré-ajusté à chaque pas,
+pas un fit unique). Testé réel : RMSE=2,259 vs MSE naïf=5,283 — ARIMA bat la persistance
+simple.

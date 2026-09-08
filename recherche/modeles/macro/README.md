@@ -72,3 +72,26 @@ Mises en chantier, permis de construire, taux hypothécaire 30 ans (`HOUST`/`PER
 `MORTGAGE30US` ajoutés à `ingestion_fred.py`) — les permis précèdent les chantiers dans le
 processus réel, comparaison de tendance pour un signal avancé. Testé réel : pas de divergence
 (les deux en baisse ensemble).
+
+## `modele_surprise_macro_composite.py` (2026-09-08)
+
+Indice composite de surprise (esprit Citi Economic Surprise Index, 3 séries : chômage, crédit
+bancaire, inflation) — proxy d'accélération vs tendance, pas un vrai consensus d'économistes
+(donnée propriétaire non disponible). Testé réel : indice=-0,33 (surprises défavorables
+dominent).
+
+## `modele_balance_commerciale.py` (2026-09-08)
+
+Balance commerciale US (`BOPGSTB`, ajouté à `ingestion_fred.py`). Testé réel : -88,6Md$,
+rang percentile=1 (proche du déficit record historique), déficit qui se creuse.
+
+## `modele_surprise_inflation.py` (2026-09-08)
+
+Surprise CPI MoM vs prévision naïve (moyenne des 6 mois précédents) — complète le composite en
+se concentrant sur l'inflation seule, en MoM plutôt qu'en YoY. Testé réel : surprise baissière
+(-0,26pt).
+
+**Macro complète les 12 idées de l'exercice initial** (Sahm, taux réel, Taylor, courbe US,
+cycle crédit, conditions financières, REER, cycle immobilier, surprise composite, balance
+commerciale, surprise inflation — seul le différentiel Fed dot-plot manque, donnée CME
+FedWatch non accessible gratuitement).
