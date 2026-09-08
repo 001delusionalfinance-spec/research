@@ -61,3 +61,16 @@ Testé réel : 4780 mots, 231 phrases, 20,7 mots/phrase, 35,6% de mots longs.
 Fréquence de mentions géographiques/thématiques (comptage de mots-clés, pas un vrai NER) dans
 les minutes — SUR QUOI le comité se concentre, complète le score de ton. Testé réel : inflation
 mentionnée 51 fois, Middle East 12 fois, tariffs 7 fois.
+
+## `modele_similarite_vocabulaire_minutes.py` (2026-09-08)
+
+Indice de Jaccard entre les vocabulaires des 2 dernières minutes — combien le vocabulaire
+change, indépendamment du ton. Testé réel : Jaccard=0,52 (368 mots nouveaux, 228 disparus).
+
+## `modele_lisibilite_flesch_kincaid.py` (2026-09-08)
+
+Indice Flesch-Kincaid (Reading Ease + Grade Level) réel — remplace le proxy "part de mots longs"
+par une formule académique reconnue (comptage de syllabes heuristique, ~90% de précision sans
+dictionnaire phonétique complet, validé sur 8 mots-tests avant le réel : 7/8 corrects). Testé
+réel : communiqué Reading Ease=48,6 (niveau université) vs minutes=28,8 (nettement plus
+difficile).
