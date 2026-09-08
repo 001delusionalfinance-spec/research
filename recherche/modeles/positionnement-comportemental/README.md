@@ -18,3 +18,15 @@ elles-mêmes. Détail dans `ingestion_cftc.py`.
 
 Testé de bout en bout avec de vraies données (156 semaines par contrat, ingestion réelle sans
 clé API requise).
+
+## `modele_momentum_positionnement.py` (2026-09-08)
+
+Dérivée du z-score, pas son niveau : un z-score qui vient de passer de 0 à +1,5 en 8 semaines
+(positionnement qui SE CONSTRUIT) n'est pas la même situation qu'un z-score déjà stabilisé à
++1,5. Testé réel : les 9 marchés ont un momentum de positionnement mesuré, aucun aberrant.
+
+## `modele_crowding_cross_asset.py` (2026-09-08)
+
+Combien de marchés ont un positionnement tendu (`|z|≥1,5`) **simultanément** — un risque de
+déroulement corrélé que regarder un marché à la fois ne montre pas. Testé réel : 2/9 marchés
+tendus au même moment (EUR_FX court, USD_INDEX long — cohérent, même thème dollar fort).
