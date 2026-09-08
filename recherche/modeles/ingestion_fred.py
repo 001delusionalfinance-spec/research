@@ -85,7 +85,11 @@ def write_series_csv(series_id: str, payload: dict) -> Path:
 
 
 def main() -> int:
-    api_key = os.environ.get("FRED_API_KEY")
+    api_key = (os.environ.get("FRED_API_KEY") or "").strip()  # bug reel trouve en CI le
+        # 2026-09-08 : la valeur du secret GitHub contenait un espace en fin de chaine (ajoute
+        # au moment de coller la valeur dans le prompt gh secret set), cassant l'URL avec
+        # "InvalidURL: URL can't contain control characters" -- strip() defensif, pas une
+        # tolerance a une cle invalide (le controle suivant leve toujours si vide apres strip)
     if not api_key:
         print("FRED_API_KEY absente de l'environnement -- rien a faire, echec explicite.")
         return 1
