@@ -26,4 +26,22 @@ avant d'utiliser ces séries telles quelles ailleurs.
 
 Corrélation S&P 500/VIX en fenêtre glissante 60j (sur les rendements, pas les niveaux) — montre
 comment la relation évolue, pas juste sa valeur actuelle. Testé réel : -0,805 actuellement,
-entre -0,951 et -0,777 sur la fenêtre d'historique disponible.
+entre -0,955 et -0,429 sur les 30 ans d'historique désormais disponibles.
+
+## `modele_cointegration_taux.py` (2026-09-08)
+
+Test d'Engle-Granger (via `statsmodels`) entre chaque paire de taux directeurs — distinct de la
+corrélation : deux séries peuvent partager un équilibre de LONG TERME sans être corrélées à
+court terme. **Bug réel trouvé en écrivant le modèle** (pas en le testant après coup) : aligner
+les séries par simple troncature "derniers N points de chaque série" aurait comparé des dates
+différentes (fréquences quotidienne vs mensuelle mélangées) — corrigé par alignement explicite
+sur les dates communes avant tout test. Testé réel : 4/10 paires cointégrées (toutes impliquant
+la Chine).
+
+## `modele_pca_taux.py` (2026-09-08)
+
+PCA sur les 5 taux directeurs, aux dates communes — combien de "facteurs" indépendants
+expliquent le mouvement conjoint des banques centrales (adaptation de Litterman-Scheinkman
+1991, maturités → blocs). Calcul direct par eigendecomposition (numpy), pas sklearn. Testé
+réel : 208 dates communes, 1ère composante explique 82,8% de la variance — poids dominant sur
+UK/US/zone euro, quasi nul sur le Japon.

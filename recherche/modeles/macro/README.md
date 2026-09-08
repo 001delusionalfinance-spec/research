@@ -35,3 +35,16 @@ Taux directeur US nominal (`DFF`) moins inflation CPI en glissement annuel (`CPI
 condition monétaire réelle, pas juste le chiffre affiché. Limite assumée : inflation *réalisée*
 (ex post), pas anticipée (ex ante) — un vrai taux réel ex ante utiliserait les breakevens
 (non ingérés ici). Testé réel : nominal 3,63%, inflation YoY 3,30%, réel +0,33%.
+
+## `modele_regle_taylor.py` (2026-09-08)
+
+Règle de Taylor (1993), version à 2 termes (r*=2%, cible inflation=2%, sans le terme d'écart de
+production — aucun PIB potentiel ingéré, terme omis et documenté plutôt qu'approximé par un
+proxy inventé). Testé réel : taux recommandé=5,96%, Fed réelle=3,63% — écart -2,33pt
+(accommodant selon la règle).
+
+## `modele_courbe_taux_us.py` (2026-09-08)
+
+Spread 10 ans - 2 ans (`DGS10`/`DGS2`, ajoutés à `ingestion_fred.py`) — un des signaux de
+récession macro les plus suivis (Estrella & Mishkin 1998). Suit aussi la durée de
+l'inversion, pas juste son état instantané. Testé réel : spread=+0,43pt, courbe normale.

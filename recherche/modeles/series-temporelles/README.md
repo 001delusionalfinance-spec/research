@@ -32,5 +32,22 @@ Exposant de Hurst (analyse R/S, Mandelbrot 1968) — mesure si les rendements on
 longue (H>0,5, tendanciel) ou courte (H<0,5, retour à la moyenne). **Limite réelle trouvée en
 validant sur une marche aléatoire synthétique** (H théorique = 0,5) : le R/S simple a un biais
 positif connu à échantillon fini, confirmé ici (H mesuré = 0,593 sur du vrai bruit gaussien).
-Le résultat réel sur S&P 500 (H=0,608) est donc à peine au-dessus de ce biais — preuve de
+Le résultat réel sur S&P 500 (H=0,608 sur 2 ans ; recalculé à 0,554 depuis l'extension à 30 ans
+d'historique, plus proche du biais mesuré) est donc à peine au-dessus de ce biais — preuve de
 mémoire plus faible que le chiffre brut ne le suggère.
+
+## `modele_ornstein_uhlenbeck_vix.py` (2026-09-08)
+
+Retour à la moyenne (processus OU, version discrète = régression variation ~ niveau) sur le
+VIX — contrairement au S&P 500 (marche quasi aléatoire, cf. Hurst ci-dessus), le VIX est
+l'exemple manuel du mean-reverting en finance. **Estimateur validé sur processus OU synthétique
+à paramètres connus** (theta=0,1 → estimé 0,091 ; mu=20,0 → estimé 20,17) avant le test réel.
+Testé réel : VIX actuel=15,31, niveau moyen estimé=18,45, demi-vie=7,0 jours.
+
+## `modele_changepoint_volatilite.py` (2026-09-08)
+
+Détection de rupture (segmentation binaire à un point, pas PELT — plus simple, validée sur cas
+synthétique à rupture connue avant le réel) sur le niveau de volatilité S&P 500. Depuis
+l'extension à 30 ans d'historique, détecte désormais une vraie rupture historiquement
+significative plutôt qu'un artefact récent : rupture le 2011-12-21 (fin de la crise de la dette
+européenne), vol avant=21,3%, après=16,7%.
