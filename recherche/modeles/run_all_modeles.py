@@ -13,13 +13,29 @@ ICI = Path(__file__).resolve().parent
 
 MODELES = [
     ("macro", "modele_regime_monetaire_emploi"),
+    ("macro", "modele_sahm_rule"),
+    ("macro", "modele_taux_reel_us"),
     ("positionnement-comportemental", "modele_positionnement_cot"),
+    ("positionnement-comportemental", "modele_momentum_positionnement"),
+    ("positionnement-comportemental", "modele_crowding_cross_asset"),
     ("statistique", "modele_correlations_positionnement"),
+    ("statistique", "modele_stationnarite_taux"),
+    ("statistique", "modele_correlation_glissante"),
     ("series-temporelles", "modele_volatilite_ewma"),
+    ("series-temporelles", "modele_garch"),
+    ("series-temporelles", "modele_hurst"),
     ("factorielle", "modele_momentum_prix"),
+    ("factorielle", "modele_carry_proxy"),
+    ("factorielle", "modele_beta_vol"),
     ("risque", "modele_var_drawdown"),
+    ("risque", "modele_skew_kurtosis"),
+    ("risque", "modele_ratios_performance"),
     ("nlp", "modele_ton_fomc"),
+    ("nlp", "modele_frequence_mots_cles_fomc"),
+    ("nlp", "modele_complexite_texte_fomc"),
     ("ml", "modele_walkforward_direction"),
+    ("ml", "modele_anomalie_multivariee"),
+    ("ml", "modele_test_overfitting"),
 ]
 
 

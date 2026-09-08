@@ -20,3 +20,14 @@ calcul 12 mois (testé : un an pile aurait fait échouer le calcul dès que la d
 ancienne s'approche de la limite).
 
 Testé avec de vraies données : momentum 12-1 mois = +19,44% (SP500 12m = +18,39%, cohérent).
+
+## `modele_carry_proxy.py` (2026-09-08)
+
+Différentiel de taux directeur entre chaque bloc et les US — proxy du carry trade classique
+(avant effet de change, limite assumée : pas de prix spot FX ingéré pour l'instant). Testé
+réel : Japon -2,79pt vs US (carry le plus négatif), UK +0,10pt (seul positif).
+
+## `modele_beta_vol.py` (2026-09-08)
+
+Beta glissant (60j) du S&P 500 au VIX — pas juste la corrélation (déjà dans `statistique/`)
+mais l'AMPLITUDE de la réaction. Testé réel : -0,00521 (SP500 perd ~0,52% pour +1pt de VIX).

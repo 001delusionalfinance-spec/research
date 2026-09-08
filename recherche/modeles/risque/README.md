@@ -18,3 +18,16 @@ Détection de saut (Barndorff-Nielsen & Shephard) volontairement pas construite 
 première passe — demande realized variance + bipower variation + tripower quarticity, plus
 lourd à valider correctement (GMDC l'a fait en validant d'abord sur données synthétiques à
 paramètres connus). À reprendre si utile.
+
+## `modele_skew_kurtosis.py` (2026-09-08)
+
+Skewness et kurtosis en excès (convention Fisher) glissants, 252j — décrit la FORME de la
+distribution, pas juste sa queue (VaR/CVaR). Testé réel : skew -0,255 (pertes extrêmes plus
+fréquentes que les gains extrêmes), kurtosis +1,205 (queues plus épaisses qu'une gaussienne) —
+cohérent avec les faits stylisés connus des rendements actions (Cont 2001).
+
+## `modele_ratios_performance.py` (2026-09-08)
+
+Sharpe, Sortino, Calmar glissants (252j) — lecture de contexte, pas un signal de trade (ce
+dépôt ne décide rien, voir `MAP.md`). Taux sans risque supposé nul (simplification documentée).
+Testé réel : Sharpe=1,323, Sortino=1,281, Calmar=1,865.

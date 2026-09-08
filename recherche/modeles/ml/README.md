@@ -18,3 +18,20 @@ cas synthétiques à résultat connu avant le test réel.
 Rapporté tel quel, pas ajusté pour paraître mieux. Confirme la même mise en garde que GMDC
 avait déjà trouvée sur un signal ML différent : un signal simple sur prix seul n'a pas
 d'avantage démontré ici.
+
+## `modele_anomalie_multivariee.py` (2026-09-08)
+
+Distance de Mahalanobis (rendement SP500 + variation VIX conjoints) — une anomalie CONJOINTE
+(les deux dimensions ensemble), pas juste un gros mouvement isolé sur une seule. Calcul à la
+main (pas de sklearn), **validé contre `scipy.spatial.distance.mahalanobis` sur données
+synthétiques avant le test réel** (résultat identique au 4e chiffre). Testé réel : distance
+0,549 (seuil 3.0) — jour ordinaire.
+
+## `modele_test_overfitting.py` (2026-09-08)
+
+Démonstration explicite d'overfitting : la même famille de règle (momentum sur N jours) est
+d'abord "optimisée" en cherchant le meilleur N sur tout l'historique à la fois (in-sample,
+l'erreur classique d'un backtest naïf), puis réévaluée avec ce N en walk-forward strict.
+L'écart entre les deux EST la démonstration. Testé réel : écart quasi nul (+0,0009) — pas de
+signature forte d'overfitting sur cet échantillon, résultat rapporté tel quel plutôt qu'un
+écart plus spectaculaire qui aurait mieux illustré le propos.
