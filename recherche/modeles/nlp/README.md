@@ -22,3 +22,16 @@ profond (`nlp/` sous `modeles/`).
 Testé avec de vraies données, résultat réel et cohérent : juin unanime (12-0), juillet 9-3 avec
 3 dissidents nommés qui voulaient RELEVER les taux — vrai basculement hawkish du comité,
 capturé correctement (pas un exemple inventé).
+
+## `modele_frequence_mots_cles_fomc.py` (2026-09-08)
+
+Fréquence de mots-clés précis (ex. "transitory", "patient", "data-dependent") dans le
+communiqué le plus récent — plus granulaire que le score de ton agrégé, un mot spécifique a
+parfois plus de portée qu'un score global. Testé réel : "uncertainty"×1, "elevated"×2,
+"solid"×1, "strong"×1 présents dans le communiqué de juillet.
+
+## `modele_complexite_texte_fomc.py` (2026-09-08)
+
+Longueur/complexité du texte (mots, phrases, part de mots longs) comme proxy d'incertitude
+rédactionnelle du comité — hypothèse testable, pas une certitude. Testé réel : 149 mots,
+10 phrases, 14,9 mots/phrase, 32,9% de mots longs (>6 lettres).
