@@ -58,3 +58,19 @@ Test de Granger (statsmodels, 5 lags) entre variation VIX et rendement SP500, le
 Précision terminologique importante dans le docstring : "causalité" de Granger = ordre
 temporel prédictif, pas causalité structurelle. Testé réel : SP500→VIX significatif (p=0,004),
 VIX→SP500 non (p=0,078).
+
+## `modele_dependance_queue.py` (2026-09-08)
+
+Dépendance de queue empirique (esprit copule, pas une copule paramétrique ajustée) SP500/VIX —
+au-delà de la corrélation linéaire. Testé réel : coefficient de dépendance de queue=6,86 (bien
+au-dessus de 1, dépendance de queue réelle confirmée — les extrêmes des deux séries arrivent
+ensemble bien plus souvent que sous indépendance).
+
+## `modele_beta_facteur_macro.py` (2026-09-08)
+
+**Bug réel trouvé et corrigé en testant** : la première version utilisait DFF (taux Fed funds
+effectif) comme facteur — seulement ~5 variations non nulles sur 90 jours (bruit de 1pb, pas de
+vraies décisions), régression instable donnant un beta extrapolé absurde (+68,8% de SP500 pour
+un choc de 100pb). Remplacé par DGS10 (taux 10 ans, variation quotidienne réelle du marché),
+avec un garde-fou explicite (minimum de variations non nulles exigé). Testé réel : beta=-0,0771,
+économiquement plausible.
