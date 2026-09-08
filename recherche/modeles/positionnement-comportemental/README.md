@@ -45,3 +45,15 @@ Ratio |position commerciale nette| / |position spéculative nette|, 9 marchés �
 spéculateurs. Nécessite les colonnes `comm_long`/`comm_short` ajoutées à `ingestion_cftc.py`
 (2026-09-08). Testé réel : 7/9 marchés en sens opposé commercial/spéculatif (cohérent avec la
 théorie) — EUR_FX et SP500_EMINI font exception, à surveiller.
+
+## `modele_rotation_risk_on_off.py` (2026-09-08)
+
+Z-score moyen actifs risque (SP500_EMINI, NASDAQ_MINI) vs refuge (GOLD, UST_10Y) — nécessite
+NASDAQ_MINI, ajouté à `ingestion_cftc.py` (vérifié frais). Testé réel : posture mixte/neutre.
+
+## `modele_concentration_traders.py` (2026-09-08)
+
+Position nette moyenne par trader — proxy de concentration, pas un vrai Herfindahl (le rapport
+COT legacy ne publie pas les positions individuelles, limite assumée dès le départ). Nécessite
+les colonnes `traders_*` ajoutées à `ingestion_cftc.py`. Testé réel sur 11 marchés, ex. UST_10Y
+la plus concentrée (2110/trader), EUR_FX la moins (78/trader).
