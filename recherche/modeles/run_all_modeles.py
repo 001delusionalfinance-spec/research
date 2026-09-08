@@ -19,6 +19,7 @@ MODELES = [
     ("factorielle", "modele_momentum_prix"),
     ("risque", "modele_var_drawdown"),
     ("nlp", "modele_ton_fomc"),
+    ("ml", "modele_walkforward_direction"),
 ]
 
 
