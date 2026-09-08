@@ -61,7 +61,7 @@ SERIES = [
     "IR3TIB01CNM156N",     # Taux interbancaire 3 mois, proxy conditions monetaires (mensuel)
 ]
 
-BRUT_DIR = Path(__file__).resolve().parents[1] / "donnees" / "brut" / "fred"
+BRUT_DIR = Path(__file__).resolve().parents[2] / "donnees" / "brut" / "fred"
 
 
 def fetch_series(series_id: str, api_key: str) -> dict:
