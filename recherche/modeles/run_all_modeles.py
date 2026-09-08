@@ -18,6 +18,7 @@ MODELES = [
     ("series-temporelles", "modele_volatilite_ewma"),
     ("factorielle", "modele_momentum_prix"),
     ("risque", "modele_var_drawdown"),
+    ("nlp", "modele_ton_fomc"),
 ]
 
 
