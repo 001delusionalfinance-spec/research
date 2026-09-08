@@ -57,3 +57,15 @@ Position nette moyenne par trader — proxy de concentration, pas un vrai Herfin
 COT legacy ne publie pas les positions individuelles, limite assumée dès le départ). Nécessite
 les colonnes `traders_*` ajoutées à `ingestion_cftc.py`. Testé réel sur 11 marchés, ex. UST_10Y
 la plus concentrée (2110/trader), EUR_FX la moins (78/trader).
+
+## `modele_metaux_precieux.py` (2026-09-08)
+
+Positionnement comparé or/argent/platine — nécessite SILVER/PLATINUM, ajoutés à
+`ingestion_cftc.py`. Testé réel : écart or/industriels=+1,40 (or plus tendu que les deux
+autres).
+
+## `modele_persistance_extremes.py` (2026-09-08)
+
+Depuis combien de semaines consécutives le z-score reste extrême, 13 marchés (nécessite
+`SILVER`/`PLATINUM`/`NASDAQ_MINI`/`COPPER`, tous ajoutés récemment). Testé réel : USD_INDEX
+extrême depuis 12 semaines consécutives, la plus longue persistance actuelle.

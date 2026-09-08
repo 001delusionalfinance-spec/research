@@ -42,6 +42,8 @@ CONTRACTS = {
     "VIX_FUT": "VIX FUTURES - CBOE FUTURES EXCHANGE",
     "NASDAQ_MINI": "NASDAQ MINI - CHICAGO MERCANTILE EXCHANGE",  # ajoute 2026-09-08, verifie frais
     "COPPER": "COPPER- #1 - COMMODITY EXCHANGE INC.",  # ajoute 2026-09-08, verifie frais
+    "SILVER": "SILVER - COMMODITY EXCHANGE INC.",  # ajoute 2026-09-08, verifie frais
+    "PLATINUM": "PLATINUM - NEW YORK MERCANTILE EXCHANGE",  # ajoute 2026-09-08, verifie frais
 }
 
 BRUT_DIR = Path(__file__).resolve().parents[2] / "donnees" / "brut" / "cftc"
