@@ -57,12 +57,23 @@ def main() -> int:
             continue
         position_moyenne = abs(noncomm_net) / traders_total
         resultats.append([derniere["date"], contrat, traders_total, round(position_moyenne, 1)])
-        print(f"{contrat} : {traders_total} traders, position nette moyenne/trader="
-              f"{position_moyenne:.0f}")
 
     if not resultats:
         print("echec -- aucun contrat exploitable")
         return 1
+
+    # lecture relative au groupe du jour : une position moyenne/trader au-dessus de la mediane
+    # signale un marche concentre entre peu de mains, en-dessous une large diffusion -- les
+    # unites brutes variant enormement d'un contrat a l'autre (ex. UST_10Y vs EUR_FX), seule la
+    # comparaison au reste du groupe est lisible, pas la valeur absolue.
+    positions_triees = sorted(r[3] for r in resultats)
+    n = len(positions_triees)
+    mediane = (positions_triees[n // 2] if n % 2 == 1
+               else (positions_triees[n // 2 - 1] + positions_triees[n // 2]) / 2)
+    for _, contrat, traders_total, position_moyenne in resultats:
+        lecture = "concentre (peu de mains)" if position_moyenne > mediane else "diffus (large base de traders)"
+        print(f"{contrat} : {traders_total} traders, position nette moyenne/trader="
+              f"{position_moyenne:.0f} -- {lecture} (mediane du groupe : {mediane:.0f})")
 
     accumuler_csv(
         ETAT / f"{NOM_MODELE}.csv",

@@ -16,6 +16,8 @@ from _lib import BRUT, ETAT, SerieVide, accumuler_csv, correlation, read_series 
 
 NOM_MODELE = "correlation_cot_prix"
 FENETRE_SEMAINES = 26  # ~6 mois de rapports hebdo COT
+SEUIL_CORR_FORTE = 0.5  # convention standard (Cohen) : |r|>=0.5 = forte, >=0.3 = moderee
+SEUIL_CORR_MODEREE = 0.3
 
 
 def lire_nets(path: Path) -> list:
@@ -68,7 +70,14 @@ def main() -> int:
         [[date_du_jour, round(corr, 4)]],
     )
 
-    print(f"OK -- correlation COT/prix SP500 ({FENETRE_SEMAINES} semaines) = {corr:+.3f}")
+    if abs(corr) >= SEUIL_CORR_FORTE:
+        lecture = "forte"
+    elif abs(corr) >= SEUIL_CORR_MODEREE:
+        lecture = "moderee"
+    else:
+        lecture = "faible"
+    print(f"OK -- correlation COT/prix SP500 ({FENETRE_SEMAINES} semaines) = {corr:+.3f} -- "
+          f"lien {lecture}")
     return 0
 
 

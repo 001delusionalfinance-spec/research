@@ -72,8 +72,14 @@ def main() -> int:
 
         resultats.append([date_du_jour, contrat, round(z_actuel, 3), round(z_ancien, 3),
                            round(momentum_z, 3)])
+        if abs(z_actuel) > abs(z_ancien):
+            lecture = "se construit (l'extreme s'accroit)"
+        elif abs(z_actuel) < abs(z_ancien):
+            lecture = "se degonfle (l'extreme diminue)"
+        else:
+            lecture = "stable"
         print(f"{contrat} : z={z_actuel:+.2f} (il y a {SEMAINES_MOMENTUM}sem: {z_ancien:+.2f}), "
-              f"momentum={momentum_z:+.2f}")
+              f"momentum={momentum_z:+.2f} -- positionnement {lecture}")
 
     if not resultats:
         print("echec -- aucun contrat exploitable")

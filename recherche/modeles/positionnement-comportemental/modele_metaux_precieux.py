@@ -19,6 +19,7 @@ from _lib import BRUT, ETAT, SerieVide, accumuler_csv  # noqa: E402
 NOM_MODELE = "metaux_precieux"
 FENETRE_ZSCORE = 78
 METAUX = ["GOLD", "SILVER", "PLATINUM"]
+SEUIL_EXTREME = 2.0  # meme seuil que modele_positionnement_cot.py -- |z| > 2 = extreme
 
 
 def lire_nets(path: Path) -> list:
@@ -71,9 +72,17 @@ def main() -> int:
          [round(ecart_or_vs_industriels, 3) if ecart_or_vs_industriels is not None else ""]],
     )
 
-    print(f"OK -- z-scores : {resultats} -- ecart or/industriels="
-          f"{ecart_or_vs_industriels:+.2f}" if ecart_or_vs_industriels is not None else
-          f"OK -- z-scores : {resultats}")
+    metal_extreme, z_extreme = max(resultats.items(), key=lambda kv: abs(kv[1]))
+    if abs(z_extreme) > SEUIL_EXTREME:
+        lecture_extreme = f"{metal_extreme} ressort en extreme (|z|>{SEUIL_EXTREME:.0f})"
+    else:
+        lecture_extreme = f"{metal_extreme} le plus tendu, sans franchir le seuil extreme (|z|>{SEUIL_EXTREME:.0f})"
+
+    if ecart_or_vs_industriels is not None:
+        print(f"OK -- z-scores : {resultats} -- {lecture_extreme} -- "
+              f"ecart or/industriels={ecart_or_vs_industriels:+.2f}")
+    else:
+        print(f"OK -- z-scores : {resultats} -- {lecture_extreme}")
     return 0
 
 
