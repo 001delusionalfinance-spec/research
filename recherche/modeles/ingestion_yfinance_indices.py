@@ -1,4 +1,9 @@
-"""Ingestion yfinance -- indices de reference (S&P 500, VIX), historique 1 an.
+"""Ingestion yfinance -- indices de reference (S&P 500, VIX), historique 2 ans.
+
+Fenetre de 2 ans (pas 1 an) deliberement : le modele momentum_prix.py (famille factorielle) a
+besoin d'un point ~12 mois avant le plus recent PLUS une marge -- une fenetre pile a 1 an
+laisserait le calcul 12 mois echouer des que la donnee la plus ancienne s'approche de la
+limite.
 
 Meme choix technique que global-macro-desk-cloud : appel direct a l'API chart de Yahoo
 (`requests`), pas la librairie `yfinance` -- deja trouve chez eux (audit 2026-08-23) que la
@@ -35,7 +40,7 @@ MAX_JOURS_RETARD = 7  # meme garde-fou que GMDC : un fournisseur peut arreter de
 def fetch_chart(ticker: str) -> list:
     resp = requests.get(
         YAHOO_CHART_URL.format(ticker=ticker),
-        params={"range": "1y", "interval": "1d"},
+        params={"range": "2y", "interval": "1d"},
         headers={"User-Agent": "Mozilla/5.0"},
         timeout=20,
     )

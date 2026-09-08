@@ -16,6 +16,7 @@ MODELES = [
     ("positionnement-comportemental", "modele_positionnement_cot"),
     ("statistique", "modele_correlations_positionnement"),
     ("series-temporelles", "modele_volatilite_ewma"),
+    ("factorielle", "modele_momentum_prix"),
 ]
 
 
