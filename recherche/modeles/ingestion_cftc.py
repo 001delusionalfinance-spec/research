@@ -62,12 +62,16 @@ def write_contract_csv(cle: str, rows: list) -> Path:
     out_path = BRUT_DIR / f"{cle}.csv"
     with out_path.open("w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
-        w.writerow(["date", "noncomm_long", "noncomm_short", "noncomm_net", "open_interest"])
+        w.writerow(["date", "noncomm_long", "noncomm_short", "noncomm_net", "comm_long",
+                     "comm_short", "comm_net", "open_interest"])
         for r in sorted(rows, key=lambda r: r["report_date_as_yyyy_mm_dd"]):
             long_ = int(r["noncomm_positions_long_all"])
             short_ = int(r["noncomm_positions_short_all"])
+            comm_long = int(r["comm_positions_long_all"])
+            comm_short = int(r["comm_positions_short_all"])
             date = r["report_date_as_yyyy_mm_dd"][:10]
-            w.writerow([date, long_, short_, long_ - short_, r["open_interest_all"]])
+            w.writerow([date, long_, short_, long_ - short_, comm_long, comm_short,
+                        comm_long - comm_short, r["open_interest_all"]])
     return out_path
 
 

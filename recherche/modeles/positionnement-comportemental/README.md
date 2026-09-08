@@ -30,3 +30,18 @@ Dérivée du z-score, pas son niveau : un z-score qui vient de passer de 0 à +1
 Combien de marchés ont un positionnement tendu (`|z|≥1,5`) **simultanément** — un risque de
 déroulement corrélé que regarder un marché à la fois ne montre pas. Testé réel : 2/9 marchés
 tendus au même moment (EUR_FX court, USD_INDEX long — cohérent, même thème dollar fort).
+
+## `modele_divergence_cot_prix.py` (2026-09-08)
+
+Divergence classique : prix qui monte pendant que le positionnement spéculatif net recule.
+Limité à S&P 500 pour l'instant — seul marché où `donnees/brut/` a à la fois un prix
+(`yfinance/SP500.csv`) et un positionnement (`cftc/SP500_EMINI.csv`). Testé réel : pas de
+divergence actuellement (SP500 -0,86% sur 30j, COT net déjà en baisse dans le même sens).
+
+## `modele_ratio_commercial_speculatif.py` (2026-09-08)
+
+Ratio |position commerciale nette| / |position spéculative nette|, 9 marchés — les
+"commercial" du rapport COT couvrent en théorie une exposition réelle, souvent à l'opposé des
+spéculateurs. Nécessite les colonnes `comm_long`/`comm_short` ajoutées à `ingestion_cftc.py`
+(2026-09-08). Testé réel : 7/9 marchés en sens opposé commercial/spéculatif (cohérent avec la
+théorie) — EUR_FX et SP500_EMINI font exception, à surveiller.
