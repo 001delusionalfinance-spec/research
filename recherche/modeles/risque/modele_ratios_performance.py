@@ -92,8 +92,23 @@ def main() -> int:
                             for n in ["sharpe", "sortino", "calmar"]]],
     )
 
-    print(f"OK -- Sharpe={resultats['sharpe']:.3f}, Sortino={resultats['sortino']:.3f}, "
-          f"Calmar={resultats['calmar']:.3f} (taux sans risque suppose nul)")
+    # lecture qualitative -- seuils academiques standards (rendement/risque ajuste) :
+    # <0 negatif, [0,1) mediocre, [1,2) bon, >=2 excellent. Appliques ici aux trois ratios
+    # (Sharpe/Sortino/Calmar) pour une lecture homogene, honnete sur la taille de l'echantillon.
+    def lecture_ratio(valeur: float) -> str:
+        if valeur < 0:
+            return "negatif"
+        if valeur < 1:
+            return "mediocre"
+        if valeur < 2:
+            return "bon"
+        return "excellent"
+
+    print(f"OK -- Sharpe={resultats['sharpe']:.3f} ({lecture_ratio(resultats['sharpe'])}), "
+          f"Sortino={resultats['sortino']:.3f} ({lecture_ratio(resultats['sortino'])}), "
+          f"Calmar={resultats['calmar']:.3f} ({lecture_ratio(resultats['calmar'])}) "
+          f"-- lecture sur fenetre {FENETRE}j (~1 an, echantillon limite), seuils academiques "
+          f"standards, taux sans risque suppose nul")
     return 0
 
 

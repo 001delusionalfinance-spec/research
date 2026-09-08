@@ -99,9 +99,17 @@ def main() -> int:
           round(dd * 100, 3) if dd is not None else ""]],
     )
 
+    # lecture qualitative : le drawdown max equivaut a combien de "mauvais jours" (VaR95) --
+    # donne un ordre de grandeur concret plutot que deux pourcentages juxtaposes sans lien
+    if resultats["var_95"]:
+        jours_equiv_var95 = dd / resultats["var_95"]
+        lecture_dd = f"soit l'equivalent de ~{jours_equiv_var95:.0f} jours de VaR95 d'affilee"
+    else:
+        lecture_dd = "VaR95 nulle -- comparaison non calculable"
+
     print(f"OK -- VaR95={resultats['var_95']*100:.2f}% CVaR95={resultats['cvar_95']*100:.2f}% "
           f"VaR99={resultats['var_99']*100:.2f}% CVaR99={resultats['cvar_99']*100:.2f}% "
-          f"drawdown_max_252j={dd*100:.2f}%")
+          f"drawdown_max_252j={dd*100:.2f}% -- {lecture_dd}")
     return 0
 
 

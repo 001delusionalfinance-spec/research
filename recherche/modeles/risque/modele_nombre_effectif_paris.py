@@ -79,8 +79,19 @@ def main() -> int:
         [[date_du_jour, n, round(nombre_effectif, 2), round(nombre_effectif / n * 100, 1)]],
     )
 
+    # lecture qualitative -- % du maximum theorique (n marches = n paris independants) :
+    # >=70% diversifie, [40,70)% moderement concentre, <40% concentre (une poignee de facteurs
+    # domine la variance des positions)
+    pct_du_max = nombre_effectif / n * 100
+    if pct_du_max >= 70:
+        lecture_div = "diversifie -- peu de redondance entre les paris"
+    elif pct_du_max >= 40:
+        lecture_div = "moderement concentre -- redondance significative entre plusieurs paris"
+    else:
+        lecture_div = "concentre -- une poignee de facteurs domine, peu de paris reellement independants"
+
     print(f"OK -- {n} marches, nombre effectif de paris independants={nombre_effectif:.2f} "
-          f"({nombre_effectif/n*100:.0f}% du maximum theorique de {n})")
+          f"({pct_du_max:.0f}% du maximum theorique de {n}) -- {lecture_div}")
     return 0
 
 

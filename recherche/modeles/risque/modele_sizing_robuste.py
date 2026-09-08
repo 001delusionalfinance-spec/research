@@ -76,8 +76,23 @@ def main() -> int:
         [[date_du_jour, round(vol_point, 4), round(p5, 4), round(p95, 4), len(resultats_bootstrap)]],
     )
 
+    # lecture qualitative -- largeur de l'IC90 relative au point estimate lui-meme : un
+    # intervalle large par rapport au point estimate = incertitude elevee sur l'estimation,
+    # un intervalle etroit = estimation relativement fiable
+    largeur_ic = p95 - p5
+    if vol_point:
+        ratio_largeur = largeur_ic / vol_point
+        if ratio_largeur >= 0.5:
+            lecture_ic = f"intervalle large ({ratio_largeur*100:.0f}% du point estimate) -- incertitude elevee"
+        elif ratio_largeur >= 0.25:
+            lecture_ic = f"intervalle modere ({ratio_largeur*100:.0f}% du point estimate)"
+        else:
+            lecture_ic = f"intervalle etroit ({ratio_largeur*100:.0f}% du point estimate) -- estimation relativement fiable"
+    else:
+        lecture_ic = "point estimate nul -- ratio non calculable"
+
     print(f"OK -- vol point estimate={vol_point:.4f}, IC90%=[{p5:.4f}, {p95:.4f}] "
-          f"({len(resultats_bootstrap)} tirages bootstrap)")
+          f"({len(resultats_bootstrap)} tirages bootstrap) -- {lecture_ic}")
     return 0
 
 

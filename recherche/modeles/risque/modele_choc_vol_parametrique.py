@@ -42,12 +42,23 @@ def main() -> int:
     moyenne_quotidienne = sum(rendements) / len(rendements)
 
     resultats = []
+    var_base = None
     for mult in MULTIPLICATEURS:
         vol_choquee = vol_quotidienne * mult
         var_parametrique = moyenne_quotidienne - Z_95 * vol_choquee
         resultats.append((mult, vol_choquee * (252 ** 0.5), var_parametrique))
+        # lecture qualitative -- gravite relative au scenario de base (x1, vol actuelle) :
+        # comme le choc est une simple mise a l'echelle lineaire de la vol, le ratio vs base
+        # donne directement la severite relative de chaque scenario, pas un chiffre isole
+        if var_base is None:
+            var_base = var_parametrique
+            lecture_scenario = "scenario de base (vol actuelle, non choquee)"
+        elif var_base:
+            lecture_scenario = f"{var_parametrique / var_base:.1f}x plus severe que le scenario de base"
+        else:
+            lecture_scenario = "scenario de base nul -- comparaison non calculable"
         print(f"choc x{mult:.0f} : vol annualisee={vol_choquee * (252**0.5)*100:.1f}%, "
-              f"VaR95 parametrique={var_parametrique*100:.2f}%/jour")
+              f"VaR95 parametrique={var_parametrique*100:.2f}%/jour -- {lecture_scenario}")
 
     accumuler_csv(
         ETAT / f"{NOM_MODELE}.csv",
@@ -57,7 +68,12 @@ def main() -> int:
          [round(r[2] * 100, 3) for r in resultats]],
     )
 
-    print(f"OK -- vol actuelle={vol_actuelle_annuelle*100:.2f}%, scenarios x1/x2/x3 calcules")
+    var_pire = resultats[-1][2]
+    if var_base:
+        lecture_pire = f"pire scenario (x{MULTIPLICATEURS[-1]:.0f}) = {var_pire*100:.2f}%/jour, soit {var_pire/var_base:.1f}x le scenario de base"
+    else:
+        lecture_pire = "scenario de base nul -- comparaison non calculable"
+    print(f"OK -- vol actuelle={vol_actuelle_annuelle*100:.2f}%, scenarios x1/x2/x3 calcules -- {lecture_pire}")
     return 0
 
 

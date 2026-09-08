@@ -74,10 +74,24 @@ def main() -> int:
           round(delta_covar * 100, 3), len(rendements_detresse)]],
     )
 
+    # lecture qualitative -- amplitude de l'aggravation (VaR en detresse vs VaR en regime normal),
+    # pas juste le delta brut : un ratio proche de 1 = peu de contagion, un ratio nettement > 1 =
+    # les pertes de queue s'amplifient clairement quand le VIX est deja extreme
+    if var_normal:
+        ratio_aggravation = var_detresse / var_normal
+        if ratio_aggravation >= 1.5:
+            lecture_covar = f"contagion notable -- VaR {ratio_aggravation:.1f}x plus severe en detresse"
+        elif ratio_aggravation >= 1.1:
+            lecture_covar = f"effet modere -- VaR {ratio_aggravation:.1f}x plus severe en detresse"
+        else:
+            lecture_covar = "peu d'ecart entre regimes -- pas de contagion marquee"
+    else:
+        lecture_covar = "VaR normale nulle -- ratio non calculable"
+
     print(f"OK -- VaR95 inconditionnelle={var_inconditionnelle*100:.2f}%, "
           f"VaR95|VIX detresse(>={seuil_vix_detresse:.1f})={var_detresse*100:.2f}%, "
           f"VaR95|VIX normal={var_normal*100:.2f}% -- DeltaCoVaR={delta_covar*100:+.2f}pt "
-          f"({len(rendements_detresse)} jours de detresse dans l'echantillon)")
+          f"({len(rendements_detresse)} jours de detresse dans l'echantillon) -- {lecture_covar}")
     return 0
 
 
