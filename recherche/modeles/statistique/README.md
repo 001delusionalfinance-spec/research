@@ -74,3 +74,25 @@ vraies décisions), régression instable donnant un beta extrapolé absurde (+68
 un choc de 100pb). Remplacé par DGS10 (taux 10 ans, variation quotidienne réelle du marché),
 avec un garde-fou explicite (minimum de variations non nulles exigé). Testé réel : beta=-0,0771,
 économiquement plausible.
+
+## `modele_decomposition_variance.py` (2026-09-08)
+
+R² glissant (SP500~DGS10, 60j) — complète le beta (l'amplitude) avec la puissance explicative.
+Testé réel : 17,0% de la variance SP500 expliquée par le taux 10 ans.
+
+## `modele_test_chow.py` (2026-09-08)
+
+Test de Chow formel (F-test, breakpoint précisé à l'avance, pas cherché comme le changepoint
+déjà construit) — validé sur cas synthétiques (série stable : p=0,40, pas de rejet ; rupture
+nette : p<0,000001, rejet net) avant le réel. Testé réel : rupture structurelle significative
+sur le taux 10 ans (F=399, p<0,0001).
+
+## `modele_cointegration_secteurs.py` (2026-09-08)
+
+Cointégration Engle-Granger entre SP500 et ses 10 secteurs — étend la technique des taux aux
+prix d'actifs. Testé réel, résultat honnête à nuancer : 0/10 cointégrés — probablement un
+manque de puissance sur seulement 2 ans d'historique (même limite déjà rencontrée avec
+`modele_saisonnalite.py` avant son extension à 30 ans), pas forcément un vrai découplage.
+
+**Statistique complète 11/12 idées de l'exercice initial** (seule la PPA manque, faute de prix
+spot FX ingérés).
