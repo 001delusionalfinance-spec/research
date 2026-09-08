@@ -54,8 +54,10 @@ def main() -> int:
           round(taux_reel, 3)]],
     )
 
+    lecture = "restrictif (taux reel positif et eleve)" if taux_reel > 0.5 else \
+        "accommodant (taux reel negatif ou proche de zero)"
     print(f"OK -- nominal={taux_nominal:.2f}%, inflation YoY={inflation_yoy_pct:.2f}%, "
-          f"reel={taux_reel:.2f}%")
+          f"reel={taux_reel:.2f}% -- {lecture}")
     return 0
 
 
