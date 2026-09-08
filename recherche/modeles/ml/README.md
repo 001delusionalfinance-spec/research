@@ -84,3 +84,10 @@ l'accuracy déjà connue, sous la baseline).
 Régression multi-features (momentum 5j + variation VIX ensemble, pas testées séparément comme
 dans le screening) sur le rendement J+1, split train/test 70/30 strict. Testé réel : R²
 out-of-sample=0,0102 — positif mais modeste, le modèle bat la moyenne de peu.
+
+## `modele_stacking.py` (2026-09-08)
+
+Stacking : poids de combinaison momentum+baseline APPRIS (régression logistique par descente de
+gradient, split train/test strict), pas un vote fixe comme `modele_ensemble_signaux.py`. Testé
+réel, résultat honnête : le poids appris pour momentum est quasi nul, le modèle converge vers
+la baseline seule — confirme une fois de plus que le signal prix seul n'apporte rien ici.
