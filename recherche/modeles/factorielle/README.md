@@ -44,3 +44,14 @@ réel : Énergie en tête (+12,62%), Immobilier dernier (-1,92%).
 Facteur saisonnier "Sell in May" testé statistiquement (test t, scipy), pas affirmé — écrit
 avec seulement 2 ans d'historique (limite documentée à l'époque), profite désormais des 30 ans
 disponibles pour SP500. Testé réel : différence été/hiver non significative (p=0,32).
+
+## `modele_dispersion_sectorielle.py` (2026-09-08)
+
+Écart-type des rendements 3 mois entre les 10 secteurs — dispersion élevée = environnement
+favorable au stock/sector-picking. Testé réel : dispersion=5,02pt, étendue=14,77pt.
+
+## `modele_low_volatility.py` (2026-09-08)
+
+Test de l'anomalie low-vol (Ang et al. 2006) sur les 10 secteurs — testé, pas affirmé, limite de
+puissance statistique documentée (n petit). Testé réel : anomalie NON confirmée sur cet
+échantillon (Sharpe bas-vol=0,55 < Sharpe haut-vol=0,75).

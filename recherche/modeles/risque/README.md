@@ -47,3 +47,14 @@ le niveau actuel du S&P 500. **A nécessité d'étendre `ingestion_yfinance_indi
 30 ans d'historique** (SP500/VIX seulement — les 10 ETF sectoriels restent à 2 ans, pas de
 besoin identifié) — vérifié sans effet négatif sur aucun modèle existant (tous en fenêtre
 glissante, ou directement améliorés par plus d'historique, ex. `modele_saisonnalite.py`).
+
+## `modele_sizing_robuste.py` (2026-09-08)
+
+Intervalle de confiance bootstrap (1000 tirages) sur l'estimation de vol réalisée — pas qu'un
+point. Testé réel : vol=12,80%, IC90%=[11,62%, 13,99%].
+
+## `modele_nombre_effectif_paris.py` (2026-09-08)
+
+Nombre effectif de paris indépendants (Meucci 2010, entropie de Shannon sur les valeurs propres
+de la matrice de corrélation) — 11 marchés COT. Testé réel : 7,14 paris effectifs sur 11 (65%
+du maximum théorique).

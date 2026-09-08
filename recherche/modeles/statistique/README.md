@@ -45,3 +45,16 @@ expliquent le mouvement conjoint des banques centrales (adaptation de Litterman-
 1991, maturités → blocs). Calcul direct par eigendecomposition (numpy), pas sklearn. Testé
 réel : 208 dates communes, 1ère composante explique 82,8% de la variance — poids dominant sur
 UK/US/zone euro, quasi nul sur le Japon.
+
+## `modele_clustering_marches.py` (2026-09-08)
+
+Clustering hiérarchique (average linkage, scipy) des 11 marchés COT par distance de corrélation.
+Testé réel : 4 clusters — {COPPER,GBP_FX,VIX_FUT,WTI_CRUDE}, {JPY_FX,UST_10Y},
+{EUR_FX,NASDAQ_MINI,SP500_EMINI,USD_INDEX}, {GOLD} seul.
+
+## `modele_causalite_granger.py` (2026-09-08)
+
+Test de Granger (statsmodels, 5 lags) entre variation VIX et rendement SP500, les deux sens.
+Précision terminologique importante dans le docstring : "causalité" de Granger = ordre
+temporel prédictif, pas causalité structurelle. Testé réel : SP500→VIX significatif (p=0,004),
+VIX→SP500 non (p=0,078).

@@ -50,3 +50,14 @@ minutes réelles). Testé réel : ton +2,49‰ → +3,97‰ (diff +1,49‰).
 nouvelle ingestion, réutilise les deux sources déjà en place. Testé réel, résultat marquant :
 communiqué +13,42‰ vs minutes +3,97‰ (écart +9,45‰) — le message public est nettement plus
 positif que la discussion interne de la même réunion.
+
+## `modele_complexite_texte_minutes.py` (2026-09-08)
+
+Mêmes métriques que `complexite_texte_fomc.py`, appliquées aux minutes (~30x plus long).
+Testé réel : 4780 mots, 231 phrases, 20,7 mots/phrase, 35,6% de mots longs.
+
+## `modele_entites_geographiques_minutes.py` (2026-09-08)
+
+Fréquence de mentions géographiques/thématiques (comptage de mots-clés, pas un vrai NER) dans
+les minutes — SUR QUOI le comité se concentre, complète le score de ton. Testé réel : inflation
+mentionnée 51 fois, Middle East 12 fois, tariffs 7 fois.

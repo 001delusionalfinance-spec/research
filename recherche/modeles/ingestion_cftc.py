@@ -40,6 +40,8 @@ CONTRACTS = {
     "GOLD": "GOLD - COMMODITY EXCHANGE INC.",
     "WTI_CRUDE": "WTI-PHYSICAL - NEW YORK MERCANTILE EXCHANGE",
     "VIX_FUT": "VIX FUTURES - CBOE FUTURES EXCHANGE",
+    "NASDAQ_MINI": "NASDAQ MINI - CHICAGO MERCANTILE EXCHANGE",  # ajoute 2026-09-08, verifie frais
+    "COPPER": "COPPER- #1 - COMMODITY EXCHANGE INC.",  # ajoute 2026-09-08, verifie frais
 }
 
 BRUT_DIR = Path(__file__).resolve().parents[2] / "donnees" / "brut" / "cftc"
@@ -63,7 +65,8 @@ def write_contract_csv(cle: str, rows: list) -> Path:
     with out_path.open("w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
         w.writerow(["date", "noncomm_long", "noncomm_short", "noncomm_net", "comm_long",
-                     "comm_short", "comm_net", "open_interest"])
+                     "comm_short", "comm_net", "open_interest", "traders_noncomm_long",
+                     "traders_noncomm_short", "traders_total"])
         for r in sorted(rows, key=lambda r: r["report_date_as_yyyy_mm_dd"]):
             long_ = int(r["noncomm_positions_long_all"])
             short_ = int(r["noncomm_positions_short_all"])
@@ -71,7 +74,9 @@ def write_contract_csv(cle: str, rows: list) -> Path:
             comm_short = int(r["comm_positions_short_all"])
             date = r["report_date_as_yyyy_mm_dd"][:10]
             w.writerow([date, long_, short_, long_ - short_, comm_long, comm_short,
-                        comm_long - comm_short, r["open_interest_all"]])
+                        comm_long - comm_short, r["open_interest_all"],
+                        r["traders_noncomm_long_all"], r["traders_noncomm_short_all"],
+                        r["traders_tot_all"]])
     return out_path
 
 

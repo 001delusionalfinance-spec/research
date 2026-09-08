@@ -48,3 +48,14 @@ proxy inventé). Testé réel : taux recommandé=5,96%, Fed réelle=3,63% — é
 Spread 10 ans - 2 ans (`DGS10`/`DGS2`, ajoutés à `ingestion_fred.py`) — un des signaux de
 récession macro les plus suivis (Estrella & Mishkin 1998). Suit aussi la durée de
 l'inversion, pas juste son état instantané. Testé réel : spread=+0,43pt, courbe normale.
+
+## `modele_cycle_credit.py` (2026-09-08)
+
+Croissance annuelle du crédit bancaire total US (`TOTBKCR`, Fed H.8, ajouté à `ingestion_fred.py`).
+Testé réel : +6,34% YoY, 40,9e percentile de son propre historique — normal.
+
+## `modele_conditions_financieres.py` (2026-09-08)
+
+Indice composite simplifié (esprit Chicago Fed NFCI, 3 composantes : taux directeur, courbe
+inversée, VIX) — chaque composante déjà utilisée ailleurs, la valeur ajoutée est la combinaison.
+Testé réel : indice=-0,14 (conditions proches de la normale, légèrement accommodantes).
