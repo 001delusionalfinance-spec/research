@@ -14,6 +14,7 @@ ICI = Path(__file__).resolve().parent
 MODELES = [
     ("macro", "modele_regime_monetaire_emploi"),
     ("positionnement-comportemental", "modele_positionnement_cot"),
+    ("statistique", "modele_correlations_positionnement"),
 ]
 
 
