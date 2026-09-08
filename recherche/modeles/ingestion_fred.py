@@ -49,6 +49,7 @@ SERIES = [
     "CPIAUCSL",  # CPI, tous postes (mensuel)
     "DGS10",     # Taux souverain 10 ans (quotidien) -- courbe des taux, verifie frais 2026-09-08
     "DGS2",      # Taux souverain 2 ans (quotidien) -- courbe des taux
+    "TOTBKCR",   # Credit bancaire total (hebdo) -- cycle du credit, verifie frais 2026-09-08
     # --- Zone euro (BCE + Allemagne comme proxy emploi -- l'agregat zone euro officiel a
     #     plusieurs mois de retard, l'Allemagne est fraiche et pese ~29% du PIB de la zone) ---
     "ECBDFR",             # Taux de la facilite de depot BCE (quotidien)
