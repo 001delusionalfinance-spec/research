@@ -3,9 +3,6 @@
 Données importées, jamais retouchées à la main — un script d'ingestion écrit ici, les modèles
 lisent d'ici, jamais l'inverse. Voir `MAP.md` (racine) pour la vision d'ensemble.
 
-Rien ingéré pour l'instant. Sources prévues, à démarrer une par une selon le besoin réel (pas
-préventivement) : FRED (séries macro multi-pays), yfinance (FX, taux, matières premières,
-indices), CFTC (positionnement COT).
-
-Convention reprise de `global-macro-desk-cloud` : un sous-dossier par source
-(`fred/`, `yfinance/`, `cftc/`), un fichier par série/instrument.
+Deux sources actives : FRED (`fred/`, `ingestion_fred.py`, 10 séries — taux directeurs et
+chômage, 5 blocs) et CFTC (`cftc/`, `ingestion_cftc.py`, 9 marchés — positionnement
+spéculatif hebdomadaire). yfinance à ajouter selon le besoin réel, pas préventivement.
