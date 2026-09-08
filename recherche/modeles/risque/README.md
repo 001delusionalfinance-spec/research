@@ -58,3 +58,19 @@ point. Testé réel : vol=12,80%, IC90%=[11,62%, 13,99%].
 Nombre effectif de paris indépendants (Meucci 2010, entropie de Shannon sur les valeurs propres
 de la matrice de corrélation) — 11 marchés COT. Testé réel : 7,14 paris effectifs sur 11 (65%
 du maximum théorique).
+
+## `modele_detection_saut.py` (2026-09-08)
+
+Détection de saut (Barndorff-Nielsen & Shephard, tripower quarticity Huang & Tauchen) — promise
+depuis la vague 1, construite maintenant. **Limite réelle trouvée en validant sur diffusion pure
+synthétique** : 18% de faux positifs à |Z|>1,96 (attendu ~5%), biais de petit échantillon
+documenté dans la littérature (n=22 trop petit pour l'asymptotique normale). Testé séparément
+sur un saut de 15% injecté : Z=29,75, détecté sans ambiguïté. À lire comme "Z très élevé = saut
+quasi certain", pas comme un seuil nominal fiable.
+
+## `modele_choc_taux.py` (2026-09-08)
+
+Sensibilité SP500 à un choc de ±100pb (taux 10 ans), via le beta de
+`modele_beta_facteur_macro.py` — **même bug DFF→DGS10 corrigé ici en parallèle** (la version
+initiale extrapolait un beta DFF instable à +68,8%/-68,8%, absurde). Testé réel après
+correction : +100pb → -7,71% (SP500 7748→7150), économiquement plausible.

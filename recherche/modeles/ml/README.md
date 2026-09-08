@@ -70,3 +70,17 @@ Vote majoritaire momentum_5j + variation_vix (suite de `modele_screening_feature
 strict. Testé réel, résultat honnête et surprenant : même le signal VIX seul (fort en
 corrélation univariée) ne bat pas la baseline en classification binaire — corrélation continue
 et précision de classification binaire ne se traduisent pas automatiquement l'une en l'autre.
+
+## `modele_couts_transaction.py` (2026-09-08)
+
+Impact de frais simulés (5pb/changement de position) sur la stratégie momentum 5j walk-forward.
+**Bug réel trouvé en testant** : sommer des rendements journaliers simples sur 30 ans donnait
+un nombre sans interprétation directe (-208%) — corrigé en calculant une vraie courbe de
+performance composée. Testé réel après correction : -92,81% brut, -96,62% net (cohérent avec
+l'accuracy déjà connue, sous la baseline).
+
+## `modele_regression_multifeatures.py` (2026-09-08)
+
+Régression multi-features (momentum 5j + variation VIX ensemble, pas testées séparément comme
+dans le screening) sur le rendement J+1, split train/test 70/30 strict. Testé réel : R²
+out-of-sample=0,0102 — positif mais modeste, le modèle bat la moyenne de peu.

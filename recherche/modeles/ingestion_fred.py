@@ -50,6 +50,12 @@ SERIES = [
     "DGS10",     # Taux souverain 10 ans (quotidien) -- courbe des taux, verifie frais 2026-09-08
     "DGS2",      # Taux souverain 2 ans (quotidien) -- courbe des taux
     "TOTBKCR",   # Credit bancaire total (hebdo) -- cycle du credit, verifie frais 2026-09-08
+    "RBUSBIS",   # Taux de change effectif reel US, BIS (mensuel) -- verifie frais 2026-09-08
+    "HOUST",     # Mises en chantier logements (mensuel) -- cycle immobilier
+    "MORTGAGE30US",  # Taux hypothecaire fixe 30 ans (hebdo) -- cycle immobilier
+    "PERMIT",    # Permis de construire (mensuel) -- cycle immobilier
+    "BAMLH0A0HYM2",  # Spread credit high-yield US (quotidien) -- facteur qualite credit
+    "BAMLC0A0CM",    # Spread credit investment-grade US (quotidien) -- facteur qualite credit
     # --- Zone euro (BCE + Allemagne comme proxy emploi -- l'agregat zone euro officiel a
     #     plusieurs mois de retard, l'Allemagne est fraiche et pese ~29% du PIB de la zone) ---
     "ECBDFR",             # Taux de la facilite de depot BCE (quotidien)
