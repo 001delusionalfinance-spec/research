@@ -81,10 +81,22 @@ def main() -> int:
           round(rendement_strategie_brut * 100, 2), round(rendement_strategie_net * 100, 2)]],
     )
 
+    # Lecture qualitative -- part du cout dans le rendement brut (deja calcules, aucun nouveau
+    # chiffre) : si le net devient <= 0 alors que le brut est positif, les frais annulent le
+    # signal ; sinon on compare le cout au rendement brut en valeur absolue.
+    brut_pct = rendement_strategie_brut * 100
+    net_pct = rendement_strategie_net * 100
+    if brut_pct > 0 and net_pct <= 0:
+        lecture_frais = "les frais annulent la performance (brut positif, net <= 0)"
+    elif abs(brut_pct) > 0.01 and cout_total_pct / abs(brut_pct) > 0.5:
+        lecture_frais = "les frais mangent une part importante du rendement (>50% du brut)"
+    else:
+        lecture_frais = "les frais restent une part marginale du rendement"
+
     print(f"OK -- {len(predictions)} predictions, {n_changements} changements de position "
           f"({COUT_PAR_CHANGEMENT_BP}pb/changement) -- rendement cumule brut="
           f"{rendement_strategie_brut*100:+.2f}%, cout total={cout_total_pct:.2f}%, "
-          f"net={rendement_strategie_net*100:+.2f}%")
+          f"net={rendement_strategie_net*100:+.2f}% -- {lecture_frais}")
     return 0
 
 

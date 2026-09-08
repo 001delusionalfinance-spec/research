@@ -114,9 +114,15 @@ def main() -> int:
           round(acc_stacking, 4), round(acc_momentum, 4), round(acc_baseline, 4)]],
     )
 
+    bat_baseline = acc_stacking > acc_baseline
+    scores = [("stacking", acc_stacking), ("momentum seul", acc_momentum), ("baseline", acc_baseline)]
+    meilleure_acc = max(v for _, v in scores)
+    meilleurs = [nom for nom, v in scores if v == meilleure_acc]
+    meilleur = " / ".join(meilleurs) + (" (ex-aequo)" if len(meilleurs) > 1 else "")
     print(f"OK -- poids appris (momentum={w_m:.3f}, baseline={w_b:.3f}, biais={biais:.3f}) -- "
           f"accuracy stacking={acc_stacking:.4f} vs momentum seul={acc_momentum:.4f}, "
-          f"baseline seule={acc_baseline:.4f} sur {n_test} points test")
+          f"baseline seule={acc_baseline:.4f} sur {n_test} points test -- stacking "
+          f"{'BAT' if bat_baseline else 'NE BAT PAS'} la baseline, meilleur={meilleur}")
     return 0
 
 

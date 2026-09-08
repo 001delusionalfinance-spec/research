@@ -116,9 +116,20 @@ def main() -> int:
           str(taille_clusters)]],
     )
 
+    # Label economique derive du centre du cluster assigne sur la dimension VIX (standardisee,
+    # donc 0 = moyenne historique) -- pas un nouveau chiffre, juste une lecture du centre deja
+    # calcule par kmeans().
+    vix_centre_cluster = centres[cluster_actuel][0]
+    if vix_centre_cluster > 0.3:
+        label_regime = "regime tendu (VIX du cluster au-dessus de la moyenne historique)"
+    elif vix_centre_cluster < -0.3:
+        label_regime = "regime calme (VIX du cluster en-dessous de la moyenne historique)"
+    else:
+        label_regime = "regime intermediaire (VIX du cluster proche de la moyenne historique)"
+
     print(f"OK -- {len(dates_communes)} points, k={K} -- point actuel (VIX={col_vix[-1]:.1f}, "
           f"spread={col_spread[-1]:+.2f}, taux={col_taux[-1]:.2f}%) -> cluster {cluster_actuel} "
-          f"(tailles : {taille_clusters})")
+          f"(tailles : {taille_clusters}) -- {label_regime}")
     return 0
 
 
