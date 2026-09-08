@@ -44,6 +44,8 @@ CONTRACTS = {
     "COPPER": "COPPER- #1 - COMMODITY EXCHANGE INC.",  # ajoute 2026-09-08, verifie frais
     "SILVER": "SILVER - COMMODITY EXCHANGE INC.",  # ajoute 2026-09-08, verifie frais
     "PLATINUM": "PLATINUM - NEW YORK MERCANTILE EXCHANGE",  # ajoute 2026-09-08, verifie frais
+    "RUSSELL_MINI": "RUSSELL E-MINI - CHICAGO MERCANTILE EXCHANGE",  # ajoute 2026-09-08
+    "PALLADIUM": "PALLADIUM - NEW YORK MERCANTILE EXCHANGE",  # ajoute 2026-09-08
 }
 
 BRUT_DIR = Path(__file__).resolve().parents[2] / "donnees" / "brut" / "cftc"
