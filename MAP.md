@@ -6,11 +6,10 @@ Ce fichier est le seul point d'orientation de ce dépôt (même convention que
 ## Ce que c'est, ce que ce n'est pas
 
 Hub de recherche macroéconomique **complètement séparé** du fonds souverain
-(`global-macro-desk-cloud`, mécanique, zéro décision liée à ici). Ici, l'objectif est
-d'**apprendre en s'entraînant en paper trading** — pas de gérer un capital réel, pas de
-comptabilité institutionnelle, pas de registre juridique. Un vrai atelier de recherche, pas un
-desk. `theses-macro/` et `strategies-rules/` avaient été supprimés de GMDC le 2026-09-06
-précisément pour vivre ici.
+(`global-macro-desk-cloud`, mécanique, zéro décision liée à ici). **Uniquement de la
+recherche** — comprendre où en est l'économie mondiale et comment ça se voit dans les prix.
+Pas de thèse de trade, pas d'exécution, pas de comptabilité, pas de capital engagé, ici ou
+ailleurs.
 
 ## Ce qui est recherché (le "quoi")
 
@@ -26,7 +25,7 @@ Régions : US, Zone Euro, UK, Japon, Chine, Émergents (agrégé).
 nominal), change, matières premières (énergie, métaux, agri), crédit, volatilité
 (actions/taux/change), corrélations et rotations inter-marchés.
 
-## Comment c'est recherché (le "comment") — 10 familles, même taxonomie que le Q1/Q2 déjà
+## Comment c'est recherché (le "comment") — 8 familles, même taxonomie que le Q1/Q2 déjà
 ## validé pendant la refonte de GMDC (2026-09-05), appliquée ici sans restriction cette fois
 
 1. **Macro** — régimes croissance/inflation par bloc, cycle de politique monétaire, courbes de
@@ -46,28 +45,18 @@ nominal), change, matières premières (énergie, métaux, agri), crédit, volat
 8. **ML** — walk-forward strict, même discipline anti-overfitting déjà démontrée dans GMDC
    (un modèle qui ne bat pas la baseline se documente honnêtement, ne se cache pas).
    (`recherche/modeles/ml/`)
-9. **Thèse** — le cœur discrétionnaire : une thèse macro (framework à récupérer depuis
-   `git log` de GMDC — `theses-macro/mandate-and-protocol.md`, `template-these.md`, journal
-   bayésien) part d'un fait vérifié, articule un mécanisme, se falsifie explicitement.
-   (`theses/`)
-10. **Paper trading** — une thèse validée devient une construction de trade (instrument,
-    sizing, invalidation), exécutée sur un compte IBKR paper, suivie jusqu'à clôture.
-    (`paper-trading/`)
+
+Chaque famille produit une lecture, jamais une décision — comprendre le mécanisme, pas
+construire un signal de trade.
 
 ## Comment c'est automatisé
 
-Même schéma que GMDC (ingestion → modèles → état → visualisations → rapports), en plus large :
+Même schéma que GMDC (ingestion → modèles → état → visualisations → rapports) :
 
 - **Ingestion programmée** (`donnees/brut/`) : FRED multi-pays, yfinance (FX/taux/matières
   premières/indices), CFTC (COT) — à étendre selon les besoins réels, pas préventivement.
 - **Modèles calculés à intervalle régulier**, orchestrés comme `run_all_modeles.py` dans GMDC —
   un échec isolé n'interrompt jamais les autres.
-- **Détection → proposition de thèse** : un régime qui bascule ou une corrélation qui casse peut
-  déclencher une proposition de sujet, jamais une thèse écrite automatiquement sans validation
-  humaine.
-- **Cycle de vie d'une thèse** : proposition → construction de trade → exécution paper → suivi
-  continu (journal bayésien, pas d'attente de la clôture pour écrire) → clôture → post-mortem
-  honnête (le vrai "pourquoi" quand ça rate, pas "pas de chance").
 - **Rapports automatiques** (`rapports/`) : pulse quotidien, revue hebdomadaire, dashboard de
   régimes — à construire une fois qu'il y a quelque chose à résumer.
 
@@ -76,22 +65,16 @@ Même schéma que GMDC (ingestion → modèles → état → visualisations → 
 | Dossier | Rôle |
 |---|---|
 | `donnees/brut/` | Données importées, non retouchées |
-| `recherche/modeles/` | Code des 8 premières familles (macro → ML), une lane par famille |
+| `recherche/modeles/` | Code des 8 familles, une lane chacune |
 | `recherche/etat/` | Résultat calculé — la donnée, jamais le code |
 | `recherche/visualisations/` | Un graphique par modèle |
-| `theses/` | Framework de thèse macro discrétionnaire (à récupérer depuis GMDC) |
-| `paper-trading/` | Constructions de trade, blotter paper, suivi de performance |
 | `rapports/` | Synthèses automatiques |
 | `automatisations/` | GitHub Actions + routines Claude |
 
 ## Où on en est
 
 Squelette posé le 2026-09-08, rien construit encore. Prochaine étape à décider avec 001 : quel
-module récupérer en premier depuis le `git log` de GMDC (event-study/NLP earnings, valuation
-DCF/comparables, Bayesian updating, factoriel single-name, jump-tail... tout ce qui a été
-supprimé le 2026-09-06 par recentrage sur le fonds souverain), ou quelle ingestion démarrer en
-premier côté données macro pures.
-
-Délibérément pas de `GOUVERNANCE.md`/registre juridique façon GMDC ici — ce n'est pas un mandat
-partagé avec un tiers sur du capital réel, juste un atelier d'apprentissage. À reconsidérer si
-ça devient nécessaire, pas par défaut.
+module récupérer en premier depuis le `git log` de GMDC (les modèles de recherche pure qui y
+avaient été construits — event-study/NLP, factoriel, jump-tail, ML walk-forward, etc. —
+récupérables indépendamment du framework de thèse/trade, qui lui reste dans GMDC), ou quelle
+ingestion démarrer en premier côté données macro pures.
