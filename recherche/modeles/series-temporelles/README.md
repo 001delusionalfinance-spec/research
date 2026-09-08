@@ -51,3 +51,15 @@ synthétique à rupture connue avant le réel) sur le niveau de volatilité S&P 
 l'extension à 30 ans d'historique, détecte désormais une vraie rupture historiquement
 significative plutôt qu'un artefact récent : rupture le 2011-12-21 (fin de la crise de la dette
 européenne), vol avant=21,3%, après=16,7%.
+
+## `modele_kalman_niveau_local.py` (2026-09-08)
+
+Filtre de Kalman (modèle à niveau local, `statsmodels.UnobservedComponents`) sur le VIX — lissage
+bayésien mis à jour à chaque observation, pas une moyenne mobile à fenêtre fixe. Testé réel :
+VIX observé=15,28, filtré=15,27.
+
+## `modele_hp_filter_taux.py` (2026-09-08)
+
+Décomposition tendance/cycle (filtre Hodrick-Prescott, lambda=129600 pour données quotidiennes,
+Ravn & Uhlig 2002) sur le taux 10 ans US. Testé réel : écart cyclique quasi nul (+0,02pt),
+proche de sa tendance locale.
