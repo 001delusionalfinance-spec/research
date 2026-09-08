@@ -55,3 +55,17 @@ favorable au stock/sector-picking. Testé réel : dispersion=5,02pt, étendue=14
 Test de l'anomalie low-vol (Ang et al. 2006) sur les 10 secteurs — testé, pas affirmé, limite de
 puissance statistique documentée (n petit). Testé réel : anomalie NON confirmée sur cet
 échantillon (Sharpe bas-vol=0,55 < Sharpe haut-vol=0,75).
+
+## `modele_facteur_qualite_credit.py` (2026-09-08)
+
+Écart HY-IG (`BAMLH0A0HYM2`/`BAMLC0A0CM`, ajoutés à `ingestion_fred.py`) — prime de risque
+crédit implicite, indépendante des mesures de positionnement/prix actions. Testé réel :
+écart=1,87pt, variation 6m=-20,1% (spread qui se resserre).
+
+## `modele_momentum_cross_sectional.py` (2026-09-08)
+
+Le VRAI facteur momentum académique (Jegadeesh-Titman) : spread de rendement entre le tercile
+gagnant et le tercile perdant des 10 secteurs, au même instant — complète
+`modele_rotation_sectorielle.py` (classement) en construisant le facteur lui-même. Testé réel :
+spread=+11,85pt (Énergie/Finance/Santé vs Services collectifs/Consommation discrétionnaire/
+Immobilier).
