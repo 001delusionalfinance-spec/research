@@ -10,16 +10,17 @@ Momentum de prix S&P 500, définition académique 12-1 mois (Jegadeesh-Titman 19
 effet distinct documenté séparément).
 
 **Limite honnête** : c'est du *time-series momentum* (un seul actif dans le temps), pas encore
-une vraie analyse factorielle cross-sectional (comparer plusieurs actifs entre eux). Première
-brique en attendant que l'univers d'instruments s'élargisse au-delà de SP500/VIX — les deux
+une vraie analyse factorielle cross-sectional (comparer plusieurs actifs entre eux). Les deux
 approches sont réelles et documentées séparément dans la littérature (time-series momentum :
-Moskowitz/Ooi/Pedersen 2012), pas un raccourci dégradé.
+Moskowitz/Ooi/Pedersen 2012), pas un raccourci dégradé. Depuis l'ajout des 10 ETF sectoriels
+(`modele_rotation_sectorielle.py` ci-dessous), une vraie comparaison cross-sectional devient
+possible — pas encore construite comme telle, la brique de données l'est.
 
-`ingestion_yfinance_indices.py` étendu de 1 à 2 ans d'historique pour laisser de la marge au
-calcul 12 mois (testé : un an pile aurait fait échouer le calcul dès que la donnée la plus
-ancienne s'approche de la limite).
+`ingestion_yfinance_indices.py` étendu de 1 à 2 ans d'historique (2026-09-08 matin) puis à
+30 ans pour SP500/VIX (2026-09-08 après-midi, pour `modele_stress_test_historique.py` en
+`risque/`) — laisse largement la marge nécessaire au calcul 12 mois.
 
-Testé avec de vraies données : momentum 12-1 mois = +19,44% (SP500 12m = +18,39%, cohérent).
+Testé avec de vraies données : momentum 12-1 mois = +19,44% (SP500 12m = +18,41%, cohérent).
 
 ## `modele_carry_proxy.py` (2026-09-08)
 
@@ -31,3 +32,15 @@ réel : Japon -2,79pt vs US (carry le plus négatif), UK +0,10pt (seul positif).
 
 Beta glissant (60j) du S&P 500 au VIX — pas juste la corrélation (déjà dans `statistique/`)
 mais l'AMPLITUDE de la réaction. Testé réel : -0,00521 (SP500 perd ~0,52% pour +1pt de VIX).
+
+## `modele_rotation_sectorielle.py` (2026-09-08)
+
+Momentum 3 mois des 10 secteurs S&P 500 (ETF SPDR), classement leaders/retardataires — lecture
+objective, pas d'interprétation automatique de phase de cycle (ce dépôt ne décide rien). Testé
+réel : Énergie en tête (+12,62%), Immobilier dernier (-1,92%).
+
+## `modele_saisonnalite.py` (2026-09-08)
+
+Facteur saisonnier "Sell in May" testé statistiquement (test t, scipy), pas affirmé — écrit
+avec seulement 2 ans d'historique (limite documentée à l'époque), profite désormais des 30 ans
+disponibles pour SP500. Testé réel : différence été/hiver non significative (p=0,32).

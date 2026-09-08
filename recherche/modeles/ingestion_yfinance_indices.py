@@ -1,9 +1,12 @@
-"""Ingestion yfinance -- indices de reference (S&P 500, VIX), historique 2 ans.
+"""Ingestion yfinance -- indices de reference (S&P 500, VIX) + 10 ETF sectoriels, historique
+30 ans pour SP500/VIX (etendu le 2026-09-08, initialement 2 ans).
 
-Fenetre de 2 ans (pas 1 an) deliberement : le modele momentum_prix.py (famille factorielle) a
-besoin d'un point ~12 mois avant le plus recent PLUS une marge -- une fenetre pile a 1 an
-laisserait le calcul 12 mois echouer des que la donnee la plus ancienne s'approche de la
-limite.
+Etendu a 30 ans pour modele_var_drawdown.py / stress-testing (famille risque) -- besoin de
+couvrir 2008 et 2020 pour un vrai test de scenario historique. Verifie sans effet negatif sur
+les modeles existants (tous utilisent des fenetres glissantes, ou beneficient directement de
+plus d'historique -- ex. modele_saisonnalite.py, dont la limite documentee "seulement 2 ans"
+est resolue par ce changement). Secteurs restes a 2 ans (pas de modele qui en a besoin plus
+long pour l'instant, pas d'ingestion excessive sans usage reel).
 
 Meme choix technique que global-macro-desk-cloud : appel direct a l'API chart de Yahoo
 (`requests`), pas la librairie `yfinance` -- deja trouve chez eux (audit 2026-08-23) que la
@@ -27,9 +30,25 @@ import requests
 BRUT_DIR = Path(__file__).resolve().parents[2] / "donnees" / "brut" / "yfinance"
 YAHOO_CHART_URL = "https://query1.finance.yahoo.com/v8/finance/chart/{ticker}"
 
-INDICES = {
+INDICES_LONGUE_HISTOIRE = {
     "SP500": "%5EGSPC",
     "VIX": "%5EVIX",
+}
+
+SECTEURS = {
+    # 10 ETF sectoriels SPDR (S&P 500 decompose par secteur) -- verifies frais le 2026-09-08,
+    # utilises par modele_rotation_sectorielle.py (factorielle/). 2 ans (pas 30) -- aucun
+    # modele n'a besoin de plus pour l'instant, pas d'ingestion excessive sans usage reel.
+    "XLK": "XLK",  # Technologie
+    "XLF": "XLF",  # Finance
+    "XLE": "XLE",  # Energie
+    "XLV": "XLV",  # Sante
+    "XLI": "XLI",  # Industrie
+    "XLY": "XLY",  # Consommation discretionnaire
+    "XLP": "XLP",  # Consommation de base
+    "XLU": "XLU",  # Services collectifs
+    "XLB": "XLB",  # Materiaux
+    "XLRE": "XLRE",  # Immobilier
 }
 
 MIN_LIGNES = 5
@@ -37,10 +56,10 @@ MAX_JOURS_RETARD = 7  # meme garde-fou que GMDC : un fournisseur peut arreter de
                        # un ticker sans jamais renvoyer d'erreur ni d'historique vide.
 
 
-def fetch_chart(ticker: str) -> list:
+def fetch_chart(ticker: str, plage: str) -> list:
     resp = requests.get(
         YAHOO_CHART_URL.format(ticker=ticker),
-        params={"range": "2y", "interval": "1d"},
+        params={"range": plage, "interval": "1d"},
         headers={"User-Agent": "Mozilla/5.0"},
         timeout=20,
     )
@@ -77,10 +96,13 @@ def valider(points: list, nom: str) -> None:
 
 
 def main() -> int:
+    tous = [(nom, ticker, "30y") for nom, ticker in INDICES_LONGUE_HISTOIRE.items()] + \
+        [(nom, ticker, "2y") for nom, ticker in SECTEURS.items()]
+
     echecs = []
-    for nom, ticker in INDICES.items():
+    for nom, ticker, plage in tous:
         try:
-            points = fetch_chart(ticker)
+            points = fetch_chart(ticker, plage)
             valider(points, nom)
         except (ValueError, requests.RequestException) as e:
             echecs.append((nom, str(e)))
@@ -96,10 +118,10 @@ def main() -> int:
         print(f"{nom} : {len(points)} lignes -> {out_path}")
 
     if echecs:
-        print(f"\n{len(echecs)}/{len(INDICES)} indices en echec : {[n for n, _ in echecs]}")
+        print(f"\n{len(echecs)}/{len(tous)} indices en echec : {[n for n, _ in echecs]}")
         return 1
 
-    print(f"\nOK -- {len(INDICES)} indices ingeres")
+    print(f"\nOK -- {len(tous)} indices ingeres")
     return 0
 
 
