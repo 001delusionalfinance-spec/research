@@ -59,3 +59,16 @@ Testé réel : +6,34% YoY, 40,9e percentile de son propre historique — normal.
 Indice composite simplifié (esprit Chicago Fed NFCI, 3 composantes : taux directeur, courbe
 inversée, VIX) — chaque composante déjà utilisée ailleurs, la valeur ajoutée est la combinaison.
 Testé réel : indice=-0,14 (conditions proches de la normale, légèrement accommodantes).
+
+## `modele_reer_us.py` (2026-09-08)
+
+Taux de change effectif réel US (BIS, `RBUSBIS`) — ajusté de l'inflation relative, contrairement
+à USD_INDEX (positionnement nominal déjà suivi). Testé réel : rang percentile=94 (dollar réel
+fort, compétitivité réduite).
+
+## `modele_cycle_immobilier.py` (2026-09-08)
+
+Mises en chantier, permis de construire, taux hypothécaire 30 ans (`HOUST`/`PERMIT`/
+`MORTGAGE30US` ajoutés à `ingestion_fred.py`) — les permis précèdent les chantiers dans le
+processus réel, comparaison de tendance pour un signal avancé. Testé réel : pas de divergence
+(les deux en baisse ensemble).
