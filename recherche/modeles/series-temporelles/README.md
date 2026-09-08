@@ -63,3 +63,17 @@ VIX observé=15,28, filtré=15,27.
 Décomposition tendance/cycle (filtre Hodrick-Prescott, lambda=129600 pour données quotidiennes,
 Ravn & Uhlig 2002) sur le taux 10 ans US. Testé réel : écart cyclique quasi nul (+0,02pt),
 proche de sa tendance locale.
+
+## `modele_var_sp500_vix.py` (2026-09-08)
+
+VAR (Vector Autoregression, ordre choisi par AIC via statsmodels) sur [rendement SP500,
+variation VIX] — système dynamique complet, pas juste un test de causalité pairwise (déjà fait).
+**Bug réel trouvé en testant** : `.iloc` sur un `ndarray` numpy brut (pas un DataFrame pandas) —
+corrigé avec une indexation numpy standard. Testé réel : ordre AIC=10, coefficients réels
+obtenus.
+
+## `modele_analyse_spectrale.py` (2026-09-08)
+
+Périodogramme (FFT) sur les rendements du VIX — cherche des cycles dominants au-delà du retour
+à la moyenne déjà mesuré (Ornstein-Uhlenbeck). Testé réel : 3 périodes dominantes à 2,2/5,4/4,0
+jours — pas de cycle mensuel/trimestriel net détecté, résultat honnête.
