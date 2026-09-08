@@ -97,6 +97,17 @@ MODELES = [
     ("factorielle", "modele_qualite_regime_macro"),
     ("risque", "modele_var_conditionnelle_regime"),
     ("ml", "modele_stacking"),
+    ("series-temporelles", "modele_decomposition_stl"),
+    ("series-temporelles", "modele_ornstein_uhlenbeck_credit"),
+    ("factorielle", "modele_momentum_credit"),
+    ("factorielle", "modele_correlation_facteurs"),
+    ("risque", "modele_ratios_conditionnels_regime"),
+    ("risque", "modele_choc_vol_parametrique"),
+    ("nlp", "modele_frequence_mots_cles_minutes"),
+    ("nlp", "modele_langage_prudence"),
+    ("nlp", "modele_intensite_desaccord"),
+    ("ml", "modele_decision_stump"),
+    ("ml", "modele_importance_permutation"),
 ]
 
 
