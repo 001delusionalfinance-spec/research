@@ -57,3 +57,16 @@ une règle fixe non apprise, mélanger l'ordre d'évaluation ne change rien à l
 fold, pas encore construit, remplacé par ce screening plus simple et honnête. Testé réel :
 variation_vix fortement significative (r=-0,51, p<0,0001), momentum_5j faiblement significatif
 (r=-0,03, p=0,01), momentum_20j et niveau_vix non significatifs.
+
+## `modele_kmeans_regimes.py` (2026-09-08)
+
+K-means (k=3, implémentation à la main, validée à 100% de pureté sur cas synthétique à 3
+clusters connus) sur VIX/spread de courbe/taux directeur — découvre les régimes plutôt que de
+les définir a priori. Testé réel : 3 clusters de tailles 3195/3486/807 sur 30 ans de données.
+
+## `modele_ensemble_signaux.py` (2026-09-08)
+
+Vote majoritaire momentum_5j + variation_vix (suite de `modele_screening_features.py`), walk-forward
+strict. Testé réel, résultat honnête et surprenant : même le signal VIX seul (fort en
+corrélation univariée) ne bat pas la baseline en classification binaire — corrélation continue
+et précision de classification binaire ne se traduisent pas automatiquement l'une en l'autre.
