@@ -31,3 +31,19 @@ cohérent avec les faits stylisés connus des rendements actions (Cont 2001).
 Sharpe, Sortino, Calmar glissants (252j) — lecture de contexte, pas un signal de trade (ce
 dépôt ne décide rien, voir `MAP.md`). Taux sans risque supposé nul (simplification documentée).
 Testé réel : Sharpe=1,323, Sortino=1,281, Calmar=1,865.
+
+## `modele_covar.py` (2026-09-08)
+
+CoVaR simplifié (Adrian & Brunnermeier 2016, version par quantile plutôt que régression
+formelle — documenté comme simplification) : VaR du S&P 500 conditionnelle à un VIX en
+détresse (décile le plus haut) vs VaR inconditionnelle. Testé réel, résultat marquant :
+VaR95 inconditionnelle=-1,84%, VaR95|VIX détresse=-4,37% (vs -1,52% en régime normal) —
+DeltaCoVaR=-2,86pt, l'amplification du risque en stress est réelle et mesurée, pas supposée.
+
+## `modele_stress_test_historique.py` (2026-09-08)
+
+Rejoue l'amplitude relative du pire drawdown de 2008 (GFC, -56,8%) et 2020 (COVID, -33,9%) sur
+le niveau actuel du S&P 500. **A nécessité d'étendre `ingestion_yfinance_indices.py` de 2 à
+30 ans d'historique** (SP500/VIX seulement — les 10 ETF sectoriels restent à 2 ans, pas de
+besoin identifié) — vérifié sans effet négatif sur aucun modèle existant (tous en fenêtre
+glissante, ou directement améliorés par plus d'historique, ex. `modele_saisonnalite.py`).
