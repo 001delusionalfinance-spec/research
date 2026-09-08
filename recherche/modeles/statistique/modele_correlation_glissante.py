@@ -88,9 +88,22 @@ def main() -> int:
     if len([c for c in correlations if c is not None]) >= 2:
         tracer(dates_correlations, correlations)
 
+    # Position de la derniere valeur dans sa propre fourchette historique (min/max deja
+    # calcules ci-dessus) -- indique si la relation se renforce (proche du minimum, le plus
+    # negatif) ou se relache (proche du maximum), pas seulement sa valeur brute.
+    borne_min, borne_max = min(correlations_valides), max(correlations_valides)
+    fourchette = borne_max - borne_min
+    position = (derniere_correlation - borne_min) / fourchette if fourchette > 0 else 0.5
+    if position <= 1 / 3:
+        lecture = "proche de son minimum historique -- la relation SP500/VIX se renforce"
+    elif position >= 2 / 3:
+        lecture = "proche de son maximum historique -- la relation SP500/VIX se relache"
+    else:
+        lecture = "dans la zone intermediaire de sa fourchette historique"
+
     print(f"OK -- correlation glissante {FENETRE}j SP500/VIX = {derniere_correlation:+.3f} "
-          f"(min={min(correlations_valides):+.3f}, max={max(correlations_valides):+.3f} sur "
-          f"la fenetre d'historique disponible)")
+          f"(min={borne_min:+.3f}, max={borne_max:+.3f} sur la fenetre d'historique "
+          f"disponible) -- {lecture}")
     return 0
 
 

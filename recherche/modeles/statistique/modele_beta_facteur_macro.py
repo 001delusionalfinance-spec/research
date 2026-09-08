@@ -11,6 +11,7 @@ absurde economiquement, signal clair d'un facteur mal choisi, pas d'un vrai beta
 riche en variation exploitable pour une regression glissante.
 """
 
+import math
 import sys
 from pathlib import Path
 
@@ -74,8 +75,25 @@ def main() -> int:
         [[date_du_jour, round(beta, 5), n_variations_non_nulles]],
     )
 
+    # Meme lecture que celle qui a fait rejeter DFF plus haut (docstring) : extrapoler le beta a
+    # un choc de +100pb (1 point, l'unite de `beta` ici) donne un ordre de grandeur du mouvement
+    # SP500 implique -- sert a juger si la sensibilite mesuree est plausible ou pas, pas juste
+    # a afficher un chiffre brut.
+    choc_100pb = math.exp(beta) - 1
+    if abs(choc_100pb) >= 0.20:
+        lecture = ("sensibilite tres elevee -- mouvement extrapole invraisemblable pour un choc "
+                   "de taux, a interpreter avec prudence (meme type de signal que le rejet de "
+                   "DFF ci-dessus)")
+    elif abs(choc_100pb) >= 0.05:
+        lecture = "sensibilite elevee au facteur macro"
+    elif abs(choc_100pb) >= 0.01:
+        lecture = "sensibilite normale au facteur macro"
+    else:
+        lecture = "sensibilite faible -- quasi insensible au facteur sur cette fenetre"
+
     print(f"OK -- beta SP500/DGS10 ({FENETRE}j) = {beta:.4f} (rendement SP500 pour +1pt de "
-          f"taux 10 ans, {n_variations_non_nulles}/{FENETRE} jours avec variation reelle)")
+          f"taux 10 ans, {n_variations_non_nulles}/{FENETRE} jours avec variation reelle) -- "
+          f"{lecture} (choc de +100pb extrapole = {choc_100pb:+.1%})")
     return 0
 
 

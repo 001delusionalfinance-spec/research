@@ -75,8 +75,23 @@ def main() -> int:
           str(composante_1)]],
     )
 
+    # Reference de comparaison : part de variance attendue par composante si les blocs
+    # bougeaient de facon totalement independante (variance egale entre les `len(blocs)`
+    # composantes) -- pas un chiffre invente, juste 1/n. PC1 nettement au-dessus = synchronise
+    # (un facteur commun domine), proche de cette reference = mouvements disperses.
+    reference_independance = 1 / len(blocs)
+    ratio_pc1 = part_expliquee[0] / reference_independance
+    if ratio_pc1 >= 2.5:
+        lecture = "synchronisation forte -- un facteur commun domine largement le mouvement conjoint"
+    elif ratio_pc1 >= 1.5:
+        lecture = "synchronisation moderee -- un facteur commun existe mais n'explique pas tout"
+    else:
+        lecture = "mouvements largement independants par bloc, pas de facteur commun dominant"
+
     print(f"OK -- {len(dates_communes)} dates communes -- PC1 explique "
-          f"{part_expliquee[0] * 100:.1f}% de la variance conjointe, poids PC1={composante_1}")
+          f"{part_expliquee[0] * 100:.1f}% de la variance conjointe (vs {reference_independance * 100:.0f}% "
+          f"attendu si les {len(blocs)} blocs etaient independants) -- {lecture}, "
+          f"poids PC1={composante_1}")
     return 0
 
 

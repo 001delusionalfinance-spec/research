@@ -51,8 +51,10 @@ def main() -> int:
             res = grangercausalitytests(donnees, maxlag=LAGS)
             p_valeur = res[LAGS][0]["ssr_ftest"][1]
             resultats[nom] = p_valeur
-            sig = " *" if p_valeur < 0.05 else ""
-            print(f"{nom} (lag={LAGS}) : p={p_valeur:.4f}{sig}")
+            causalite = p_valeur < 0.05
+            sig = " *" if causalite else ""
+            print(f"{nom} (lag={LAGS}) : p={p_valeur:.4f}{sig} -- "
+                  f"{'causalite Granger detectee' if causalite else 'pas de causalite Granger detectee'}")
         except (ValueError, SerieVide) as e:
             print(f"{nom} : echec -- {e}")
 
@@ -65,6 +67,13 @@ def main() -> int:
         ["date", "lags"] + list(resultats.keys()),
         [[date_du_jour, LAGS] + [round(p, 5) for p in resultats.values()]],
     )
+
+    sens_significatifs = [nom for nom, p in resultats.items() if p < 0.05]
+    if sens_significatifs:
+        print(f"OK -- causalite Granger detectee : {', '.join(sens_significatifs)} (lag={LAGS})")
+    else:
+        print(f"OK -- aucune causalite Granger detectee (lag={LAGS}, "
+              f"{len(resultats)}/2 sens testes)")
     return 0
 
 
