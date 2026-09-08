@@ -54,9 +54,20 @@ Screening préalable à tout modèle combiné : corrélation univariée (test po
 S&P 500. Un modèle de kfold-vs-walk-forward avait été tenté puis **abandonné en testant** : pour
 une règle fixe non apprise, mélanger l'ordre d'évaluation ne change rien à l'accuracy (testé,
 écart quasi nul confirmé) — un vrai test de fuite k-fold demanderait un paramètre RÉ-APPRIS par
-fold, pas encore construit, remplacé par ce screening plus simple et honnête. Testé réel :
-variation_vix fortement significative (r=-0,51, p<0,0001), momentum_5j faiblement significatif
-(r=-0,03, p=0,01), momentum_20j et niveau_vix non significatifs.
+fold, pas encore construit, remplacé par ce screening plus simple et honnête.
+
+**Bug réel de fuite temporelle trouvé et corrigé le 2026-09-08 (vague 7)** : le résultat
+original (vague 2, déjà mergé) donnait `variation_vix` fortement significative (r=-0,51,
+p<0,0001) — ce chiffre a été cité comme signal fort dans plusieurs docstrings dérivées avant
+d'être découvert comme un artefact. `variation_vix[i]` utilisait `niveaux_vix[i+1] -
+niveaux_vix[i]`, soit le MÊME intervalle temporel que la direction prédite (`dirs[i]` = prix[i]
+vs prix[i+1]) — de l'information du futur, pas du passé. Trouvé en construisant
+`modele_decision_stump.py` (accuracy walk-forward suspecte de 78,9%, bien au-delà de tout ce qui
+est plausible). Corrigé : `variation_vix[i] = niveaux_vix[i] - niveaux_vix[i-1]` (mouvement de
+la veille, réellement connu avant de prédire). **Résultat corrigé, réel** : variation_vix
+r=+0,0306, p=0,0079 — statistiquement non-nul sur ce grand échantillon mais négligeable en
+pratique (loin du r=-0,51 d'origine). momentum_5j faiblement significatif (r=-0,03, p=0,01),
+momentum_20j et niveau_vix non significatifs.
 
 ## `modele_kmeans_regimes.py` (2026-09-08)
 
@@ -91,3 +102,28 @@ Stacking : poids de combinaison momentum+baseline APPRIS (régression logistique
 gradient, split train/test strict), pas un vote fixe comme `modele_ensemble_signaux.py`. Testé
 réel, résultat honnête : le poids appris pour momentum est quasi nul, le modèle converge vers
 la baseline seule — confirme une fois de plus que le signal prix seul n'apporte rien ici.
+
+## `modele_decision_stump.py` (2026-09-08, vague 7)
+
+Decision stump (seuil unique appris sur `variation_vix`, la brique de base d'un arbre/forêt) —
+teste si un seuil non-linéaire simple capture quelque chose qu'une droite ne capture pas. Seuil
+cherché uniquement sur le train (déciles), jamais recalculé en voyant le test.
+
+**C'est ce modèle qui a révélé le bug de fuite temporelle de `modele_screening_features.py`** :
+premier test avec la feature buguée (`niveaux_vix[i+1]-niveaux_vix[i]`) donnait 78,89%
+d'accuracy walk-forward — largement au-delà de tout ce qui est plausible sur ce type de
+relation, ce qui a déclenché l'investigation. Une fois `variations_vix` corrigé dès l'écriture
+(`niveaux_vix[i]-niveaux_vix[i-1]`, réellement connu avant la prédiction), **résultat honnête** :
+accuracy stump=54,73% vs baseline=54,90% sur 2264 points test — le stump NE BAT PAS la baseline,
+cohérent avec tout le reste de cette famille sur la relation SP500/VIX contemporaine.
+
+## `modele_importance_permutation.py` (2026-09-08, vague 7)
+
+Importance de feature par permutation (Breiman 2001) sur le modèle déjà fitté de
+`modele_regression_multifeatures.py` — mesure de combien le R² out-of-sample se dégrade quand on
+mélange aléatoirement une feature à la fois dans le test set, donc l'importance DANS le modèle
+combiné (effets partagés/redondants inclus), pas seulement le lien univarié déjà mesuré par le
+screening. Feature `variation_vix` construite ici avec le décalage correct dès l'origine (même
+pattern que `modele_regression_multifeatures.py`, vérifié non affecté par le bug ci-dessus).
+Testé réel : R² base=0,0102 — importance momentum5j=0,00771, importance variation_vix=0,01416 —
+le VIX contribue davantage au modèle combiné que le momentum, malgré un R² global modeste.
