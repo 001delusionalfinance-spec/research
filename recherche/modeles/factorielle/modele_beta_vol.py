@@ -68,7 +68,20 @@ def main() -> int:
         [[date_du_jour, round(beta, 6)]],
     )
 
-    print(f"OK -- beta SP500/VIX ({FENETRE}j) = {beta:.5f} (rendement SP500 pour +1pt VIX)")
+    # bandes indicatives (ordre de grandeur du rendement SP500 pour +1pt VIX, pas de reference
+    # precise) -- servent juste a qualifier l'amplitude, le signe (relation inverse attendue)
+    # est le signal principal
+    relation = "relation inverse attendue (normale)" if beta < 0 else "relation inversee (atypique)"
+    abs_beta = abs(beta)
+    if abs_beta < 0.002:
+        sensibilite = "faible"
+    elif abs_beta < 0.006:
+        sensibilite = "normale"
+    else:
+        sensibilite = "elevee"
+
+    print(f"OK -- beta SP500/VIX ({FENETRE}j) = {beta:.5f} (rendement SP500 pour +1pt VIX) -- "
+          f"sensibilite {sensibilite}, {relation}")
     return 0
 
 

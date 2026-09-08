@@ -59,9 +59,27 @@ def main() -> int:
           round(tendance_pct, 1) if tendance_pct is not None else ""]],
     )
 
+    # niveau absolu : bandes indicatives sur l'ecart HY-IG (pas de reference precise) --
+    # tendance : le sens de la variation 6m dit si le risque credit percu monte ou baisse
+    if ecart_actuel < 3:
+        niveau = "niveau contenu"
+    elif ecart_actuel < 5:
+        niveau = "niveau modere"
+    else:
+        niveau = "stress credit eleve"
+
+    if tendance_pct is None:
+        tendance_lecture = "tendance indisponible"
+    elif tendance_pct > 0:
+        tendance_lecture = "s'ecarte (risque credit percu en hausse)"
+    elif tendance_pct < 0:
+        tendance_lecture = "se resserre (risque credit percu en baisse)"
+    else:
+        tendance_lecture = "stable"
+
     print(f"OK -- spread HY={map_hy[date_du_jour]:.2f}, IG={map_ig[date_du_jour]:.2f}, "
-          f"ecart={ecart_actuel:.2f}pt, variation 6m="
-          f"{f'{tendance_pct:+.1f}%' if tendance_pct is not None else 'indisponible'}")
+          f"ecart={ecart_actuel:.2f}pt ({niveau}), variation 6m="
+          f"{f'{tendance_pct:+.1f}%' if tendance_pct is not None else 'indisponible'} -- {tendance_lecture}")
     return 0
 
 

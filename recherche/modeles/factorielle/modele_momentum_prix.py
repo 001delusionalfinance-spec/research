@@ -81,8 +81,12 @@ def main() -> int:
          [round(momentum_12_1, 3) if momentum_12_1 is not None else ""]],
     )
 
+    lecture = "indisponible" if momentum_12_1 is None \
+        else ("haussier (momentum positif)" if momentum_12_1 > 0
+              else ("baissier (momentum negatif)" if momentum_12_1 < 0 else "neutre"))
+
     print(f"OK -- SP500 momentum 12-1 mois = "
-          f"{round(momentum_12_1, 2) if momentum_12_1 is not None else 'indisponible'}%, "
+          f"{round(momentum_12_1, 2) if momentum_12_1 is not None else 'indisponible'}% -- {lecture}, "
           f"detail 1/3/6/12m = {[round(resultats[n], 2) if resultats[n] else None for n, _ in FENETRES]}")
     return 0
 

@@ -60,8 +60,18 @@ def main() -> int:
         [[date_du_jour, n, round(moyenne, 3), round(dispersion, 3), round(etendue, 3)]],
     )
 
+    # bandes indicatives sur l'ecart-type des rendements sectoriels 3m -- au-dessus, les
+    # secteurs divergent nettement (stock/sector-picking pertinent) ; en-dessous, tout bouge
+    # ensemble (facteur macro commun dominant), cf. docstring du fichier
+    if dispersion < 5:
+        lecture = "marche macro-domine (secteurs bougent ensemble)"
+    elif dispersion < 10:
+        lecture = "dispersion intermediaire"
+    else:
+        lecture = "marche selectif (dispersion elevee, stock/sector-picking pertinent)"
+
     print(f"OK -- {n} secteurs, rendement moyen 3m={moyenne:+.2f}%, "
-          f"dispersion (ecart-type)={dispersion:.2f}pt, etendue={etendue:.2f}pt")
+          f"dispersion (ecart-type)={dispersion:.2f}pt, etendue={etendue:.2f}pt -- {lecture}")
     return 0
 
 
