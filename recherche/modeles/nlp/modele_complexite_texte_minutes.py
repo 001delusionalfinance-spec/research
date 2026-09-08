@@ -43,9 +43,17 @@ def main() -> int:
           round(part_mots_longs * 100, 2)]],
     )
 
+    if longueur_moyenne_phrase > 20:
+        lecture_phrase = "phrases longues"
+    elif longueur_moyenne_phrase < 12:
+        lecture_phrase = "phrases courtes"
+    else:
+        lecture_phrase = "phrases de longueur moderee"
+    lecture_vocab = "vocabulaire dense" if part_mots_longs > 0.30 else "vocabulaire simple"
+
     print(f"OK -- minutes {date_minutes} : {n_mots} mots, {n_phrases} phrases "
-          f"({longueur_moyenne_phrase:.1f} mots/phrase), {part_mots_longs * 100:.1f}% de mots "
-          f"longs (>6 lettres)")
+          f"({longueur_moyenne_phrase:.1f} mots/phrase, {lecture_phrase}), {part_mots_longs * 100:.1f}% de mots "
+          f"longs (>6 lettres, {lecture_vocab})")
     return 0
 
 

@@ -51,7 +51,13 @@ def main() -> int:
         [[date_minutes] + [comptes[e] for e in ENTITES]],
     )
 
-    print(f"OK -- minutes {date_minutes} -- mentions : {presents}")
+    if presents:
+        entite_dominante, n_dominant = max(presents.items(), key=lambda kv: kv[1])
+        lecture = f"focus dominant : '{entite_dominante}' ({n_dominant} mention(s))"
+    else:
+        lecture = "aucune entite suivie ne ressort"
+
+    print(f"OK -- minutes {date_minutes} -- mentions : {presents} -- {lecture}")
     return 0
 
 

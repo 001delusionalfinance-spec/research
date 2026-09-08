@@ -64,8 +64,14 @@ def main() -> int:
         [[date_communique, total_mots] + [comptes[m] for m in MOTS_SUIVIS]],
     )
 
+    if presents:
+        mot_dominant, n_dominant = max(presents.items(), key=lambda kv: kv[1])
+        lecture = f"theme dominant : '{mot_dominant}' ({n_dominant} mention(s))"
+    else:
+        lecture = "aucun theme suivi ne ressort"
+
     print(f"OK -- communique {date_communique}, {total_mots} mots -- mots-cles presents : "
-          f"{presents if presents else 'aucun des mots suivis'}")
+          f"{presents if presents else 'aucun des mots suivis'} -- {lecture}")
     return 0
 
 

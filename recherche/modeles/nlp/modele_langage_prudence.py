@@ -48,8 +48,15 @@ def main() -> int:
         [[date_minutes, n_prudence, total_mots, round(indice_pour_mille, 3)]],
     )
 
+    if indice_pour_mille > 15:
+        lecture = "langage prudent"
+    elif indice_pour_mille < 8:
+        lecture = "langage direct"
+    else:
+        lecture = "langage moderement prudent"
+
     print(f"OK -- minutes {date_minutes} : {n_prudence} mots de prudence sur {total_mots} "
-          f"({indice_pour_mille:.2f} pour mille)")
+          f"({indice_pour_mille:.2f} pour mille, {lecture})")
     return 0
 
 

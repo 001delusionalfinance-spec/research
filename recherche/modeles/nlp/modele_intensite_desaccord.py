@@ -49,8 +49,15 @@ def main() -> int:
         [[date_minutes, n_dissidents, str(comptes), total_mentions]],
     )
 
+    if n_dissidents >= 2 or total_mentions >= 10:
+        lecture = "desaccord notable"
+    elif n_dissidents == 0 and total_mentions < 5:
+        lecture = "desaccord faible"
+    else:
+        lecture = "desaccord modere"
+
     print(f"OK -- minutes {date_minutes} : {n_dissidents} dissident(s) au vote, "
-          f"{total_mentions} mention(s) de desaccord dans le texte ({comptes})")
+          f"{total_mentions} mention(s) de desaccord dans le texte ({comptes}) -- {lecture}")
     return 0
 
 

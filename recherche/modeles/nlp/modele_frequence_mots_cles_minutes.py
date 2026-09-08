@@ -48,7 +48,13 @@ def main() -> int:
     )
 
     presents = {m: c for m, c in comptes.items() if c > 0}
-    print(f"OK -- minutes {date_minutes}, {total_mots} mots -- mots-cles : {presents}")
+    if presents:
+        mot_dominant, n_dominant = max(presents.items(), key=lambda kv: kv[1])
+        lecture = f"theme dominant : '{mot_dominant}' ({n_dominant} mention(s))"
+    else:
+        lecture = "aucun theme suivi ne ressort"
+
+    print(f"OK -- minutes {date_minutes}, {total_mots} mots -- mots-cles : {presents} -- {lecture}")
     return 0
 
 

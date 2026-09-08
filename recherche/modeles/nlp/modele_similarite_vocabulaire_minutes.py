@@ -58,7 +58,14 @@ def main() -> int:
           len(mots_nouveaux), len(mots_disparus)]],
     )
 
-    print(f"OK -- {precedent.stem} -> {dernier.stem} : Jaccard={jaccard:.4f} "
+    if jaccard > 0.6:
+        lecture = "vocabulaire stable"
+    elif jaccard < 0.4:
+        lecture = "changement de discours marque"
+    else:
+        lecture = "vocabulaire moderement renouvele"
+
+    print(f"OK -- {precedent.stem} -> {dernier.stem} : Jaccard={jaccard:.4f} ({lecture}) "
           f"({len(intersection)} mots communs / {len(union)} mots uniques au total), "
           f"{len(mots_nouveaux)} nouveaux, {len(mots_disparus)} disparus")
     return 0

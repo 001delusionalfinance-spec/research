@@ -90,8 +90,15 @@ def main() -> int:
           dissidents_prec]],
     )
 
+    if diff_score > 0.5:
+        lecture = "ton qui s'ameliore"
+    elif diff_score < -0.5:
+        lecture = "ton qui se degrade"
+    else:
+        lecture = "ton stable"
+
     print(f"OK -- {precedent['date']} -> {dernier['date']} : "
-          f"ton {score_prec:+.2f}‰ -> {score_der:+.2f}‰ (diff {diff_score:+.2f}‰), "
+          f"ton {score_prec:+.2f}‰ -> {score_der:+.2f}‰ (diff {diff_score:+.2f}‰, {lecture}), "
           f"taux {'change' if taux_change else 'inchange'} ({dernier['taux_cible']}), "
           f"dissidents {dissidents_prec} -> {dissidents_der}")
     return 0

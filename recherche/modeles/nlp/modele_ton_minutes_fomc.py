@@ -65,8 +65,15 @@ def main() -> int:
           round(diff_score, 3)]],
     )
 
+    if diff_score > 0.5:
+        lecture = "ton qui s'ameliore"
+    elif diff_score < -0.5:
+        lecture = "ton qui se degrade"
+    else:
+        lecture = "ton stable"
+
     print(f"OK -- {date_precedent} -> {date_dernier} : ton {score_prec:+.2f}pm -> "
-          f"{score_der:+.2f}pm (diff {diff_score:+.2f}pm), {n_mots_der} mots "
+          f"{score_der:+.2f}pm (diff {diff_score:+.2f}pm, {lecture}), {n_mots_der} mots "
           f"({pos_der} positifs, {neg_der} negatifs)")
     return 0
 
