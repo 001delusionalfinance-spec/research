@@ -65,7 +65,23 @@ def main() -> int:
                             (pair[0], round(pair[1], 2))]],
     )
 
-    print(f"OK -- 3 periodes dominantes (jours de bourse) : {[p[0] for p in top3]}")
+    # cycles de bourse connus : ~5j (semaine), ~21j (mois), ~63j (trimestre) -- tolerance de
+    # 20% relatif pour considerer qu'une periode dominante "correspond" a l'un d'eux.
+    cycles_connus = {5: "hebdomadaire", 21: "mensuel", 63: "trimestriel"}
+    correspondances = []
+    for periode, _ in top3:
+        if periode is None:
+            continue
+        for ref, nom in cycles_connus.items():
+            if abs(periode - ref) / ref <= 0.20:
+                correspondances.append(f"{periode:.1f}j~{nom}")
+                break
+    if correspondances:
+        lecture_spectre = f"cycle(s) connu(s) qui ressortent : {', '.join(correspondances)}"
+    else:
+        lecture_spectre = "aucune des 3 periodes dominantes ne correspond a un cycle connu (hebdo/mensuel/trimestriel)"
+
+    print(f"OK -- 3 periodes dominantes (jours de bourse) : {[p[0] for p in top3]} -- {lecture_spectre}")
     return 0
 
 

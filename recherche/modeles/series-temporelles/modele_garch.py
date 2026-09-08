@@ -60,8 +60,17 @@ def main() -> int:
           round(persistance, 4) if persistance is not None else ""]],
     )
 
+    if persistance is not None and persistance > 0.95:
+        lecture_persistance = "tres proche de 1 -- chocs de volatilite tres durables"
+    elif persistance is not None and persistance < 0.80:
+        lecture_persistance = "assez loin de 1 -- la vol revient relativement vite a sa moyenne"
+    elif persistance is not None:
+        lecture_persistance = "persistance moderee -- retour a la moyenne ni tres rapide ni tres lent"
+    else:
+        lecture_persistance = "non calculable"
+
     print(f"OK -- vol GARCH(1,1) annualisee={vol_annualisee_garch:.4f} (alpha={alpha:.3f}, "
-          f"beta={beta:.3f}, persistance={persistance:.3f})")
+          f"beta={beta:.3f}, persistance={persistance:.3f} -- {lecture_persistance})")
     if not (0.03 < vol_annualisee_garch < 1.0):
         print(f"AVERTISSEMENT -- ordre de grandeur suspect (attendu ~0.05-0.60 pour un indice "
               f"actions), verifier le piege d'echelle x100 documente en tete de fichier")

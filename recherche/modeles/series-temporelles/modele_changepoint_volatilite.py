@@ -78,8 +78,18 @@ def main() -> int:
           round(reduction, 4)]],
     )
 
+    variation_relative = (vol_apres - vol_avant) / vol_avant if vol_avant > 0 else None
+    if variation_relative is None:
+        lecture_rupture = "variation non calculable (vol avant nulle)"
+    elif variation_relative > 0.10:
+        lecture_rupture = f"hausse de la vol au point de rupture ({variation_relative:+.1%})"
+    elif variation_relative < -0.10:
+        lecture_rupture = f"baisse de la vol au point de rupture ({variation_relative:+.1%})"
+    else:
+        lecture_rupture = f"vol quasi stable de part et d'autre de la rupture ({variation_relative:+.1%})"
+
     print(f"OK -- rupture detectee le {date_rupture} -- vol avant={vol_avant:.4f}, "
-          f"vol apres={vol_apres:.4f} (reduction SSE={reduction:.1%})")
+          f"vol apres={vol_apres:.4f} (reduction SSE={reduction:.1%}) -- {lecture_rupture}")
     return 0
 
 

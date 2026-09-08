@@ -62,8 +62,20 @@ def main() -> int:
           round(coef_vix_vers_sp500, 6) if coef_vix_vers_sp500 is not None else ""]],
     )
 
+    if coef_sp500_vers_vix is not None:
+        sens_sp500_vix = "SP500(t-1) en hausse -> VIX(t) tend a baisser (effet de levier)" \
+            if coef_sp500_vers_vix < 0 else "SP500(t-1) en hausse -> VIX(t) tend aussi a monter"
+    else:
+        sens_sp500_vix = "non calculable"
+    if coef_vix_vers_sp500 is not None:
+        sens_vix_sp500 = "VIX(t-1) en hausse -> SP500(t) tend a baisser" \
+            if coef_vix_vers_sp500 < 0 else "VIX(t-1) en hausse -> SP500(t) tend aussi a monter"
+    else:
+        sens_vix_sp500 = "non calculable"
+
     print(f"OK -- VAR ordre choisi par AIC={ordre_choisi} -- coef SP500(t-1)->VIX(t)="
-          f"{coef_sp500_vers_vix}, coef VIX(t-1)->SP500(t)={coef_vix_vers_sp500}")
+          f"{coef_sp500_vers_vix} ({sens_sp500_vix}), coef VIX(t-1)->SP500(t)="
+          f"{coef_vix_vers_sp500} ({sens_vix_sp500})")
     return 0
 
 

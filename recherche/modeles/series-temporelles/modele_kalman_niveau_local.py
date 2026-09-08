@@ -54,9 +54,22 @@ def main() -> int:
           round(ratio_signal_bruit, 5) if ratio_signal_bruit is not None else ""]],
     )
 
+    # ratio_signal_bruit = variance du niveau / variance d'observation : >1 -> le filtre
+    # attribue le gros du mouvement au vrai niveau et suit les observations de pres (peu de
+    # lissage) ; <1 -> il attribue le mouvement au bruit d'observation et lisse fortement
+    # (le niveau filtre reagit lentement, s'ecarte plus de l'observation brute).
+    if ratio_signal_bruit is not None and ratio_signal_bruit > 1:
+        lecture_filtre = f"le filtre suit les observations de pres, peu de lissage (ecart obs.-filtre={ecart_bruit:+.2f})"
+    elif ratio_signal_bruit is not None and ratio_signal_bruit < 1:
+        lecture_filtre = f"le filtre lisse fortement le bruit, reagit lentement (ecart obs.-filtre={ecart_bruit:+.2f})"
+    elif ratio_signal_bruit is not None:
+        lecture_filtre = f"lissage equilibre entre signal et bruit (ecart obs.-filtre={ecart_bruit:+.2f})"
+    else:
+        lecture_filtre = None
+
     print(f"OK -- VIX observe={observation_brute:.2f}, filtre Kalman={niveau_filtre:.2f} "
           f"(ecart-type={variance_niveau**0.5:.2f}), ratio signal/bruit="
-          f"{ratio_signal_bruit:.4f}" if ratio_signal_bruit is not None else "N/A")
+          f"{ratio_signal_bruit:.4f} -- {lecture_filtre}" if ratio_signal_bruit is not None else "N/A")
     return 0
 
 

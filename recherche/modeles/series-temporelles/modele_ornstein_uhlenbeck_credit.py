@@ -65,8 +65,15 @@ def main() -> int:
           round(ecart_a_la_moyenne, 3)]],
     )
 
+    if ecart_a_la_moyenne > 0:
+        lecture_niveau = "spread HY actuel au-dessus de son niveau moyen de long terme"
+    elif ecart_a_la_moyenne < 0:
+        lecture_niveau = "spread HY actuel en-dessous de son niveau moyen de long terme"
+    else:
+        lecture_niveau = "spread HY actuel exactement a son niveau moyen de long terme"
+
     print(f"OK -- spread HY actuel={spread_actuel:.2f}, niveau moyen estime={mu:.2f}, "
-          f"demi-vie={demi_vie:.1f}j, ecart actuel={ecart_a_la_moyenne:+.2f}")
+          f"demi-vie={demi_vie:.1f}j, ecart actuel={ecart_a_la_moyenne:+.2f} -- {lecture_niveau}")
     return 0
 
 
