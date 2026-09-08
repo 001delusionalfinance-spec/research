@@ -75,7 +75,20 @@ BRUT_DIR = Path(__file__).resolve().parents[2] / "donnees" / "brut" / "fred"
 
 
 def fetch_series(series_id: str, api_key: str) -> dict:
-    params = f"series_id={series_id}&api_key={api_key}&file_type=json&sort_order=desc&limit=100"
+    # limit=100 -- bug reel trouve le 2026-09-08 : suffisant pour les series mensuelles/
+    # trimestrielles (~8 ans d'historique), mais beaucoup trop court pour les series
+    # quotidiennes (DFF, DGS10, DGS2, ECBDFR, IUDSOIA, BAMLH0A0HYM2, BAMLC0A0CM -- ~100 jours
+    # ouvres = ~5 mois). Comme write_series_csv() ECRASE le fichier a chaque ingestion (pas
+    # d'accumulation, cf. accumuler_csv() dans _lib.py qui elle accumule), cette fenetre ne
+    # grandit jamais dans le temps -- casse modele_momentum_credit.py (besoin de 365j),
+    # modele_hp_filter_taux.py (besoin de >=100 points valides, echoue meme a exactement 100
+    # bruts des que quelques jours feries FRED (valeur ".") sont filtres) et
+    # modele_pca_taux.py (besoin de dates communes entre blocs quotidiens et mensuels -- une
+    # fenetre quotidienne de 5 mois ne contient que 4-5 debuts de mois exploitables). Releve a
+    # 3000 (~12 ans ouvres) : couvre large marge pour toutes les series quotidiennes, sans cout
+    # pour les series mensuelles/trimestrielles (FRED renvoie simplement tout l'historique
+    # disponible si celui-ci est plus court que la limite demandee).
+    params = f"series_id={series_id}&api_key={api_key}&file_type=json&sort_order=desc&limit=3000"
     url = f"{FRED_BASE}?{params}"
     req = urllib.request.Request(url, headers={"User-Agent": "research/1.0"})
     with urllib.request.urlopen(req, timeout=20) as resp:
