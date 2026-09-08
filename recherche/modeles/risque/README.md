@@ -79,3 +79,18 @@ correction : +100pb → -7,71% (SP500 7748→7150), économiquement plausible.
 
 VaR conditionnelle au régime de volatilité actuel (VIX haut vs bas), pas une VaR globale unique.
 Testé réel : régime bas actuellement, VaR95 applicable=-1,14% (vs -1,84% non-conditionnelle).
+
+## `modele_ratios_conditionnels_regime.py` (2026-09-08, vague 7)
+
+Sharpe/Sortino conditionnels au régime de volatilité (VIX haut/bas), même logique de
+conditionnement que `modele_var_conditionnelle_regime.py` mais appliquée aux ratios de
+performance plutôt qu'à la VaR. Testé réel : Sharpe régime haut-vol=-1,107, bas-vol=2,418,
+global=0,427 — écart marqué entre régimes, un Sharpe global masque une réalité très différente
+selon le contexte de volatilité.
+
+## `modele_choc_vol_parametrique.py` (2026-09-08, vague 7)
+
+VaR paramétrique (gaussienne, quantile Z_95=1,645) sous des chocs de volatilité multiplicatifs
+(x1/x2/x3) — complète `modele_choc_taux.py` (choc sur les taux) avec un choc directement sur la
+vol. Testé réel : choc x1 → VaR95=-1,26%/jour, x2 → -2,59%, x3 → -3,91% (relation
+quasi-linéaire attendue pour une VaR paramétrique gaussienne).
