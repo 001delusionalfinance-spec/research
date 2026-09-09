@@ -1,0 +1,6 @@
+date,bloc,serie,adf_stat,p_valeur,stationnaire
+2026-09-07,US,DFF,-0.5527,0.8813,False
+2026-09-07,Zone_euro,ECBDFR,-0.6643,0.8558,False
+2026-09-07,Royaume-Uni,IUDSOIA,-0.1456,0.9447,False
+2026-09-07,Japon,IRSTCI01JPM156N,-1.9066,0.329,False
+2026-09-07,Chine,IR3TIB01CNM156N,-4.4586,0.0002,True

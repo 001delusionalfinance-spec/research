@@ -1,0 +1,2 @@
+date,date_precedente,n_mots_uniques_dernier,n_mots_uniques_precedent,jaccard,n_mots_nouveaux,n_mots_disparus
+20260729,20260617,1016,876,0.5209,368,228

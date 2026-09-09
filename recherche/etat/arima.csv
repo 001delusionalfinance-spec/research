@@ -1,0 +1,2 @@
+date,n_previsions_test,rmse_arima,mse_naif,bat_naif
+2026-09-09,100,2.2751,5.3592,True

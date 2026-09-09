@@ -1,0 +1,11 @@
+date,bloc_a,bloc_b,stat_eg,p_valeur,cointegrees
+2026-09-07,Chine,Japon,-3.6335,0.0223,True
+2026-09-07,Chine,Royaume-Uni,-2.4023,0.3237,False
+2026-09-07,Chine,US,-1.9994,0.5289,False
+2026-09-07,Chine,Zone_euro,-2.0632,0.4956,False
+2026-09-07,Japon,Royaume-Uni,-1.9472,0.5559,False
+2026-09-07,Japon,US,-0.6706,0.9497,False
+2026-09-07,Japon,Zone_euro,-1.6272,0.7093,False
+2026-09-07,Royaume-Uni,US,-1.8485,0.6059,False
+2026-09-07,Royaume-Uni,Zone_euro,-2.2022,0.4232,False
+2026-09-07,US,Zone_euro,-1.5964,0.7224,False

@@ -1,0 +1,5 @@
+date,feature,correlation,p_valeur,significatif
+2026-09-08,momentum_5j,-0.0294,0.0108,True
+2026-09-08,momentum_20j,-0.0118,0.3049,False
+2026-09-08,niveau_vix,-0.0044,0.6994,False
+2026-09-08,variation_vix,0.0306,0.0079,True
