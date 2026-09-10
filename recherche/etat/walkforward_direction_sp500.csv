@@ -1,3 +1,4 @@
 date,n_predictions,accuracy_momentum_5j,accuracy_baseline_majoritaire,bat_la_baseline
 2026-09-08,470,0.483,0.5574,False
 2026-09-08,7516,0.4963,0.5378,False
+2026-09-09,7516,0.4964,0.5378,False

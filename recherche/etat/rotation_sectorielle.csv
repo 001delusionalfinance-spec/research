@@ -9,3 +9,13 @@ date,rang,ticker,secteur,rendement_3m_pct
 2026-09-08,8,XLU,Services collectifs,-1.205
 2026-09-08,9,XLY,Consommation discretionnaire,-1.623
 2026-09-08,10,XLRE,Immobilier,-2.379
+2026-09-09,1,XLE,Energie,12.12
+2026-09-09,2,XLF,Finance,9.248
+2026-09-09,3,XLV,Sante,8.983
+2026-09-09,4,XLK,Technologie,6.364
+2026-09-09,5,XLB,Materiaux,3.609
+2026-09-09,6,XLI,Industrie,1.255
+2026-09-09,7,XLY,Consommation discretionnaire,-0.908
+2026-09-09,8,XLU,Services collectifs,-2.409
+2026-09-09,9,XLP,Consommation de base,-2.854
+2026-09-09,10,XLRE,Immobilier,-3.512
