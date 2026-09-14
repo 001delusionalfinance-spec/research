@@ -54,7 +54,12 @@ construire un signal de trade.
 Même schéma que GMDC (ingestion → modèles → état → visualisations → rapports) :
 
 - **Ingestion programmée** (`donnees/brut/`), 1×/jour ouvré :
-  - `ingestion_fred.py` — 45 séries officielles. 12 blocs de banques centrales (G10 complet +
+  - `ingestion_fred.py` — 67 séries officielles, dont les **bilans de banques centrales
+    (QE/QT)** : actif total de la Fed et ses composantes (Treasuries, MBS, SOMA), reverse repo
+    total et overnight, compte du Trésor vu du bilan de la Fed, plus les actifs totaux de la
+    BCE et de la Banque du Japon. Sans ces séries le dispositif ne voyait qu'une moitié de la
+    politique monétaire — une banque centrale peut tenir son taux inchangé et durcir
+    fortement en laissant son bilan se réduire. 12 blocs de banques centrales (G10 complet +
     Chine + Corée) en taux directeur et emploi, courbe des taux US (3M/2a/5a/10a/30a),
     rendements réels TIPS + point mort d'inflation, souverains 10 ans non-US, spreads crédit
     IG/HY US et corporate émergent, cycle immobilier, balance commerciale, dette publique.

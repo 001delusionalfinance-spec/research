@@ -182,6 +182,40 @@ SERIES = [
     "TRESEGUSM052N",  # Reserves internationales des US (mensuel)
     #     BOPBCA (compte courant, ancienne serie) testee et rejetee : figee a 2014-01.
     #     TOTRESV testee : renvoie 404, n'existe pas sous ce nom.
+
+    # ======================================================================================
+    # BILANS DE BANQUES CENTRALES -- QE / QT (ajoute le 2026-09-14)
+    #
+    # Trou majeur jusqu'ici : le repo suivait les TAUX DIRECTEURS des 12 blocs mais AUCUN
+    # bilan. Or l'assouplissement et le resserrement quantitatifs agissent sur les taux longs
+    # et la liquidite independamment du taux directeur -- une banque centrale peut tenir son
+    # taux inchange et durcir fortement en laissant son bilan se reduire. Sans ces series, le
+    # dispositif ne voyait qu'une moitie de la politique monetaire.
+    # ======================================================================================
+
+    # --- Reserve federale (hebdomadaire, source H.4.1) ---
+    "WALCL",     # Actif total de la Fed -- la mesure de reference du QE/QT
+    "TREAST",    # Titres du Tresor detenus par la Fed
+    "WSHOMCB",   # Titres hypothecaires (MBS) detenus par la Fed
+    "WSHOSHO",   # Titres detenus outright (portefeuille SOMA)
+    "WLRRAL",    # Reverse repo total -- liquidite retiree du systeme
+    "RRPONTSYD",  # Reverse repo overnight, QUOTIDIEN -- le drain de liquidite le plus reactif
+    "WTREGEN",   # Compte general du Tresor a la Fed, vu depuis le bilan de la Fed.
+                 # Recoupe volontairement `solde_tresorerie` d'ingestion_tresor_us.py (vu,
+                 # lui, depuis le Tresor et en quotidien) : les avoir tous deux issus du
+                 # meme releve H.4.1 que WALCL et WLRRAL permet de calculer proprement la
+                 # liquidite nette (actif total moins compte du Tresor moins reverse repo)
+                 # sans melanger des sources aux dates de publication differentes.
+
+    # --- Autres banques centrales ---
+    "ECBASSETSW",  # Actif total de la BCE (hebdomadaire)
+    "JPNASSETS",   # Actif total de la Banque du Japon (mensuel)
+    #     CHNASSETS (PBOC) et SWSTOTASSETS (SNB) testees : renvoient 404, n'existent pas sous
+    #     ces identifiants. Bilans PBOC et SNB toujours absents.
+    #     Bilan de la Banque d'Angleterre : pas cherche sur FRED, a prendre chez elle.
+    #     H41RESPPALDKNWW (prets d'urgence Fed) testee et ecartee : figee a 2026-05, serie
+    #     dormante hors periode de stress -- son gel n'est pas un incident, mais elle
+    #     declencherait le detecteur de peremption pour rien.
 ]
 
 BRUT_DIR = Path(__file__).resolve().parents[2] / "donnees" / "brut" / "fred"
