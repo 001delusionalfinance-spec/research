@@ -37,6 +37,10 @@ jobs:
         if: always()
         run: python recherche/modeles/ingestion_yfinance_indices.py
 
+      - name: Ingestion marches (FX, matieres premieres, vol, indices non-US)
+        if: always()
+        run: python recherche/modeles/ingestion_marches.py
+
       - name: Ingestion communiques FOMC
         if: always()
         run: python recherche/modeles/ingestion_fomc_statements.py

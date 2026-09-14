@@ -8,6 +8,14 @@ instable sous une rafale d'appels (une reponse tronquee au milieu d'une requete)
 officielle (`api.stlouisfed.org/fred/series/observations`) est le seul chemin retenu pour
 l'ingestion planifiee.
 
+ETENDU LE 2026-09-14 -- l'etat decrit juste en dessous est celui du 2026-09-08 et il est
+conserve tel quel (pas de reecriture de l'historique) ; ce qui a ete ajoute depuis est
+documente bloc par bloc dans la liste SERIES elle-meme. En resume : passage de 5 a 12 blocs
+de banques centrales (G10 complet + Chine + Coree), plus la courbe des taux US au complet,
+les rendements reels (TIPS), les souverains 10 ans non-US, le credit emergent et la dette
+publique US. Memes regles qu'au premier jour : chaque serie testee en direct avant ajout,
+chaque rejet documente avec sa raison.
+
 Liste de series verifiee en direct le 2026-09-08 (fraicheur reelle constatee, pas supposee) --
 5 blocs economiques (US / Zone euro / UK / Japon / Chine), deux dimensions seulement :
 
@@ -69,6 +77,77 @@ SERIES = [
     "LRHUTTTTJPM156S",     # Taux de chomage Japon, harmonise OCDE (mensuel)
     # --- Chine (aucune serie chomage fiable disponible -- taux seul) ---
     "IR3TIB01CNM156N",     # Taux interbancaire 3 mois, proxy conditions monetaires (mensuel)
+
+    # ======================================================================================
+    # Extension du 2026-09-14 -- passage de 5 a 12 blocs de banques centrales (G10 complet +
+    # Chine + Coree), plus la courbe US, les rendements reels et les souverains non-US.
+    # Chaque serie ci-dessous a ete testee en direct le 2026-09-14 via l'endpoint public
+    # (meme methode d'exploration que le 2026-09-08) : seules celles dont la derniere
+    # observation etait >= 2026-06-01 ont ete retenues. Les rejets sont documentes en bas.
+    # ======================================================================================
+
+    # --- Canada (BOC) ---
+    "IRSTCI01CAM156N",     # Taux interbancaire au jour le jour, proxy BOC (mensuel)
+    "LRHUTTTTCAM156S",     # Taux de chomage Canada, harmonise OCDE (mensuel)
+    # --- Australie (RBA) ---
+    "IRSTCI01AUM156N",     # Taux interbancaire au jour le jour, proxy RBA (mensuel)
+    "LRHUTTTTAUM156S",     # Taux de chomage Australie, harmonise OCDE (mensuel)
+    # --- Norvege (Norges Bank) ---
+    "IRSTCI01NOM156N",     # Taux interbancaire au jour le jour, proxy Norges (mensuel)
+    "LRHUTTTTNOM156S",     # Taux de chomage Norvege, harmonise OCDE (mensuel)
+    # --- Coree (BOK) ---
+    "IRSTCI01KRM156N",     # Taux interbancaire au jour le jour, proxy BOK (mensuel)
+    "LRHUTTTTKRM156S",     # Taux de chomage Coree, harmonise OCDE (mensuel)
+    # --- Suisse (SNB) -- proxy 3 mois, PAS le jour le jour ---
+    #     IRSTCI01CHM156N (jour le jour) teste et rejete : gele a 2024-03.
+    "IR3TIB01CHM156N",     # Taux interbancaire 3 mois, proxy SNB (mensuel)
+    #     Aucun chomage suisse exploitable : LRHUTTTTCHM156S renvoie 404, LMUNRRTTCHM156S
+    #     gele a 2023-12. Trou assume, pas un oubli.
+    # --- Nouvelle-Zelande (RBNZ) -- proxy 3 mois ---
+    #     IRSTCI01NZM156N (jour le jour) teste et rejete : gele a 2024-12.
+    "IR3TIB01NZM156N",     # Taux interbancaire 3 mois, proxy RBNZ (mensuel)
+    # --- Suede (Riksbank) -- proxy 3 mois ---
+    #     IRSTCI01SEM156N (jour le jour) teste et rejete : gele a 2020-10.
+    "IR3TIB01SEM156N",     # Taux interbancaire 3 mois, proxy Riksbank (mensuel)
+    "LRHUTTTTSEM156S",     # Taux de chomage Suede, harmonise OCDE (mensuel)
+
+    # --- Courbe des taux US : points manquants (quotidiens, frais au 2026-09-10) ---
+    "DGS3MO",    # Taux souverain 3 mois -- extremite courte de la courbe
+    "DGS5",      # Taux souverain 5 ans -- ventre de la courbe
+    "DGS30",     # Taux souverain 30 ans -- extremite longue
+
+    # --- Rendements reels US et anticipations d'inflation (quotidiens) ---
+    #     Manquaient completement alors que le taux reel est un intrant macro central
+    #     (cout reel du capital, proxy de la posture monetaire une fois l'inflation retiree).
+    "DFII5",     # Rendement reel 5 ans (TIPS)
+    "DFII10",    # Rendement reel 10 ans (TIPS)
+    "T10YIE",    # Point mort d'inflation 10 ans (anticipation de marche)
+
+    # --- Souverains 10 ans non-US (mensuels, source OCDE -- frais a 2026-06-01) ---
+    #     Frequence mensuelle seulement : suffisant pour du differentiel de taux entre blocs,
+    #     insuffisant pour du suivi quotidien. Limite assumee, a remplacer par une source
+    #     nationale directe si un modele exige du quotidien hors US.
+    "IRLTLT01DEM156N",     # Allemagne 10 ans
+    "IRLTLT01GBM156N",     # Royaume-Uni 10 ans
+    "IRLTLT01JPM156N",     # Japon 10 ans
+    "IRLTLT01CAM156N",     # Canada 10 ans
+    "IRLTLT01KRM156N",     # Coree 10 ans
+
+    # --- Credit emergent ---
+    "BAMLEMCBPIOAS",       # Spread credit corporate emergent (quotidien)
+    #     BAMLEMPUBLSLCRPIUSOAS (souverain emergent) teste : renvoie 404, n'existe pas sous ce
+    #     nom. Le souverain emergent reste absent.
+
+    # --- Budgetaire ---
+    #     Seule serie budgetaire retenue. Sa derniere observation (2026-01) est en dehors du
+    #     seuil de fraicheur applique aux autres, et c'est normal : serie TRIMESTRIELLE sur une
+    #     variable structurelle lente, deux trimestres de retard est le regime normal de
+    #     publication, pas un gel. Le seuil >= 2026-06-01 a ete concu pour du mensuel/quotidien.
+    "GFDEGDQ188S",         # Dette federale US en % du PIB (trimestriel)
+    #     FYFSGDA188S (deficit federal en % du PIB) teste et ECARTE : serie ANNUELLE, derniere
+    #     observation 2025-01, soit ~20 mois de retard -- inexploitable pour du suivi. Le
+    #     calendrier d'emission souveraine et le deficit courant demandent une autre source
+    #     (Treasury direct), chantier non ouvert ici.
 ]
 
 BRUT_DIR = Path(__file__).resolve().parents[2] / "donnees" / "brut" / "fred"

@@ -53,8 +53,21 @@ construire un signal de trade.
 
 Même schéma que GMDC (ingestion → modèles → état → visualisations → rapports) :
 
-- **Ingestion programmée** (`donnees/brut/`) : FRED multi-pays, yfinance (FX/taux/matières
-  premières/indices), CFTC (COT) — à étendre selon les besoins réels, pas préventivement.
+- **Ingestion programmée** (`donnees/brut/`), 1×/jour ouvré :
+  - `ingestion_fred.py` — 45 séries officielles. 12 blocs de banques centrales (G10 complet +
+    Chine + Corée) en taux directeur et emploi, courbe des taux US (3M/2a/5a/10a/30a),
+    rendements réels TIPS + point mort d'inflation, souverains 10 ans non-US, spreads crédit
+    IG/HY US et corporate émergent, cycle immobilier, balance commerciale, dette publique.
+  - `ingestion_marches.py` — 25 marchés : FX G10 + DXY + CNY/KRW, 5 matières premières
+    (Brent, WTI, gaz, or, cuivre), vol de taux (MOVE) et vol de la vol (VVIX), indices
+    non-US (Euro Stoxx, Nikkei, FTSE, DAX, KOSPI, Hang Seng).
+  - `ingestion_yfinance_indices.py` — S&P 500 et VIX (30 ans) + 10 ETF sectoriels.
+  - `ingestion_cftc.py` — COT, 9 contrats.
+  - `ingestion_fomc_statements.py` / `ingestion_fomc_minutes.py` — texte brut Fed.
+
+  Règle tenue depuis le premier jour : **aucune série n'entre sans avoir été testée en direct**,
+  et chaque rejet reste documenté avec sa raison dans le fichier concerné (séries gelées,
+  identifiants inexistants) pour ne pas être retenté à l'aveugle.
 - **Modèles calculés à intervalle régulier**, orchestrés comme `run_all_modeles.py` dans GMDC —
   un échec isolé n'interrompt jamais les autres.
 - **Rapports automatiques** (`rapports/`) : pulse quotidien, revue hebdomadaire, dashboard de
@@ -73,8 +86,29 @@ Même schéma que GMDC (ingestion → modèles → état → visualisations → 
 
 ## Où on en est
 
-Squelette posé le 2026-09-08, rien construit encore. Prochaine étape à décider avec 001 : quel
-module récupérer en premier depuis le `git log` de GMDC (les modèles de recherche pure qui y
-avaient été construits — event-study/NLP, factoriel, jump-tail, ML walk-forward, etc. —
-récupérables indépendamment du framework de thèse/trade, qui lui reste dans GMDC), ou quelle
-ingestion démarrer en premier côté données macro pures.
+*(Cette section disait encore « squelette posé, rien construit encore » jusqu'au 2026-09-14 —
+dérive de documentation corrigée ce jour, le repo tournait déjà depuis une semaine.)*
+
+**État réel au 2026-09-14 :**
+
+- **96 modèles** répartis sur les 8 familles, tous testés sur données réelles, orchestrés par
+  `run_all_modeles.py` (un échec isolé n'interrompt jamais les autres).
+- **Deux workflows** : ingestion à 06h00 UTC, modèles à 06h30 UTC, jours ouvrés, poussés par
+  le bot `research-bot`. Les fichiers `donnees/brut/` et `recherche/etat/` ne sont **jamais**
+  committés depuis une session de travail — seulement par ce bot.
+- **Couverture étendue le 2026-09-14** de 5 à 12 blocs de banques centrales, plus FX, matières
+  premières, volatilité de taux et indices non-US (voir « Comment c'est automatisé »).
+
+**Trous connus, documentés et non résolus :**
+
+- **Inflation hors US** : les séries CPI internationales gratuites sur FRED (source OCDE) ont
+  12 à 60+ mois de retard — testées et rejetées une par une. Il faudra taper Eurostat / ONS /
+  e-Stat / NBS en direct. C'est le trou le plus gênant : sans CPI non-US, pas de comparaison
+  d'inflation entre blocs.
+- **Chômage suisse** : aucune série exploitable trouvée sur FRED.
+- **Souverains non-US en fréquence quotidienne** : seulement du mensuel (source OCDE).
+- **PMI, ventes de détail, production industrielle** : absents pour tous les pays.
+- **Réserves de change, flux de fonds, calendrier d'émission souveraine** : absents.
+- **Volatilité zone euro (VSTOXX)** : indisponible via l'endpoint utilisé.
+- **NLP** : encore 100 % Fed (12 modèles sur les communiqués et minutes du FOMC), aucune autre
+  banque centrale — alors que le patron de code est réutilisable tel quel pour la BCE.
