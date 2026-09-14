@@ -1,9 +1,14 @@
-"""Modele -- positionnement speculatif extreme (z-score COT), 9 marches (actions, taux,
+"""Modele -- positionnement speculatif extreme (z-score COT), tous les contrats presents dans donnees/brut/cftc/ (actions, taux,
 change, or, petrole, vol).
 
 Z-score du positionnement net non-commercial sur une fenetre de 78 semaines (~1,5 an) --
 |z| > 2 marque un positionnement extreme, lu comme un signal contrarien classique. Porte depuis
 global-macro-desk-cloud, univers etendu de 4 a 9 contrats (voir ingestion_cftc.py).
+
+
+NOTE DE PERIMETRE (2026-09-14) : ce modele PARCOURT le dossier des donnees COT, il ne
+travaille donc pas sur une liste figee. L'univers est passe de 9 a 32 contrats le 2026-09-14
+et les sorties d'avant cette date ne sont pas comparables a celles d'apres.
 """
 
 import csv

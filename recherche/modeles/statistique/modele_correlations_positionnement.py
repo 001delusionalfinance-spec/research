@@ -1,4 +1,4 @@
-"""Modele -- correlations croisees du positionnement speculatif (COT), 9 marches, avec test
+"""Modele -- correlations croisees du positionnement speculatif (COT), tous les contrats presents dans donnees/brut/cftc/, avec test
 de significativite et correction pour tests multiples.
 
 Consomme donnees/brut/cftc/*.csv (meme source que positionnement-comportemental/
@@ -6,6 +6,11 @@ modele_positionnement_cot.py, aucune nouvelle ingestion). Correle les positions 
 non-commerciales entre marches -- une correlation affichee sans test de significativite peut
 induire en erreur des qu'on scanne plusieurs paires a la fois (C(9,2) = 36 paires ici), d'ou le
 garde-fou Bonferroni.
+
+
+NOTE DE PERIMETRE (2026-09-14) : ce modele PARCOURT le dossier des donnees COT, il ne
+travaille donc pas sur une liste figee. L'univers est passe de 9 a 32 contrats le 2026-09-14
+et les sorties d'avant cette date ne sont pas comparables a celles d'apres.
 """
 
 import csv
@@ -14,7 +19,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from _lib import (BRUT, ETAT, SerieVide, accumuler_csv,  # noqa: E402
+from _lib import (BRUT, ETAT, SerieVide, ecrire_csv,  # noqa: E402
                    correlation_avec_p_valeur, seuils_bonferroni)
 
 NOM_MODELE = "correlations_positionnement"
@@ -78,7 +83,7 @@ def main() -> int:
     print(f"\n{n_sig}/{len(resultats)} paires significatives apres correction Bonferroni "
           f"(alpha=0.05/{len(resultats)})")
 
-    accumuler_csv(
+    ecrire_csv(
         ETAT / f"{NOM_MODELE}.csv",
         ["marche_a", "marche_b", "correlation", "p_valeur", "significatif_bonferroni"],
         [[a, b, r, p, sig] for a, b, r, p, sig in lignes_finales],

@@ -1,4 +1,4 @@
-"""Modele -- ratio commercial/non-commercial (COT), proxy hedgers vs speculateurs, 9 marches.
+"""Modele -- ratio commercial/non-commercial (COT), proxy hedgers vs speculateurs, tous les contrats presents dans donnees/brut/cftc/.
 
 Les "commercial" du rapport COT sont en theorie des acteurs qui couvrent une exposition reelle
 (producteurs, importateurs, teneurs de marche) -- leur positionnement net est structurellement
@@ -6,6 +6,11 @@ souvent l'inverse des speculateurs (qui prennent le risque que les commerciaux c
 Ratio = |position nette commerciale| / |position nette speculative| -- un ratio qui s'ecarte
 de sa norme historique peut signaler un desequilibre entre couverture reelle et paris directionnels.
 Necessite les colonnes comm_long/comm_short ajoutees a ingestion_cftc.py (2026-09-08).
+
+
+NOTE DE PERIMETRE (2026-09-14) : ce modele PARCOURT le dossier des donnees COT, il ne
+travaille donc pas sur une liste figee. L'univers est passe de 9 a 32 contrats le 2026-09-14
+et les sorties d'avant cette date ne sont pas comparables a celles d'apres.
 """
 
 import csv

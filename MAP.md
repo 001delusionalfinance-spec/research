@@ -194,6 +194,13 @@ dérive de documentation corrigée ce jour, le repo tournait déjà depuis une s
      son coefficient de variation — prendre la première colonne venue donnait des aperçus à
      côté du sujet.
 
+**Décision actée le 2026-09-14 — les modèles qui énumèrent sans conclure restent tels quels.**
+Douze modèles produisent une ligne par pays, par contrat ou par paire, sans phrase de synthèse.
+Ils sont signalés _(sans synthèse)_ dans la lecture du jour. Décision de 001 : ne pas leur en
+écrire une automatiquement — leur sortie est de la matière première, et l'interprétation se
+fait au moment où l'on rédige la note du jour ou une thèse. Une synthèse générée d'avance
+n'ajouterait rien et figerait une lecture qui dépend du contexte.
+
 **Trous connus, documentés et non résolus :**
 
 - ~~Inflation hors US~~ — **résolu le 2026-09-14** via `ingestion_bis_cpi.py` (BIS, 12 blocs,
