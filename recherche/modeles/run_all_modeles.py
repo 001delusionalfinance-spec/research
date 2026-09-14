@@ -21,6 +21,15 @@ MODELES = [
     ("macro", "modele_conditions_financieres"),
     ("macro", "modele_reer_us"),
     ("macro", "modele_cycle_immobilier"),
+    # --- Modeles ajoutes le 2026-09-14 : ils lisent les donnees ingerees le meme jour
+    #     (prix BIS, taux directeurs quotidiens, bilans, Eurostat, service de la dette).
+    #     Jusque-la ces donnees etaient ingerees sans qu'aucun modele ne les ouvre.
+    ("macro", "modele_inflation_comparee"),
+    ("macro", "modele_divergence_taux_directeurs"),
+    ("macro", "modele_bilans_banques_centrales"),
+    ("macro", "modele_liquidite_nette_fed"),
+    ("macro", "modele_activite_zone_euro"),
+    ("macro", "modele_soutenabilite_dette"),
     ("positionnement-comportemental", "modele_positionnement_cot"),
     ("positionnement-comportemental", "modele_momentum_positionnement"),
     ("positionnement-comportemental", "modele_crowding_cross_asset"),
