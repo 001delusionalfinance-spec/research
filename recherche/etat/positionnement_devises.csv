@@ -1,0 +1,9 @@
+devise,contrat,date,position_nette_speculative,percentile_historique,differentiel_taux_vs_us_pt,sens,nature_de_la_position,extremite
+Dollar neo-zelandais,NZD_FX,2026-09-08,6232,92.1,-0.88,long,pari directionnel couteux (long une devise moins remuneree),extreme haut
+Peso mexicain,MXN_FX,2026-09-08,94732,82.5,,long,differentiel inconnu,median
+Yen,JPY_FX,2026-09-08,10796,65.9,-2.62,long,pari directionnel couteux (long une devise moins remuneree),median
+Dollar australien,AUD_FX,2026-09-08,-34870,36.2,0.72,short,short contre le carry (position qui coute a porter),median
+Euro,EUR_FX,2026-09-08,-42616,31.6,-1.38,short,short adosse au differentiel,median
+Livre sterling,GBP_FX,2026-09-08,-58836,13.3,0.12,short,short adosse au differentiel,extreme bas
+Franc suisse,CHF_FX,2026-09-08,-29985,11.3,-3.62,short,short adosse au differentiel,extreme bas
+Dollar canadien,CAD_FX,2026-09-08,-70499,10.2,-1.38,short,short adosse au differentiel,extreme bas

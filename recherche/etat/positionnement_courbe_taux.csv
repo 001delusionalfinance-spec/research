@@ -1,0 +1,9 @@
+maturite,contrat,date,position_nette_speculative,percentile_historique,n_semaines,sens,extremite
+Fed funds,FED_FUNDS,2026-09-08,-83889,52.9,240,short,median
+SOFR 3 mois,SOFR_3M,2026-09-08,-3103337,0.4,240,short,extreme bas
+2 ans,UST_2Y,2026-09-08,-929107,69.6,240,short,median
+5 ans,UST_5Y,2026-09-08,-1267493,55.0,240,short,median
+10 ans,UST_10Y,2026-09-08,-834783,23.8,240,short,median
+Ultra 10 ans,UST_ULTRA_10Y,2026-09-08,-189538,33.3,240,short,median
+Bond (30 ans),UST_BOND,2026-09-08,-200517,2.9,240,short,extreme bas
+Ultra bond,UST_ULTRA_BOND,2026-09-08,-345140,33.6,238,short,median
