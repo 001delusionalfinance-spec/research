@@ -81,6 +81,10 @@ Même schéma que GMDC (ingestion → modèles → état → visualisations → 
     Philly Fed retenues côté US — les PMI S&P Global et l'ISM sont propriétaires).
   - `ingestion_cftc.py` — COT, 9 contrats.
   - `ingestion_fomc_statements.py` / `ingestion_fomc_minutes.py` — texte brut Fed.
+  - `ingestion_boe_declarations.py` — résumés de politique monétaire de la Banque
+    d'Angleterre, repérés par motif de titre dans son flux d'actualités (qui mélange tous les
+    sujets). **La BOJ manque encore** : ses déclarations sont publiées en PDF, ce qui
+    demanderait une dépendance d'extraction PDF dans une CI partagée par 96 modèles.
   - `ingestion_bce_declarations.py` — déclarations de politique monétaire BCE. **Seule la
     déclaration préparée est extraite, pas la séance de questions-réponses** : deux registres
     linguistiques différents (texte écrit et négocié vs réponses orales spontanées), les
