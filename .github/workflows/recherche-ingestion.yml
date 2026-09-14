@@ -57,6 +57,10 @@ jobs:
         if: always()
         run: python recherche/modeles/ingestion_fomc_statements.py
 
+      - name: Ingestion declarations de politique monetaire BCE
+        if: always()
+        run: python recherche/modeles/ingestion_bce_declarations.py
+
       - name: Ingestion minutes FOMC
         if: always()
         run: python recherche/modeles/ingestion_fomc_minutes.py

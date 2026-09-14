@@ -68,6 +68,16 @@ Même schéma que GMDC (ingestion → modèles → état → visualisations → 
     publie à 2026-07. Tableau comparatif des sources dans le docstring du fichier.
   - `ingestion_cftc.py` — COT, 9 contrats.
   - `ingestion_fomc_statements.py` / `ingestion_fomc_minutes.py` — texte brut Fed.
+  - `ingestion_bce_declarations.py` — déclarations de politique monétaire BCE. **Seule la
+    déclaration préparée est extraite, pas la séance de questions-réponses** : deux registres
+    linguistiques différents (texte écrit et négocié vs réponses orales spontanées), les
+    mélanger fausserait toute mesure de ton ou de complexité comparée dans le temps.
+  - `ingestion_souverains_quotidiens.py` — courbes souveraines **quotidiennes** hors US :
+    zone euro (BCE, AAA 2a/5a/10a + tous émetteurs 10a), Royaume-Uni (BoE 5a/10a/20a),
+    Japon (MOF 2a/5a/10a/30a, historique depuis 1974).
+  - `ingestion_bis_macro.py` — taux directeurs **quotidiens** des 12 blocs (le vrai taux fixé
+    par la banque centrale, pas un proxy interbancaire mensuel) + ratio de service de la dette
+    du secteur privé, 12 pays.
 
   Règle tenue depuis le premier jour : **aucune série n'entre sans avoir été testée en direct**,
   et chaque rejet reste documenté avec sa raison dans le fichier concerné (séries gelées,
@@ -132,9 +142,13 @@ dérive de documentation corrigée ce jour, le repo tournait déjà depuis une s
   frais à 2026-07). Restriction : indice de prix seulement, pas d'inflation sous-jacente
   (core) ni de décomposition par poste.
 - **Chômage suisse** : aucune série exploitable trouvée sur FRED.
-- **Souverains non-US en fréquence quotidienne** : seulement du mensuel (source OCDE).
-- **PMI, ventes de détail, production industrielle** : absents pour tous les pays.
+- ~~Souverains non-US en quotidien~~ — **résolu le 2026-09-14** (BCE, BoE, MOF Japon).
+- **PMI, ventes de détail, production industrielle** : couverts pour les **US seulement**
+  depuis le 2026-09-14 (ventes de détail, production industrielle, CFNAI, confiance Michigan,
+  et les enquêtes Empire State / Philly Fed comme substituts gratuits du PMI — S&P Global et
+  ISM sont payants, aucune voie gratuite trouvée). **Toujours absents hors US.**
 - **Réserves de change, flux de fonds, calendrier d'émission souveraine** : absents.
 - **Volatilité zone euro (VSTOXX)** : indisponible via l'endpoint utilisé.
-- **NLP** : encore 100 % Fed (12 modèles sur les communiqués et minutes du FOMC), aucune autre
-  banque centrale — alors que le patron de code est réutilisable tel quel pour la BCE.
+- **NLP** : l'ingestion BCE existe depuis le 2026-09-14, mais **aucun modèle ne la lit
+  encore** — les 12 modèles NLP restent écrits contre le FOMC. C'est un cas particulier du
+  chantier 6 ci-dessus (ingérer n'est pas consommer).
