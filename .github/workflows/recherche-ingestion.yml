@@ -41,6 +41,10 @@ jobs:
         if: always()
         run: python recherche/modeles/ingestion_marches.py
 
+      - name: Ingestion BIS (prix a la consommation, 12 blocs)
+        if: always()
+        run: python recherche/modeles/ingestion_bis_cpi.py
+
       - name: Ingestion communiques FOMC
         if: always()
         run: python recherche/modeles/ingestion_fomc_statements.py

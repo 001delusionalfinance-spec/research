@@ -62,6 +62,10 @@ Même schéma que GMDC (ingestion → modèles → état → visualisations → 
     (Brent, WTI, gaz, or, cuivre), vol de taux (MOVE) et vol de la vol (VVIX), indices
     non-US (Euro Stoxx, Nikkei, FTSE, DAX, KOSPI, Hang Seng).
   - `ingestion_yfinance_indices.py` — S&P 500 et VIX (30 ans) + 10 ETF sectoriels.
+  - `ingestion_bis_cpi.py` — indices de prix à la consommation, **12 blocs** (BIS SDMX).
+    C'est ce qui comble le trou « inflation hors US » : FRED, Eurostat, la BCE, l'OCDE et le
+    FMI ont tous été testés le 2026-09-14 et étaient trop en retard (de 9 à 60 mois) ; le BIS
+    publie à 2026-07. Tableau comparatif des sources dans le docstring du fichier.
   - `ingestion_cftc.py` — COT, 9 contrats.
   - `ingestion_fomc_statements.py` / `ingestion_fomc_minutes.py` — texte brut Fed.
 
@@ -99,12 +103,34 @@ dérive de documentation corrigée ce jour, le repo tournait déjà depuis une s
 - **Couverture étendue le 2026-09-14** de 5 à 12 blocs de banques centrales, plus FX, matières
   premières, volatilité de taux et indices non-US (voir « Comment c'est automatisé »).
 
+**Chantiers annexes — correctifs d'infra à enchaîner une fois les ingestions terminées
+(identifiés le 2026-09-14, aucun n'est encore fait) :**
+
+1. **Timing du COT — bug réel.** Le CFTC publie le vendredi vers 20h30 UTC ; l'ingestion tourne
+   à 06h00 UTC. La donnée de positionnement du vendredi n'est donc ramassée que le lundi
+   matin, ~2,5 jours de retard chaque semaine. À sortir sur son propre créneau.
+2. **Aucune détection de péremption côté FRED.** `ingestion_marches.py` et
+   `ingestion_yfinance_indices.py` ont un garde-fou `MAX_JOURS_RETARD` ; `ingestion_fred.py`
+   n'en a aucun. Or on sait que des séries FRED gèlent (3 rencontrées le 2026-09-14). Une
+   série qui se fige passerait inaperçue et les modèles continueraient à calculer dessus.
+3. **Aucune alerte.** Ni opérationnelle (workflow en échec, série morte, modèle planté), ni de
+   recherche (indicateur à un extrême historique). `if: always()` masque d'autant plus les
+   échecs partiels. Contrainte de périmètre à respecter : une alerte reste **descriptive**,
+   jamais un signal de décision — sinon on sort du mandat de ce repo.
+4. **Cadence à étager.** Le macro lent (FRED, textes FOMC) reste à 1×/jour — c'est correct et
+   accélérer ne produirait que des fichiers identiques. Mais le FX, les matières premières,
+   la vol et les indices ajoutés le 2026-09-14 bougent en continu : ils justifient leur propre
+   créneau intrajournalier, séparé du lent.
+5. **Hygiène CI** : pas de cache pip (réinstallation complète à chaque run), pas de garde de
+   concurrence alors que les deux workflows poussent sur `main`.
+6. **Les 96 modèles ne consomment pas encore les nouvelles données** — ils ont été écrits
+   contre l'ancien jeu. Ingérer n'est pas consommer.
+
 **Trous connus, documentés et non résolus :**
 
-- **Inflation hors US** : les séries CPI internationales gratuites sur FRED (source OCDE) ont
-  12 à 60+ mois de retard — testées et rejetées une par une. Il faudra taper Eurostat / ONS /
-  e-Stat / NBS en direct. C'est le trou le plus gênant : sans CPI non-US, pas de comparaison
-  d'inflation entre blocs.
+- ~~Inflation hors US~~ — **résolu le 2026-09-14** via `ingestion_bis_cpi.py` (BIS, 12 blocs,
+  frais à 2026-07). Restriction : indice de prix seulement, pas d'inflation sous-jacente
+  (core) ni de décomposition par poste.
 - **Chômage suisse** : aucune série exploitable trouvée sur FRED.
 - **Souverains non-US en fréquence quotidienne** : seulement du mensuel (source OCDE).
 - **PMI, ventes de détail, production industrielle** : absents pour tous les pays.
