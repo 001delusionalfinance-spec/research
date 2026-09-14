@@ -71,6 +71,29 @@ def _http(url: str, accept: str) -> str:
         return resp.read().decode("utf-8", errors="replace")
 
 
+def _http_avec_reessai(url: str, accept: str = "text/csv", tentatives: int = 4) -> str:
+    """Comme _http, mais tolere un refus temporaire.
+
+    La Reserve Bank of Australia renvoie par intermittence un HTTP 403 aux appels venant d'une
+    integration continue -- constate le 2026-09-14, apres plusieurs executions successives dans
+    la journee, alors que les executions precedentes du meme code passaient. C'est une
+    limitation d'acces cote source, pas un defaut ici ni une donnee manquante.
+    """
+    import time as _time
+    for essai in range(tentatives):
+        try:
+            return _http(url, accept)
+        except urllib.error.HTTPError as e:
+            if e.code not in (403, 429) or essai == tentatives - 1:
+                raise
+            _time.sleep(5 * (essai + 1))
+        except (urllib.error.URLError, TimeoutError):
+            if essai == tentatives - 1:
+                raise
+            _time.sleep(5 * (essai + 1))
+    raise RuntimeError(f"sortie de boucle de reessai sans resultat pour {url}")
+
+
 def _valider(points: list, nom: str) -> None:
     if len(points) < MIN_LIGNES:
         raise ValueError(f"seulement {len(points)} ligne(s) pour {nom} -- snapshot degrade")
@@ -125,8 +148,16 @@ def ingerer_canada() -> list:
 
 def ingerer_australie() -> list:
     try:
-        texte = _http(RBA_URL, "text/csv")
-    except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError) as e:
+        texte = _http_avec_reessai(RBA_URL, "text/csv")
+    except urllib.error.HTTPError as e:
+        if e.code in (403, 429):
+            print(f"AUSTRALIE : source inaccessible ({e.code} apres reessais) -- limitation "
+                  f"d'acces cote RBA, pas une donnee manquante. Les fichiers deja ingeres "
+                  f"restent en place ; controle_fraicheur.py signalera s'ils vieillissent.")
+            return [("AUSTRALIE_INACCESSIBLE", str(e))]
+        print(f"AUSTRALIE : echec -- {e}")
+        return [("AUSTRALIE", str(e))]
+    except (urllib.error.URLError, TimeoutError) as e:
         print(f"AUSTRALIE : echec -- {e}")
         return [("AUSTRALIE", str(e))]
 
