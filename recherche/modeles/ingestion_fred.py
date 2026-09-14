@@ -137,6 +137,18 @@ SERIES = [
 
     # --- Credit emergent ---
     "BAMLEMCBPIOAS",       # Spread credit corporate emergent (quotidien)
+
+    # --- Credit europeen et emergent, elargissement du 2026-09-14 ---
+    #     Le crediteait couvert pour les seuls US (IG + HY). Un desk macro lit aussi le credit
+    #     europeen et le souverain emergent, qui ne bougent pas en phase avec le credit US.
+    "BAMLHE00EHYIOAS",       # Spread high-yield europeen (quotidien)
+    "BAMLHE00EHYIEY",        # Rendement high-yield europeen (quotidien)
+    "BAMLEMHBHYCRPIOAS",     # Spread high-yield emergent
+    "BAMLEMPBPUBSICRPIOAS",  # Spread souverain public emergent -- comble l'absence signalee
+                             # le matin meme, quand BAMLEMPUBLSLCRPIUSOAS s'etait revele
+                             # inexistant sous ce nom.
+    "BAMLEMFSFCRPIOAS",      # Spread emetteurs financiers emergents
+    "BAMLC0A0CMEY",          # Rendement investment-grade US (complete le spread deja ingere)
     #     BAMLEMPUBLSLCRPIUSOAS (souverain emergent) teste : renvoie 404, n'existe pas sous ce
     #     nom. Le souverain emergent reste absent.
 

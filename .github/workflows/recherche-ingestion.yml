@@ -57,6 +57,10 @@ jobs:
         if: always()
         run: python recherche/modeles/ingestion_souverains_g10.py
 
+      - name: Ingestion bilans nationaux (Banque d'Angleterre)
+        if: always()
+        run: python recherche/modeles/ingestion_bilans_nationaux.py
+
       - name: Ingestion Tresor US (emission, dette, tresorerie)
         if: always()
         run: python recherche/modeles/ingestion_tresor_us.py
