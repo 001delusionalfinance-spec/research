@@ -116,19 +116,43 @@ def ecrire_csv(path: Path, header: list, lignes: list) -> None:
 
 def accumuler_csv(path: Path, header: list, lignes: list) -> None:
     """Ajoute des lignes a l'historique -- n'ecrase jamais. Deduplique les lignes strictement
-    identiques a une ligne deja presente."""
+    identiques a une ligne deja presente.
+
+    **Changement d'en-tete : le fichier est reconstruit, pas complete.** Defaut reel constate le
+    2026-09-14. La deduplication porte sur l'egalite STRICTE des lignes ; quand un modele fait
+    evoluer ses colonnes, les nouvelles lignes ne sont donc egales a aucune ancienne et sont
+    ajoutees, alors qu'elles decrivent la meme chose. Le fichier se retrouve avec deux
+    generations de lignes de largeurs differentes sous un en-tete qui ne decrit plus que la
+    premiere -- malforme pour tout lecteur strict, et trompeur pour un lecteur humain.
+
+    Plutot que d'empiler du malforme en silence, on repart d'un fichier propre et on le signale.
+    L'historique ecrit sous l'ancien schema est perdu, et c'est le moindre mal : il n'etait de
+    toute facon plus interpretable a cote du nouveau, puisque les colonnes ne signifient plus
+    la meme chose.
+    """
     import csv
     path.parent.mkdir(parents=True, exist_ok=True)
     nouveau = not path.exists()
     existantes = set()
+    entete_actuelle = None
     if not nouveau:
         with path.open(encoding="utf-8") as f:
-            for row in csv.reader(f):
+            for index, row in enumerate(csv.reader(f)):
+                if index == 0:
+                    entete_actuelle = row
                 existantes.add(tuple(row))
+
+    if entete_actuelle is not None and entete_actuelle != [str(c) for c in header]:
+        print(f"  [{path.name}] en-tete modifie "
+              f"({len(entete_actuelle)} -> {len(header)} colonnes) : fichier reconstruit, "
+              f"l'historique ecrit sous l'ancien schema n'etait plus comparable")
+        nouveau, existantes = True, set()
+
     lignes_a_ecrire = [l for l in lignes if tuple(str(v) for v in l) not in existantes]
     if not lignes_a_ecrire:
         return
-    with path.open("a", newline="", encoding="utf-8") as f:
+    mode = "w" if nouveau else "a"
+    with path.open(mode, newline="", encoding="utf-8") as f:
         w = csv.writer(f)
         if nouveau:
             w.writerow(header)
