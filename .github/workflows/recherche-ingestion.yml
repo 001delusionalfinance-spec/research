@@ -53,6 +53,10 @@ jobs:
         if: always()
         run: python recherche/modeles/ingestion_souverains_quotidiens.py
 
+      - name: Ingestion souverains G10 (Canada, Australie, Suede)
+        if: always()
+        run: python recherche/modeles/ingestion_souverains_g10.py
+
       - name: Ingestion Tresor US (emission, dette, tresorerie)
         if: always()
         run: python recherche/modeles/ingestion_tresor_us.py

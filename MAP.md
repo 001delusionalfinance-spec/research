@@ -85,6 +85,11 @@ Même schéma que GMDC (ingestion → modèles → état → visualisations → 
     déclaration préparée est extraite, pas la séance de questions-réponses** : deux registres
     linguistiques différents (texte écrit et négocié vs réponses orales spontanées), les
     mélanger fausserait toute mesure de ton ou de complexité comparée dans le temps.
+  - `ingestion_souverains_g10.py` — courbes quotidiennes Canada (BoC Valet), Australie
+    (table RBA F2), Suède (API Riksbank). Non retenus faute de source exploitable : NZ (RBNZ
+    en HTTP 403 sur l'accès automatisé), Norvège (chemin des rendements non identifié),
+    Suisse (cube SNB à dernière observation 2025-07, gel ou tri non chronologique — non
+    tranché, donc non ingéré plutôt qu'ingéré à l'aveugle).
   - `ingestion_souverains_quotidiens.py` — courbes souveraines **quotidiennes** hors US :
     zone euro (BCE, AAA 2a/5a/10a + tous émetteurs 10a), Royaume-Uni (BoE 5a/10a/20a),
     Japon (MOF 2a/5a/10a/30a, historique depuis 1974).
