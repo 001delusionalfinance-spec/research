@@ -148,6 +148,26 @@ SERIES = [
     #     observation 2025-01, soit ~20 mois de retard -- inexploitable pour du suivi. Le
     #     calendrier d'emission souveraine et le deficit courant demandent une autre source
     #     (Treasury direct), chantier non ouvert ici.
+
+    # --- Activite reelle US (ajoute le 2026-09-14, toutes verifiees fraiches) ---
+    #     Le repo n'avait AUCUNE mesure d'activite reelle : ni ventes, ni production, ni
+    #     enquete. Il ne voyait que les prix, les taux et l'emploi.
+    "RSAFS",     # Ventes de detail et restauration (mensuel)
+    "INDPRO",    # Production industrielle (mensuel)
+    "CFNAI",     # Indice d'activite nationale, Chicago Fed (mensuel, 85 indicateurs agreges)
+    "UMCSENT",   # Confiance des consommateurs, Michigan (mensuel)
+
+    # --- Substituts gratuits du PMI (enquetes manufacturieres des Fed regionales) ---
+    #     Les PMI S&P Global et l'ISM sont proprietaires et payants : aucune voie gratuite
+    #     trouvee. Les enquetes des Fed regionales mesurent la meme chose (diffusion de
+    #     l'activite manufacturiere declaree par les entreprises), sont publiques, et sortent
+    #     AVANT l'ISM dans le mois -- ce sont les substituts retenus, pas un pis-aller cache.
+    "GACDISA066MSFRBNY",   # Enquete manufacturiere Fed de New York (Empire State)
+    "GACDFSA066MSFRBPHI",  # Enquete manufacturiere Fed de Philadelphie
+
+    # --- Agregats monetaires US ---
+    "TOTRESNS",  # Reserves des banques aupres de la Fed (mensuel) -- liquidite du systeme
+    "BOGMBASE",  # Base monetaire (mensuel)
 ]
 
 BRUT_DIR = Path(__file__).resolve().parents[2] / "donnees" / "brut" / "fred"

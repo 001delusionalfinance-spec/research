@@ -45,6 +45,10 @@ jobs:
         if: always()
         run: python recherche/modeles/ingestion_bis_cpi.py
 
+      - name: Ingestion BIS (taux directeurs quotidiens, service de la dette)
+        if: always()
+        run: python recherche/modeles/ingestion_bis_macro.py
+
       - name: Ingestion communiques FOMC
         if: always()
         run: python recherche/modeles/ingestion_fomc_statements.py
