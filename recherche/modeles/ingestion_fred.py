@@ -43,12 +43,14 @@ import csv
 import json
 import os
 import sys
+import time
 import urllib.request
 import urllib.error
 from datetime import datetime, timezone
 from pathlib import Path
 
 FRED_BASE = "https://api.stlouisfed.org/fred/series/observations"
+TENTATIVES = 3
 
 SERIES = [
     # --- US ---
@@ -202,8 +204,25 @@ def fetch_series(series_id: str, api_key: str) -> dict:
     params = f"series_id={series_id}&api_key={api_key}&file_type=json&sort_order=desc&limit=3000"
     url = f"{FRED_BASE}?{params}"
     req = urllib.request.Request(url, headers={"User-Agent": "research/1.0"})
-    with urllib.request.urlopen(req, timeout=20) as resp:
-        return json.loads(resp.read().decode("utf-8"))
+
+    # Reessai sur erreur TRANSITOIRE uniquement. Defaut reel constate en CI le 2026-09-14 :
+    # l'API FRED a renvoye un HTTP 500 sur une seule serie (chomage Coree) parmi 58, et comme
+    # il n'y avait aucun reessai, cet incident serveur isole faisait echouer toute l'etape
+    # d'ingestion. Un 4xx (identifiant invalide, cle refusee) n'est PAS reessaye : il ne
+    # deviendra pas valide en insistant, et le masquer retarderait le vrai diagnostic.
+    for essai in range(TENTATIVES):
+        try:
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                return json.loads(resp.read().decode("utf-8"))
+        except urllib.error.HTTPError as e:
+            if e.code < 500 or essai == TENTATIVES - 1:
+                raise
+            time.sleep(2 * (essai + 1))
+        except (urllib.error.URLError, TimeoutError):
+            if essai == TENTATIVES - 1:
+                raise
+            time.sleep(2 * (essai + 1))
+    raise RuntimeError(f"{series_id} : sortie de boucle de reessai sans resultat")
 
 
 def write_series_csv(series_id: str, payload: dict) -> Path:
