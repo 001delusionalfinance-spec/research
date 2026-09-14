@@ -5,11 +5,16 @@ Usage :
     python run_all_modeles.py
 """
 
+import contextlib
 import importlib
+import io
+import re
 import sys
+from datetime import datetime, timezone
 from pathlib import Path
 
 ICI = Path(__file__).resolve().parent
+REPO_ROOT = ICI.parents[1]
 
 MODELES = [
     ("macro", "modele_regime_monetaire_emploi"),
@@ -129,23 +134,114 @@ MODELES = [
 ]
 
 
+def _lecture(sortie: str) -> tuple:
+    """Extrait la phrase interpretable d'un modele. Retourne (texte, conforme).
+
+    Convention du depot : un modele termine par une ligne "OK -- ..." ou "echec -- ..." ecrite
+    pour etre comprise sans lire le code.
+
+    Douze modeles ne la respectent pas (constate le 2026-09-14) : ils ENUMERENT sans conclure --
+    une ligne par pays, par contrat ou par paire, et rien qui resume. Pour eux on retombe sur la
+    derniere ligne utile, mais le drapeau `conforme` reste faux et le rapport les signale. Les
+    masquer aurait produit une premiere page d'apparence complete ou douze entrees seraient en
+    realite un item pris au hasard dans une liste.
+    """
+    lignes = [l.strip() for l in sortie.splitlines() if l.strip()]
+    if not lignes:
+        return "(aucune sortie)", False
+
+    for i, ligne in enumerate(lignes):
+        if ligne.startswith(("OK --", "echec --")):
+            # Certaines lectures sont un en-tete suivi du detail ("... 4 clusters :").
+            # Dans ce cas on rattache les lignes suivantes, sinon la lecture ne dit rien.
+            if ligne.endswith(":"):
+                suite = " | ".join(lignes[i + 1:i + 6])
+                return (ligne + " " + suite).strip(), True
+            return ligne, True
+
+    # Repli : une ligne de synthese chiffree ("1/10 paires cointegrees") si elle existe,
+    # sinon la derniere ligne affichee.
+    for ligne in reversed(lignes):
+        if re.match(r"^\d+\s*/\s*\d+", ligne):
+            return ligne, False
+    return lignes[-1], False
+
+
+def _ecrire_rapport(resultats: list) -> Path:
+    """Ecrit rapports/lecture-du-jour.md -- la premiere page du dispositif.
+
+    Raison d'etre : les modeles produisent chacun une lecture en langage clair, mais elle
+    n'existait que dans le journal d'execution et disparaissait apres le run. Personne ne
+    lisait cent fichiers d'etat un par un. Sans cette page, le depot calculait beaucoup et ne
+    disait rien.
+    """
+    rapport = REPO_ROOT / "rapports" / "lecture-du-jour.md"
+    rapport.parent.mkdir(parents=True, exist_ok=True)
+    horodatage = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+    en_echec = [r for r in resultats if not r["ok"]]
+
+    lignes = [f"# Lecture du jour -- {horodatage}", "",
+              f"{len(resultats) - len(en_echec)} modeles sur {len(resultats)} ont produit une "
+              f"lecture.", ""]
+    non_conformes = [r for r in resultats if r["ok"] and not r["conforme"]]
+    if non_conformes:
+        lignes += ["> " + str(len(non_conformes)) + " modele(s) n'ont **pas de ligne de "
+                   "synthese** : ils enumerent sans conclure. La lecture affichee pour eux est "
+                   "un repli sur leur derniere ligne, elle est signalee par _(sans synthese)_ "
+                   "et ne resume pas l'ensemble de leur sortie.", ""]
+    if en_echec:
+        lignes += ["**" + str(len(en_echec)) + " en echec** : "
+                   + ", ".join("`" + r["lane"] + "/" + r["nom"] + "`" for r in en_echec), ""]
+
+    for lane in sorted({r["lane"] for r in resultats}):
+        lignes += ["## " + lane, ""]
+        for r in [x for x in resultats if x["lane"] == lane]:
+            texte = r["lecture"]
+            for prefixe in ("OK -- ", "echec -- "):
+                if texte.startswith(prefixe):
+                    texte = texte[len(prefixe):]
+            marque = "" if r["ok"] else "**[ECHEC]** "
+            suffixe = "" if r["conforme"] else "  _(sans synthese)_"
+            lignes.append("- **" + r["nom"].replace("modele_", "") + "** -- " + marque
+                          + texte + suffixe)
+        lignes.append("")
+
+    rapport.write_text(chr(10).join(lignes), encoding="utf-8")
+    return rapport
+
+
 def main() -> int:
-    echecs = []
+    echecs, resultats = [], []
     for lane, nom in MODELES:
         print(f"\n--- {lane}/{nom} ---")
         sys.path.insert(0, str(ICI / lane))
+        tampon = io.StringIO()
+        ok = True
         try:
             module = importlib.import_module(nom)
-            code = module.main()
+            # Sortie capturee POUR LE RAPPORT puis reaffichee telle quelle : le journal
+            # d'execution reste identique, on ne perd rien en diagnostic.
+            with contextlib.redirect_stdout(tampon):
+                code = module.main()
             if code != 0:
-                echecs.append(f"{lane}/{nom}")
+                ok = False
         except Exception as e:
-            print(f"{lane}/{nom} : exception non geree -- {e}")
-            echecs.append(f"{lane}/{nom}")
+            tampon.write("echec -- exception non geree : " + str(e) + chr(10))
+            ok = False
         finally:
             sys.path.remove(str(ICI / lane))
 
+        sortie = tampon.getvalue()
+        print(sortie, end="")
+        if not ok:
+            echecs.append(f"{lane}/{nom}")
+        texte, conforme = _lecture(sortie)
+        resultats.append({"lane": lane, "nom": nom, "ok": ok,
+                          "lecture": texte, "conforme": conforme})
+
+    rapport = _ecrire_rapport(resultats)
     print(f"\n=== Resume : {len(MODELES) - len(echecs)}/{len(MODELES)} modeles OK ===")
+    print(f"Lecture du jour -> {rapport}")
     if echecs:
         print(f"En echec : {echecs}")
         return 1

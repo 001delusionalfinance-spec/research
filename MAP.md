@@ -160,8 +160,22 @@ dérive de documentation corrigée ce jour, le repo tournait déjà depuis une s
 5. ✅ **Hygiène CI** : cache pip sur les trois workflows, et un groupe de concurrence commun
    (`recherche-push`) qui sérialise tout ce qui pousse sur `main` — sans lui, deux exécutions
    simultanées se marchent dessus entre le rebase et le push.
-6. ⬜ **Les modèles ne consomment pas encore les nouvelles données** — seul chantier restant.
-   Ingérer n'est pas consommer.
+6. ✅ **Les modèles lisent les données** — 12 modèles ajoutés le 2026-09-14, un par famille de
+   données ingérées ce jour. 111 modèles au total, tous verts en CI.
+7. ✅ **Chaque modèle a une sortie.** Trois formes, toutes generiques — aucune n'a demandé de
+   modifier les 111 modèles un par un :
+   -  — la première page. L'orchestrateur capture la phrase
+     interprétable de chaque modèle et les regroupe par famille. Sans elle, ces lectures
+     n'existaient que dans le journal d'exécution et disparaissaient après le run : le dépôt
+     calculait beaucoup et ne disait rien. Les 12 modèles qui **énumèrent sans conclure** y
+     sont marqués _(sans synthèse)_ plutôt que masqués.
+   -  — un classeur, une feuille par fichier d'état, valeurs
+     écrites comme des nombres et non du texte.
+   -  — un aperçu par sortie. La forme est
+     choisie d'après la structure du fichier (série temporelle ou comparaison), et pour une
+     comparaison la colonne tracée est celle qui **sépare le plus les entités**, mesurée par
+     son coefficient de variation — prendre la première colonne venue donnait des aperçus à
+     côté du sujet.
 
 **Trous connus, documentés et non résolus :**
 
