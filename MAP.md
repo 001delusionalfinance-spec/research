@@ -79,6 +79,11 @@ Même schéma que GMDC (ingestion → modèles → état → visualisations → 
     Italie, Espagne : production industrielle, ventes de détail, chômage, et **confiance
     industrielle comme substitut du PMI** (pendant européen des enquêtes Empire State /
     Philly Fed retenues côté US — les PMI S&P Global et l'ISM sont propriétaires).
+  - `ingestion_bilans_nationaux.py` — bilans des banques centrales que FRED n'expose pas :
+    Banque d'Angleterre, Reserve Bank of Australia (total, or et devises, titres locaux — la
+    composition dit s'il s'agit de QE ou d'accumulation de réserves) et Banque du Canada
+    (groupe complet, avec un index des libellés : l'API Valet nomme ses séries par des codes
+    opaques que personne ne peut interpréter sans traduction).
   - `ingestion_cftc.py` — COT, 9 contrats.
   - `ingestion_fomc_statements.py` / `ingestion_fomc_minutes.py` — texte brut Fed.
   - `ingestion_boe_declarations.py` — résumés de politique monétaire de la Banque
