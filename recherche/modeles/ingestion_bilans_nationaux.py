@@ -12,13 +12,14 @@ Etat de la recherche menee le 2026-09-14, gardee ici pour ne pas etre refaite a 
 | **Reserve Bank of Australia** | **Retenue** -- table statistique A1, hebdomadaire |
 | **Banque du Canada** | **Retenue** -- groupe `B2_WEEKLY` de l'API Valet, hebdomadaire. Trouve en parcourant la liste complete des 2537 groupes : trois noms devines au prealable renvoyaient tous 404. Les identifiants de cette API ne se devinent pas, il faut lister |
 | Riksbank | Aucune serie de bilan exposee par l'API SWEA (liste complete parcourue) |
-| SNB | Le portail expose bien une API mais l'endpoint de liste des cubes renvoie du HTML, pas l'index attendu. Cube de bilan non identifie |
+| **BCE** | **Retenue** pour ses avoirs de reserve hebdomadaires (l'actif total vient deja de FRED). Attention : elle renvoie une reponse VIDE si on lui demande du CSV -- il lui faut un `Accept` JSON, contrairement aux autres sources de ce fichier |
+| SNB | **Ecartee volontairement, alors qu'elle repond.** Le cube `snbbipo` est frais (2026-07) mais expose des codes de position (`GFG`, `RIWF`, `T1`...) sans table de correspondance : l'API ne documente que "Actifs / Passifs" au niveau superieur. L'ingerer produirait des fichiers nommes par des codes que personne ne peut interpreter -- exactement le defaut corrige le meme jour cote canadien |
 | PBOC, RBNZ, Norges | Non explores a ce stade |
 
 Pourquoi ca compte : une banque centrale peut laisser son taux directeur inchange et durcir
 fortement en laissant son bilan se reduire. Sans les bilans, on ne lit qu'une moitie de la
-politique monetaire -- et pour l'instant cette moitie n'est visible que pour la Fed, la BCE,
-la Banque du Japon et desormais la Banque d'Angleterre.
+politique monetaire -- desormais visible pour la Fed, la BCE, la Banque du Japon, la Banque
+d'Angleterre, la RBA et la Banque du Canada.
 
 Usage :
     python ingestion_bilans_nationaux.py
@@ -55,14 +56,25 @@ RBA_SERIES = {
 BOC_URL = ("https://www.bankofcanada.ca/valet/observations/group/B2_WEEKLY/json"
            "?start_date=1990-01-01")
 
+# Avoirs de reserve de l'Eurosysteme, hebdomadaires (portail de donnees de la BCE). Releve du
+# meme bilan consolide que l'actif total deja ingere via FRED, mais c'est la poche de reserves
+# de change -- la seule mesure de reserves a frequence utile trouvee le 2026-09-14. Le FMI les
+# publie en mensuel mais son miroir accuse ~14 mois de retard, et la Banque mondiale en annuel
+# seulement : ni l'un ni l'autre ne detecte une intervention de change.
+ECB_RESERVES_URL = ("https://data-api.ecb.europa.eu/service/data/ILM/"
+                    "W.U2.C.A050000.U2.EUR?format=jsondata")
+
 MIN_LIGNES = 50
 # Hebdomadaire, publie a J-5 environ (verifie : 2026-09-09 au 2026-09-14).
 MAX_JOURS_RETARD = 21
 
 
-def _http(url: str) -> str:
+def _http(url: str, accept: str = "text/csv") -> str:
+    # L'en-tete Accept doit correspondre a la source : la BCE renvoie une reponse vide si on
+    # lui demande du CSV (defaut trouve au test du 2026-09-14, la valeur par defaut convient
+    # aux sources CSV mais pas a elle).
     req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0",
-                                               "Accept": "text/csv"})
+                                               "Accept": accept})
     with urllib.request.urlopen(req, timeout=60) as resp:
         return resp.read().decode("utf-8", errors="replace")
 
@@ -170,7 +182,7 @@ def ingerer_rba() -> list:
 
 def ingerer_boc(compteur: list) -> list:
     try:
-        charge = json.loads(_http(BOC_URL))
+        charge = json.loads(_http(BOC_URL, "application/json"))
     except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError) as e:
         print(f"BOC : echec -- {e}")
         return [("BOC", str(e))]
@@ -224,6 +236,30 @@ def ingerer_boc(compteur: list) -> list:
     return echecs
 
 
+def ingerer_bce_reserves() -> list:
+    """Avoirs de reserve de l'Eurosysteme. Periodes en semaines ISO (2026-W36) : converties en
+    date du lundi de la semaine, pour rester homogene avec le reste du depot."""
+    try:
+        charge = json.loads(_http(ECB_RESERVES_URL, "application/json"))
+        periodes = charge["structure"]["dimensions"]["observation"][0]["values"]
+        observations = list(charge["dataSets"][0]["series"].values())[0]["observations"]
+        points = []
+        for index_str, valeurs in observations.items():
+            if valeurs[0] is None:
+                continue
+            brut = periodes[int(index_str)]["id"]
+            annee, semaine = brut.split("-W")
+            jour = datetime.strptime(f"{annee}-{semaine}-1", "%G-%V-%u").date().isoformat()
+            points.append((jour, float(valeurs[0])))
+        points.sort()
+        _ecrire("BCE_AVOIRS_DE_RESERVE", points)
+    except (ValueError, KeyError, IndexError, urllib.error.URLError,
+            urllib.error.HTTPError, TimeoutError) as e:
+        print(f"BCE_AVOIRS_DE_RESERVE : echec -- {e}")
+        return [("BCE_AVOIRS_DE_RESERVE", str(e))]
+    return []
+
+
 def main() -> int:
     print("=== Banque d'Angleterre ===")
     echecs = ingerer_boe()
@@ -232,7 +268,9 @@ def main() -> int:
     print("\n=== Banque du Canada ===")
     ecrites_boc = []
     echecs += ingerer_boc(ecrites_boc)
-    total = len(BOE_SERIES) + len(RBA_SERIES) + len(ecrites_boc)
+    print("\n=== BCE (avoirs de reserve) ===")
+    echecs += ingerer_bce_reserves()
+    total = len(BOE_SERIES) + len(RBA_SERIES) + len(ecrites_boc) + 1
     if echecs:
         print(f"\n{len(echecs)}/{total} bilans en echec : {[n for n, _ in echecs]}")
         return 1

@@ -71,6 +71,13 @@ MATIERES = {
 VOLATILITE = {
     "MOVE": "%5EMOVE",      # volatilite implicite des taux US
     "VVIX": "%5EVVIX",      # volatilite de la volatilite actions
+    # Ajoutes le 2026-09-14 : la vol n'existait que pour les actions et les taux, alors que
+    # les chocs macro passent souvent d'abord par l'energie et l'or.
+    "OVX": "%5EOVX",        # volatilite implicite du petrole
+    "GVZ": "%5EGVZ",        # volatilite implicite de l'or
+    "VXN": "%5EVXN",        # volatilite implicite du Nasdaq (complete le VIX)
+    # Vol FX cherchee et non trouvee : les indices de reference (VXY de JPMorgan, EUVIX)
+    # ne sont pas exposes par cet endpoint. Trou assume, c'est le dernier de la ligne vol.
 }
 
 INDICES_NON_US = {
