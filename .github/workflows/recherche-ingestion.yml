@@ -53,6 +53,10 @@ jobs:
         if: always()
         run: python recherche/modeles/ingestion_souverains_quotidiens.py
 
+      - name: Ingestion Tresor US (emission, dette, tresorerie)
+        if: always()
+        run: python recherche/modeles/ingestion_tresor_us.py
+
       - name: Ingestion communiques FOMC
         if: always()
         run: python recherche/modeles/ingestion_fomc_statements.py

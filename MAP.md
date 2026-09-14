@@ -66,6 +66,10 @@ Même schéma que GMDC (ingestion → modèles → état → visualisations → 
     C'est ce qui comble le trou « inflation hors US » : FRED, Eurostat, la BCE, l'OCDE et le
     FMI ont tous été testés le 2026-09-14 et étaient trop en retard (de 9 à 60 mois) ; le BIS
     publie à 2026-07. Tableau comparatif des sources dans le docstring du fichier.
+  - `ingestion_tresor_us.py` — API FiscalData du Trésor : calendrier d'adjudications (l'offre
+    de papier souverain, qui pèse sur la prime de terme sans passer par la Fed), encours de
+    dette quotidien, et solde du compte de trésorerie à la Fed (variable de liquidité de
+    premier ordre : quand ce compte se remplit il retire des réserves du système bancaire).
   - `ingestion_cftc.py` — COT, 9 contrats.
   - `ingestion_fomc_statements.py` / `ingestion_fomc_minutes.py` — texte brut Fed.
   - `ingestion_bce_declarations.py` — déclarations de politique monétaire BCE. **Seule la
@@ -147,7 +151,13 @@ dérive de documentation corrigée ce jour, le repo tournait déjà depuis une s
   depuis le 2026-09-14 (ventes de détail, production industrielle, CFNAI, confiance Michigan,
   et les enquêtes Empire State / Philly Fed comme substituts gratuits du PMI — S&P Global et
   ISM sont payants, aucune voie gratuite trouvée). **Toujours absents hors US.**
-- **Réserves de change, flux de fonds, calendrier d'émission souveraine** : absents.
+- ~~Calendrier d'émission souveraine~~ — **résolu le 2026-09-14** (Trésor US, FiscalData),
+  ainsi que le déficit budgétaire **mensuel** et le compte courant côté FRED.
+- **Réserves de change hors US** : uniquement en **annuel** (Banque mondiale) — testé, mais
+  une fréquence annuelle ne permet pas de détecter une intervention de change, donc non
+  ingéré plutôt que de donner une fausse impression de couverture.
+- **Flux de fonds** : pas de source gratuite. Les données de référence (EPFR, Lipper) sont
+  propriétaires. Non résolu.
 - **Volatilité zone euro (VSTOXX)** : indisponible via l'endpoint utilisé.
 - **NLP** : l'ingestion BCE existe depuis le 2026-09-14, mais **aucun modèle ne la lit
   encore** — les 12 modèles NLP restent écrits contre le FOMC. C'est un cas particulier du

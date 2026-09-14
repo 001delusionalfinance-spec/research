@@ -168,6 +168,18 @@ SERIES = [
     # --- Agregats monetaires US ---
     "TOTRESNS",  # Reserves des banques aupres de la Fed (mensuel) -- liquidite du systeme
     "BOGMBASE",  # Base monetaire (mensuel)
+    "WRESBAL",   # Reserves bancaires, HEBDOMADAIRE -- meme grandeur que TOTRESNS mais en
+                 # frequence utile pour suivre la liquidite ; les deux sont gardees.
+    "RESPPLLOPNWW",  # Prets de la Fed aux etablissements (hebdomadaire)
+
+    # --- Exterieur et budgetaire (ajoute le 2026-09-14) ---
+    "IEABC",         # Solde du compte courant US (trimestriel)
+    "MTSDS133FMS",   # Deficit/excedent budgetaire MENSUEL du Tresor US.
+                     # Remplace fonctionnellement FYFSGDA188S, ecartee le meme jour parce
+                     # qu'annuelle et vieille de ~20 mois : celle-ci est mensuelle et fraiche.
+    "TRESEGUSM052N",  # Reserves internationales des US (mensuel)
+    #     BOPBCA (compte courant, ancienne serie) testee et rejetee : figee a 2014-01.
+    #     TOTRESV testee : renvoie 404, n'existe pas sous ce nom.
 ]
 
 BRUT_DIR = Path(__file__).resolve().parents[2] / "donnees" / "brut" / "fred"
