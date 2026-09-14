@@ -49,6 +49,10 @@ jobs:
         if: always()
         run: python recherche/modeles/ingestion_bis_macro.py
 
+      - name: Ingestion souverains quotidiens (BCE, BoE, MOF Japon)
+        if: always()
+        run: python recherche/modeles/ingestion_souverains_quotidiens.py
+
       - name: Ingestion communiques FOMC
         if: always()
         run: python recherche/modeles/ingestion_fomc_statements.py
