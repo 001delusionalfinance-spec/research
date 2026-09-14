@@ -217,6 +217,9 @@ dérive de documentation corrigée ce jour, le repo tournait déjà depuis une s
 - **Flux de fonds** : pas de source gratuite. Les données de référence (EPFR, Lipper) sont
   propriétaires. Non résolu.
 - **Volatilité zone euro (VSTOXX)** : indisponible via l'endpoint utilisé.
-- **NLP** : l'ingestion BCE existe depuis le 2026-09-14, mais **aucun modèle ne la lit
-  encore** — les 12 modèles NLP restent écrits contre le FOMC. C'est un cas particulier du
-  chantier 6 ci-dessus (ingérer n'est pas consommer).
+- **NLP** : la BCE et la Banque d'Angleterre sont désormais lues par
+  `modele_ton_banques_centrales`, qui applique le même lexique aux trois institutions. Les
+  autres modèles NLP restent écrits contre le FOMC seul — ce n'est pas un oubli : un modèle de
+  désaccord au vote ou d'écart communiqué/minutes n'a pas d'équivalent direct chez les deux
+  autres, qui ne publient ni les mêmes documents ni la même procédure. **La BOJ reste absente**
+  (déclarations en PDF).
