@@ -51,19 +51,31 @@ BASE = ("https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/{je
 # present : la production industrielle de la ZONE EURO est parue a 2026-06 quand les pays
 # membres etaient a 2026-07 -- normal, l'agregat attend la remontee de tous les membres.
 # Un seuil commun a 100 jours la rejetait a 105 comme "gelee".
+# Chaque entree porte AUSSI sa geographie : le code de la zone euro n'est pas le meme d'un jeu
+# a l'autre (EA21 pour l'activite, EA20 pour le budgetaire). Verifie le 2026-09-14 -- utiliser
+# le mauvais code renvoie une reponse structurellement valide mais VIDE, donc silencieuse.
+PAYS = {"DE": "Allemagne", "FR": "France", "IT": "Italie", "ES": "Espagne"}
+GEOS_ACTIVITE = {"EA21": "Zone euro", **PAYS}
+GEOS_BUDGET = {"EA20": "Zone euro", **PAYS}
+
 INDICATEURS = [
     ("production_industrielle", "sts_inpr_m",
-     "indic_bt=PRD&s_adj=SCA&nace_r2=B-D&unit=I21", "Production industrielle", 130),
+     "indic_bt=PRD&s_adj=SCA&nace_r2=B-D&unit=I21", "Production industrielle", 130,
+     GEOS_ACTIVITE),
     ("ventes_detail", "sts_trtu_m",
-     "indic_bt=VOL_SLS&s_adj=SCA&nace_r2=G47&unit=I21", "Ventes de detail", 100),
+     "indic_bt=VOL_SLS&s_adj=SCA&nace_r2=G47&unit=I21", "Ventes de detail", 100,
+     GEOS_ACTIVITE),
     ("chomage", "une_rt_m",
-     "s_adj=SA&age=TOTAL&sex=T&unit=PC_ACT", "Taux de chomage", 100),
+     "s_adj=SA&age=TOTAL&sex=T&unit=PC_ACT", "Taux de chomage", 100, GEOS_ACTIVITE),
     ("confiance_industrielle", "ei_bsin_m_r2",
-     "indic=BS-ICI&s_adj=SA", "Confiance industrielle (substitut PMI)", 100),
+     "indic=BS-ICI&s_adj=SA", "Confiance industrielle (substitut PMI)", 100, GEOS_ACTIVITE),
+    # Budgetaire, ajoute le 2026-09-14 : le poste n'existait que pour les US. Trimestriel, donc
+    # un seuil de peremption bien plus large (2026-Q1 au 2026-09-14, publication normale).
+    ("dette_publique", "gov_10q_ggdebt",
+     "sector=S13&na_item=GD&unit=PC_GDP", "Dette publique (% du PIB)", 300, GEOS_BUDGET),
+    ("solde_public", "gov_10q_ggnfa",
+     "sector=S13&na_item=B9&unit=PC_GDP", "Solde public (% du PIB)", 300, GEOS_BUDGET),
 ]
-
-GEOS = {"EA21": "Zone euro", "DE": "Allemagne", "FR": "France",
-        "IT": "Italie", "ES": "Espagne"}
 
 MIN_LIGNES = 24
 TENTATIVES = 3
@@ -106,8 +118,14 @@ def fetch(jeu: str, filtres: str, geo: str) -> list:
 def valider(points: list, nom: str, retard_max: int) -> None:
     if len(points) < MIN_LIGNES:
         raise ValueError(f"seulement {len(points)} ligne(s) pour {nom} -- snapshot degrade")
-    annee, mois = points[-1][0].split("-")
-    derniere = datetime(int(annee), int(mois), 1, tzinfo=timezone.utc).date()
+    brut = points[-1][0]
+    if "-Q" in brut:   # les jeux budgetaires sont trimestriels ("2026-Q1")
+        annee, trimestre = brut.split("-Q")
+        derniere = datetime(int(annee), (int(trimestre) - 1) * 3 + 1, 1,
+                            tzinfo=timezone.utc).date()
+    else:
+        annee, mois = brut.split("-")
+        derniere = datetime(int(annee), int(mois), 1, tzinfo=timezone.utc).date()
     retard = (datetime.now(timezone.utc).date() - derniere).days
     if retard > retard_max:
         raise ValueError(f"derniere observation {points[-1][0]} pour {nom} -- {retard} jours "
@@ -118,9 +136,9 @@ def valider(points: list, nom: str, retard_max: int) -> None:
 def main() -> int:
     echecs = []
     total = 0
-    for nom_ind, jeu, filtres, libelle, retard_max in INDICATEURS:
+    for nom_ind, jeu, filtres, libelle, retard_max, geos in INDICATEURS:
         print(f"\n=== {libelle} ===")
-        for geo, pays in GEOS.items():
+        for geo, pays in geos.items():
             total += 1
             etiquette = f"{libelle} {pays}"
             try:

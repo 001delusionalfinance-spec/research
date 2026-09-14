@@ -58,6 +58,13 @@ FX = {
     "DXY": "DX-Y.NYB",      # indice dollar
     "USDCNY": "USDCNY=X",   # bloc Chine (suivi cote FRED via IR3TIB01CNM156N)
     "USDKRW": "USDKRW=X",   # bloc Coree
+    # Croisements sans dollar, ajoutes le 2026-09-14. Ils isolent une comparaison entre deux
+    # politiques monetaires NON americaines : lire BCE contre BOJ via EURUSD et USDJPY fait
+    # transiter la vue par le dollar, qui a sa propre dynamique. EURJPY la donne directement.
+    "EURJPY": "EURJPY=X",
+    "EURGBP": "EURGBP=X",
+    "EURCHF": "EURCHF=X",
+    "AUDJPY": "AUDJPY=X",   # couple classique de sensibilite au risque
 }
 
 MATIERES = {

@@ -40,10 +40,18 @@ from pathlib import Path
 BRUT_DIR = Path(__file__).resolve().parents[2] / "donnees" / "brut" / "souverains"
 
 ECB_URL = "https://data-api.ecb.europa.eu/service/data/YC/{cle}?format=jsondata"
+# Courbe elargie le 2026-09-14 : de 3 a 8 maturites AAA. Une courbe a trois points ne permet
+# pas de lire une deformation (pentification par l'avant contre par l'arriere, bosse sur le
+# ventre) -- il faut les points intermediaires.
 ECB_SERIES = {
+    "ZONE_EURO_AAA_1A": "B.U2.EUR.4F.G_N_A.SV_C_YM.SR_1Y",
     "ZONE_EURO_AAA_2A": "B.U2.EUR.4F.G_N_A.SV_C_YM.SR_2Y",
+    "ZONE_EURO_AAA_3A": "B.U2.EUR.4F.G_N_A.SV_C_YM.SR_3Y",
     "ZONE_EURO_AAA_5A": "B.U2.EUR.4F.G_N_A.SV_C_YM.SR_5Y",
+    "ZONE_EURO_AAA_7A": "B.U2.EUR.4F.G_N_A.SV_C_YM.SR_7Y",
     "ZONE_EURO_AAA_10A": "B.U2.EUR.4F.G_N_A.SV_C_YM.SR_10Y",
+    "ZONE_EURO_AAA_20A": "B.U2.EUR.4F.G_N_A.SV_C_YM.SR_20Y",
+    "ZONE_EURO_AAA_30A": "B.U2.EUR.4F.G_N_A.SV_C_YM.SR_30Y",
     "ZONE_EURO_TOUS_10A": "B.U2.EUR.4F.G_N_C.SV_C_YM.SR_10Y",
 }
 
