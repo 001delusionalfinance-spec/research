@@ -1,4 +1,4 @@
-# Inventaire du dispositif -- 2026-09-14 14:30 UTC
+# Inventaire du dispositif -- 2026-09-14 14:48 UTC
 
 Genere par `inventaire.py`. **Ne pas recopier ces chiffres ailleurs** : ils changent a chaque ajout, et une copie manuelle derive le jour meme (constate le 2026-09-14).
 
@@ -37,6 +37,6 @@ Fraicheur : 271 ok, 1 suspecte.
 
 ## Sorties
 
-- 113 fichiers d'etat (`recherche/etat/`)
-- 113 apercus graphiques (`recherche/visualisations/`)
+- 114 fichiers d'etat (`recherche/etat/`)
+- 114 apercus graphiques (`recherche/visualisations/`)
 - `rapports/lecture-du-jour.md`, `rapports/etat-recherche.xlsx`

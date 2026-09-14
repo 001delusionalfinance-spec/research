@@ -1,6 +1,6 @@
 serie,colonne,date_avant,taille_avant,date_apres,taille_apres,variation_pct,nature
 crowding_cross_asset,n_marches_tendus,2026-09-01,3.0,2026-09-08,15.0,400.0,a verifier (peut etre un resultat)
 crowding_cross_asset,n_marches_total,2026-09-01,15.0,2026-09-08,32.0,113.3,perimetre
-dollar_smile,n_devises_non_usd_courtes,2026-09-01,3.0,2026-09-08,2.0,33.3,perimetre
+dollar_smile,n_devises_non_usd_courtes,2026-09-01,3.0,2026-09-08,2.0,33.3,a verifier (peut etre un resultat)
 nombre_effectif_paris,n_marches,2026-09-01,15.0,2026-09-08,32.0,113.3,perimetre
 nombre_effectif_paris,nombre_effectif_paris,2026-09-01,8.54,2026-09-08,13.39,56.8,a verifier (peut etre un resultat)
