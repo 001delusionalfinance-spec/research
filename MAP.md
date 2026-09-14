@@ -70,6 +70,10 @@ Même schéma que GMDC (ingestion → modèles → état → visualisations → 
     de papier souverain, qui pèse sur la prime de terme sans passer par la Fed), encours de
     dette quotidien, et solde du compte de trésorerie à la Fed (variable de liquidité de
     premier ordre : quand ce compte se remplit il retire des réserves du système bancaire).
+  - `ingestion_eurostat.py` — activité réelle et enquêtes, zone euro + Allemagne, France,
+    Italie, Espagne : production industrielle, ventes de détail, chômage, et **confiance
+    industrielle comme substitut du PMI** (pendant européen des enquêtes Empire State /
+    Philly Fed retenues côté US — les PMI S&P Global et l'ISM sont propriétaires).
   - `ingestion_cftc.py` — COT, 9 contrats.
   - `ingestion_fomc_statements.py` / `ingestion_fomc_minutes.py` — texte brut Fed.
   - `ingestion_bce_declarations.py` — déclarations de politique monétaire BCE. **Seule la
@@ -147,10 +151,14 @@ dérive de documentation corrigée ce jour, le repo tournait déjà depuis une s
   (core) ni de décomposition par poste.
 - **Chômage suisse** : aucune série exploitable trouvée sur FRED.
 - ~~Souverains non-US en quotidien~~ — **résolu le 2026-09-14** (BCE, BoE, MOF Japon).
-- **PMI, ventes de détail, production industrielle** : couverts pour les **US seulement**
-  depuis le 2026-09-14 (ventes de détail, production industrielle, CFNAI, confiance Michigan,
-  et les enquêtes Empire State / Philly Fed comme substituts gratuits du PMI — S&P Global et
-  ISM sont payants, aucune voie gratuite trouvée). **Toujours absents hors US.**
+- **PMI, ventes de détail, production industrielle** : couverts pour les **US** (FRED) et
+  pour la **zone euro + DE/FR/IT/ES** (Eurostat) depuis le 2026-09-14. **Restent absents :
+  Royaume-Uni, Japon, Chine, Corée** — chacun demanderait sa source nationale (ONS, e-Stat,
+  NBS, KOSIS), non ouvert à ce stade.
+- **Réserves de change hors US** : le FMI (via DBnomics) les publie en **mensuel**, ce qui est
+  la bonne fréquence, mais le miroir accuse ~14 mois de retard (Chine à 2025-07 au
+  2026-09-14). Utilisable pour de l'étude historique, pas pour détecter une intervention.
+  Les sources nationales (SNB, BOJ, SAFE) seraient nécessaires pour du courant — non ouvert.
 - ~~Calendrier d'émission souveraine~~ — **résolu le 2026-09-14** (Trésor US, FiscalData),
   ainsi que le déficit budgétaire **mensuel** et le compte courant côté FRED.
 - **Réserves de change hors US** : uniquement en **annuel** (Banque mondiale) — testé, mais

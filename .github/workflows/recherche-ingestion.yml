@@ -57,6 +57,10 @@ jobs:
         if: always()
         run: python recherche/modeles/ingestion_tresor_us.py
 
+      - name: Ingestion Eurostat (activite reelle et enquetes, zone euro)
+        if: always()
+        run: python recherche/modeles/ingestion_eurostat.py
+
       - name: Ingestion communiques FOMC
         if: always()
         run: python recherche/modeles/ingestion_fomc_statements.py
