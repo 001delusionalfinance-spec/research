@@ -73,7 +73,15 @@ SERIES = [
     "LRHUTTTTDEM156S",    # Taux de chomage Allemagne, harmonise OCDE (mensuel)
     # --- Royaume-Uni ---
     "IUDSOIA",             # SONIA, taux au jour le jour (quotidien)
-    "LRHUTTTTGBM156S",     # Taux de chomage UK, harmonise OCDE (mensuel)
+    "LRHUTTTTGBM156S",     # Taux de chomage UK, harmonise OCDE (mensuel).
+    #     SOUS SURVEILLANCE (2026-09-14) : derniere observation a 166 jours pour
+    #     un rythme habituel de 31, quand les autres pays de la meme famille OCDE
+    #     sont a 105. Elle decroche donc de ses pairs sans etre gelee.
+    #     controle_fraicheur.py la classe SUSPECTE et basculera seul en GELEE si
+    #     elle passe le seuil. Deux remplacants (LRUNTTTTGBM156S, LRHUTTTTGBQ156S)
+    #     n'ont pas pu etre testes -- l'endpoint public d'exploration de FRED
+    #     etait en timeout. A retenter avant de la remplacer : substituer une
+    #     serie sans avoir verifie la remplacante serait pire que la garder.
     # --- Japon ---
     "IRSTCI01JPM156N",     # Taux interbancaire au jour le jour, proxy taux BOJ (mensuel)
     "LRHUTTTTJPM156S",     # Taux de chomage Japon, harmonise OCDE (mensuel)

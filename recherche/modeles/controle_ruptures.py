@@ -31,7 +31,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from _lib import ETAT  # noqa: E402
+from _lib import BRUT, ETAT  # noqa: E402
 
 SORTIE = ETAT / "ruptures_perimetre.csv"
 # Une colonne decrit la taille de l'echantillon si son nom COMMENCE par n_ / nombre_, ou se
@@ -70,9 +70,19 @@ def _denominateurs(lignes: list, colonnes: list) -> set:
     plus grande colonne de comptage de sa ligne (un total majore par construction ses parties).
     """
     trouves = {c for c in colonnes if c.lower().endswith(SUFFIXES_TAILLE)}
+    # Si une colonne _total existe, elle EST le denominateur et aucune autre ne peut l'etre.
+    # Sans cette regle, une egalite de valeurs faisait designer la mauvaise colonne : sur
+    # `dollar_smile`, "3 devises courtes sur 3 au total" laissait max() choisir au hasard, et
+    # c'est le RESULTAT qui etait signale comme un changement de perimetre.
+    if trouves:
+        return trouves
     for ligne in lignes:
         valeurs = {c: _nombre(ligne.get(c)) for c in colonnes}
         valeurs = {c: v for c, v in valeurs.items() if v is not None}
+        # Il faut AU MOINS DEUX colonnes de comptage pour qu'une soit le total des autres.
+        # Avec une seule, la designer comme denominateur est arbitraire -- faux positif reel
+        # constate le 2026-09-14 sur `dollar_smile/n_devises_non_usd_courtes`, qui est un
+        # resultat (combien de devises sont courtes) et non un univers.
         if len(valeurs) > 1:
             trouves.add(max(valeurs, key=valeurs.get))
     return trouves
@@ -132,6 +142,49 @@ def analyser(chemin: Path) -> list:
     return ruptures
 
 
+def _ruptures_univers_de_donnees() -> list:
+    """Compare le nombre de fichiers par source a ce qui etait observe au passage precedent.
+
+    Necessaire parce que le controle par colonne ne voit QUE les changements declares. Trois
+    modeles parcourent le dossier des donnees COT sans jamais publier le nombre de contrats
+    traites : leur univers est passe de 9 a 32 le 2026-09-14 et rien dans leurs sorties ne
+    pouvait le reveler -- il a fallu lire leur documentation pour s'en apercevoir.
+
+    En surveillant les dossiers eux-memes, une source qui gagne ou perd des series est vue,
+    que les modeles la declarent ou non.
+    """
+    reference = ETAT / "univers_sources.csv"
+    actuel = {}
+    for dossier in sorted(d for d in BRUT.iterdir() if d.is_dir()):
+        actuel[dossier.name] = len(list(dossier.rglob("*.csv")))
+
+    precedent = {}
+    if reference.exists():
+        with reference.open(encoding="utf-8") as f:
+            for ligne in csv.DictReader(f):
+                precedent[ligne["source"]] = int(ligne["n_fichiers"])
+
+    ruptures = []
+    for source, n in actuel.items():
+        n_avant = precedent.get(source)
+        if n_avant is None or n_avant == n:
+            continue
+        variation = abs(n - n_avant) / max(n_avant, 1) * 100
+        if variation >= SEUIL_RUPTURE_PCT:
+            ruptures.append({
+                "serie": f"[source] {source}", "colonne": "nombre de fichiers",
+                "date_avant": "passage precedent", "taille_avant": n_avant,
+                "date_apres": "ce passage", "taille_apres": n,
+                "variation_pct": round(variation, 1), "nature": "perimetre",
+            })
+
+    with reference.open("w", newline="", encoding="utf-8") as f:
+        ecrivain = csv.writer(f)
+        ecrivain.writerow(["source", "n_fichiers"])
+        ecrivain.writerows(sorted(actuel.items()))
+    return ruptures
+
+
 def main() -> int:
     fichiers = sorted(ETAT.glob("*.csv"))
     if not fichiers:
@@ -140,9 +193,10 @@ def main() -> int:
 
     ruptures = []
     for chemin in fichiers:
-        if chemin.name in (SORTIE.name, "fraicheur.csv"):
+        if chemin.name in (SORTIE.name, "fraicheur.csv", "univers_sources.csv"):
             continue
         ruptures.extend(analyser(chemin))
+    ruptures.extend(_ruptures_univers_de_donnees())
 
     if ruptures:
         SORTIE.parent.mkdir(parents=True, exist_ok=True)
