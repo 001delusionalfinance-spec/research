@@ -1,0 +1,42 @@
+# Inventaire du dispositif -- 2026-09-14 14:10 UTC
+
+Genere par `inventaire.py`. **Ne pas recopier ces chiffres ailleurs** : ils changent a chaque ajout, et une copie manuelle derive le jour meme (constate le 2026-09-14).
+
+## Donnees ingerees
+
+| Source | Fichiers |
+|---|---|
+| FRED (series officielles) | 73 |
+| BIS -- prix a la consommation | 12 |
+| BIS -- taux directeurs quotidiens | 12 |
+| BIS -- service de la dette | 12 |
+| Courbes souveraines quotidiennes | 26 |
+| Marches (FX, matieres, vol, indices) | 32 |
+| Eurostat | 30 |
+| Bilans de banques centrales | 29 |
+| Positionnement CFTC | 32 |
+| Tresor US | 3 |
+| Indices et secteurs (yfinance) | 12 |
+| **Total** | **276** |
+
+Fraicheur : 271 ok, 1 suspecte.
+
+## Modeles
+
+| Famille | Modeles |
+|---|---|
+| factorielle | 13 |
+| macro | 20 |
+| ml | 12 |
+| nlp | 13 |
+| positionnement-comportemental | 14 |
+| risque | 13 |
+| series-temporelles | 13 |
+| statistique | 13 |
+| **Total** | **111** |
+
+## Sorties
+
+- 113 fichiers d'etat (`recherche/etat/`)
+- 113 apercus graphiques (`recherche/visualisations/`)
+- `rapports/lecture-du-jour.md`, `rapports/etat-recherche.xlsx`

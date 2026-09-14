@@ -1,4 +1,4 @@
-# Lecture du jour -- 2026-09-14 13:47 UTC
+# Lecture du jour -- 2026-09-14 14:09 UTC
 
 111 modeles sur 111 ont produit une lecture.
 
@@ -60,7 +60,7 @@
 
 ## nlp
 
-- **ton_banques_centrales** -- ton (pour mille, meme lexique) : Fed +13.42, BCE +7.28, Banque d'Angleterre -15.34. Plus positive : Fed, plus negative : Banque d'Angleterre -- les tons DIVERGENT -- BCE se detend pendant que Fed, Banque d'Angleterre se durcit
+- **ton_banques_centrales** -- variation du ton depuis la publication precedente, par institution (pour mille, meme lexique) : Fed -4.28, BCE +12.50, Banque d'Angleterre -4.90 -- les tons DIVERGENT -- BCE se detend pendant que Fed, Banque d'Angleterre se durcit. Les niveaux ne sont PAS comparables entre institutions : un seul mot de ton les deplace de Fed 6.7, BCE 0.6, Banque d'Angleterre 0.3 pour mille respectivement, selon la longueur du document
 - **ton_fomc** -- 20260617 -> 20260729 : ton +17.70‰ -> +13.42‰ (diff -4.28‰, ton qui se degrade), taux inchange (3-1/2 to 3-3/4), dissidents 0 -> 3
 - **frequence_mots_cles_fomc** -- communique 20260729, 151 mots -- mots-cles presents : {'uncertainty': 1, 'elevated': 2, 'solid': 1, 'strong': 1} -- theme dominant : 'elevated' (2 mention(s))
 - **complexite_texte_fomc** -- communique 20260729 : 149 mots, 10 phrases (14.9 mots/phrase en moyenne, phrases de longueur moderee), 32.9% de mots longs (>6 lettres, vocabulaire dense)
@@ -117,7 +117,7 @@
 - **changepoint_volatilite** -- rupture detectee le 2011-12-21 -- vol avant=0.2127, vol apres=0.1668 (reduction SSE=0.5%) -- baisse de la vol au point de rupture (-21.6%)
 - **kalman_niveau_local** -- VIX observe=17.55, filtre Kalman=17.33 (ecart-type=0.62), ratio signal/bruit=0.2052 -- le filtre lisse fortement le bruit, reagit lentement (ecart obs.-filtre=+0.22)
 - **hp_filter_taux** -- taux 10 ans observe=4.950%, tendance HP=4.789%, ecart cyclique=+0.161pt -- au-dessus de sa tendance locale
-- **var_sp500_vix** -- VAR ordre choisi par AIC=10 -- coef SP500(t-1)->VIX(t)=0.4264235235490972 (SP500(t-1) en hausse -> VIX(t) tend aussi a monter), coef VIX(t-1)->SP500(t)=-0.05236097746923429 (VIX(t-1) en hausse -> SP500(t) tend a baisser)
+- **var_sp500_vix** -- VAR ordre choisi par AIC=10 -- coef SP500(t-1)->VIX(t)=0.42642352354906876 (SP500(t-1) en hausse -> VIX(t) tend aussi a monter), coef VIX(t-1)->SP500(t)=-0.052360977469234446 (VIX(t-1) en hausse -> SP500(t) tend a baisser)
 - **analyse_spectrale** -- 3 periodes dominantes (jours de bourse) : [2.2, 3.0, 2.4] -- aucune des 3 periodes dominantes ne correspond a un cycle connu (hebdo/mensuel/trimestriel)
 - **arima** -- ARIMA(1,1,1) sur 100 previsions 1-jour test : RMSE=2.341 vs baseline naive MSE=5.502 -- ARIMA bat la persistance simple
 - **decomposition_stl** -- VIX : tendance=15.47, composante saisonniere (periode 5j)=+0.121, residu=+1.958 -- la saisonnalite explique 0.71% de la variance totale (negligeable)

@@ -2,3 +2,6 @@ institution,document,score_ton_pour_mille,n_mots,variation_vs_precedent,lecture
 Fed,20260729,13.423,149,-4.276,ton plus negatif que la publication precedente
 BCE,declaration_2026-09-10,7.283,1785,12.502,ton plus positif que la publication precedente
 Banque d'Angleterre,resume_2026-07-30,-15.337,3912,-4.897,ton plus negatif que la publication precedente
+Fed,20260729,13.423,149,-4.276,ton plus negatif que la publication precedente,6.71
+BCE,declaration_2026-09-10,7.283,1785,12.502,ton plus positif que la publication precedente,0.56
+Banque d'Angleterre,resume_2026-07-30,-15.337,3912,-4.897,ton plus negatif que la publication precedente,0.26
