@@ -46,6 +46,30 @@ CONTRACTS = {
     "PLATINUM": "PLATINUM - NEW YORK MERCANTILE EXCHANGE",  # ajoute 2026-09-08, verifie frais
     "RUSSELL_MINI": "RUSSELL E-MINI - CHICAGO MERCANTILE EXCHANGE",  # ajoute 2026-09-08
     "PALLADIUM": "PALLADIUM - NEW YORK MERCANTILE EXCHANGE",  # ajoute 2026-09-08
+
+    # --- Elargissement du 2026-09-14, 17 contrats, tous verifies frais avant ajout ---
+    # Le positionnement ne couvrait qu'UN point de la courbe des taux (10 ans) alors que c'est
+    # la structure du positionnement obligataire qui informe -- etre short le 2 ans et long le
+    # 30 ans n'est pas la meme vue qu'un short uniforme. Et il manquait quatre devises du G10.
+    "UST_2Y": "UST 2Y NOTE - CHICAGO BOARD OF TRADE",
+    "UST_5Y": "UST 5Y NOTE - CHICAGO BOARD OF TRADE",
+    "UST_BOND": "UST BOND - CHICAGO BOARD OF TRADE",
+    "UST_ULTRA_BOND": "ULTRA UST BOND - CHICAGO BOARD OF TRADE",
+    "UST_ULTRA_10Y": "ULTRA UST 10Y - CHICAGO BOARD OF TRADE",
+    "FED_FUNDS": "FED FUNDS - CHICAGO BOARD OF TRADE",
+    "SOFR_3M": "SOFR-3M - CHICAGO MERCANTILE EXCHANGE",
+    "CAD_FX": "CANADIAN DOLLAR - CHICAGO MERCANTILE EXCHANGE",
+    "AUD_FX": "AUSTRALIAN DOLLAR - CHICAGO MERCANTILE EXCHANGE",
+    "CHF_FX": "SWISS FRANC - CHICAGO MERCANTILE EXCHANGE",
+    "NZD_FX": "NZ DOLLAR - CHICAGO MERCANTILE EXCHANGE",
+    "MXN_FX": "MEXICAN PESO - CHICAGO MERCANTILE EXCHANGE",
+    "NAT_GAS": "NAT GAS NYME - NEW YORK MERCANTILE EXCHANGE",
+    "BRENT_CRUDE": "BRENT LAST DAY - NEW YORK MERCANTILE EXCHANGE",
+    # Agricoles : role macro marginal en soi, mais elles portent une part reelle du choc
+    # d'inflation alimentaire, absent de tout le reste du dispositif.
+    "CORN": "CORN - CHICAGO BOARD OF TRADE",
+    "WHEAT": "WHEAT-SRW - CHICAGO BOARD OF TRADE",
+    "SOYBEANS": "SOYBEANS - CHICAGO BOARD OF TRADE",
 }
 
 BRUT_DIR = Path(__file__).resolve().parents[2] / "donnees" / "brut" / "cftc"
@@ -55,7 +79,11 @@ def fetch_contract(nom_contrat: str) -> list:
     params = {
         "$where": f"market_and_exchange_names='{nom_contrat}'",
         "$order": "report_date_as_yyyy_mm_dd DESC",
-        "$limit": "156",  # ~3 ans hebdomadaires
+        "$limit": "1000",  # ~19 ans hebdomadaires. Releve de 156 (~3 ans) le 2026-09-14 :
+                           # juger qu'un positionnement est "extreme" sur trois ans seulement
+                           # n'a pas de sens, l'extreme se mesure contre un historique long
+                           # (modele_extremes_historiques.py et modele_persistance_extremes.py
+                           # de la famille positionnement en dependent directement).
     }
     url = f"{SOCRATA_BASE}?{urllib.parse.urlencode(params)}"
     req = urllib.request.Request(url, headers={"User-Agent": "research/1.0"})
