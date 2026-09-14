@@ -169,7 +169,7 @@ def main() -> int:
                              ("volatilite", VOLATILITE), ("indices", INDICES_NON_US)):
         tous += [(famille, nom, ticker) for nom, ticker in mapping.items()]
 
-    echecs = []
+    echecs, inchanges = [], []
     for famille, nom, ticker in tous:
         try:
             points = fetch_chart(ticker, PLAGE)
@@ -182,17 +182,30 @@ def main() -> int:
         dossier = BRUT_DIR / famille
         dossier.mkdir(parents=True, exist_ok=True)
         out_path = dossier / f"{nom}.csv"
-        with out_path.open("w", encoding="utf-8") as f:
-            f.write("date,close\n")
-            for date_str, close in points:
-                f.write(f"{date_str},{close:.6f}\n")
+        contenu = "date,close\n" + "".join(
+            f"{date_str},{close:.6f}\n" for date_str, close in points)
+
+        # Ecriture CONDITIONNELLE. Cette ingestion tourne toutes les 30 minutes et reecrit
+        # l'historique complet a chaque passage -- environ 3 Mo pour l'ensemble des marches, soit
+        # une trentaine de reecritures par jour ouvre. Or a un instant donne la plupart de ces
+        # marches ne cotent pas : les indices asiatiques pendant la seance americaine, les
+        # matieres premieres hors de leurs heures. Reecrire un fichier identique cree un objet
+        # git nouveau pour rien et fait grossir le depot sans rien apporter.
+        if out_path.exists() and out_path.read_text(encoding="utf-8") == contenu:
+            inchanges.append(nom)
+            continue
+        out_path.write_text(contenu, encoding="utf-8")
         print(f"{nom} : {len(points)} lignes -> {out_path}")
 
+    if inchanges:
+        print(f"\n{len(inchanges)} marche(s) inchange(s) depuis le passage precedent, fichier "
+              f"non reecrit (marche ferme ou aucune cotation nouvelle)")
     if echecs:
         print(f"\n{len(echecs)}/{len(tous)} marches en echec : {[n for n, _ in echecs]}")
         return 1
 
-    print(f"\nOK -- {len(tous)} marches ingeres")
+    print(f"\nOK -- {len(tous)} marches ingeres ({len(tous) - len(inchanges)} mis a jour, "
+          f"{len(inchanges)} inchanges)")
     return 0
 
 

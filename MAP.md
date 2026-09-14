@@ -54,7 +54,7 @@ construire un signal de trade.
 Même schéma que GMDC (ingestion → modèles → état → visualisations → rapports) :
 
 - **Ingestion programmée** (`donnees/brut/`), 1×/jour ouvré :
-  - `ingestion_fred.py` — 67 séries officielles, dont les **bilans de banques centrales
+  - `ingestion_fred.py` — séries officielles, dont les **bilans de banques centrales
     (QE/QT)** : actif total de la Fed et ses composantes (Treasuries, MBS, SOMA), reverse repo
     total et overnight, compte du Trésor vu du bilan de la Fed, plus les actifs totaux de la
     BCE et de la Banque du Japon. Sans ces séries le dispositif ne voyait qu'une moitié de la
@@ -63,7 +63,7 @@ Même schéma que GMDC (ingestion → modèles → état → visualisations → 
     Chine + Corée) en taux directeur et emploi, courbe des taux US (3M/2a/5a/10a/30a),
     rendements réels TIPS + point mort d'inflation, souverains 10 ans non-US, spreads crédit
     IG/HY US et corporate émergent, cycle immobilier, balance commerciale, dette publique.
-  - `ingestion_marches.py` — 25 marchés : FX G10 + DXY + CNY/KRW, 5 matières premières
+  - `ingestion_marches.py` — FX G10 + DXY + CNY/KRW, 5 matières premières
     (Brent, WTI, gaz, or, cuivre), vol de taux (MOVE) et vol de la vol (VVIX), indices
     non-US (Euro Stoxx, Nikkei, FTSE, DAX, KOSPI, Hang Seng).
   - `ingestion_yfinance_indices.py` — S&P 500 et VIX (30 ans) + 10 ETF sectoriels.
@@ -84,12 +84,12 @@ Même schéma que GMDC (ingestion → modèles → état → visualisations → 
     composition dit s'il s'agit de QE ou d'accumulation de réserves) et Banque du Canada
     (groupe complet, avec un index des libellés : l'API Valet nomme ses séries par des codes
     opaques que personne ne peut interpréter sans traduction).
-  - `ingestion_cftc.py` — COT, 9 contrats.
+  - `ingestion_cftc.py` — COT, positionnement spéculatif par contrat.
   - `ingestion_fomc_statements.py` / `ingestion_fomc_minutes.py` — texte brut Fed.
   - `ingestion_boe_declarations.py` — résumés de politique monétaire de la Banque
     d'Angleterre, repérés par motif de titre dans son flux d'actualités (qui mélange tous les
     sujets). **La BOJ manque encore** : ses déclarations sont publiées en PDF, ce qui
-    demanderait une dépendance d'extraction PDF dans une CI partagée par 96 modèles.
+    demanderait une dépendance d'extraction PDF dans une CI partagée par tous les modèles.
   - `ingestion_bce_declarations.py` — déclarations de politique monétaire BCE. **Seule la
     déclaration préparée est extraite, pas la séance de questions-réponses** : deux registres
     linguistiques différents (texte écrit et négocié vs réponses orales spontanées), les
@@ -114,6 +114,16 @@ Même schéma que GMDC (ingestion → modèles → état → visualisations → 
 - **Rapports automatiques** (`rapports/`) : pulse quotidien, revue hebdomadaire, dashboard de
   régimes — à construire une fois qu'il y a quelque chose à résumer.
 
+## Combien -- ne pas le chercher ici
+
+Les quantites (nombre de series par source, de modeles, de sorties) sont **generees** dans
+`rapports/inventaire.md` a chaque execution, et ne sont pas recopiees dans ce fichier.
+
+Raison, constatee par un audit le 2026-09-14 : les chiffres portes a la main dans MAP.md
+avaient derive le jour meme de leur ecriture -- "67 series" quand il y en avait 73, "9 contrats"
+quand il y en avait 32, et "96 modeles" coexistant avec "111 modeles" dans le meme document.
+Un chiffre qui decrit le depot se compte, il ne s'ecrit pas.
+
 ## Structure
 
 | Dossier | Rôle |
@@ -132,7 +142,7 @@ dérive de documentation corrigée ce jour, le repo tournait déjà depuis une s
 
 **État réel au 2026-09-14 :**
 
-- **96 modèles** répartis sur les 8 familles, tous testés sur données réelles, orchestrés par
+- Modèles répartis sur les 8 familles, tous testés sur données réelles, orchestrés par
   `run_all_modeles.py` (un échec isolé n'interrompt jamais les autres).
 - **Deux workflows** : ingestion à 06h00 UTC, modèles à 06h30 UTC, jours ouvrés, poussés par
   le bot `research-bot`. Les fichiers `donnees/brut/` et `recherche/etat/` ne sont **jamais**
@@ -161,9 +171,16 @@ dérive de documentation corrigée ce jour, le repo tournait déjà depuis une s
    (`recherche-push`) qui sérialise tout ce qui pousse sur `main` — sans lui, deux exécutions
    simultanées se marchent dessus entre le rebase et le push.
 6. ✅ **Les modèles lisent les données** — 12 modèles ajoutés le 2026-09-14, un par famille de
-   données ingérées ce jour. 111 modèles au total, tous verts en CI.
-7. ✅ **Chaque modèle a une sortie.** Trois formes, toutes generiques — aucune n'a demandé de
-   modifier les 111 modèles un par un :
+   données ingérées ce jour, tous verts en CI.
+7. ✅ **Détection des ruptures de périmètre** — `controle_ruptures.py`. Quand l'univers change
+   (un contrat ajouté, un historique rallongé), les lignes accumulées avant et après ne sont
+   plus comparables et rien ne le signalait. Deux ruptures réelles trouvées à l'audit du
+   2026-09-14 : `crowding_cross_asset` passant de « 3 tendus sur 15 » à « 15 sur 32 » d'une
+   semaine à l'autre, et `nombre_effectif_paris` de 8,54 à 13,39 — dans les deux cas
+   l'élargissement du COT, pas le marché. Le contrôle distingue un **dénominateur** (rupture)
+   d'un **résultat** (variation normale), sans quoi il crierait à chaque mesure.
+8. ✅ **Chaque modèle a une sortie.** Trois formes, toutes generiques — aucune n'a demandé de
+   modifier les modèles un par un :
    - `rapports/lecture-du-jour.md` — la première page. L'orchestrateur capture la phrase
      interprétable de chaque modèle et les regroupe par famille. Sans elle, ces lectures
      n'existaient que dans le journal d'exécution et disparaissaient après le run : le dépôt

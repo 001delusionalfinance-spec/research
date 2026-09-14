@@ -9,13 +9,25 @@ Le lexique est importe de `modele_ton_fomc` plutot que recopie. Le dupliquer aur
 derive : deux copies divergent des qu'on enrichit l'une des deux, et la comparaison deviendrait
 silencieusement fausse -- sans erreur, juste un resultat faux.
 
-**Ce que la comparaison ne dit pas.** Les trois documents n'ont ni la meme longueur ni le meme
-genre : le communique du FOMC fait quelques centaines de mots, la declaration preparee de la
-BCE une dizaine de milliers, le resume de la BoE davantage encore puisqu'il inclut les minutes.
-Le score etant normalise par le nombre de mots (en pour-mille), cet ecart de longueur ne le
-biaise pas mecaniquement. En revanche un texte long dilue naturellement ses mots de ton, donc
-un ecart de niveau entre institutions s'interprete avec prudence -- c'est le suivi de CHAQUE
-institution dans le temps qui est fiable, plus que le classement entre elles a un instant donne.
+**Le classement entre institutions n'est PAS publie, et ce n'est pas un oubli.**
+
+Une premiere version affichait "plus positive : Fed, plus negative : BoE". Un audit le meme
+jour a montre que ce classement etait du bruit. La raison est arithmetique : le score est
+normalise par le nombre de mots, or les trois documents n'ont pas du tout la meme taille --
+le communique du FOMC fait environ 150 mots, la declaration preparee de la BCE environ 1 800,
+le resume de la BoE environ 3 900 puisqu'il inclut les minutes. UN SEUL mot de ton deplace
+donc le score de :
+
+    Fed  : 6,7 pour mille        BCE : 0,6 pour mille        BoE : 0,3 pour mille
+
+soit un facteur 26 entre la Fed et la BoE. L'ecart Fed/BCE observe ce jour-la (6,1) valait
+donc MOINS D'UN MOT cote Fed. Classer trois institutions sur une grandeur dont la resolution
+varie d'un facteur 26 entre elles ne mesure que la longueur de leurs documents.
+
+Ce qui reste valide, et que le modele publie : le suivi de CHAQUE institution dans le temps.
+La comparaison d'un document au precedent de la MEME institution porte sur des textes de
+longueur voisine, donc la variation a un sens. La sensibilite par mot est ecrite dans la sortie
+pour que personne ne recompare les institutions entre elles sans le savoir.
 """
 
 import sys
@@ -77,14 +89,12 @@ def main() -> int:
     accumuler_csv(
         ETAT / f"{NOM_MODELE}.csv",
         ["institution", "document", "score_ton_pour_mille", "n_mots",
-         "variation_vs_precedent", "lecture"],
-        [list(l) for l in lignes],
+         "variation_vs_precedent", "lecture", "sensibilite_un_mot_pour_mille"],
+        [list(l) + [round(1000 / l[3], 2) if l[3] else ""] for l in lignes],
     )
 
     scores = {l[0]: l[2] for l in lignes}
     variations = {l[0]: l[4] for l in lignes if l[4] != ""}
-    plus_positive = max(scores, key=scores.get)
-    plus_negative = min(scores, key=scores.get)
 
     if variations:
         montent = [n for n, v in variations.items() if v > SEUIL_VARIATION]
@@ -101,9 +111,14 @@ def main() -> int:
     else:
         lecture = "pas assez d'historique pour comparer"
 
-    detail = ", ".join(f"{n} {s:+.2f}" for n, s in scores.items())
-    print(f"OK -- ton (pour mille, meme lexique) : {detail}. Plus positive : {plus_positive}, "
-          f"plus negative : {plus_negative} -- {lecture}")
+    # On affiche la VARIATION de chaque institution, pas son niveau compare aux autres.
+    detail = ", ".join(
+        f"{l[0]} {l[4]:+.2f}" if l[4] != "" else f"{l[0]} (pas d'anterieur)" for l in lignes)
+    sensibilite = ", ".join(f"{l[0]} {1000 / l[3]:.1f}" for l in lignes if l[3])
+    print(f"OK -- variation du ton depuis la publication precedente, par institution "
+          f"(pour mille, meme lexique) : {detail} -- {lecture}. "
+          f"Les niveaux ne sont PAS comparables entre institutions : un seul mot de ton les "
+          f"deplace de {sensibilite} pour mille respectivement, selon la longueur du document")
     if echecs:
         print(f"   {len(echecs)} institution(s) non exploitable(s) : {[n for n, _ in echecs]}")
     return 0
