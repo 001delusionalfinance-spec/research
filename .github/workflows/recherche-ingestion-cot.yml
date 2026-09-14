@@ -1,0 +1,60 @@
+name: Recherche - Ingestion (positionnement COT, hebdomadaire)
+
+# ETAGE HEBDOMADAIRE, sorti de l'ingestion lente le 2026-09-14 pour corriger un BUG DE TIMING
+# reel, pas une preference de style.
+#
+# Le rapport Commitments of Traders de la CFTC parait le VENDREDI vers 15h30 heure de New York,
+# soit environ 20h30 UTC. L'ingestion lente tourne a 06h00 UTC. La donnee de positionnement du
+# vendredi n'etait donc ramassee que le lundi matin suivant : environ deux jours et demi de
+# retard, chaque semaine, sur la donnee de positionnement la plus fraiche du dispositif.
+#
+# Programme ici a 21h30 UTC le vendredi -- une heure apres la publication, marge suffisante
+# pour un retard de mise en ligne cote CFTC sans attendre le lendemain. Un rattrapage tourne
+# aussi le lundi matin au cas ou le vendredi soir aurait echoue : le rapport ne change plus
+# apres publication, une ingestion en double est sans effet (chaque run reecrit le fichier).
+
+on:
+  schedule:
+    - cron: "30 21 * * 5"   # vendredi, une heure apres la publication
+    - cron: "15 6 * * 1"    # lundi matin, rattrapage si le vendredi a echoue
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: recherche-push
+  cancel-in-progress: false
+
+jobs:
+  cot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: recherche/modeles/requirements.txt
+
+      - name: Installer les dependances
+        run: pip install -r recherche/modeles/requirements.txt
+
+      - name: Ingestion CFTC (positionnement, 32 contrats)
+        if: always()
+        run: python recherche/modeles/ingestion_cftc.py
+
+      - name: Commit et push si changement
+        if: always()
+        run: |
+          git config user.name "research-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add donnees/brut
+          if git diff --cached --quiet; then
+            echo "Aucun changement -- rien a committer."
+          else
+            git commit -m "Ingestion COT - $(date -u +%Y-%m-%d)"
+            git pull --rebase
+            git push
+          fi

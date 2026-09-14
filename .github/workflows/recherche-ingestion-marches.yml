@@ -1,0 +1,62 @@
+name: Recherche - Ingestion (marches, intrajournalier)
+
+# ETAGE RAPIDE, cree le 2026-09-14 en meme temps que l'univers FX / matieres premieres / vol /
+# indices non-US. Ces prix bougent en continu : les laisser dans l'ingestion lente les figeait
+# a une photo quotidienne de 06h00 UTC, sans rapport avec leur rythme reel.
+#
+# Cadence : toutes les 30 minutes entre 07h00 et 21h00 UTC, jours ouvres. La fenetre couvre
+# l'ouverture europeenne (07h00 UTC) jusqu'apres l'ouverture US et les publications macro de
+# l'apres-midi. Au-dela, l'essentiel de ce qui est suivi ici ne cote plus.
+#
+# A savoir : le fournisseur renvoie des BARRES QUOTIDIENNES. Un passage intrajournalier met
+# donc a jour la barre du jour en cours, il ne cree pas de granularite infra-journaliere. Le
+# gain est la fraicheur du dernier point, pas une resolution plus fine.
+
+on:
+  schedule:
+    - cron: "*/30 7-21 * * 1-5"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: recherche-push
+  cancel-in-progress: false
+
+jobs:
+  marches:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: recherche/modeles/requirements.txt
+
+      - name: Installer les dependances
+        run: pip install -r recherche/modeles/requirements.txt
+
+      - name: Ingestion marches (FX, matieres premieres, vol, indices non-US)
+        if: always()
+        run: python recherche/modeles/ingestion_marches.py
+
+      - name: Ingestion yfinance - indices (S&P 500, VIX, secteurs)
+        if: always()
+        run: python recherche/modeles/ingestion_yfinance_indices.py
+
+      - name: Commit et push si changement
+        if: always()
+        run: |
+          git config user.name "research-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add donnees/brut
+          if git diff --cached --quiet; then
+            echo "Aucun changement -- rien a committer."
+          else
+            git commit -m "Ingestion marches - $(date -u +%Y-%m-%dT%H:%MZ)"
+            git pull --rebase
+            git push
+          fi

@@ -140,28 +140,28 @@ dérive de documentation corrigée ce jour, le repo tournait déjà depuis une s
 - **Couverture étendue le 2026-09-14** de 5 à 12 blocs de banques centrales, plus FX, matières
   premières, volatilité de taux et indices non-US (voir « Comment c'est automatisé »).
 
-**Chantiers annexes — correctifs d'infra à enchaîner une fois les ingestions terminées
-(identifiés le 2026-09-14, aucun n'est encore fait) :**
+**Correctifs d'infra — faits le 2026-09-14 :**
 
-1. **Timing du COT — bug réel.** Le CFTC publie le vendredi vers 20h30 UTC ; l'ingestion tourne
-   à 06h00 UTC. La donnée de positionnement du vendredi n'est donc ramassée que le lundi
-   matin, ~2,5 jours de retard chaque semaine. À sortir sur son propre créneau.
-2. **Aucune détection de péremption côté FRED.** `ingestion_marches.py` et
-   `ingestion_yfinance_indices.py` ont un garde-fou `MAX_JOURS_RETARD` ; `ingestion_fred.py`
-   n'en a aucun. Or on sait que des séries FRED gèlent (3 rencontrées le 2026-09-14). Une
-   série qui se fige passerait inaperçue et les modèles continueraient à calculer dessus.
-3. **Aucune alerte.** Ni opérationnelle (workflow en échec, série morte, modèle planté), ni de
-   recherche (indicateur à un extrême historique). `if: always()` masque d'autant plus les
-   échecs partiels. Contrainte de périmètre à respecter : une alerte reste **descriptive**,
-   jamais un signal de décision — sinon on sort du mandat de ce repo.
-4. **Cadence à étager.** Le macro lent (FRED, textes FOMC) reste à 1×/jour — c'est correct et
-   accélérer ne produirait que des fichiers identiques. Mais le FX, les matières premières,
-   la vol et les indices ajoutés le 2026-09-14 bougent en continu : ils justifient leur propre
-   créneau intrajournalier, séparé du lent.
-5. **Hygiène CI** : pas de cache pip (réinstallation complète à chaque run), pas de garde de
-   concurrence alors que les deux workflows poussent sur `main`.
-6. **Les 96 modèles ne consomment pas encore les nouvelles données** — ils ont été écrits
-   contre l'ancien jeu. Ingérer n'est pas consommer.
+1. ✅ **Timing du COT.** Le CFTC publie le vendredi vers 20h30 UTC ; l'ingestion tournait à
+   06h00 UTC, donc la donnée du vendredi n'était ramassée que le lundi — ~2,5 jours de retard
+   chaque semaine. Sorti dans `recherche-ingestion-cot.yml`, vendredi 21h30 UTC, avec un
+   rattrapage le lundi matin si le vendredi échoue.
+2. ✅ **Détection de péremption** — `controle_fraicheur.py`, lancé après chaque ingestion lente.
+   Le seuil n'est pas configuré série par série mais **déduit du rythme de la série elle-même**
+   (écart médian entre observations), parce que cinq seuils posés à la main se sont révélés
+   faux le jour même de leur écriture. Calibré contre les six gels réellement observés sur ce
+   dépôt. Sortie : `recherche/etat/fraicheur.csv`.
+3. ✅ **Alerte.** Une série classée GELÉE fait échouer le workflow — c'est le signal. Une série
+   seulement SUSPECTE est signalée sans faire échouer : une alerte qui crie tous les jours est
+   désactivée en une semaine et ne protège plus rien.
+4. ✅ **Cadence étagée** en trois workflows : lent (macro et textes, 1×/jour ouvré), marchés
+   (FX, matières premières, vol, indices — toutes les 30 min de 07h à 21h UTC), COT
+   (hebdomadaire).
+5. ✅ **Hygiène CI** : cache pip sur les trois workflows, et un groupe de concurrence commun
+   (`recherche-push`) qui sérialise tout ce qui pousse sur `main` — sans lui, deux exécutions
+   simultanées se marchent dessus entre le rebase et le push.
+6. ⬜ **Les modèles ne consomment pas encore les nouvelles données** — seul chantier restant.
+   Ingérer n'est pas consommer.
 
 **Trous connus, documentés et non résolus :**
 
