@@ -198,7 +198,7 @@ def ingerer_mof() -> list:
     for nom, points in series.items():
         try:
             points.sort()
-            _valider(points, nom)
+            _valider(points, nom, RETARD_MAX_MOF)
             _ecrire(nom, points)
         except ValueError as e:
             echecs.append((nom, str(e)))

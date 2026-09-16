@@ -5,8 +5,9 @@ Volontairement PAS un quadrant croissance/inflation classique : l'inflation inte
 n'est pas disponible fraiche gratuitement (voir ingestion_fred.py pour le detail par pays,
 teste et rejete pays par pays, pas suppose). Deux dimensions retenues parce qu'elles SONT
 fraiches partout (ou presque) : le taux directeur (resserrement/assouplissement monetaire) et
-le taux de chomage (tension/detente du marche du travail, absent pour la Chine -- aucune serie
-fiable trouvee sur FRED).
+le taux de chomage (tension/detente du marche du travail, absent pour la Chine et la zone euro
+-- aucune serie FRED fiable et correctement labellisee trouvee pour ces deux blocs ; le vrai
+chomage zone euro vit dans modele_activite_zone_euro.py, source Eurostat).
 
 Tendance mesuree sur ~6 mois calendaires (182 jours), pas sur un nombre de points fixe --
 necessaire ici parce que les series melangent frequences quotidienne (DFF, ECBDFR, IUDSOIA) et
@@ -28,10 +29,21 @@ SEUIL_TAUX_PT = 0.25     # un mouvement de banque centrale standard (25 pb)
 SEUIL_CHOMAGE_PT = 0.30  # variation jugee significative pour un taux de chomage mensuel
 
 # (bloc, serie_taux, serie_chomage_ou_None)
+# Bug corrige le 2026-09-16 : la ligne "Zone euro" pointait vers LRHUTTTTDEM156S, qui est le
+# chomage ALLEMAND (cf. le commentaire dans ingestion_fred.py -- "DE" = code pays, pas zone),
+# pas un agregat zone euro. Aucune serie FRED "zone euro" fiable n'a ete testee/retenue ici --
+# le vrai chiffre zone euro (Eurostat, EA21) vit dans modele_activite_zone_euro.py /
+# recherche/etat/activite_zone_euro.csv, pas ici. Mettre a None plutot que de fabriquer un
+# proxy : mieux vaut "non_couvert" que "faux et silencieux" (meme principe que la Chine
+# ci-dessous, qui n'a jamais eu de serie chomage exploitable).
 BLOCS = [
     ("US", "DFF", "UNRATE"),
-    ("Zone euro", "ECBDFR", "LRHUTTTTDEM156S"),
+    ("Zone euro", "ECBDFR", None),
     ("Royaume-Uni", "IUDSOIA", "LRHUTTTTGBM156S"),
+    # Japon/Chine : IRSTCI01JPM156N et IR3TIB01CNM156N sont des taux INTERBANCAIRES (proxy de
+    # marche), pas la cible officielle de la banque centrale -- normal qu'ils different du taux
+    # directeur officiel suivi par divergence_taux_directeurs.csv (source BIS). Les deux mesurent
+    # des choses differentes par construction, ce n'est pas une incoherence a corriger.
     ("Japon", "IRSTCI01JPM156N", "LRHUTTTTJPM156S"),
     ("Chine", "IR3TIB01CNM156N", None),
 ]
