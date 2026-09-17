@@ -92,7 +92,17 @@ def extraire_vote(texte_page: str, texte_statement: str) -> tuple:
 
 
 def extraire_taux(texte_statement: str) -> str:
-    m = re.search(r"federal funds rate at ([\d/\- to]+) percent", texte_statement)
+    """Bug reel trouve le 2026-09-17, pas suppose : cette regex ne capturait QUE la formule de
+    statu quo ("...federal funds rate AT X to Y percent"). Le communique du 16/09/2026
+    (vraie hausse de 25pb) utilise une formule differente -- "...raise the target range for
+    the federal funds rate by 1/4 percentage point TO X to Y percent" -- ou le mot-cle "at"
+    n'apparait jamais pres du chiffre. Resultat : `taux_cible` restait vide silencieusement
+    exactement les fois ou la Fed BOUGE, le seul cas qui compte vraiment -- verifie sur
+    `votes.csv` (ligne 20260916 avec taux_cible="" alors que la hausse etait deja dans le
+    texte ingere le jour meme). Corrige en captant aussi bien "at X to Y percent" (statu quo)
+    que "to X to Y percent" (hausse ou baisse), qui sont les deux seules formulations
+    observees sur l'historique disponible."""
+    m = re.search(r"(?:at|to) ([\d]+(?:-[\d/]+)? to [\d]+(?:-[\d/]+)?) percent", texte_statement)
     return m.group(1).strip() if m else ""
 
 

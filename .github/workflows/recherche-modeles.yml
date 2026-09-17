@@ -39,6 +39,10 @@ jobs:
         if: always()
         run: python recherche/modeles/controle_ruptures.py
 
+      - name: Controle de coherence -- taux Fed (FOMC vs BIS)
+        if: always()
+        run: python recherche/modeles/controle_coherence_fed.py
+
       - name: Generer les apercus graphiques
         if: always()
         run: python recherche/modeles/generer_visualisations.py
