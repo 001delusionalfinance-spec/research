@@ -27,6 +27,14 @@ retenter a l'aveugle :
   et non une absence de donnee : il est conserve dans la liste, et un echec ponctuel sera
   simplement signale comme les autres sans bloquer le reste.
 
+**`TAUX_FUTURES` ajoute le 2026-09-17** pour `modele_probabilite_reunion_fed.py` : le contrat
+Fed Funds front-month (`ZQ=F`, prix = 100 - taux Fed Funds moyen implicite du mois en cours).
+Limite assumee et documentee dans le modele qui l'utilise -- Yahoo n'expose QUE le contrat
+continu du mois le plus proche, pas les mois individuels au-dela (testes en direct le
+2026-09-17 : `ZQF26.CBT`, `ZQZ25.CBT` etc. renvoient tous "Not Found"). L'acces gratuit a la
+bande complete de contrats CME est de toute facon ferme : CME repond avec un message explicite
+de blocage anti-scraping sur ses pages de settlements, teste en direct le meme jour.
+
 Chaque run reecrit l'historique complet (pas d'append incremental) -- meme choix que les
 autres ingestions, evite toute derive/doublon si un run est manque ou relance.
 
@@ -94,6 +102,10 @@ INDICES_NON_US = {
     "DAX": "%5EGDAXI",
     "KOSPI": "%5EKS11",
     "HANGSENG": "%5EHSI",
+}
+
+TAUX_FUTURES = {
+    "FED_FUNDS_FRONT": "ZQ=F",  # contrat continu front-month uniquement, cf. docstring
 }
 
 # 15 ans : couvre 2015 (franc suisse), 2020 et le cycle de resserrement 2022-2023 -- assez
@@ -166,7 +178,8 @@ def valider(points: list, nom: str, permet_negatif: bool = False) -> None:
 def main() -> int:
     tous = []
     for famille, mapping in (("fx", FX), ("matieres", MATIERES),
-                             ("volatilite", VOLATILITE), ("indices", INDICES_NON_US)):
+                             ("volatilite", VOLATILITE), ("indices", INDICES_NON_US),
+                             ("taux_futures", TAUX_FUTURES)):
         tous += [(famille, nom, ticker) for nom, ticker in mapping.items()]
 
     echecs, inchanges = [], []

@@ -126,6 +126,15 @@ SERIES = [
     "DGS5",      # Taux souverain 5 ans -- ventre de la courbe
     "DGS30",     # Taux souverain 30 ans -- extremite longue
 
+    # --- Ajoutees le 2026-09-17 : points courts pour bootstrap de taux forward implicites,
+    #     utilises par modele_probabilite_reunion_fed.py (probabilite de mouvement du taux
+    #     directeur US par horizon). Testees fraiches en direct via fredgraph.csv avant ajout
+    #     (derniere observation 2026-09-15 sur les 3, aucun gel) -- l'API authentifiee reste le
+    #     seul chemin retenu pour l'ingestion planifiee, meme regle que le reste de ce fichier.
+    "DGS1MO",    # Taux souverain 1 mois -- ancre courte du bootstrap forward
+    "DGS6MO",    # Taux souverain 6 mois -- point intermediaire du bootstrap forward
+    "DGS1",      # Taux souverain 1 an -- horizon long du bootstrap forward
+
     # --- Rendements reels US et anticipations d'inflation (quotidiens) ---
     #     Manquaient completement alors que le taux reel est un intrant macro central
     #     (cout reel du capital, proxy de la posture monetaire une fois l'inflation retiree).

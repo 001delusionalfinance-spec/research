@@ -80,6 +80,10 @@ jobs:
         if: always()
         run: python recherche/modeles/ingestion_fomc_statements.py
 
+      - name: Ingestion calendrier FOMC (reunions a venir)
+        if: always()
+        run: python recherche/modeles/ingestion_fomc_calendrier.py
+
       - name: Ingestion minutes FOMC
         if: always()
         run: python recherche/modeles/ingestion_fomc_minutes.py
