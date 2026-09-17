@@ -1,4 +1,4 @@
-# Inventaire du dispositif -- 2026-09-17 11:58 UTC
+# Inventaire du dispositif -- 2026-09-17 12:55 UTC
 
 Genere par `inventaire.py`. **Ne pas recopier ces chiffres ailleurs** : ils changent a chaque ajout, et une copie manuelle derive le jour meme (constate le 2026-09-14).
 
@@ -6,37 +6,37 @@ Genere par `inventaire.py`. **Ne pas recopier ces chiffres ailleurs** : ils chan
 
 | Source | Fichiers |
 |---|---|
-| FRED (series officielles) | 73 |
+| FRED (series officielles) | 76 |
 | BIS -- prix a la consommation | 12 |
 | BIS -- taux directeurs quotidiens | 12 |
 | BIS -- service de la dette | 12 |
 | Courbes souveraines quotidiennes | 26 |
-| Marches (FX, matieres, vol, indices) | 32 |
+| Marches (FX, matieres, vol, indices) | 33 |
 | Eurostat | 30 |
 | Bilans de banques centrales | 29 |
 | Positionnement CFTC | 32 |
 | Tresor US | 3 |
 | Indices et secteurs (yfinance) | 12 |
-| **Total** | **276** |
+| **Total** | **281** |
 
-Fraicheur : 272 ok.
+Fraicheur : 276 ok.
 
 ## Modeles
 
 | Famille | Modeles |
 |---|---|
 | factorielle | 13 |
-| macro | 20 |
+| macro | 21 |
 | ml | 12 |
 | nlp | 13 |
 | positionnement-comportemental | 14 |
 | risque | 13 |
 | series-temporelles | 13 |
 | statistique | 13 |
-| **Total** | **111** |
+| **Total** | **112** |
 
 ## Sorties
 
-- 114 fichiers d'etat (`recherche/etat/`)
-- 114 apercus graphiques (`recherche/visualisations/`)
+- 115 fichiers d'etat (`recherche/etat/`)
+- 115 apercus graphiques (`recherche/visualisations/`)
 - `rapports/lecture-du-jour.md`, `rapports/etat-recherche.xlsx`

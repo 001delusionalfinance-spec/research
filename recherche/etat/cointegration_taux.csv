@@ -69,3 +69,6 @@ date,bloc_a,bloc_b,stat_eg,p_valeur,cointegrees
 2026-09-15,Royaume-Uni,US,-1.8592,0.6006,False
 2026-09-15,Royaume-Uni,Zone_euro,-2.2025,0.4231,False
 2026-09-15,US,Zone_euro,-1.6013,0.7204,False
+2026-09-15,Chine,Zone_euro,-2.1259,0.4628,False
+2026-09-15,Japon,Zone_euro,-0.7129,0.9452,False
+2026-09-15,US,Zone_euro,-1.6016,0.7202,False
