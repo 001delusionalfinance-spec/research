@@ -3,3 +3,7 @@ date,horizon,echeance,n_reunions_incluses,taux_implicite_pct,mouvement_implicite
 2026-09-17,1-3 mois,2026-12-17,2,4.2,57.0,hausse
 2026-09-17,3-6 mois,2027-03-18,5,4.23,60.0,hausse
 2026-09-17,6-12 mois,2027-09-17,9,4.61,98.0,hausse
+2026-09-18,0-1 mois,2026-10-18,0,3.96,33.0,hausse
+2026-09-18,1-3 mois,2026-12-18,2,4.23,60.0,hausse
+2026-09-18,3-6 mois,2027-03-19,5,4.3,67.0,hausse
+2026-09-18,6-12 mois,2027-09-18,9,4.68,105.0,hausse

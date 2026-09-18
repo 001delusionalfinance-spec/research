@@ -1,4 +1,4 @@
-# Inventaire du dispositif -- 2026-09-17 12:55 UTC
+# Inventaire du dispositif -- 2026-09-18 11:37 UTC
 
 Genere par `inventaire.py`. **Ne pas recopier ces chiffres ailleurs** : ils changent a chaque ajout, et une copie manuelle derive le jour meme (constate le 2026-09-14).
 
@@ -19,7 +19,7 @@ Genere par `inventaire.py`. **Ne pas recopier ces chiffres ailleurs** : ils chan
 | Indices et secteurs (yfinance) | 12 |
 | **Total** | **281** |
 
-Fraicheur : 276 ok.
+Fraicheur : 276 ok, 1 suspecte.
 
 ## Modeles
 

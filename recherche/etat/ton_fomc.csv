@@ -1,3 +1,4 @@
 date,date_precedente,score_ton_pour_mille,diff_score_pour_mille,taux_cible,taux_a_change,dissidents,nb_dissidents,nb_dissidents_precedent
 20260729,20260617,13.423,-4.276,3-1/2 to 3-3/4,False,Beth M. Hammack;Neel Kashkari;Lorie K. Logan,3,0
 20260916,20260729,35.398,21.975,,True,,0,3
+20260916,20260729,35.398,21.975,3-3/4 to 4,True,,0,3
