@@ -44,3 +44,8 @@ date,bloc,taux_dernier,taux_tendance,taux_niveau_relatif,chomage_dernier,chomage
 2026-09-16,Royaume-Uni,3.7303,stable,haut,4.9,stable
 2026-09-16,Japon,0.977,stable,haut,2.4,stable
 2026-09-16,Chine,1.54,stable,bas,,non_couvert
+2026-09-17,US,3.88,stable,moyen,4.1,stable
+2026-09-17,Zone euro,2.5,hausse,haut,,non_couvert
+2026-09-17,Royaume-Uni,3.7304,stable,haut,4.9,stable
+2026-09-17,Japon,0.977,stable,haut,2.4,stable
+2026-09-17,Chine,1.54,stable,bas,,non_couvert

@@ -1,6 +1,7 @@
 serie,colonne,date_avant,taille_avant,date_apres,taille_apres,variation_pct,nature
 complexite_texte_fomc,n_mots,20260729,149.0,20260916,113.0,24.2,perimetre
 crowding_cross_asset,n_marches_tendus,2026-09-01,3.0,2026-09-08,15.0,400.0,a verifier (peut etre un resultat)
+crowding_cross_asset,n_marches_tendus,2026-09-08,15.0,2026-09-15,11.0,26.7,a verifier (peut etre un resultat)
 crowding_cross_asset,n_marches_total,2026-09-01,15.0,2026-09-08,32.0,113.3,perimetre
 dollar_smile,n_devises_non_usd_courtes,2026-09-01,3.0,2026-09-08,2.0,33.3,a verifier (peut etre un resultat)
 nombre_effectif_paris,n_marches,2026-09-01,15.0,2026-09-08,32.0,113.3,perimetre

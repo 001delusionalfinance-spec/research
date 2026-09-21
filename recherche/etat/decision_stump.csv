@@ -7,3 +7,4 @@ date,seuil_appris,sens,n_test,accuracy_stump,accuracy_baseline
 2026-09-15,-1.53,False,2264,0.5473,0.5486
 2026-09-16,-1.53,False,2264,0.5468,0.5481
 2026-09-17,-1.53,False,2264,0.5468,0.5481
+2026-09-18,-1.53,False,2264,0.5468,0.5486
