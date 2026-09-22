@@ -8,3 +8,4 @@ date,variation_prix_pct,cot_net_actuel,cot_net_reference,divergence_prix_hausse_
 2026-09-16,-2.495,-76036.0,-27258.0,False
 2026-09-17,-0.702,-76036.0,-27258.0,False
 2026-09-18,-0.746,-100461.0,11280.0,False
+2026-09-21,1.177,-100461.0,11280.0,True
