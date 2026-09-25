@@ -1,0 +1,46 @@
+name: Recherche - Surveillance du cycle horaire
+
+on:
+  schedule:
+    # Le scheduler GitHub peut supprimer ponctuellement un evenement planifie. Ce controle
+    # leger multiplie les occasions de rattrapage sans recalculer lui-meme la recherche.
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+permissions:
+  actions: write
+  contents: read
+
+concurrency:
+  group: recherche-surveillance
+  cancel-in-progress: true
+
+jobs:
+  verifier:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Relancer la chaine si le dernier depart a plus de 50 minutes
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          dernier=$(gh run list \
+            --repo "$GITHUB_REPOSITORY" \
+            --workflow recherche-modeles.yml \
+            --limit 1 \
+            --json createdAt \
+            --jq '.[0].createdAt // ""')
+
+          if [ -z "$dernier" ]; then
+            age=999999
+          else
+            age=$(( $(date -u +%s) - $(date -u -d "$dernier" +%s) ))
+          fi
+
+          echo "Dernier depart il y a ${age}s."
+          if [ "$age" -ge 3000 ]; then
+            echo "Plus de 50 minutes : declenchement de la mise a jour complete."
+            gh workflow run recherche-modeles.yml --repo "$GITHUB_REPOSITORY" --ref main
+          else
+            echo "Cycle recent : aucune relance necessaire."
+          fi
+

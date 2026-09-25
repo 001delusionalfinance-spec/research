@@ -150,9 +150,10 @@ dérive de documentation corrigée ce jour, le repo tournait déjà depuis une s
 - **Chaîne horaire unique et redondante** : toutes les sources sont interrogées, les modèles
   sont recalculés, puis les contrôles et rapports sont publiés dans la même exécution. Deux
   déclenchements hors du début d'heure absorbent les événements cron que GitHub peut retarder
-  ou supprimer. Le bot `research-bot` pousse uniquement les changements réels. Les sources
-  mensuelles, trimestrielles ou hebdomadaires restent naturellement identiques entre deux
-  publications.
+  ou supprimer. Un workflow de surveillance léger vérifie en plus toutes les cinq minutes que
+  le dernier départ date de moins de 50 minutes et relance la chaîne sinon. Le bot
+  `research-bot` pousse uniquement les changements réels. Les sources mensuelles,
+  trimestrielles ou hebdomadaires restent naturellement identiques entre deux publications.
 - **Couverture étendue le 2026-09-14** de 5 à 12 blocs de banques centrales, plus FX, matières
   premières, volatilité de taux et indices non-US (voir « Comment c'est automatisé »).
 

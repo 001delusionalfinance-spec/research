@@ -4,14 +4,15 @@ from pathlib import Path
 RACINE = Path(__file__).resolve().parents[1]
 WORKFLOWS = RACINE / ".github" / "workflows"
 CHAINE_HORAIRE = WORKFLOWS / "recherche-modeles.yml"
+SURVEILLANCE = WORKFLOWS / "recherche-surveillance.yml"
 
 
-def test_une_seule_chaine_de_recherche_est_planifiee():
+def test_seules_la_chaine_et_sa_surveillance_sont_planifiees():
     planifies = []
     for chemin in WORKFLOWS.glob("recherche-*.yml"):
         if "schedule:" in chemin.read_text(encoding="utf-8"):
             planifies.append(chemin.name)
-    assert planifies == ["recherche-modeles.yml"]
+    assert sorted(planifies) == ["recherche-modeles.yml", "recherche-surveillance.yml"]
 
 
 def test_la_chaine_complete_tourne_toutes_les_heures():
@@ -35,3 +36,11 @@ def test_les_ingestions_ciblees_restent_relancables_manuellement():
         contenu = (WORKFLOWS / nom).read_text(encoding="utf-8")
         assert "workflow_dispatch:" in contenu
         assert "schedule:" not in contenu
+
+
+def test_la_surveillance_rattrape_un_cycle_absent_sans_recalculer():
+    contenu = SURVEILLANCE.read_text(encoding="utf-8")
+    assert 'cron: "*/5 * * * *"' in contenu
+    assert 'age" -ge 3000' in contenu
+    assert "gh workflow run recherche-modeles.yml" in contenu
+    assert "run_all_modeles.py" not in contenu
