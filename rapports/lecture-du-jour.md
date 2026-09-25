@@ -1,4 +1,4 @@
-# Rapport global — 2026-09-25 08:20 UTC
+# Rapport global — 2026-09-25 08:26 UTC
 
 **Etat global : OK** · 112/112 modeles reussis · 0 source(s) suspecte(s) · 0 source(s) gelee(s).
 
@@ -116,7 +116,7 @@ Volatilite, queues, drawdowns, stress, contagion et changements de regime.
 - **Ornstein uhlenbeck vix** — VIX actuel=15.57, niveau moyen estime (mu)=20.20, demi-vie=28.8j, ecart actuel=-4.63 -- VIX actuel en-dessous de son niveau moyen de long terme _(observation : 2026-09-25)_
 - **Changepoint volatilite** — rupture detectee le 2011-12-21 -- vol avant=0.2129, vol apres=0.1667 (reduction SSE=0.5%) -- baisse de la vol au point de rupture (-21.7%) _(observation : 2026-09-24)_
 - **Kalman niveau local** — VIX observe=15.57, filtre Kalman=15.57 (ecart-type=0.62), ratio signal/bruit=0.2051 -- le filtre lisse fortement le bruit, reagit lentement (ecart obs.-filtre=-0.00) _(observation : 2026-09-25)_
-- **Var sp500 vix** — VAR ordre choisi par AIC=10 -- coef SP500(t-1)->VIX(t)=0.42303763997917443 (SP500(t-1) en hausse -> VIX(t) tend aussi a monter), coef VIX(t-1)->SP500(t)=-0.052746827501372995 (VIX(t-1) en hausse -> SP500(t) tend a baisser) _(observation : 2026-09-24)_
+- **Var sp500 vix** — VAR ordre choisi par AIC=10 -- coef SP500(t-1)->VIX(t)=0.42303763997892396 (SP500(t-1) en hausse -> VIX(t) tend aussi a monter), coef VIX(t-1)->SP500(t)=-0.0527468275013714 (VIX(t-1) en hausse -> SP500(t) tend a baisser) _(observation : 2026-09-24)_
 - **Analyse spectrale** — 3 periodes dominantes (jours de bourse) : [2.2, 4.0, 5.4] -- cycle(s) connu(s) qui ressortent : 4.0j~hebdomadaire, 5.4j~hebdomadaire _(observation : 2026-09-25)_
 - **Var drawdown** — VaR95=-1.45% CVaR95=-1.80% VaR99=-2.08% CVaR99=-2.50% drawdown_max_252j=-9.10% -- soit l'equivalent de ~6 jours de VaR95 d'affilee _(observation : 2026-09-24)_
 - **Skew kurtosis** — skewness=-0.184 (asymetrie negative (pertes extremes > gains extremes)), kurtosis exces=+1.013 (queues epaisses (risque extreme sous-estime par une hypothese normale)) _(observation : 2026-09-24)_
