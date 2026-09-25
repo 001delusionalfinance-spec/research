@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-25T08:04:26.078590+00:00",
-  "status": "attention",
+  "generated_at": "2026-09-25T08:06:28.772774+00:00",
+  "status": "ok",
   "models": [
     {
       "nom": "regime_monetaire_emploi",
@@ -1236,7 +1236,6 @@
     }
   ],
   "freshness": {
-    "OK": 272,
-    "SUSPECTE": 5
+    "OK": 277
   }
 }

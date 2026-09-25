@@ -21,9 +21,11 @@ ecriture, et personne ne le maintiendrait.
 
 Ici le rythme est **mesure sur la serie elle-meme** : l'ecart median entre deux observations
 consecutives dit si elle est quotidienne, hebdomadaire, mensuelle ou trimestrielle. Le seuil
-en decoule. Une serie trimestrielle se donne naturellement une tolerance trimestrielle, sans
-que personne n'ait rien a declarer -- et une serie dont le rythme change est suivie
-automatiquement.
+en decoule. Deux exceptions documentees portent sur la cadence de LIVRAISON, impossible a
+deduire des observations : le MOF livre ses points JGB quotidiens par lot mensuel et le BIS
+alimente le taux coreen avec davantage de retard que ses autres taux. Le controle reprend les
+memes tolerances que leurs scripts d'ingestion afin de ne pas appeler "suspecte" une source que
+l'ingestion vient de valider.
 
 Sortie : `recherche/etat/fraicheur.csv` (une ligne par serie) et un resume lisible. Le code de
 retour vaut 1 si au moins une serie est classee GELEE : c'est le signal d'alerte, il fait
@@ -65,6 +67,14 @@ FACTEUR_GELE = 9.0
 # moindre pont. Aucun signalement en dessous de cette anciennete, quel que soit le rythme.
 PLANCHER_JOURS = 21
 MIN_OBSERVATIONS = 8
+
+# Planchers lies a la cadence de livraison de la source, et non a celle des observations.
+# Ils sont alignes sur RETARD_MAX_MOF et RETARD_MAX_TAUX d'ingestion_souverains_quotidiens.py
+# et ingestion_bis_macro.py. Sans cela, des observations quotidiennes livrees mensuellement
+# sont faussement classees suspectes apres 21 jours.
+RETARDS_SOURCE = {
+    "bis/taux_directeurs/KR.csv": (35, 70),
+}
 
 FORMATS_DATE = ("%Y-%m-%d", "%Y-%m", "%d %b %Y", "%d-%b-%Y", "%Y/%m/%d")
 
@@ -132,6 +142,13 @@ def analyser(chemin: Path) -> dict | None:
     anciennete = (datetime.now(timezone.utc).date() - dates[-1]).days
     seuil_suspect = max(rythme * FACTEUR_SUSPECT, PLANCHER_JOURS)
     seuil_gele = max(rythme * FACTEUR_GELE, PLANCHER_JOURS * 2)
+    relatif = str(chemin.relative_to(BRUT_DIR)).replace("\\", "/")
+    retard_source = RETARDS_SOURCE.get(relatif)
+    if relatif.startswith("souverains/JAPON_"):
+        retard_source = (45, 90)
+    if retard_source:
+        seuil_suspect = max(seuil_suspect, retard_source[0])
+        seuil_gele = max(seuil_gele, retard_source[1])
 
     if anciennete >= seuil_gele:
         verdict = "GELEE"
@@ -141,7 +158,7 @@ def analyser(chemin: Path) -> dict | None:
         verdict = "OK"
 
     return {
-        "serie": str(chemin.relative_to(BRUT_DIR)).replace("\\", "/"),
+        "serie": relatif,
         "derniere_observation": dates[-1].isoformat(),
         "anciennete_jours": anciennete,
         "rythme_median_jours": round(rythme, 1),

@@ -1,6 +1,6 @@
-# Rapport global — 2026-09-25 08:04 UTC
+# Rapport global — 2026-09-25 08:06 UTC
 
-**Etat global : ATTENTION** · 112/112 modeles reussis · 5 source(s) suspecte(s) · 0 source(s) gelee(s).
+**Etat global : OK** · 112/112 modeles reussis · 0 source(s) suspecte(s) · 0 source(s) gelee(s).
 
 Cette page regroupe toutes les conclusions. Les calculs sont actualises chaque heure ; les observations conservent la cadence de publication de leur source officielle.
 

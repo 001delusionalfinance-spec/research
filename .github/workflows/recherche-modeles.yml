@@ -37,6 +37,10 @@ jobs:
       - name: Calculer tous les modeles
         run: python recherche/modeles/run_all_modeles.py
 
+      - name: Controle de fraicheur des sources
+        if: always()
+        run: python recherche/modeles/controle_fraicheur.py
+
       # Les trois sorties ci-dessous tournent meme si un modele a echoue : le reste du
       # dispositif a produit des resultats exploitables, et une page de lecture partielle vaut
       # mieux que pas de page du tout.
