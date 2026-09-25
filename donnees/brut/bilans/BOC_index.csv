@@ -1,24 +1,24 @@
 fichier,code_valet,libelle,n_observations
-BOC_V36612,V36612,Treasury Bills,1916
-BOC_V36613,V36613,Government of Canada Bonds,1916
-BOC_V1160788296,V1160788296,Real Return Bonds,329
-BOC_V1038114416,V1038114416,Canada Mortgage Bonds,404
-BOC_V1146067261,v1146067261,Provincial Money Market Securities,339
-BOC_V1154426989,v1154426989,Provincial Bonds,332
-BOC_V1146067262,v1146067262,Bankers’ Acceptances,339
-BOC_V1146067263,v1146067263,Commercial Paper,337
-BOC_V1154426990,v1154426990,Corporate Bonds,329
-BOC_V36634,V36634,Advances,1916
-BOC_V44201362,V44201362,Securities purchased under resale agreements,990
-BOC_V1154426991,v1154426991,Derivatives: Indemnity agreements with the Government of Canada,307
-BOC_V36635,V36635,All other assets,1916
-BOC_V36610,V36610,Total assets,1916
-BOC_V36625,V36625,Notes in circulation,1916
-BOC_V36628,V36628,Government of Canada,1916
-BOC_V36636,V36636,Members of Payments Canada,1916
-BOC_V1146067264,v1146067264,Other,339
-BOC_V1203435186,V1203435186,Securities sold under repurchase agreements,321
-BOC_V1210798115,V1210798115,Derivatives: Indemnity agreements with the Government of Canada,325
-BOC_V1490410223,V1490410223,All other liabilities,194
-BOC_V1490410224,V1490410224,Equity,194
-BOC_V36624,V36624,Total liabilities and equity,1916
+BOC_V36612,V36612,Treasury Bills,1917
+BOC_V36613,V36613,Government of Canada Bonds,1917
+BOC_V1160788296,V1160788296,Real Return Bonds,330
+BOC_V1038114416,V1038114416,Canada Mortgage Bonds,405
+BOC_V1146067261,v1146067261,Provincial Money Market Securities,340
+BOC_V1154426989,v1154426989,Provincial Bonds,333
+BOC_V1146067262,v1146067262,Bankers’ Acceptances,340
+BOC_V1146067263,v1146067263,Commercial Paper,338
+BOC_V1154426990,v1154426990,Corporate Bonds,330
+BOC_V36634,V36634,Advances,1917
+BOC_V44201362,V44201362,Securities purchased under resale agreements,991
+BOC_V1154426991,v1154426991,Derivatives: Indemnity agreements with the Government of Canada,308
+BOC_V36635,V36635,All other assets,1917
+BOC_V36610,V36610,Total assets,1917
+BOC_V36625,V36625,Notes in circulation,1917
+BOC_V36628,V36628,Government of Canada,1917
+BOC_V36636,V36636,Members of Payments Canada,1917
+BOC_V1146067264,v1146067264,Other,340
+BOC_V1203435186,V1203435186,Securities sold under repurchase agreements,322
+BOC_V1210798115,V1210798115,Derivatives: Indemnity agreements with the Government of Canada,326
+BOC_V1490410223,V1490410223,All other liabilities,195
+BOC_V1490410224,V1490410224,Equity,195
+BOC_V36624,V36624,Total liabilities and equity,1917

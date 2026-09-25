@@ -2,7 +2,7 @@
 
 Change, actions, secteurs, facteurs, rotations et signaux d'allocation.
 
-Mis a jour : **2026-09-25 14:10 UTC** · 16 lectures.
+Mis a jour : **2026-09-25 18:11 UTC** · 16 lectures.
 
 [Retour au tableau de bord](../README.md)
 
@@ -22,7 +22,7 @@ _Statut **OK** · observation 2026-09-23 · moteur `statistique` · [donnees](..
 
 ### Indices mondiaux
 
-7 indices (devise locale) : Coree (KOSPI) +103.1% en tete sur 12 mois, Hong Kong (Hang Seng) -7.5% en queue -- ecart tres large entre blocs sur 12 mois (111pt) -- les cycles economiques ou les flux divergent nettement. ROTATION en cours : Coree (KOSPI) mene sur 12 mois mais Hong Kong (Hang Seng) a repris la tete sur 3 mois
+7 indices (devise locale) : Coree (KOSPI) +103.1% en tete sur 12 mois, Hong Kong (Hang Seng) -6.6% en queue -- ecart tres large entre blocs sur 12 mois (110pt) -- les cycles economiques ou les flux divergent nettement. ROTATION en cours : Coree (KOSPI) mene sur 12 mois mais Hong Kong (Hang Seng) a repris la tete sur 3 mois
 
 _Statut **OK** · observation 2026-09-25 · moteur `factorielle` · [donnees](../donnees/indices_mondiaux.csv) · [graphique](../graphiques/indices_mondiaux/apercu.png)_
 
@@ -31,7 +31,7 @@ _Statut **OK** · observation 2026-09-25 · moteur `factorielle` · [donnees](..
 
 correlation glissante 60j SP500/VIX = -0.750 (min=-0.955, max=-0.429 sur la fenetre d'historique disponible) -- dans la zone intermediaire de sa fourchette historique
 
-_Statut **OK** · observation 2026-09-24 · moteur `statistique` · [donnees](../donnees/correlation_glissante.csv) · [graphique](../graphiques/correlation_glissante/correlation_glissante_sp500_vix.png)_
+_Statut **OK** · observation 2026-09-25 · moteur `statistique` · [donnees](../donnees/correlation_glissante.csv) · [graphique](../graphiques/correlation_glissante/correlation_glissante_sp500_vix.png)_
 
 
 ### Clustering marches
@@ -43,16 +43,16 @@ _Statut **OK** · observation 2026-09-15 · moteur `statistique` · [donnees](..
 
 ### Beta facteur macro
 
-beta SP500/DGS10 (60j) = -0.0776 (rendement SP500 pour +1pt de taux 10 ans, 57/60 jours avec variation reelle) -- sensibilite elevee au facteur macro (choc de +100pb extrapole = -7.5%)
+beta SP500/DGS10 (60j) = -0.0765 (rendement SP500 pour +1pt de taux 10 ans, 57/60 jours avec variation reelle) -- sensibilite elevee au facteur macro (choc de +100pb extrapole = -7.4%)
 
 _Statut **OK** · observation 2026-09-23 · moteur `statistique` · [donnees](../donnees/beta_facteur_macro.csv)_
 
 
 ### Momentum prix
 
-SP500 momentum 12-1 mois = 15.66% -- haussier (momentum positif), detail 1/3/6/12m = [0.35, 4.71, 18.94, 16.06]
+SP500 momentum 12-1 mois = 16.22% -- haussier (momentum positif), detail 1/3/6/12m = [0.84, 5.26, 21.54, 17.2]
 
-_Statut **OK** · observation 2026-09-24 · moteur `factorielle` · [donnees](../donnees/momentum_prix.csv)_
+_Statut **OK** · observation 2026-09-25 · moteur `factorielle` · [donnees](../donnees/momentum_prix.csv)_
 
 
 ### Carry proxy
@@ -64,56 +64,56 @@ _Statut **OK** · observation 2026-09-23 · moteur `factorielle` · [donnees](..
 
 ### Beta vol
 
-beta SP500/VIX (60j) = -0.00488 (rendement SP500 pour +1pt VIX) -- sensibilite normale, relation inverse attendue (normale)
+beta SP500/VIX (60j) = -0.00484 (rendement SP500 pour +1pt VIX) -- sensibilite normale, relation inverse attendue (normale)
 
-_Statut **OK** · observation 2026-09-24 · moteur `factorielle` · [donnees](../donnees/beta_vol.csv)_
+_Statut **OK** · observation 2026-09-25 · moteur `factorielle` · [donnees](../donnees/beta_vol.csv)_
 
 
 ### Rotation sectorielle
 
-classement momentum 3 mois (10 secteurs) : 1. Energie (XLE) : +15.73% | 2. Sante (XLV) : +9.15% | 3. Technologie (XLK) : +5.49% | 4. Finance (XLF) : +2.02% | 5. Consommation de base (XLP) : -2.67%
+classement momentum 3 mois (10 secteurs) : 1. Energie (XLE) : +14.77% | 2. Technologie (XLK) : +8.58% | 3. Sante (XLV) : +6.08% | 4. Finance (XLF) : +2.28% | 5. Consommation de base (XLP) : -3.26%
 
-_Statut **OK** · observation 2026-09-24 · moteur `factorielle` · [donnees](../donnees/rotation_sectorielle.csv) · [graphique](../graphiques/rotation_sectorielle/apercu.png)_
+_Statut **OK** · observation 2026-09-25 · moteur `factorielle` · [donnees](../donnees/rotation_sectorielle.csv) · [graphique](../graphiques/rotation_sectorielle/apercu.png)_
 
 
 ### Saisonnalite
 
-rendement journalier moyen ete=+0.0181%, hiver=+0.0465% (t=-1.02, p=0.3060) -- non significatif (attendu vu la faible puissance sur seulement ~2 ans)
+rendement journalier moyen ete=+0.0182%, hiver=+0.0465% (t=-1.02, p=0.3078) -- non significatif (attendu vu la faible puissance sur seulement ~2 ans)
 
-_Statut **OK** · observation 2026-09-24 · moteur `factorielle` · [donnees](../donnees/saisonnalite.csv)_
+_Statut **OK** · observation 2026-09-25 · moteur `factorielle` · [donnees](../donnees/saisonnalite.csv)_
 
 
 ### Dispersion sectorielle
 
-10 secteurs, rendement moyen 3m=-0.62%, dispersion (ecart-type)=8.40pt, etendue=29.89pt -- dispersion intermediaire
+10 secteurs, rendement moyen 3m=-0.76%, dispersion (ecart-type)=8.28pt, etendue=29.46pt -- dispersion intermediaire
 
-_Statut **OK** · observation 2026-09-24 · moteur `factorielle` · [donnees](../donnees/dispersion_sectorielle.csv)_
+_Statut **OK** · observation 2026-09-25 · moteur `factorielle` · [donnees](../donnees/dispersion_sectorielle.csv)_
 
 
 ### Low volatility
 
-tercile bas-vol ['XLF', 'XLRE', 'XLU'] Sharpe=-0.649 vs tercile haut-vol ['XLY', 'XLE', 'XLK'] Sharpe=0.123 -- anomalie low-vol non confirmee sur cet echantillon (puissance statistique faible, n petit -- limite assumee)
+tercile bas-vol ['XLF', 'XLRE', 'XLU'] Sharpe=-0.602 vs tercile haut-vol ['XLY', 'XLE', 'XLK'] Sharpe=0.207 -- anomalie low-vol non confirmee sur cet echantillon (puissance statistique faible, n petit -- limite assumee)
 
-_Statut **OK** · observation 2026-09-24 · moteur `factorielle` · [donnees](../donnees/low_volatility.csv)_
+_Statut **OK** · observation 2026-09-25 · moteur `factorielle` · [donnees](../donnees/low_volatility.csv)_
 
 
 ### Momentum cross sectional
 
-panier gagnant ['XLE', 'XLV', 'XLK'] (+10.13%) vs panier perdant ['XLRE', 'XLI', 'XLU'] (-9.68%) -- spread momentum=+19.81pt
+panier gagnant ['XLE', 'XLK', 'XLV'] (+9.81%) vs panier perdant ['XLI', 'XLRE', 'XLU'] (-9.70%) -- spread momentum=+19.51pt
 
-_Statut **OK** · observation 2026-09-24 · moteur `factorielle` · [donnees](../donnees/momentum_cross_sectional.csv)_
+_Statut **OK** · observation 2026-09-25 · moteur `factorielle` · [donnees](../donnees/momentum_cross_sectional.csv)_
 
 
 ### Cointegration secteurs
 
 0/10 secteurs cointegres avec SP500 -- decouples : ['XLK', 'XLF', 'XLE', 'XLV', 'XLI', 'XLY', 'XLP', 'XLU', 'XLB', 'XLRE']  _(sans synthese)_
 
-_Statut **OK** · observation 2026-09-24 · moteur `statistique` · [donnees](../donnees/cointegration_secteurs.csv)_
+_Statut **OK** · observation 2026-09-25 · moteur `statistique` · [donnees](../donnees/cointegration_secteurs.csv)_
 
 
 ### Correlation facteurs
 
-correlation entre momentum 3m et beta-VIX, 10 secteurs : +0.143 (facteurs largement independants)
+correlation entre momentum 3m et beta-VIX, 10 secteurs : +0.041 (facteurs largement independants)
 
-_Statut **OK** · observation 2026-09-24 · moteur `factorielle` · [donnees](../donnees/correlation_facteurs.csv)_
+_Statut **OK** · observation 2026-09-25 · moteur `factorielle` · [donnees](../donnees/correlation_facteurs.csv)_
 
