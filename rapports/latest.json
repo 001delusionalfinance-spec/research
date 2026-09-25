@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-25T18:11:15.956166+00:00",
+  "generated_at": "2026-09-25T22:44:04.717209+00:00",
   "status": "ok",
   "models": [
     {
@@ -11,7 +11,7 @@
       "ok": true,
       "synthese": false,
       "sortie": "regime_monetaire_emploi.csv",
-      "derniere_observation": "2026-09-23"
+      "derniere_observation": "2026-09-24"
     },
     {
       "nom": "sahm_rule",
@@ -33,7 +33,7 @@
       "ok": true,
       "synthese": true,
       "sortie": "taux_reel_us.csv",
-      "derniere_observation": "2026-09-23"
+      "derniere_observation": "2026-09-24"
     },
     {
       "nom": "regle_taylor",
@@ -44,51 +44,51 @@
       "ok": true,
       "synthese": true,
       "sortie": "regle_taylor.csv",
-      "derniere_observation": "2026-09-23"
+      "derniere_observation": "2026-09-24"
     },
     {
       "nom": "courbe_taux_us",
       "titre": "Courbe taux us",
       "theme": "taux-credit-liquidite",
       "lane": "macro",
-      "lecture": "10 ans=5.11%, 2 ans=4.85%, spread=+0.26pt -- normale (0 run(s) consecutif(s) dans l'historique accumule)",
+      "lecture": "10 ans=5.18%, 2 ans=4.87%, spread=+0.31pt -- normale (0 run(s) consecutif(s) dans l'historique accumule)",
       "ok": true,
       "synthese": true,
       "sortie": "courbe_taux_us.csv",
-      "derniere_observation": "2026-09-23"
+      "derniere_observation": "2026-09-24"
     },
     {
       "nom": "chemin_taux_fed",
       "titre": "Chemin taux fed",
       "theme": "banques-centrales",
       "lane": "macro",
-      "lecture": "chemin de taux (pas des probabilites) : DFF=3.88%, prochaine reunion 2026-10-27 (11 a venir dans le calendrier) -- 0-1 mois: +11pb (hausse, confiance faible) | 1-3 mois: +41pb (hausse, confiance faible) | 3-6 mois: +55pb (hausse, confiance faible) | 6-12 mois: +79pb (hausse, confiance faible)",
+      "lecture": "chemin de taux (pas des probabilites) : DFF=3.88%, prochaine reunion 2026-10-27 (11 a venir dans le calendrier) -- 0-1 mois: +13pb (hausse, confiance faible) | 1-3 mois: +48pb (hausse, confiance faible) | 3-6 mois: +56pb (hausse, confiance faible) | 6-12 mois: +80pb (hausse, confiance faible)",
       "ok": true,
       "synthese": true,
       "sortie": "chemin_taux_fed.csv",
-      "derniere_observation": "2026-09-23"
+      "derniere_observation": "2026-09-24"
     },
     {
       "nom": "cycle_credit",
       "titre": "Cycle credit",
       "theme": "taux-credit-liquidite",
       "lane": "macro",
-      "lecture": "credit bancaire total croissance YoY=+6.24%, rang percentile historique=40.18691588785047, lecture=normal",
+      "lecture": "credit bancaire total croissance YoY=+6.15%, rang percentile historique=39.7196261682243, lecture=normal",
       "ok": true,
       "synthese": true,
       "sortie": "cycle_credit.csv",
-      "derniere_observation": "2026-09-09"
+      "derniere_observation": "2026-09-16"
     },
     {
       "nom": "conditions_financieres",
       "titre": "Conditions financieres",
       "theme": "taux-credit-liquidite",
       "lane": "macro",
-      "lecture": "indice conditions financieres=+0.097 (3 composantes: {'taux_directeur': 0.5989298167517355, 'courbe_inversee': 0.3359699129001652, 'vix': -0.6437234738165255}) -- conditions proches de la normale",
+      "lecture": "indice conditions financieres=+0.064 (3 composantes: {'taux_directeur': 0.5985724560125544, 'courbe_inversee': 0.2531563730537784, 'vix': -0.6597998970697634}) -- conditions proches de la normale",
       "ok": true,
       "synthese": true,
       "sortie": "conditions_financieres.csv",
-      "derniere_observation": "2026-09-23"
+      "derniere_observation": "2026-09-24"
     },
     {
       "nom": "reer_us",
@@ -172,7 +172,7 @@
       "titre": "Soutenabilite dette",
       "theme": "cycle-macro",
       "lane": "macro",
-      "lecture": "8 pays. charge la plus lourde : Canada a 25.5% du revenu. taux 10 ans AU-DESSUS de l'inflation dans 5 pays -- Royaume-Uni (+2.2pt), Etats-Unis (+1.7pt), Japon (+1.0pt), Canada (+0.9pt), Zone euro (+0.8pt). Configuration ou le ratio d'endettement monte meme a budget primaire equilibre (approximation : croissance nominale reduite a l'inflation)",
+      "lecture": "8 pays. charge la plus lourde : Canada a 25.5% du revenu. taux 10 ans AU-DESSUS de l'inflation dans 5 pays -- Royaume-Uni (+2.2pt), Etats-Unis (+1.8pt), Japon (+1.0pt), Canada (+0.9pt), Zone euro (+0.8pt). Configuration ou le ratio d'endettement monte meme a budget primaire equilibre (approximation : croissance nominale reduite a l'inflation)",
       "ok": true,
       "synthese": true,
       "sortie": "soutenabilite_dette.csv",
@@ -183,7 +183,7 @@
       "titre": "Matieres premieres macro",
       "theme": "cycle-macro",
       "lane": "macro",
-      "lecture": "ratio cuivre/or stable -- pas de signal net sur la croissance (+4.5% sur 3 mois). Brent 97.1$ (+34.8% sur 3 mois, +39.8% sur 12 mois), gaz +0.3% sur 3 mois, ecart Brent-WTI +4.9$ -- energie nettement plus chere sur un an -- pression inflationniste a venir que les prix a la consommation ne montrent pas encore",
+      "lecture": "ratio cuivre/or stable -- pas de signal net sur la croissance (+4.7% sur 3 mois). Brent 97.5$ (+35.4% sur 3 mois, +40.4% sur 12 mois), gaz +0.6% sur 3 mois, ecart Brent-WTI +5.0$ -- energie nettement plus chere sur un an -- pression inflationniste a venir que les prix a la consommation ne montrent pas encore",
       "ok": true,
       "synthese": true,
       "sortie": "matieres_premieres_macro.csv",
@@ -205,7 +205,7 @@
       "titre": "Pentes courbes",
       "theme": "taux-credit-liquidite",
       "lane": "series-temporelles",
-      "lecture": "7 courbes : pente de +0.26pt (Etats-Unis) a +1.20pt (Japon) -- aucune courbe inversee -- pas de signal recessif par la pente",
+      "lecture": "7 courbes : pente de +0.30pt (Australie) a +1.20pt (Japon) -- aucune courbe inversee -- pas de signal recessif par la pente",
       "ok": true,
       "synthese": true,
       "sortie": "pentes_courbes.csv",
@@ -220,7 +220,7 @@
       "ok": true,
       "synthese": true,
       "sortie": "differentiel_taux_change.csv",
-      "derniere_observation": "2026-09-23"
+      "derniere_observation": "2026-09-24"
     },
     {
       "nom": "indices_mondiaux",
@@ -238,7 +238,7 @@
       "titre": "Vol cross asset",
       "theme": "risques-regimes",
       "lane": "risque",
-      "lecture": "6 mesures de volatilite : Petrole (OVX) 88e pct, Or (GVZ) 80e pct, Taux US (MOVE) 55e pct, Nasdaq (VXN) 38e pct, Vol de la vol (VVIX) 27e pct, Actions US (VIX) 22e pct -- stress LOCALISE sur Petrole (OVX), Or (GVZ) pendant que le reste ne l'est pas -- episode propre a cette classe d'actifs, pas une aversion au risque d'ensemble",
+      "lecture": "6 mesures de volatilite : Petrole (OVX) 88e pct, Or (GVZ) 80e pct, Taux US (MOVE) 43e pct, Nasdaq (VXN) 38e pct, Vol de la vol (VVIX) 27e pct, Actions US (VIX) 21e pct -- stress LOCALISE sur Petrole (OVX), Or (GVZ) pendant que le reste ne l'est pas -- episode propre a cette classe d'actifs, pas une aversion au risque d'ensemble",
       "ok": true,
       "synthese": true,
       "sortie": "vol_cross_asset.csv",
@@ -249,22 +249,22 @@
       "titre": "Positionnement courbe taux",
       "theme": "positionnement",
       "lane": "positionnement-comportemental",
-      "lecture": "8 contrats de taux -- pari de NIVEAU -- courtes et longues sont short, le marche joue un deplacement de toute la courbe dans le meme sens. Positionnement a un extreme historique sur : SOFR 3 mois (extreme bas, 2e pct), Bond (30 ans) (extreme bas, 2e pct)",
+      "lecture": "8 contrats de taux -- pari de NIVEAU -- courtes et longues sont short, le marche joue un deplacement de toute la courbe dans le meme sens. Positionnement a un extreme historique sur : SOFR 3 mois (extreme bas, 5e pct)",
       "ok": true,
       "synthese": true,
       "sortie": "positionnement_courbe_taux.csv",
-      "derniere_observation": "2026-09-15"
+      "derniere_observation": "2026-09-22"
     },
     {
       "nom": "positionnement_devises",
       "titre": "Positionnement devises",
       "theme": "positionnement",
       "lane": "positionnement-comportemental",
-      "lecture": "8 devises (net positif = pari haussier sur la devise etrangere, jamais sur le dollar) -- aucune position de carry identifiee. A un extreme historique : Yen (extreme haut, 98e pct), Dollar neo-zelandais (extreme haut, 97e pct), Livre sterling (extreme bas, 14e pct), Franc suisse (extreme bas, 12e pct) -- un positionnement extreme est vulnerable a un deboucle rapide si la volatilite monte",
+      "lecture": "8 devises (net positif = pari haussier sur la devise etrangere, jamais sur le dollar) -- aucune position de carry identifiee. A un extreme historique : Yen (extreme haut, 97e pct), Franc suisse (extreme bas, 14e pct), Livre sterling (extreme bas, 2e pct) -- un positionnement extreme est vulnerable a un deboucle rapide si la volatilite monte",
       "ok": true,
       "synthese": true,
       "sortie": "positionnement_devises.csv",
-      "derniere_observation": "2026-09-15"
+      "derniere_observation": "2026-09-22"
     },
     {
       "nom": "ton_banques_centrales",
@@ -282,40 +282,40 @@
       "titre": "Positionnement cot",
       "theme": "positionnement",
       "lane": "positionnement-comportemental",
-      "lecture": "WTI_CRUDE : net=135905.0, z=0.04, extreme=False  _(sans synthese)_",
+      "lecture": "WTI_CRUDE : net=141106.0, z=0.15, extreme=False  _(sans synthese)_",
       "ok": true,
       "synthese": false,
       "sortie": "positionnement_cot.csv",
-      "derniere_observation": "2026-09-15"
+      "derniere_observation": "2026-09-22"
     },
     {
       "nom": "momentum_positionnement",
       "titre": "Momentum positionnement",
       "theme": "positionnement",
       "lane": "positionnement-comportemental",
-      "lecture": "WTI_CRUDE : z=+0.04 (il y a 8sem: -1.04), momentum=+1.08 -- positionnement se degonfle (l'extreme diminue)  _(sans synthese)_",
+      "lecture": "WTI_CRUDE : z=+0.15 (il y a 8sem: -0.35), momentum=+0.49 -- positionnement se degonfle (l'extreme diminue)  _(sans synthese)_",
       "ok": true,
       "synthese": false,
       "sortie": "momentum_positionnement.csv",
-      "derniere_observation": "2026-09-15"
+      "derniere_observation": "2026-09-22"
     },
     {
       "nom": "crowding_cross_asset",
       "titre": "Crowding cross asset",
       "theme": "positionnement",
       "lane": "positionnement-comportemental",
-      "lecture": "11/32 marches avec |z|>=1.5 simultanement : CORN(+2.45);EUR_FX(-1.57);NAT_GAS(-1.85);NZD_FX(+2.22);SOFR_3M(-2.07);SOYBEANS(+1.58);UST_2Y(+2.37);UST_5Y(+2.06);UST_BOND(-1.76);UST_ULTRA_BOND(-1.83);WHEAT(+1.61)",
+      "lecture": "11/32 marches avec |z|>=1.5 simultanement : BRENT_CRUDE(-1.69);COPPER(+2.02);CORN(+2.31);EUR_FX(-1.90);NASDAQ_MINI(+1.82);NAT_GAS(-1.67);SOFR_3M(-1.73);SOYBEANS(+1.75);UST_2Y(+2.01);UST_5Y(+2.20);UST_ULTRA_BOND(-1.58)",
       "ok": true,
       "synthese": true,
       "sortie": "crowding_cross_asset.csv",
-      "derniere_observation": "2026-09-15"
+      "derniere_observation": "2026-09-22"
     },
     {
       "nom": "divergence_cot_prix",
       "titre": "Divergence cot prix",
       "theme": "positionnement",
       "lane": "positionnement-comportemental",
-      "lecture": "SP500 +0.84% sur 30j, COT net 11280 -> -100461 -- DIVERGENCE (prix monte, positionnement recule)",
+      "lecture": "SP500 +0.88% sur 30j, COT net -10560 -> -133228 -- DIVERGENCE (prix monte, positionnement recule)",
       "ok": true,
       "synthese": true,
       "sortie": "divergence_cot_prix.csv",
@@ -326,55 +326,55 @@
       "titre": "Ratio commercial speculatif",
       "theme": "positionnement",
       "lane": "positionnement-comportemental",
-      "lecture": "WTI_CRUDE : commercial=-164858, speculatif=+135905, ratio=1.21, sens_oppose=True  _(sans synthese)_",
+      "lecture": "WTI_CRUDE : commercial=-169889, speculatif=+141106, ratio=1.20, sens_oppose=True  _(sans synthese)_",
       "ok": true,
       "synthese": false,
       "sortie": "ratio_commercial_speculatif.csv",
-      "derniere_observation": "2026-09-15"
+      "derniere_observation": "2026-09-22"
     },
     {
       "nom": "rotation_risk_on_off",
       "titre": "Rotation risk on off",
       "theme": "positionnement",
       "lane": "positionnement-comportemental",
-      "lecture": "z-score moyen risque=+0.49 ({'SP500_EMINI': 0.2781561647249375, 'NASDAQ_MINI': 0.7113876667331047}), refuge=+0.46 ({'GOLD': 0.9287746611732994, 'UST_10Y': -0.004638865300170082}) -- posture=mixte/neutre",
+      "lecture": "z-score moyen risque=+0.77 ({'SP500_EMINI': -0.28249477882517304, 'NASDAQ_MINI': 1.8208598917628376}), refuge=+0.45 ({'GOLD': 0.8076914537111165, 'UST_10Y': 0.0983803955037745}) -- posture=mixte/neutre",
       "ok": true,
       "synthese": true,
       "sortie": "rotation_risk_on_off.csv",
-      "derniere_observation": "2026-09-15"
+      "derniere_observation": "2026-09-22"
     },
     {
       "nom": "concentration_traders",
       "titre": "Concentration traders",
       "theme": "positionnement",
       "lane": "positionnement-comportemental",
-      "lecture": "WTI_CRUDE : 326 traders, position nette moyenne/trader=417 -- diffus (large base de traders) (mediane du groupe : 418)  _(sans synthese)_",
+      "lecture": "WTI_CRUDE : 312 traders, position nette moyenne/trader=452 -- concentre (peu de mains) (mediane du groupe : 423)  _(sans synthese)_",
       "ok": true,
       "synthese": false,
       "sortie": "concentration_traders.csv",
-      "derniere_observation": "2026-09-15"
+      "derniere_observation": "2026-09-22"
     },
     {
       "nom": "metaux_precieux",
       "titre": "Metaux precieux",
       "theme": "positionnement",
       "lane": "positionnement-comportemental",
-      "lecture": "z-scores : {'GOLD': 0.9287746611732994, 'SILVER': -0.8411389470660166, 'PLATINUM': -0.2805751279778128} -- GOLD le plus tendu, sans franchir le seuil extreme (|z|>2) -- ecart or/industriels=+1.49",
+      "lecture": "z-scores : {'GOLD': 0.8076914537111165, 'SILVER': -0.8121496674542396, 'PLATINUM': -0.2532302108462876} -- SILVER le plus tendu, sans franchir le seuil extreme (|z|>2) -- ecart or/industriels=+1.34",
       "ok": true,
       "synthese": true,
       "sortie": "metaux_precieux.csv",
-      "derniere_observation": "2026-09-15"
+      "derniere_observation": "2026-09-22"
     },
     {
       "nom": "persistance_extremes",
       "titre": "Persistance extremes",
       "theme": "positionnement",
       "lane": "positionnement-comportemental",
-      "lecture": "32 marches analyses, plus longue persistance : SOFR_3M (20 semaines)",
+      "lecture": "32 marches analyses, plus longue persistance : SOFR_3M (21 semaines)",
       "ok": true,
       "synthese": true,
       "sortie": "persistance_extremes.csv",
-      "derniere_observation": "2026-09-15"
+      "derniere_observation": "2026-09-22"
     },
     {
       "nom": "correlations_positionnement",
@@ -396,7 +396,7 @@
       "ok": true,
       "synthese": false,
       "sortie": "stationnarite_taux.csv",
-      "derniere_observation": "2026-09-23"
+      "derniere_observation": "2026-09-24"
     },
     {
       "nom": "correlation_glissante",
@@ -418,7 +418,7 @@
       "ok": true,
       "synthese": false,
       "sortie": "cointegration_taux.csv",
-      "derniere_observation": "2026-09-23"
+      "derniere_observation": "2026-09-24"
     },
     {
       "nom": "pca_taux",
@@ -436,11 +436,11 @@
       "titre": "Clustering marches",
       "theme": "marches-allocation",
       "lane": "statistique",
-      "lecture": "32 marches, 4 clusters (average linkage, distance=1-|r|) : cluster 1 : ['EUR_FX', 'SP500_EMINI'] | cluster 2 : ['CORN', 'GBP_FX', 'NAT_GAS', 'PALLADIUM', 'SOFR_3M', 'SOYBEANS'] | cluster 3 : ['AUD_FX', 'BRENT_CRUDE', 'CAD_FX', 'CHF_FX', 'COPPER', 'GOLD', 'JPY_FX', 'MXN_FX', 'NASDAQ_MINI', 'NZD_FX', 'PLATINUM', 'RUSSELL_MINI', 'SILVER', 'USD_INDEX', 'UST_10Y', 'UST_2Y', 'UST_5Y', 'UST_BOND', 'UST_ULTRA_10Y', 'UST_ULTRA_BOND', 'VIX_FUT', 'WHEAT', 'WTI_CRUDE'] | cluster 4 : ['FED_FUNDS']",
+      "lecture": "32 marches, 4 clusters (average linkage, distance=1-|r|) : cluster 1 : ['CORN', 'GBP_FX', 'NAT_GAS', 'PALLADIUM', 'SOFR_3M', 'SOYBEANS'] | cluster 2 : ['AUD_FX', 'BRENT_CRUDE', 'CAD_FX', 'CHF_FX', 'COPPER', 'GOLD', 'JPY_FX', 'MXN_FX', 'NASDAQ_MINI', 'NZD_FX', 'PLATINUM', 'RUSSELL_MINI', 'SILVER', 'USD_INDEX', 'UST_10Y', 'UST_2Y', 'UST_5Y', 'UST_ULTRA_10Y', 'UST_ULTRA_BOND', 'VIX_FUT', 'WHEAT', 'WTI_CRUDE'] | cluster 3 : ['EUR_FX', 'SP500_EMINI'] | cluster 4 : ['FED_FUNDS', 'UST_BOND']",
       "ok": true,
       "synthese": true,
       "sortie": "clustering_marches.csv",
-      "derniere_observation": "2026-09-15"
+      "derniere_observation": "2026-09-22"
     },
     {
       "nom": "causalite_granger",
@@ -458,7 +458,7 @@
       "titre": "Dependance queue",
       "theme": "modeles-validation",
       "lane": "statistique",
-      "lecture": "518/7547 jours conjointement extremes (SP500 pire 10% ET VIX pire 10%), P observee=0.0686 vs P sous independance=0.0100 -- coefficient de dependance de queue=6.86 (dependance reelle)",
+      "lecture": "518/7546 jours conjointement extremes (SP500 pire 10% ET VIX pire 10%), P observee=0.0686 vs P sous independance=0.0100 -- coefficient de dependance de queue=6.86 (dependance reelle)",
       "ok": true,
       "synthese": true,
       "sortie": "dependance_queue.csv",
@@ -469,18 +469,18 @@
       "titre": "Beta facteur macro",
       "theme": "marches-allocation",
       "lane": "statistique",
-      "lecture": "beta SP500/DGS10 (60j) = -0.0765 (rendement SP500 pour +1pt de taux 10 ans, 57/60 jours avec variation reelle) -- sensibilite elevee au facteur macro (choc de +100pb extrapole = -7.4%)",
+      "lecture": "beta SP500/DGS10 (60j) = -0.0790 (rendement SP500 pour +1pt de taux 10 ans, 57/60 jours avec variation reelle) -- sensibilite elevee au facteur macro (choc de +100pb extrapole = -7.6%)",
       "ok": true,
       "synthese": true,
       "sortie": "beta_facteur_macro.csv",
-      "derniere_observation": "2026-09-23"
+      "derniere_observation": "2026-09-24"
     },
     {
       "nom": "volatilite_ewma",
       "titre": "Volatilite ewma",
       "theme": "risques-regimes",
       "lane": "series-temporelles",
-      "lecture": "vol realisee 60j=0.11146748334500522, EWMA=0.1078 (tendance 10 runs: stable)",
+      "lecture": "vol realisee 60j=0.11153026065780319, EWMA=0.1081 (tendance 10 runs: stable)",
       "ok": true,
       "synthese": true,
       "sortie": "volatilite_ewma.csv",
@@ -502,7 +502,7 @@
       "titre": "Hurst",
       "theme": "risques-regimes",
       "lane": "series-temporelles",
-      "lecture": "Hurst=0.5537 (R2 regression=1.000) -- persistant (tendanciel)",
+      "lecture": "Hurst=0.5535 (R2 regression=1.000) -- persistant (tendanciel)",
       "ok": true,
       "synthese": true,
       "sortie": "hurst.csv",
@@ -513,7 +513,7 @@
       "titre": "Ornstein uhlenbeck vix",
       "theme": "risques-regimes",
       "lane": "series-temporelles",
-      "lecture": "VIX actuel=15.00, niveau moyen estime (mu)=20.20, demi-vie=28.8j, ecart actuel=-5.20 -- VIX actuel en-dessous de son niveau moyen de long terme",
+      "lecture": "VIX actuel=14.87, niveau moyen estime (mu)=20.20, demi-vie=28.8j, ecart actuel=-5.33 -- VIX actuel en-dessous de son niveau moyen de long terme",
       "ok": true,
       "synthese": true,
       "sortie": "ornstein_uhlenbeck_vix.csv",
@@ -535,7 +535,7 @@
       "titre": "Kalman niveau local",
       "theme": "risques-regimes",
       "lane": "series-temporelles",
-      "lecture": "VIX observe=15.00, filtre Kalman=15.09 (ecart-type=0.62), ratio signal/bruit=0.2051 -- le filtre lisse fortement le bruit, reagit lentement (ecart obs.-filtre=-0.09)",
+      "lecture": "VIX observe=14.87, filtre Kalman=14.98 (ecart-type=0.62), ratio signal/bruit=0.2051 -- le filtre lisse fortement le bruit, reagit lentement (ecart obs.-filtre=-0.11)",
       "ok": true,
       "synthese": true,
       "sortie": "kalman_niveau_local.csv",
@@ -546,18 +546,18 @@
       "titre": "Hp filter taux",
       "theme": "taux-credit-liquidite",
       "lane": "series-temporelles",
-      "lecture": "taux 10 ans observe=5.110%, tendance HP=4.934%, ecart cyclique=+0.176pt -- au-dessus de sa tendance locale",
+      "lecture": "taux 10 ans observe=5.180%, tendance HP=4.960%, ecart cyclique=+0.220pt -- au-dessus de sa tendance locale",
       "ok": true,
       "synthese": true,
       "sortie": "hp_filter_taux.csv",
-      "derniere_observation": "2026-09-23"
+      "derniere_observation": "2026-09-24"
     },
     {
       "nom": "var_sp500_vix",
       "titre": "Var sp500 vix",
       "theme": "risques-regimes",
       "lane": "series-temporelles",
-      "lecture": "VAR ordre choisi par AIC=10 -- coef SP500(t-1)->VIX(t)=0.3764196555320396 (SP500(t-1) en hausse -> VIX(t) tend aussi a monter), coef VIX(t-1)->SP500(t)=-0.05234678024699575 (VIX(t-1) en hausse -> SP500(t) tend a baisser)",
+      "lecture": "VAR ordre choisi par AIC=10 -- coef SP500(t-1)->VIX(t)=0.3769116249569233 (SP500(t-1) en hausse -> VIX(t) tend aussi a monter), coef VIX(t-1)->SP500(t)=-0.05237241130035915 (VIX(t-1) en hausse -> SP500(t) tend a baisser)",
       "ok": true,
       "synthese": true,
       "sortie": "var_sp500_vix.csv",
@@ -579,7 +579,7 @@
       "titre": "Momentum prix",
       "theme": "marches-allocation",
       "lane": "factorielle",
-      "lecture": "SP500 momentum 12-1 mois = 16.22% -- haussier (momentum positif), detail 1/3/6/12m = [0.84, 5.26, 21.54, 17.2]",
+      "lecture": "SP500 momentum 12-1 mois = 16.22% -- haussier (momentum positif), detail 1/3/6/12m = [0.88, 5.29, 21.58, 17.24]",
       "ok": true,
       "synthese": true,
       "sortie": "momentum_prix.csv",
@@ -594,7 +594,7 @@
       "ok": true,
       "synthese": false,
       "sortie": "carry_proxy.csv",
-      "derniere_observation": "2026-09-23"
+      "derniere_observation": "2026-09-24"
     },
     {
       "nom": "beta_vol",
@@ -612,7 +612,7 @@
       "titre": "Rotation sectorielle",
       "theme": "marches-allocation",
       "lane": "factorielle",
-      "lecture": "classement momentum 3 mois (10 secteurs) : 1. Energie (XLE) : +14.77% | 2. Technologie (XLK) : +8.58% | 3. Sante (XLV) : +6.08% | 4. Finance (XLF) : +2.28% | 5. Consommation de base (XLP) : -3.26%",
+      "lecture": "classement momentum 3 mois (10 secteurs) : 1. Energie (XLE) : +15.23% | 2. Technologie (XLK) : +8.37% | 3. Sante (XLV) : +6.46% | 4. Finance (XLF) : +2.37% | 5. Consommation de base (XLP) : -3.13%",
       "ok": true,
       "synthese": true,
       "sortie": "rotation_sectorielle.csv",
@@ -623,7 +623,7 @@
       "titre": "Saisonnalite",
       "theme": "marches-allocation",
       "lane": "factorielle",
-      "lecture": "rendement journalier moyen ete=+0.0182%, hiver=+0.0465% (t=-1.02, p=0.3078) -- non significatif (attendu vu la faible puissance sur seulement ~2 ans)",
+      "lecture": "rendement journalier moyen ete=+0.0182%, hiver=+0.0465% (t=-1.02, p=0.3081) -- non significatif (attendu vu la faible puissance sur seulement ~2 ans)",
       "ok": true,
       "synthese": true,
       "sortie": "saisonnalite.csv",
@@ -634,7 +634,7 @@
       "titre": "Dispersion sectorielle",
       "theme": "marches-allocation",
       "lane": "factorielle",
-      "lecture": "10 secteurs, rendement moyen 3m=-0.76%, dispersion (ecart-type)=8.28pt, etendue=29.46pt -- dispersion intermediaire",
+      "lecture": "10 secteurs, rendement moyen 3m=-0.61%, dispersion (ecart-type)=8.31pt, etendue=29.71pt -- dispersion intermediaire",
       "ok": true,
       "synthese": true,
       "sortie": "dispersion_sectorielle.csv",
@@ -645,7 +645,7 @@
       "titre": "Low volatility",
       "theme": "marches-allocation",
       "lane": "factorielle",
-      "lecture": "tercile bas-vol ['XLF', 'XLRE', 'XLU'] Sharpe=-0.602 vs tercile haut-vol ['XLY', 'XLE', 'XLK'] Sharpe=0.207 -- anomalie low-vol non confirmee sur cet echantillon (puissance statistique faible, n petit -- limite assumee)",
+      "lecture": "tercile bas-vol ['XLF', 'XLRE', 'XLU'] Sharpe=-0.566 vs tercile haut-vol ['XLY', 'XLE', 'XLK'] Sharpe=0.218 -- anomalie low-vol non confirmee sur cet echantillon (puissance statistique faible, n petit -- limite assumee)",
       "ok": true,
       "synthese": true,
       "sortie": "low_volatility.csv",
@@ -667,7 +667,7 @@
       "titre": "Momentum cross sectional",
       "theme": "marches-allocation",
       "lane": "factorielle",
-      "lecture": "panier gagnant ['XLE', 'XLK', 'XLV'] (+9.81%) vs panier perdant ['XLI', 'XLRE', 'XLU'] (-9.70%) -- spread momentum=+19.51pt",
+      "lecture": "panier gagnant ['XLE', 'XLK', 'XLV'] (+10.02%) vs panier perdant ['XLI', 'XLRE', 'XLU'] (-9.52%) -- spread momentum=+19.54pt",
       "ok": true,
       "synthese": true,
       "sortie": "momentum_cross_sectional.csv",
@@ -689,7 +689,7 @@
       "titre": "Skew kurtosis",
       "theme": "risques-regimes",
       "lane": "risque",
-      "lecture": "skewness=-0.201 (asymetrie negative (pertes extremes > gains extremes)), kurtosis exces=+1.032 (queues epaisses (risque extreme sous-estime par une hypothese normale))",
+      "lecture": "skewness=-0.201 (asymetrie negative (pertes extremes > gains extremes)), kurtosis exces=+1.031 (queues epaisses (risque extreme sous-estime par une hypothese normale))",
       "ok": true,
       "synthese": true,
       "sortie": "skew_kurtosis.csv",
@@ -700,7 +700,7 @@
       "titre": "Ratios performance",
       "theme": "risques-regimes",
       "lane": "risque",
-      "lecture": "Sharpe=1.227 (bon), Sortino=1.204 (bon), Calmar=1.751 (bon) -- lecture sur fenetre 252j (~1 an, echantillon limite), seuils academiques standards, taux sans risque suppose nul",
+      "lecture": "Sharpe=1.230 (bon), Sortino=1.207 (bon), Calmar=1.755 (bon) -- lecture sur fenetre 252j (~1 an, echantillon limite), seuils academiques standards, taux sans risque suppose nul",
       "ok": true,
       "synthese": true,
       "sortie": "ratios_performance.csv",
@@ -722,7 +722,7 @@
       "titre": "Stress test historique",
       "theme": "risques-regimes",
       "lane": "risque",
-      "lecture": "COVID_2020 (2020-02-19 -> 2020-03-23) : chute historique=-33.9% -- rejouee sur le niveau actuel (7740) -> 5115  _(sans synthese)_",
+      "lecture": "COVID_2020 (2020-02-19 -> 2020-03-23) : chute historique=-33.9% -- rejouee sur le niveau actuel (7743) -> 5116  _(sans synthese)_",
       "ok": true,
       "synthese": false,
       "sortie": "stress_test_historique.csv",
@@ -744,18 +744,18 @@
       "titre": "Nombre effectif paris",
       "theme": "risques-regimes",
       "lane": "risque",
-      "lecture": "32 marches, nombre effectif de paris independants=13.42 (42% du maximum theorique de 32) -- moderement concentre -- redondance significative entre plusieurs paris",
+      "lecture": "32 marches, nombre effectif de paris independants=13.45 (42% du maximum theorique de 32) -- moderement concentre -- redondance significative entre plusieurs paris",
       "ok": true,
       "synthese": true,
       "sortie": "nombre_effectif_paris.csv",
-      "derniere_observation": "2026-09-15"
+      "derniere_observation": "2026-09-22"
     },
     {
       "nom": "detection_saut",
       "titre": "Detection saut",
       "theme": "risques-regimes",
       "lane": "risque",
-      "lecture": "Z-stat BNS (fenetre 22j)=1.309 (seuil ±1.96) -- pas de saut isole detecte",
+      "lecture": "Z-stat BNS (fenetre 22j)=1.336 (seuil ±1.96) -- pas de saut isole detecte",
       "ok": true,
       "synthese": true,
       "sortie": "detection_saut.csv",
@@ -766,11 +766,11 @@
       "titre": "Choc taux",
       "theme": "risques-regimes",
       "lane": "risque",
-      "lecture": "beta SP500/DGS10=-0.0765 -- choc +100pb : -7.65% (SP500 7706 -> 7117) ; choc -100pb : +7.65% (-> 8295)",
+      "lecture": "beta SP500/DGS10=-0.0790 -- choc +100pb : -7.90% (SP500 7704 -> 7096) ; choc -100pb : +7.90% (-> 8313)",
       "ok": true,
       "synthese": true,
       "sortie": "choc_taux.csv",
-      "derniere_observation": "2026-09-23"
+      "derniere_observation": "2026-09-24"
     },
     {
       "nom": "ton_fomc",
@@ -876,7 +876,7 @@
       "titre": "Walkforward direction",
       "theme": "modeles-validation",
       "lane": "ml",
-      "lecture": "7517 predictions walk-forward -- momentum 5j=0.4961 vs baseline majoritaire=0.5376 -- NE BAT PAS la baseline (resultat honnete, pas ajuste pour paraitre mieux)",
+      "lecture": "7516 predictions walk-forward -- momentum 5j=0.4960 vs baseline majoritaire=0.5375 -- NE BAT PAS la baseline (resultat honnete, pas ajuste pour paraitre mieux)",
       "ok": true,
       "synthese": true,
       "sortie": "walkforward_direction_sp500.csv",
@@ -887,7 +887,7 @@
       "titre": "Anomalie multivariee",
       "theme": "modeles-validation",
       "lane": "ml",
-      "lecture": "distance de Mahalanobis=0.502 (seuil 3.0) -- jour ordinaire",
+      "lecture": "distance de Mahalanobis=0.557 (seuil 3.0) -- jour ordinaire",
       "ok": true,
       "synthese": true,
       "sortie": "anomalie_multivariee.csv",
@@ -898,7 +898,7 @@
       "titre": "Test overfitting",
       "theme": "modeles-validation",
       "lane": "ml",
-      "lecture": "meilleure fenetre in-sample=23j (accuracy=0.5165) vs meme fenetre en walk-forward=0.5163 -- ecart=+0.0002 (ecart faible)",
+      "lecture": "meilleure fenetre in-sample=23j (accuracy=0.5164) vs meme fenetre en walk-forward=0.5162 -- ecart=+0.0002 (ecart faible)",
       "ok": true,
       "synthese": true,
       "sortie": "test_overfitting_momentum.csv",
@@ -909,7 +909,7 @@
       "titre": "Prevision vol regression",
       "theme": "modeles-validation",
       "lane": "ml",
-      "lecture": "regression AR(1) (a=0.000116, b=0.2096) MSE=2.9835e-07 vs baseline persistance MSE=3.8326e-07 -- BAT la baseline (resultat honnete, pas ajuste)",
+      "lecture": "regression AR(1) (a=0.000116, b=0.2096) MSE=2.9848e-07 vs baseline persistance MSE=3.8343e-07 -- BAT la baseline (resultat honnete, pas ajuste)",
       "ok": true,
       "synthese": true,
       "sortie": "prevision_vol_regression.csv",
@@ -920,18 +920,18 @@
       "titre": "Kmeans regimes",
       "theme": "modeles-validation",
       "lane": "ml",
-      "lecture": "2049 points, k=3 -- point actuel (VIX=15.2, spread=+0.26, taux=3.88%) -> cluster 1 (tailles : {0: 357, 1: 1368, 2: 324}) -- regime calme (VIX du cluster en-dessous de la moyenne historique)",
+      "lecture": "2050 points, k=3 -- point actuel (VIX=15.7, spread=+0.31, taux=3.88%) -> cluster 1 (tailles : {0: 357, 1: 1369, 2: 324}) -- regime calme (VIX du cluster en-dessous de la moyenne historique)",
       "ok": true,
       "synthese": true,
       "sortie": "kmeans_regimes.csv",
-      "derniere_observation": "2026-09-23"
+      "derniere_observation": "2026-09-24"
     },
     {
       "nom": "ensemble_signaux",
       "titre": "Ensemble signaux",
       "theme": "modeles-validation",
       "lane": "ml",
-      "lecture": "7517 predictions -- momentum=0.4961, vix=0.4989, ensemble=0.4989, baseline=0.5376 -- ensemble NE BAT PAS la baseline",
+      "lecture": "7516 predictions -- momentum=0.4960, vix=0.4988, ensemble=0.4988, baseline=0.5375 -- ensemble NE BAT PAS la baseline",
       "ok": true,
       "synthese": true,
       "sortie": "ensemble_signaux.csv",
@@ -953,7 +953,7 @@
       "titre": "Couts transaction",
       "theme": "modeles-validation",
       "lane": "ml",
-      "lecture": "7517 predictions, 1512 changements de position (5pb/changement) -- rendement cumule brut=-93.08%, cout total=53.05%, net=-96.75% -- les frais mangent une part importante du rendement (>50% du brut)",
+      "lecture": "7516 predictions, 1512 changements de position (5pb/changement) -- rendement cumule brut=-93.11%, cout total=53.05%, net=-96.76% -- les frais mangent une part importante du rendement (>50% du brut)",
       "ok": true,
       "synthese": true,
       "sortie": "couts_transaction.csv",
@@ -964,7 +964,7 @@
       "titre": "Regression multifeatures",
       "theme": "modeles-validation",
       "lane": "ml",
-      "lecture": "coefs (intercept=0.00029, momentum5j=-0.0326, var_vix=0.00027) -- R2 out-of-sample=0.0103 (modele bat la moyenne)",
+      "lecture": "coefs (intercept=0.00029, momentum5j=-0.0325, var_vix=0.00027) -- R2 out-of-sample=0.0103 (modele bat la moyenne)",
       "ok": true,
       "synthese": true,
       "sortie": "regression_multifeatures.csv",
@@ -1008,55 +1008,55 @@
       "titre": "Dollar smile",
       "theme": "positionnement",
       "lane": "positionnement-comportemental",
-      "lecture": "USD_INDEX net=+10593 (long), 2/3 devises non-USD nettes courtes -- positionnement coherent",
+      "lecture": "USD_INDEX net=+10330 (long), 2/3 devises non-USD nettes courtes -- positionnement coherent",
       "ok": true,
       "synthese": true,
       "sortie": "dollar_smile.csv",
-      "derniere_observation": "2026-09-15"
+      "derniere_observation": "2026-09-22"
     },
     {
       "nom": "extremes_historiques",
       "titre": "Extremes historiques",
       "theme": "positionnement",
       "lane": "positionnement-comportemental",
-      "lecture": "32 marches -- le plus proche de son record directionnel : NAT_GAS (100% de son record)",
+      "lecture": "32 marches -- le plus proche de son record directionnel : SOYBEANS (100% de son record)",
       "ok": true,
       "synthese": true,
       "sortie": "extremes_historiques.csv",
-      "derniere_observation": "2026-09-15"
+      "derniere_observation": "2026-09-22"
     },
     {
       "nom": "correlation_cot_prix",
       "titre": "Correlation cot prix",
       "theme": "positionnement",
       "lane": "positionnement-comportemental",
-      "lecture": "correlation COT/prix SP500 (26 semaines) = +0.025 -- lien faible",
+      "lecture": "correlation COT/prix SP500 (26 semaines) = +0.000 -- lien faible",
       "ok": true,
       "synthese": true,
       "sortie": "correlation_cot_prix.csv",
-      "derniere_observation": "2026-09-15"
+      "derniere_observation": "2026-09-22"
     },
     {
       "nom": "decomposition_variance",
       "titre": "Decomposition variance",
       "theme": "modeles-validation",
       "lane": "statistique",
-      "lecture": "R² SP500~DGS10 (60j) = 0.2460 -- 24.6% de la variance des rendements SP500 expliquee par les variations du taux 10 ans (le reste = idiosyncratique/autres facteurs)",
+      "lecture": "R² SP500~DGS10 (60j) = 0.2696 -- 27.0% de la variance des rendements SP500 expliquee par les variations du taux 10 ans (le reste = idiosyncratique/autres facteurs)",
       "ok": true,
       "synthese": true,
       "sortie": "decomposition_variance.csv",
-      "derniere_observation": "2026-09-23"
+      "derniere_observation": "2026-09-24"
     },
     {
       "nom": "test_chow",
       "titre": "Test chow",
       "theme": "modeles-validation",
       "lane": "statistique",
-      "lecture": "test de Chow (taux 10 ans, 1ere vs 2eme moitie des 12 derniers mois) : F=573.127, p=0.0000 -- RUPTURE structurelle significative",
+      "lecture": "test de Chow (taux 10 ans, 1ere vs 2eme moitie des 12 derniers mois) : F=567.167, p=0.0000 -- RUPTURE structurelle significative",
       "ok": true,
       "synthese": true,
       "sortie": "test_chow.csv",
-      "derniere_observation": "2026-09-23"
+      "derniere_observation": "2026-09-24"
     },
     {
       "nom": "cointegration_secteurs",
@@ -1085,11 +1085,11 @@
       "titre": "Qualite regime macro",
       "theme": "risques-regimes",
       "lane": "factorielle",
-      "lecture": "instabilite taux=0.0088, instabilite VIX=0.0678 -- score qualite du regime=-0.0383 (plus haut = regime plus stable/previsible)",
+      "lecture": "instabilite taux=0.0088, instabilite VIX=0.0679 -- score qualite du regime=-0.0383 (plus haut = regime plus stable/previsible)",
       "ok": true,
       "synthese": true,
       "sortie": "qualite_regime_macro.csv",
-      "derniere_observation": "2026-09-23"
+      "derniere_observation": "2026-09-24"
     },
     {
       "nom": "var_conditionnelle_regime",
@@ -1107,7 +1107,7 @@
       "titre": "Stacking",
       "theme": "modeles-validation",
       "lane": "ml",
-      "lecture": "poids appris (momentum=-0.080, baseline=0.090, biais=0.090) -- accuracy stacking=0.5465 vs momentum seul=0.5027, baseline seule=0.5465 sur 2256 points test -- stacking NE BAT PAS la baseline, meilleur=stacking / baseline (ex-aequo)",
+      "lecture": "poids appris (momentum=-0.080, baseline=0.090, biais=0.090) -- accuracy stacking=0.5463 vs momentum seul=0.5024, baseline seule=0.5463 sur 2255 points test -- stacking NE BAT PAS la baseline, meilleur=stacking / baseline (ex-aequo)",
       "ok": true,
       "synthese": true,
       "sortie": "stacking.csv",
@@ -1118,7 +1118,7 @@
       "titre": "Decomposition stl",
       "theme": "risques-regimes",
       "lane": "series-temporelles",
-      "lecture": "VIX : tendance=15.55, composante saisonniere (periode 5j)=-0.641, residu=+0.096 -- la saisonnalite explique 0.71% de la variance totale (negligeable)",
+      "lecture": "VIX : tendance=15.52, composante saisonniere (periode 5j)=-0.665, residu=+0.016 -- la saisonnalite explique 0.71% de la variance totale (negligeable)",
       "ok": true,
       "synthese": true,
       "sortie": "decomposition_stl.csv",
@@ -1151,7 +1151,7 @@
       "titre": "Correlation facteurs",
       "theme": "marches-allocation",
       "lane": "factorielle",
-      "lecture": "correlation entre momentum 3m et beta-VIX, 10 secteurs : +0.041 (facteurs largement independants)",
+      "lecture": "correlation entre momentum 3m et beta-VIX, 10 secteurs : +0.062 (facteurs largement independants)",
       "ok": true,
       "synthese": true,
       "sortie": "correlation_facteurs.csv",

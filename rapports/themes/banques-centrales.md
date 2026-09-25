@@ -2,7 +2,7 @@
 
 Decisions, fonctions de reaction, bilan, communication et trajectoires de taux.
 
-Mis a jour : **2026-09-25 18:11 UTC** · 19 lectures.
+Mis a jour : **2026-09-25 22:44 UTC** · 19 lectures.
 
 [Retour au tableau de bord](../README.md)
 
@@ -10,21 +10,21 @@ Mis a jour : **2026-09-25 18:11 UTC** · 19 lectures.
 
 Chine : taux 1.54% (stable, niveau bas) -- chomage non_couvert  _(sans synthese)_
 
-_Statut **OK** · observation 2026-09-23 · moteur `macro` · [donnees](../donnees/regime_monetaire_emploi.csv) · [graphique](../graphiques/regime_monetaire_emploi/regime_monetaire_emploi.png)_
+_Statut **OK** · observation 2026-09-24 · moteur `macro` · [donnees](../donnees/regime_monetaire_emploi.csv) · [graphique](../graphiques/regime_monetaire_emploi/regime_monetaire_emploi.png)_
 
 
 ### Regle taylor
 
 Taylor (2 termes, sans output gap)=6.03%, Fed reel=3.88%, ecart=-2.15pt -- accommodant (Fed en-dessous de la regle)
 
-_Statut **OK** · observation 2026-09-23 · moteur `macro` · [donnees](../donnees/regle_taylor.csv) · [graphique](../graphiques/regle_taylor/apercu.png)_
+_Statut **OK** · observation 2026-09-24 · moteur `macro` · [donnees](../donnees/regle_taylor.csv) · [graphique](../graphiques/regle_taylor/apercu.png)_
 
 
 ### Chemin taux fed
 
-chemin de taux (pas des probabilites) : DFF=3.88%, prochaine reunion 2026-10-27 (11 a venir dans le calendrier) -- 0-1 mois: +11pb (hausse, confiance faible) | 1-3 mois: +41pb (hausse, confiance faible) | 3-6 mois: +55pb (hausse, confiance faible) | 6-12 mois: +79pb (hausse, confiance faible)
+chemin de taux (pas des probabilites) : DFF=3.88%, prochaine reunion 2026-10-27 (11 a venir dans le calendrier) -- 0-1 mois: +13pb (hausse, confiance faible) | 1-3 mois: +48pb (hausse, confiance faible) | 3-6 mois: +56pb (hausse, confiance faible) | 6-12 mois: +80pb (hausse, confiance faible)
 
-_Statut **OK** · observation 2026-09-23 · moteur `macro` · [donnees](../donnees/chemin_taux_fed.csv)_
+_Statut **OK** · observation 2026-09-24 · moteur `macro` · [donnees](../donnees/chemin_taux_fed.csv)_
 
 
 ### Divergence taux directeurs
