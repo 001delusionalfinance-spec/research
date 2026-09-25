@@ -1,8 +1,10 @@
-name: Recherche - Modeles
+name: Recherche - Publication horaire
 
 on:
   schedule:
-    - cron: "30 6 * * 1-5"  # 30 min apres l'ingestion, meme jour ouvre
+    # Les marches sont ingeres a :00 et :30. Le calcul part ensuite a :45 et publie
+    # l'ensemble des 112 modeles, pas seulement un sous-ensemble Fed.
+    - cron: "45 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -50,6 +52,10 @@ jobs:
         if: always()
         run: python recherche/modeles/generer_visualisations.py
 
+      - name: Publier le centre de recherche thematique
+        if: always()
+        run: python recherche/modeles/publier_rapports.py
+
       - name: Exporter le classeur Excel
         if: always()
         run: python recherche/modeles/export_excel.py
@@ -67,7 +73,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "Aucun changement -- rien a committer."
           else
-            git commit -m "Modeles recherche - $(date -u +%Y-%m-%d)"
+            git commit -m "Recherche - publication $(date -u +%Y-%m-%dT%H:%MZ)"
             git pull --rebase
             git push
           fi

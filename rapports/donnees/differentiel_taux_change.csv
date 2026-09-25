@@ -1,0 +1,9 @@
+paire,date,differentiel_taux_pt,correlation,p_valeur,n_observations,significatif_apres_bonferroni
+EURUSD,2026-09-17,-1.522,0.37,4e-05,118,oui
+USDJPY,2026-08-31,2.597,0.62,0.0,112,oui
+GBPUSD,2026-09-17,-0.02,0.292,0.0014,117,oui
+USDCAD,2026-09-17,1.4,0.623,0.0,117,oui
+AUDUSD,2026-09-16,0.259,0.331,0.00029,116,oui
+USDSEK,2026-09-17,1.939,0.252,0.00606,117,oui
+EURJPY,2026-08-31,1.113,0.367,0.0,150,oui
+EURGBP,2026-09-17,-1.521,0.274,0.0005,158,oui

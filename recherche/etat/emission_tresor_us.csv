@@ -1,4 +1,4 @@
 segment,n_adjudications,montant_offert_mds_usd,part_pct,ratio_couverture_median
-court (moins d'un an),76,6557.0,85.8,2.85
-intermediaire (2 a 10 ans),20,969.0,12.7,2.59
+court (moins d'un an),72,6235.0,85.1,2.85
+intermediaire (2 a 10 ans),20,969.0,13.2,2.59
 long (20 a 30 ans),7,119.0,1.6,2.57
