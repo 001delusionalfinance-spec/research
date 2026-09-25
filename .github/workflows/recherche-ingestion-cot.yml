@@ -1,4 +1,4 @@
-name: Recherche - Ingestion (positionnement COT, hebdomadaire)
+name: Recherche - Relance manuelle (positionnement COT)
 
 # ETAGE HEBDOMADAIRE, sorti de l'ingestion lente le 2026-09-14 pour corriger un BUG DE TIMING
 # reel, pas une preference de style.
@@ -8,15 +8,10 @@ name: Recherche - Ingestion (positionnement COT, hebdomadaire)
 # vendredi n'etait donc ramassee que le lundi matin suivant : environ deux jours et demi de
 # retard, chaque semaine, sur la donnee de positionnement la plus fraiche du dispositif.
 #
-# Programme ici a 21h30 UTC le vendredi -- une heure apres la publication, marge suffisante
-# pour un retard de mise en ligne cote CFTC sans attendre le lendemain. Un rattrapage tourne
-# aussi le lundi matin au cas ou le vendredi soir aurait echoue : le rapport ne change plus
-# apres publication, une ingestion en double est sans effet (chaque run reecrit le fichier).
+# Cette relance ciblee n'est pas planifiee. L'ingestion CFTC fait partie de la mise a jour
+# complete horaire ; avant la publication hebdomadaire, elle reecrit simplement le meme fichier.
 
 on:
-  schedule:
-    - cron: "30 21 * * 5"   # vendredi, une heure apres la publication
-    - cron: "15 6 * * 1"    # lundi matin, rattrapage si le vendredi a echoue
   workflow_dispatch:
 
 permissions:

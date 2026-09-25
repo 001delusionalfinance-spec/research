@@ -147,10 +147,10 @@ dérive de documentation corrigée ce jour, le repo tournait déjà depuis une s
 
 - Modèles répartis sur les 8 familles, tous testés sur données réelles, orchestrés par
   `run_all_modeles.py` (un échec isolé n'interrompt jamais les autres).
-- **Workflows étagés** : ingestion lente à 06h00 UTC, marchés toutes les 30 minutes, COT
-  hebdomadaire et publication complète toutes les heures, poussés par le bot
-  `research-bot`. En exploitation normale, les données et états sont actualisés par ce bot ;
-  les migrations de schéma restent des changements de code contrôlés et testés.
+- **Chaîne horaire unique** : toutes les sources sont interrogées, les modèles sont recalculés,
+  puis les contrôles et rapports sont publiés dans la même exécution. Le bot `research-bot`
+  pousse uniquement les changements réels. Les sources mensuelles, trimestrielles ou
+  hebdomadaires restent naturellement identiques entre deux publications.
 - **Couverture étendue le 2026-09-14** de 5 à 12 blocs de banques centrales, plus FX, matières
   premières, volatilité de taux et indices non-US (voir « Comment c'est automatisé »).
 
@@ -158,9 +158,9 @@ dérive de documentation corrigée ce jour, le repo tournait déjà depuis une s
 
 1. ✅ **Timing du COT.** Le CFTC publie le vendredi vers 20h30 UTC ; l'ingestion tournait à
    06h00 UTC, donc la donnée du vendredi n'était ramassée que le lundi — ~2,5 jours de retard
-   chaque semaine. Sorti dans `recherche-ingestion-cot.yml`, vendredi 21h30 UTC, avec un
-   rattrapage le lundi matin si le vendredi échoue.
-2. ✅ **Détection de péremption** — `controle_fraicheur.py`, lancé après chaque ingestion lente.
+   chaque semaine. D'abord corrigé par un workflow du vendredi soir, le COT est désormais
+   vérifié à chaque cycle horaire avec toutes les autres sources.
+2. ✅ **Détection de péremption** — `controle_fraicheur.py`, lancé à chaque cycle horaire.
    Le seuil n'est pas configuré série par série mais **déduit du rythme de la série elle-même**
    (écart médian entre observations), parce que cinq seuils posés à la main se sont révélés
    faux le jour même de leur écriture. Calibré contre les six gels réellement observés sur ce
@@ -168,12 +168,11 @@ dérive de documentation corrigée ce jour, le repo tournait déjà depuis une s
 3. ✅ **Alerte.** Une série classée GELÉE fait échouer le workflow — c'est le signal. Une série
    seulement SUSPECTE est signalée sans faire échouer : une alerte qui crie tous les jours est
    désactivée en une semaine et ne protège plus rien.
-4. ✅ **Cadence étagée** en trois workflows : lent (macro et textes, 1×/jour ouvré), marchés
-   (FX, matières premières, vol, indices — toutes les 30 min de 07h à 21h UTC), COT
-   (hebdomadaire).
-5. ✅ **Hygiène CI** : cache pip sur les trois workflows, et un groupe de concurrence commun
-   (`recherche-push`) qui sérialise tout ce qui pousse sur `main` — sans lui, deux exécutions
-   simultanées se marchent dessus entre le rebase et le push.
+4. ✅ **Cadence horaire complète** : un seul workflow ordonne l'ingestion des marchés, du COT,
+   des sources macro et des textes avant le recalcul. Les anciens workflows spécialisés sont
+   conservés uniquement pour une relance manuelle ciblée.
+5. ✅ **Hygiène CI** : cache pip et verrou de concurrence commun. Une chaîne unique empêche les
+   courses au `git push` et évite qu'un workflow planifié en attente soit remplacé par un autre.
 6. ✅ **Les modèles lisent les données** — 12 modèles ajoutés le 2026-09-14, un par famille de
    données ingérées ce jour, tous verts en CI.
 7. ✅ **Détection des ruptures de périmètre** — `controle_ruptures.py`. Quand l'univers change

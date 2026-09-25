@@ -198,7 +198,7 @@ def main() -> int:
         contenu = "date,close\n" + "".join(
             f"{date_str},{close:.6f}\n" for date_str, close in points)
 
-        # Ecriture CONDITIONNELLE. Cette ingestion tourne toutes les 30 minutes et reecrit
+        # Ecriture CONDITIONNELLE. Cette ingestion tourne chaque heure et reecrit
         # l'historique complet a chaque passage -- environ 3 Mo pour l'ensemble des marches, soit
         # une trentaine de reecritures par jour ouvre. Or a un instant donne la plupart de ces
         # marches ne cotent pas : les indices asiatiques pendant la seance americaine, les

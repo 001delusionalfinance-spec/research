@@ -1,28 +1,18 @@
-name: Recherche - Ingestion (lent)
+name: Recherche - Relance manuelle (sources macro)
 
 # ETAGE LENT. Sources macro officielles et textes de banques centrales : taux directeurs,
 # prix, activite, courbes souveraines, budgetaire, bilans, communiques.
-# Une fois par jour ouvre, et c'est delibere -- ces series sont mensuelles, hebdomadaires ou au
-# mieux quotidiennes avec un decalage de publication. Les faire tourner plus souvent reecrirait
-# des fichiers identiques et consommerait des minutes pour rien.
-#
-# Les deux autres etages sont dans des workflows separes, parce que leur rythme n'a rien a voir
-# (decoupage du 2026-09-14) :
-#   - recherche-ingestion-marches.yml : FX, matieres premieres, vol, indices -- intrajournalier
-#   - recherche-ingestion-cot.yml     : positionnement CFTC -- hebdomadaire, vendredi soir
+# Cette relance ciblee n'est pas planifiee. Toutes ces sources sont verifiees dans la mise a
+# jour complete horaire ; une source mensuelle ou trimestrielle reste naturellement inchangee
+# tant que son producteur n'a rien publie de nouveau.
 
 on:
-  schedule:
-    - cron: "0 6 * * 1-5"
   workflow_dispatch:
 
 permissions:
   contents: write
 
-# Les trois workflows d'ingestion et celui des modeles poussent tous sur `main`. Sans garde,
-# deux executions simultanees se marchent dessus entre le `git pull --rebase` et le `push`.
-# Un groupe commun les serialise. On ne les annule pas : une ingestion interrompue laisserait
-# des donnees partielles committees.
+# Le verrou est partage avec la chaine horaire pour proteger les rares relances manuelles.
 concurrency:
   group: recherche-push
   cancel-in-progress: false

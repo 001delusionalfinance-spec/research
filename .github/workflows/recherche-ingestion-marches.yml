@@ -1,20 +1,17 @@
-name: Recherche - Ingestion (marches, intrajournalier)
+name: Recherche - Relance manuelle (marches)
 
 # ETAGE RAPIDE, cree le 2026-09-14 en meme temps que l'univers FX / matieres premieres / vol /
 # indices non-US. Ces prix bougent en continu : les laisser dans l'ingestion lente les figeait
 # a une photo quotidienne de 06h00 UTC, sans rapport avec leur rythme reel.
 #
-# Cadence : toutes les 30 minutes entre 07h00 et 21h00 UTC, jours ouvres. La fenetre couvre
-# l'ouverture europeenne (07h00 UTC) jusqu'apres l'ouverture US et les publications macro de
-# l'apres-midi. Au-dela, l'essentiel de ce qui est suivi ici ne cote plus.
+# Cette relance ciblee n'est pas planifiee. L'ingestion des marches fait partie de la mise a
+# jour complete horaire dans `recherche-modeles.yml`.
 #
 # A savoir : le fournisseur renvoie des BARRES QUOTIDIENNES. Un passage intrajournalier met
 # donc a jour la barre du jour en cours, il ne cree pas de granularite infra-journaliere. Le
 # gain est la fraicheur du dernier point, pas une resolution plus fine.
 
 on:
-  schedule:
-    - cron: "*/30 7-21 * * 1-5"
   workflow_dispatch:
 
 permissions:

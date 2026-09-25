@@ -1,23 +1,23 @@
-name: Recherche - Publication horaire
+name: Recherche - Mise a jour complete horaire
 
 on:
   schedule:
-    # Les marches sont ingeres a :00 et :30. Le calcul part ensuite a :45 et publie
-    # l'ensemble des 112 modeles, pas seulement un sous-ensemble Fed.
-    - cron: "45 * * * *"
+    # Une seule chaine ordonnee : toutes les sources, tous les modeles, puis les rapports.
+    # GitHub Actions utilise UTC et peut decaler legerement le depart des crons.
+    - cron: "5 * * * *"
   workflow_dispatch:
 
 permissions:
   contents: write
 
-# Meme groupe que les trois workflows d'ingestion : tout ce qui pousse sur
-# `main` est serialise, sinon deux executions se marchent dessus au rebase.
+# Une seule execution horaire peut ecrire a la fois. Les workflows d'ingestion specialises
+# restent disponibles en relance manuelle et partagent ce verrou.
 concurrency:
   group: recherche-push
   cancel-in-progress: false
 
 jobs:
-  modeles:
+  mise-a-jour:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
@@ -34,7 +34,76 @@ jobs:
       - name: Tests reproductibles
         run: pytest
 
+      # Toutes les ingestions precedent le calcul : la fraicheur arrive donc jusqu'aux rapports
+      # dans la meme execution, sans course entre plusieurs workflows planifies.
+      - name: Ingestion marches (FX, matieres premieres, vol, indices non-US)
+        if: always()
+        run: python recherche/modeles/ingestion_marches.py
+
+      - name: Ingestion yfinance (S&P 500, VIX, secteurs)
+        if: always()
+        run: python recherche/modeles/ingestion_yfinance_indices.py
+
+      - name: Ingestion CFTC (positionnement, 32 contrats)
+        if: always()
+        run: python recherche/modeles/ingestion_cftc.py
+
+      - name: Ingestion FRED
+        if: always()
+        env:
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+        run: python recherche/modeles/ingestion_fred.py
+
+      - name: Ingestion BIS (prix a la consommation)
+        if: always()
+        run: python recherche/modeles/ingestion_bis_cpi.py
+
+      - name: Ingestion BIS (taux directeurs et service de la dette)
+        if: always()
+        run: python recherche/modeles/ingestion_bis_macro.py
+
+      - name: Ingestion souverains quotidiens (BCE, BoE, Japon)
+        if: always()
+        run: python recherche/modeles/ingestion_souverains_quotidiens.py
+
+      - name: Ingestion souverains G10 (Canada, Australie, Suede)
+        if: always()
+        run: python recherche/modeles/ingestion_souverains_g10.py
+
+      - name: Ingestion bilans nationaux
+        if: always()
+        run: python recherche/modeles/ingestion_bilans_nationaux.py
+
+      - name: Ingestion Tresor US
+        if: always()
+        run: python recherche/modeles/ingestion_tresor_us.py
+
+      - name: Ingestion Eurostat
+        if: always()
+        run: python recherche/modeles/ingestion_eurostat.py
+
+      - name: Ingestion communiques FOMC
+        if: always()
+        run: python recherche/modeles/ingestion_fomc_statements.py
+
+      - name: Ingestion calendrier FOMC
+        if: always()
+        run: python recherche/modeles/ingestion_fomc_calendrier.py
+
+      - name: Ingestion minutes FOMC
+        if: always()
+        run: python recherche/modeles/ingestion_fomc_minutes.py
+
+      - name: Ingestion declarations BCE
+        if: always()
+        run: python recherche/modeles/ingestion_bce_declarations.py
+
+      - name: Ingestion resumes BoE
+        if: always()
+        run: python recherche/modeles/ingestion_boe_declarations.py
+
       - name: Calculer tous les modeles
+        if: always()
         run: python recherche/modeles/run_all_modeles.py
 
       - name: Controle de fraicheur des sources
@@ -73,11 +142,11 @@ jobs:
         run: |
           git config user.name "research-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add rapports
+          git add donnees/brut rapports
           if git diff --cached --quiet; then
             echo "Aucun changement -- rien a committer."
           else
-            git commit -m "Recherche - publication $(date -u +%Y-%m-%dT%H:%MZ)"
+            git commit -m "Recherche - mise a jour complete $(date -u +%Y-%m-%dT%H:%MZ)"
             git pull --rebase
             git push
           fi
