@@ -1,0 +1,259 @@
+{
+  "schema_version": "1.0",
+  "product": "fed_research",
+  "checked_on": "2026-09-25",
+  "as_of": "2026-09-22",
+  "status": "warning",
+  "warnings": [
+    "Le chemin de taux dérivé des Treasuries ne constitue pas une distribution de probabilités par réunion FOMC.",
+    "BIS en retard sur la derniere decision; le communique FOMC reste la source canonique jusqu'a resorption de l'ecart"
+  ],
+  "sections": [
+    {
+      "id": "position_actuelle",
+      "label": "Position actuelle",
+      "metrics": [
+        {
+          "id": "fed_target_midpoint",
+          "label": "Milieu de la cible FOMC",
+          "value": 3.875,
+          "unit": "%",
+          "as_of": "2026-09-16",
+          "source": "Federal Reserve/FOMC",
+          "freshness_days": 9,
+          "status": "ok",
+          "confidence": "haute",
+          "methodology": "Milieu de la fourchette officielle"
+        },
+        {
+          "id": "fed_effective_rate",
+          "label": "Taux Fed effectif",
+          "value": 3.88,
+          "unit": "%",
+          "as_of": "2026-09-18",
+          "source": "FRED DFF",
+          "freshness_days": 7,
+          "status": "stale",
+          "confidence": "haute",
+          "methodology": "Derniere observation du taux effectif"
+        },
+        {
+          "id": "fed_real_rate",
+          "label": "Taux réel ex post",
+          "value": 0.527,
+          "unit": "%",
+          "as_of": "2026-09-18",
+          "source": "FRED DFF et CPIAUCSL",
+          "freshness_days": 7,
+          "status": "ok",
+          "confidence": "moyenne",
+          "methodology": "Taux effectif moins inflation CPI realisee en glissement annuel"
+        },
+        {
+          "id": "fed_source_coherence",
+          "label": "Cohérence FOMC / BIS",
+          "value": 0.25,
+          "unit": "point",
+          "as_of": "2026-09-25",
+          "source": "FOMC et BIS WS_CBPOL",
+          "freshness_days": 0,
+          "status": "warning",
+          "confidence": "haute",
+          "methodology": "BIS en retard sur la derniere decision; le communique FOMC reste la source canonique jusqu'a resorption de l'ecart"
+        }
+      ]
+    },
+    {
+      "id": "fonction_reaction",
+      "label": "Fonction de réaction",
+      "metrics": [
+        {
+          "id": "taylor_gap",
+          "label": "Écart Fed - Taylor",
+          "value": -2.15,
+          "unit": "point",
+          "as_of": "2026-09-18",
+          "source": "Modèle Taylor interne",
+          "freshness_days": 7,
+          "status": "ok",
+          "confidence": "faible",
+          "methodology": "Taylor à deux termes sans output gap"
+        },
+        {
+          "id": "sahm_gap",
+          "label": "Écart règle de Sahm",
+          "value": 0,
+          "unit": "point",
+          "as_of": "2026-08-01",
+          "source": "FRED UNRATE",
+          "freshness_days": 55,
+          "status": "stale",
+          "confidence": "haute",
+          "methodology": "MM3 chômage moins son plus bas sur 12 mois"
+        },
+        {
+          "id": "financial_conditions",
+          "label": "Conditions financières",
+          "value": 0.0908,
+          "unit": "score z",
+          "as_of": "2026-09-18",
+          "source": "Composite interne",
+          "freshness_days": 7,
+          "status": "stale",
+          "confidence": "moyenne",
+          "methodology": "Taux directeur, pente de courbe et VIX standardisés"
+        },
+        {
+          "id": "inflation_surprise",
+          "label": "Surprise inflation",
+          "value": 0.08,
+          "unit": "point",
+          "as_of": "2026-08-01",
+          "source": "FRED CPIAUCSL",
+          "freshness_days": 55,
+          "status": "stale",
+          "confidence": "faible",
+          "methodology": "Publication CPI mensuelle moins prévision naïve"
+        }
+      ]
+    },
+    {
+      "id": "anticipations_marche",
+      "label": "Anticipations de marché",
+      "metrics": [
+        {
+          "id": "rate_path_0-1_mois",
+          "label": "Mouvement implicite 0-1 mois",
+          "value": 9,
+          "unit": "pb",
+          "as_of": "2026-09-22",
+          "source": "forward_treasury_proxy",
+          "freshness_days": 3,
+          "status": "ok",
+          "confidence": "faible",
+          "methodology": "mouvement net de fenetre; aucune probabilite isolee par reunion"
+        },
+        {
+          "id": "rate_path_1-3_mois",
+          "label": "Mouvement implicite 1-3 mois",
+          "value": 34.5,
+          "unit": "pb",
+          "as_of": "2026-09-22",
+          "source": "forward_treasury_proxy",
+          "freshness_days": 3,
+          "status": "ok",
+          "confidence": "faible",
+          "methodology": "mouvement net de fenetre; aucune probabilite isolee par reunion"
+        },
+        {
+          "id": "rate_path_3-6_mois",
+          "label": "Mouvement implicite 3-6 mois",
+          "value": 46,
+          "unit": "pb",
+          "as_of": "2026-09-22",
+          "source": "forward_treasury_proxy",
+          "freshness_days": 3,
+          "status": "ok",
+          "confidence": "faible",
+          "methodology": "mouvement net de fenetre; aucune probabilite isolee par reunion"
+        },
+        {
+          "id": "rate_path_6-12_mois",
+          "label": "Mouvement implicite 6-12 mois",
+          "value": 76,
+          "unit": "pb",
+          "as_of": "2026-09-22",
+          "source": "forward_treasury_proxy",
+          "freshness_days": 3,
+          "status": "ok",
+          "confidence": "faible",
+          "methodology": "mouvement net de fenetre; aucune probabilite isolee par reunion"
+        },
+        {
+          "id": "yield_curve_10y2y",
+          "label": "Pente Treasury 10a-2a",
+          "value": 0.25,
+          "unit": "point",
+          "as_of": "2026-09-18",
+          "source": "FRED DGS10/DGS2",
+          "freshness_days": 7,
+          "status": "stale",
+          "confidence": "haute",
+          "methodology": "Rendement 10 ans moins rendement 2 ans"
+        }
+      ]
+    },
+    {
+      "id": "liquidite_bilan",
+      "label": "Liquidité et bilan",
+      "metrics": [
+        {
+          "id": "fed_net_liquidity",
+          "label": "Liquidité nette Fed",
+          "value": 5545717,
+          "unit": "M$",
+          "as_of": "2026-09-16",
+          "source": "Fed H.4.1 via FRED",
+          "freshness_days": 9,
+          "status": "ok",
+          "confidence": "moyenne",
+          "methodology": "WALCL - compte du Trésor - reverse repo"
+        },
+        {
+          "id": "fed_net_liquidity_3m",
+          "label": "Variation liquidité sur 3 mois",
+          "value": 0.46,
+          "unit": "%",
+          "as_of": "2026-09-16",
+          "source": "Fed H.4.1 via FRED",
+          "freshness_days": 9,
+          "status": "ok",
+          "confidence": "moyenne",
+          "methodology": "Variation du proxy de liquidité nette"
+        }
+      ]
+    },
+    {
+      "id": "communication",
+      "label": "Communication",
+      "metrics": [
+        {
+          "id": "fomc_tone_change",
+          "label": "Variation du ton FOMC",
+          "value": 21.975,
+          "unit": "‰",
+          "as_of": "2026-09-16",
+          "source": "Communiqués FOMC",
+          "freshness_days": 9,
+          "status": "ok",
+          "confidence": "faible",
+          "methodology": "Différence d'un lexique interne entre deux communiqués"
+        },
+        {
+          "id": "fomc_dissenters",
+          "label": "Dissidents au vote",
+          "value": 0,
+          "unit": "membres",
+          "as_of": "2026-09-16",
+          "source": "Communiqué FOMC",
+          "freshness_days": 9,
+          "status": "ok",
+          "confidence": "haute",
+          "methodology": "Comptage des votes contre la décision"
+        },
+        {
+          "id": "minutes_disagreement",
+          "label": "Mentions de désaccord",
+          "value": 20,
+          "unit": "mentions",
+          "as_of": "2026-07-29",
+          "source": "Minutes FOMC",
+          "freshness_days": 58,
+          "status": "ok",
+          "confidence": "faible",
+          "methodology": "Comptage d'expressions de désaccord dans les minutes : {'disagreed': 0, 'preferred': 1, 'dissent': 0, 'alternative view': 0, 'some participants': 11, 'a few participants': 6, 'several participants noted': 2}"
+        }
+      ]
+    }
+  ]
+}

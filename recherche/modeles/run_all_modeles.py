@@ -22,7 +22,7 @@ MODELES = [
     ("macro", "modele_taux_reel_us"),
     ("macro", "modele_regle_taylor"),
     ("macro", "modele_courbe_taux_us"),
-    ("macro", "modele_probabilite_reunion_fed"),
+    ("macro", "modele_chemin_taux_fed"),
     ("macro", "modele_cycle_credit"),
     ("macro", "modele_conditions_financieres"),
     ("macro", "modele_reer_us"),

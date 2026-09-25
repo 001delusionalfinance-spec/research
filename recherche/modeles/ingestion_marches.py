@@ -27,7 +27,7 @@ retenter a l'aveugle :
   et non une absence de donnee : il est conserve dans la liste, et un echec ponctuel sera
   simplement signale comme les autres sans bloquer le reste.
 
-**`TAUX_FUTURES` ajoute le 2026-09-17** pour `modele_probabilite_reunion_fed.py` : le contrat
+**`TAUX_FUTURES` ajoute le 2026-09-17** pour `modele_chemin_taux_fed.py` : le contrat
 Fed Funds front-month (`ZQ=F`, prix = 100 - taux Fed Funds moyen implicite du mois en cours).
 Limite assumee et documentee dans le modele qui l'utilise -- Yahoo n'expose QUE le contrat
 continu du mois le plus proche, pas les mois individuels au-dela (testes en direct le

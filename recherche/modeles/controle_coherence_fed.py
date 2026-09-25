@@ -18,6 +18,10 @@ d'un mouvement reel ("...TO X to Y percent") -- `taux_cible` restait vide silenc
 exactement les fois ou la Fed bouge. Corrige avant que ce controle-ci ne soit ecrit, sinon il
 n'aurait rien eu a comparer.
 
+Un retard de publication est un statut ``warning`` ecrit dans ``coherence_fed.csv`` et non un
+code d'echec : le moteur a correctement detecte une degradation externe. Les erreurs de lecture
+ou de format restent, elles, de vrais echecs.
+
 Usage :
     python controle_coherence_fed.py
 """
@@ -25,14 +29,28 @@ Usage :
 import csv
 import re
 import sys
+from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from _lib import BRUT  # noqa: E402
+from _lib import BRUT, ETAT, ecrire_csv  # noqa: E402
 
 VOTES = BRUT / "fomc" / "votes.csv"
 BIS_US = BRUT / "bis" / "taux_directeurs" / "US.csv"
 SEUIL_ALERTE_PT = 0.05  # au dela, ce n'est plus un arrondi de representation -- un vrai ecart
+SORTIE = ETAT / "coherence_fed.csv"
+
+
+def ecrire_etat(derniere: dict, derniere_bis: dict, taux_fomc: float,
+                taux_bis: float, ecart: float, statut: str, message: str) -> None:
+    ecrire_csv(
+        SORTIE,
+        ["date_controle", "date_fomc", "fourchette_fomc", "milieu_fomc_pct",
+         "date_bis", "taux_bis_pct", "ecart_pt", "statut", "source_canonique", "message"],
+        [[datetime.now(timezone.utc).date().isoformat(), derniere["date"],
+          derniere["taux_cible"], round(taux_fomc, 3), derniere_bis["date"],
+          round(taux_bis, 3), round(ecart, 3), statut, "communique_fomc", message]],
+    )
 
 
 def milieu_fourchette(texte: str) -> float:
@@ -87,14 +105,17 @@ def main() -> int:
     print(f"BIS (WS_CBPOL, US), derniere observation {derniere_bis['date']} : {taux_bis:.3f}%")
 
     if abs(ecart) > SEUIL_ALERTE_PT:
-        print(f"\nECART DETECTE : {ecart:+.3f}pt -- le BIS n'a probablement pas encore publie "
-              f"la derniere decision Fed. Tout modele qui lit le taux directeur US depuis le "
-              f"BIS (divergence_taux_directeurs.csv notamment) travaille sur un chiffre perime "
-              f"jusqu'a ce que cet ecart se resorbe. Ne pas ecrire de these sur le taux Fed "
-              f"sans avoir verifie ce controle en premier.")
-        return 1
+        message = ("BIS en retard sur la derniere decision; le communique FOMC reste la source "
+                   "canonique jusqu'a resorption de l'ecart")
+        ecrire_etat(derniere, derniere_bis, taux_fomc, taux_bis, ecart, "warning", message)
+        print(f"\nWARNING -- ECART DETECTE : {ecart:+.3f}pt -- {message}. Les modeles "
+              f"dependant du BIS sont marques comme potentiellement perimes, mais ce delai de "
+              f"publication externe ne constitue pas une panne du moteur.")
+        return 0
 
-    print("\nOK -- coherent, le BIS reflete la derniere decision FOMC connue.")
+    message = "le BIS reflete la derniere decision FOMC connue"
+    ecrire_etat(derniere, derniere_bis, taux_fomc, taux_bis, ecart, "ok", message)
+    print(f"\nOK -- coherent, {message}.")
     return 0
 
 

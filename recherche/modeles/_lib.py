@@ -114,49 +114,113 @@ def ecrire_csv(path: Path, header: list, lignes: list) -> None:
         w.writerows(lignes)
 
 
-def accumuler_csv(path: Path, header: list, lignes: list) -> None:
-    """Ajoute des lignes a l'historique -- n'ecrase jamais. Deduplique les lignes strictement
-    identiques a une ligne deja presente.
+def _indices_cle_naturelle(header: list, lignes: list) -> list:
+    """Deduit la cle d'un historique date sans connaitre le modele.
 
-    **Changement d'en-tete : le fichier est reconstruit, pas complete.** Defaut reel constate le
-    2026-09-14. La deduplication porte sur l'egalite STRICTE des lignes ; quand un modele fait
-    evoluer ses colonnes, les nouvelles lignes ne sont donc egales a aucune ancienne et sont
-    ajoutees, alors qu'elles decrivent la meme chose. Le fichier se retrouve avec deux
-    generations de lignes de largeurs differentes sous un en-tete qui ne decrit plus que la
-    premiere -- malforme pour tout lecteur strict, et trompeur pour un lecteur humain.
+    La date est toujours incluse. Les colonnes placees avant elle sont des identifiants
+    (institution, bloc, contrat...). Si plusieurs lignes du meme lot ont encore la meme cle,
+    on ajoute les colonnes suivantes jusqu'a obtenir une cle unique. Exemples :
 
-    Plutot que d'empiler du malforme en silence, on repart d'un fichier propre et on le signale.
-    L'historique ecrit sous l'ancien schema est perdu, et c'est le moindre mal : il n'etait de
-    toute facon plus interpretable a cote du nouveau, puisque les colonnes ne signifient plus
-    la meme chose.
+    - ``date`` pour une observation unique par jour ;
+    - ``date, horizon`` pour le chemin de taux Fed ;
+    - ``bloc, date`` pour une observation par bloc et par jour.
+
+    Un fichier sans colonne temporelle conserve l'ancien comportement de deduplication par
+    ligne complete : aucune cle metier ne peut alors etre inventee sans ambiguite.
+    """
+    noms = [str(c).strip().lower() for c in header]
+    indices_date = [i for i, nom in enumerate(noms)
+                    if nom == "date" or nom.startswith("date_") or nom.endswith("_date")]
+    if not indices_date:
+        return list(range(len(header)))
+
+    index_date = indices_date[0]
+    indices = list(range(index_date + 1))
+    # Certains modeles ecrivent une dimension a la fois (positionnement COT, par exemple).
+    # On ne peut donc pas se fier uniquement aux doublons du lot entrant pour decouvrir la
+    # dimension. Ces noms ont un sens d'identifiant stable dans les schemas du depot.
+    dimensions_connues = {
+        "horizon", "bloc", "contrat", "marche", "feature", "scenario", "secteur",
+        "serie", "type_document", "institution", "ticker",
+    }
+    for i, nom in enumerate(noms):
+        if i > index_date and nom in dimensions_connues and i not in indices:
+            indices.append(i)
+    lignes_texte = [[str(v) for v in ligne] for ligne in lignes]
+    while len(indices) < len(header):
+        cles = [tuple(ligne[i] if i < len(ligne) else "" for i in indices)
+                for ligne in lignes_texte]
+        if len(cles) == len(set(cles)):
+            break
+        prochain = next(i for i in range(len(header)) if i not in indices)
+        indices.append(prochain)
+        indices.sort()
+    return indices
+
+
+def accumuler_csv(path: Path, header: list, lignes: list, key_columns: list | None = None) -> None:
+    """Insere ou remplace des observations dans un historique CSV.
+
+    L'ancienne implementation ne dedupliquait que des lignes strictement identiques. Une
+    correction portant sur une observation deja publiee creait donc deux verites pour la meme
+    date -- c'est exactement ce qui s'est produit pour ``ton_fomc`` le 2026-09-16.
+
+    La cle est deduite de la colonne temporelle et des dimensions necessaires pour rendre le
+    lot entrant unique. Elle peut etre imposee avec ``key_columns`` pour les schemas atypiques.
+    Les doublons deja presents sont nettoyes en conservant leur derniere version.
+
+    Un changement d'en-tete reconstruit toujours le fichier : des lignes issues de deux schemas
+    differents ne sont pas comparables.
     """
     import csv
-    path.parent.mkdir(parents=True, exist_ok=True)
-    nouveau = not path.exists()
-    existantes = set()
-    entete_actuelle = None
-    if not nouveau:
-        with path.open(encoding="utf-8") as f:
-            for index, row in enumerate(csv.reader(f)):
-                if index == 0:
-                    entete_actuelle = row
-                existantes.add(tuple(row))
 
-    if entete_actuelle is not None and entete_actuelle != [str(c) for c in header]:
-        print(f"  [{path.name}] en-tete modifie "
-              f"({len(entete_actuelle)} -> {len(header)} colonnes) : fichier reconstruit, "
-              f"l'historique ecrit sous l'ancien schema n'etait plus comparable")
-        nouveau, existantes = True, set()
-
-    lignes_a_ecrire = [l for l in lignes if tuple(str(v) for v in l) not in existantes]
-    if not lignes_a_ecrire:
+    if not lignes:
         return
-    mode = "w" if nouveau else "a"
-    with path.open(mode, newline="", encoding="utf-8") as f:
+    header_texte = [str(c) for c in header]
+    lignes_texte = [[str(v) for v in ligne] for ligne in lignes]
+    if any(len(ligne) != len(header_texte) for ligne in lignes_texte):
+        raise ValueError(f"{path.name}: une ligne n'a pas {len(header_texte)} colonnes")
+
+    path.parent.mkdir(parents=True, exist_ok=True)
+    existantes = []
+    entete_actuelle = None
+    if path.exists():
+        with path.open(encoding="utf-8", newline="") as f:
+            lecteur = csv.reader(f)
+            entete_actuelle = next(lecteur, None)
+            existantes = [row for row in lecteur if row]
+
+    if entete_actuelle is not None and entete_actuelle != header_texte:
+        print(f"  [{path.name}] en-tete modifie "
+              f"({len(entete_actuelle)} -> {len(header_texte)} colonnes) : fichier reconstruit, "
+              f"l'historique ecrit sous l'ancien schema n'etait plus comparable")
+        existantes = []
+
+    if key_columns is None:
+        indices_cle = _indices_cle_naturelle(header_texte, lignes_texte)
+    else:
+        inconnues = [nom for nom in key_columns if nom not in header_texte]
+        if inconnues:
+            raise ValueError(f"{path.name}: colonnes de cle inconnues: {inconnues}")
+        indices_cle = [header_texte.index(nom) for nom in key_columns]
+
+    def cle(ligne: list) -> tuple:
+        return tuple(ligne[i] if i < len(ligne) else "" for i in indices_cle)
+
+    # Un dictionnaire ordonne preserve la position historique de la premiere occurrence, mais
+    # la valeur de la derniere occurrence gagne : une correction remplace l'ancienne version.
+    par_cle = {}
+    for ligne in existantes + lignes_texte:
+        if len(ligne) == len(header_texte):
+            par_cle[cle(ligne)] = ligne
+    resultat = list(par_cle.values())
+
+    if entete_actuelle == header_texte and resultat == existantes:
+        return
+    with path.open("w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
-        if nouveau:
-            w.writerow(header)
-        w.writerows(lignes_a_ecrire)
+        w.writerow(header_texte)
+        w.writerows(resultat)
 
 
 def lire_historique(path: Path) -> list:

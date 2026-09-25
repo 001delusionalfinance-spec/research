@@ -1,0 +1,24 @@
+as_of,metric_id,value,unit,status,confidence,source
+2026-09-16,fed_target_midpoint,3.875,%,ok,haute,Federal Reserve/FOMC
+2026-09-18,fed_effective_rate,3.88,%,stale,haute,FRED DFF
+2026-09-18,fed_real_rate,0.527,%,ok,moyenne,FRED DFF et CPIAUCSL
+2026-09-24,fed_source_coherence,0.25,point,warning,haute,FOMC et BIS WS_CBPOL
+2026-09-18,taylor_gap,-2.15,point,ok,faible,Modèle Taylor interne
+2026-08-01,sahm_gap,0,point,stale,haute,FRED UNRATE
+2026-09-18,financial_conditions,0.0908,score z,stale,moyenne,Composite interne
+2026-08-01,inflation_surprise,0.08,point,stale,faible,FRED CPIAUCSL
+2026-09-24,rate_path_0-1_mois,9,pb,ok,faible,forward_treasury_proxy
+2026-09-24,rate_path_1-3_mois,34.5,pb,ok,faible,forward_treasury_proxy
+2026-09-24,rate_path_3-6_mois,46,pb,ok,faible,forward_treasury_proxy
+2026-09-24,rate_path_6-12_mois,76,pb,ok,faible,forward_treasury_proxy
+2026-09-18,yield_curve_10y2y,0.25,point,stale,haute,FRED DGS10/DGS2
+2026-09-16,fed_net_liquidity,5545717,M$,ok,moyenne,Fed H.4.1 via FRED
+2026-09-16,fed_net_liquidity_3m,0.46,%,ok,moyenne,Fed H.4.1 via FRED
+2026-09-16,fomc_tone_change,21.975,‰,ok,faible,Communiqués FOMC
+2026-09-16,fomc_dissenters,0,membres,ok,haute,Communiqué FOMC
+2026-07-29,minutes_disagreement,20,mentions,ok,faible,Minutes FOMC
+2026-09-22,rate_path_0-1_mois,9,pb,ok,faible,forward_treasury_proxy
+2026-09-22,rate_path_1-3_mois,34.5,pb,ok,faible,forward_treasury_proxy
+2026-09-22,rate_path_3-6_mois,46,pb,ok,faible,forward_treasury_proxy
+2026-09-22,rate_path_6-12_mois,76,pb,ok,faible,forward_treasury_proxy
+2026-09-25,fed_source_coherence,0.25,point,warning,haute,FOMC et BIS WS_CBPOL

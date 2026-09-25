@@ -1,6 +1,9 @@
-"""Modele -- probabilite de mouvement du taux directeur US (Fed), lecture par horizon.
+"""Modele -- chemin de taux Fed implicite, lecture par horizon.
 
-**Ce n'est PAS un arbre de probabilites par reunion a la CME FedWatch, et c'est assume.**
+**Ce n'est PAS un arbre de probabilites par reunion a la CME FedWatch.** Le nom historique
+``probabilite_reunion_fed`` etait donc trompeur : une courbe de taux donne un mouvement net
+implicite, pas une distribution de probabilites discrete par reunion.
+
 FedWatch differencie les prix de futures Fed Funds MOIS PAR MOIS (un contrat par echeance) pour
 isoler chaque reunion individuellement. Verifie en direct le 2026-09-17 avant d'ecrire ce
 fichier : l'acces gratuit a cette bande complete de contrats est ferme -- CME repond avec un
@@ -39,16 +42,16 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from _lib import BRUT, ETAT, SerieVide, accumuler_csv, read_series  # noqa: E402
 
-NOM_MODELE = "probabilite_reunion_fed"
+NOM_MODELE = "chemin_taux_fed"
 SEUIL_LECTURE_PB = 5  # en dessous, on lit "statu quo" plutot qu'un mouvement bruite
 
 
-def lire_reunions_futures() -> list:
+def lire_reunions_futures(reference: date | None = None) -> list:
     """Reunions FOMC dont la date de fin est aujourd'hui ou plus tard, triees."""
     chemin = BRUT / "fomc" / "calendrier.csv"
     if not chemin.exists():
         raise SerieVide(f"{chemin} n'existe pas")
-    aujourdhui = date.today()
+    aujourdhui = reference or date.today()
     reunions = []
     with chemin.open(encoding="utf-8") as f:
         for row in csv.DictReader(f):
@@ -61,10 +64,11 @@ def lire_reunions_futures() -> list:
     return sorted(reunions)
 
 
-def lecture_mois_en_cours(dff: float, prochaine_reunion: date) -> dict | None:
+def lecture_mois_en_cours(dff: float, prochaine_reunion: date,
+                          reference: date | None = None) -> dict | None:
     """Lecture precise via ZQ=F -- seulement si la prochaine reunion tombe dans le mois en
     cours (sinon le contrat front-month ne dit rien sur elle)."""
-    aujourdhui = date.today()
+    aujourdhui = reference or date.today()
     if (prochaine_reunion.year, prochaine_reunion.month) != (aujourdhui.year, aujourdhui.month):
         return None
     try:
@@ -104,26 +108,39 @@ def lecture(mouvement_pb: float) -> str:
 
 def main() -> int:
     try:
-        dff = read_series(BRUT / "fred" / "DFF.csv")[-1][1]
-        dgs1mo = read_series(BRUT / "fred" / "DGS1MO.csv")[-1][1]
-        dgs3mo = read_series(BRUT / "fred" / "DGS3MO.csv")[-1][1]
-        dgs6mo = read_series(BRUT / "fred" / "DGS6MO.csv")[-1][1]
-        dgs1an = read_series(BRUT / "fred" / "DGS1.csv")[-1][1]
-        reunions = lire_reunions_futures()
+        series = {
+            "dff": read_series(BRUT / "fred" / "DFF.csv"),
+            "dgs1mo": read_series(BRUT / "fred" / "DGS1MO.csv"),
+            "dgs3mo": read_series(BRUT / "fred" / "DGS3MO.csv"),
+            "dgs6mo": read_series(BRUT / "fred" / "DGS6MO.csv"),
+            "dgs1an": read_series(BRUT / "fred" / "DGS1.csv"),
+        }
+        # Une sortie ne doit jamais paraitre plus fraiche que son entree la plus ancienne.
+        # L'ancien code utilisait date.today(), meme lorsque les rendements s'arretaient plusieurs
+        # jours plus tot, ce qui masquait precisement le probleme de fraicheur que la vue Fed doit
+        # rendre visible.
+        date_modele = min(serie[-1][0] for serie in series.values())
+        aujourdhui = date.fromisoformat(date_modele)
+        dff = series["dff"][-1][1]
+        dgs1mo = series["dgs1mo"][-1][1]
+        dgs3mo = series["dgs3mo"][-1][1]
+        dgs6mo = series["dgs6mo"][-1][1]
+        dgs1an = series["dgs1an"][-1][1]
+        reunions = lire_reunions_futures(aujourdhui)
     except SerieVide as e:
         print(f"echec -- {e}")
         return 1
 
-    aujourdhui = date.today()
     prochaine_reunion = reunions[0][0]
     lignes = []
 
-    court_terme = lecture_mois_en_cours(dff, prochaine_reunion)
+    court_terme = lecture_mois_en_cours(dff, prochaine_reunion, aujourdhui)
     if court_terme:
         lignes.append((
             aujourdhui.isoformat(), "mois_en_cours", prochaine_reunion.isoformat(), 1,
             court_terme["taux_implicite_pct"], court_terme["mouvement_pb"],
-            lecture(court_terme["mouvement_pb"]),
+            lecture(court_terme["mouvement_pb"]), "futures_fed_funds_front",
+            "moyenne", "contrat continu; estimation seulement si la reunion tombe ce mois",
         ))
 
     fenetres = [
@@ -140,17 +157,25 @@ def main() -> int:
         lignes.append((
             aujourdhui.isoformat(), nom_fenetre, echeance.isoformat(), n_reunions,
             round(implicite, 3), mouvement_pb, lecture(mouvement_pb),
+            "forward_treasury_proxy", "faible",
+            "mouvement net de fenetre; aucune probabilite isolee par reunion",
         ))
 
     accumuler_csv(
         ETAT / f"{NOM_MODELE}.csv",
         ["date", "horizon", "echeance", "n_reunions_incluses",
-         "taux_implicite_pct", "mouvement_implicite_pb", "lecture"],
+         "taux_implicite_pct", "mouvement_implicite_pb", "lecture", "methode",
+         "confiance", "limite"],
         lignes,
+        key_columns=["date", "horizon"],
     )
 
-    resume = " | ".join(f"{h}: {m:+.0f}pb ({l})" for _, h, _, _, _, m, l in lignes)
-    print(f"OK -- DFF={dff:.2f}%, prochaine reunion {prochaine_reunion.isoformat()} "
+    resume = " | ".join(
+        f"{ligne[1]}: {ligne[5]:+.0f}pb ({ligne[6]}, confiance {ligne[8]})"
+        for ligne in lignes
+    )
+    print(f"OK -- chemin de taux (pas des probabilites) : DFF={dff:.2f}%, "
+          f"prochaine reunion {prochaine_reunion.isoformat()} "
           f"({len(reunions)} a venir dans le calendrier) -- {resume}")
     return 0
 

@@ -127,7 +127,7 @@ SERIES = [
     "DGS30",     # Taux souverain 30 ans -- extremite longue
 
     # --- Ajoutees le 2026-09-17 : points courts pour bootstrap de taux forward implicites,
-    #     utilises par modele_probabilite_reunion_fed.py (probabilite de mouvement du taux
+    #     utilises par modele_chemin_taux_fed.py (chemin de taux implicite, pas une probabilite
     #     directeur US par horizon). Testees fraiches en direct via fredgraph.csv avant ajout
     #     (derniere observation 2026-09-15 sur les 3, aucun gel) -- l'API authentifiee reste le
     #     seul chemin retenu pour l'ingestion planifiee, meme regle que le reste de ce fichier.

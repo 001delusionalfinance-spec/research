@@ -1,0 +1,2 @@
+date_controle,date_fomc,fourchette_fomc,milieu_fomc_pct,date_bis,taux_bis_pct,ecart_pt,statut,source_canonique,message
+2026-09-25,20260916,3-3/4 to 4,3.875,2026-09-15,3.625,0.25,warning,communique_fomc,BIS en retard sur la derniere decision; le communique FOMC reste la source canonique jusqu'a resorption de l'ecart

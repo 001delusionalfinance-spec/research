@@ -49,16 +49,18 @@ Spread 10 ans - 2 ans (`DGS10`/`DGS2`, ajoutés à `ingestion_fred.py`) — un d
 récession macro les plus suivis (Estrella & Mishkin 1998). Suit aussi la durée de
 l'inversion, pas juste son état instantané. Testé réel : spread=+0,43pt, courbe normale.
 
-## `modele_probabilite_reunion_fed.py` (2026-09-17)
+## `modele_chemin_taux_fed.py` (renomme le 2026-09-24)
 
-Probabilité de mouvement du taux directeur US par horizon — PAS un arbre de probabilités par
-réunion à la CME FedWatch (accès gratuit à la bande complète de futures Fed Funds fermé, CME
-bloque explicitement le scraping de ses settlements, vérifié en direct). Combine deux lectures
+Chemin de taux directeur US implicite par horizon — PAS un arbre de probabilités par réunion à
+la CME FedWatch. L'ancien nom a été retiré car il promettait une précision que le modèle ne
+produit pas. L'accès gratuit à la bande complète de futures Fed Funds est fermé et la CME
+bloque explicitement le scraping de ses settlements (vérifié en direct). Le modèle combine deux lectures
 gratuites et officielles : le contrat Fed Funds front-month (`ZQ=F`, Yahoo) pour le mois en
 cours si une réunion y tombe, et un bootstrap de taux forward sur la courbe des bons du Trésor
 (`DGS1MO/DGS3MO/DGS6MO/DGS1`) pour 4 fenêtres à terme (0-1, 1-3, 3-6, 6-12 mois) — mouvement NET
 CUMULÉ par fenêtre, pas une probabilité isolée par réunion (`n_reunions_incluses` le rappelle à
-chaque ligne). Calendrier des réunions FOMC ingéré séparément (`ingestion_fomc_calendrier.py`,
+chaque ligne). La méthode, le niveau de confiance et la limite sont écrits sur chaque ligne.
+Calendrier des réunions FOMC ingéré séparément (`ingestion_fomc_calendrier.py`,
 même page que les communiqués, lue différemment pour capter les dates à venir).
 
 **Réserve trouvée en testant sur données réelles (2026-09-17), pas théorique** : les bons du

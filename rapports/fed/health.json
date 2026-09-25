@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "checked_on": "2026-09-25",
+  "as_of": "2026-09-22",
+  "status": "warning",
+  "counts": {
+    "ok": 12,
+    "warning": 1,
+    "stale": 5,
+    "missing": 0
+  },
+  "warnings": [
+    "Le chemin de taux dérivé des Treasuries ne constitue pas une distribution de probabilités par réunion FOMC.",
+    "BIS en retard sur la derniere decision; le communique FOMC reste la source canonique jusqu'a resorption de l'ecart"
+  ]
+}

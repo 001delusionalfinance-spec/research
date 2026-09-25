@@ -111,6 +111,10 @@ Même schéma que GMDC (ingestion → modèles → état → visualisations → 
   identifiants inexistants) pour ne pas être retenté à l'aveugle.
 - **Modèles calculés à intervalle régulier**, orchestrés comme `run_all_modeles.py` dans GMDC —
   un échec isolé n'interrompt jamais les autres.
+- **Vue Fed horaire** (`rapports/fed/`) : les mêmes modèles sont regroupés par question métier
+  — position actuelle, fonction de réaction, anticipations de marché, liquidité/bilan et
+  communication. Chaque mesure publie sa source, sa date, sa fraîcheur, son statut, sa confiance
+  et sa méthodologie. Cette vue est un contrat de sortie ; elle ne recalcule rien en parallèle.
 - **Rapports automatiques** (`rapports/`) : pulse quotidien, revue hebdomadaire, dashboard de
   régimes — à construire une fois qu'il y a quelque chose à résumer.
 
@@ -132,7 +136,7 @@ Un chiffre qui decrit le depot se compte, il ne s'ecrit pas.
 | `recherche/modeles/` | Code des 8 familles, une lane chacune |
 | `recherche/etat/` | Résultat calculé — la donnée, jamais le code |
 | `recherche/visualisations/` | Un graphique par modèle |
-| `rapports/` | Synthèses automatiques |
+| `rapports/` | Synthèses automatiques, dont le contrat thématique `fed/` |
 | `automatisations/` | GitHub Actions + routines Claude |
 
 ## Où on en est
@@ -144,9 +148,10 @@ dérive de documentation corrigée ce jour, le repo tournait déjà depuis une s
 
 - Modèles répartis sur les 8 familles, tous testés sur données réelles, orchestrés par
   `run_all_modeles.py` (un échec isolé n'interrompt jamais les autres).
-- **Deux workflows** : ingestion à 06h00 UTC, modèles à 06h30 UTC, jours ouvrés, poussés par
-  le bot `research-bot`. Les fichiers `donnees/brut/` et `recherche/etat/` ne sont **jamais**
-  committés depuis une session de travail — seulement par ce bot.
+- **Workflows étagés** : ingestion lente à 06h00 UTC, marchés toutes les 30 minutes, COT
+  hebdomadaire, modèles complets à 06h30 UTC et vue Fed toutes les heures, poussés par le bot
+  `research-bot`. En exploitation normale, les données et états sont actualisés par ce bot ;
+  les migrations de schéma restent des changements de code contrôlés et testés.
 - **Couverture étendue le 2026-09-14** de 5 à 12 blocs de banques centrales, plus FX, matières
   premières, volatilité de taux et indices non-US (voir « Comment c'est automatisé »).
 
@@ -193,6 +198,10 @@ dérive de documentation corrigée ce jour, le repo tournait déjà depuis une s
      comparaison la colonne tracée est celle qui **sépare le plus les entités**, mesurée par
      son coefficient de variation — prendre la première colonne venue donnait des aperçus à
      côté du sujet.
+9. ✅ **Scheduler réactivé le 2026-09-25.** Les workflows étaient encore marqués `active`, mais
+   le dépôt lui-même avait été archivé : GitHub le plaçait en lecture seule et ne lançait plus
+   aucun cron depuis le 2026-09-22. Le dépôt a été désarchivé ; la cause n'était ni le YAML, ni
+   les permissions Actions, ni les scripts d'ingestion.
 
 **Décision actée le 2026-09-14 — les modèles qui énumèrent sans conclure restent tels quels.**
 Douze modèles produisent une ligne par pays, par contrat ou par paire, sans phrase de synthèse.

@@ -1,7 +1,7 @@
 """Ingestion -- calendrier des reunions FOMC, passees et a venir (federalreserve.gov, source
 officielle, aucune cle requise).
 
-Cree le 2026-09-17 pour `modele_probabilite_reunion_fed.py` : ce modele a besoin de savoir
+Cree le 2026-09-17 pour `modele_chemin_taux_fed.py` : ce modele a besoin de savoir
 QUAND tombent les prochaines reunions pour situer ses lectures de taux implicites dans le
 temps, ce qu'aucune ingestion existante ne fournissait -- `ingestion_fomc_statements.py` ne
 liste que les 2 derniers communiques DEJA publies, jamais le calendrier a venir.
