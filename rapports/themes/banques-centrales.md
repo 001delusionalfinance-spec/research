@@ -2,7 +2,7 @@
 
 Decisions, fonctions de reaction, bilan, communication et trajectoires de taux.
 
-Mis a jour : **2026-09-25 07:53 UTC** · 19 lectures.
+Mis a jour : **2026-09-25 08:04 UTC** · 19 lectures.
 
 [Retour au tableau de bord](../README.md)
 
@@ -10,42 +10,42 @@ Mis a jour : **2026-09-25 07:53 UTC** · 19 lectures.
 
 Chine : taux 1.54% (stable, niveau bas) -- chomage non_couvert  _(sans synthese)_
 
-_Statut **OK** · observation 2026-09-18 · moteur `macro` · [donnees](../donnees/regime_monetaire_emploi.csv) · [graphique](../graphiques/regime_monetaire_emploi/apercu.png)_
+_Statut **OK** · observation 2026-09-23 · moteur `macro` · [donnees](../donnees/regime_monetaire_emploi.csv) · [graphique](../graphiques/regime_monetaire_emploi/apercu.png)_
 
 
 ### Regle taylor
 
 Taylor (2 termes, sans output gap)=6.03%, Fed reel=3.88%, ecart=-2.15pt -- accommodant (Fed en-dessous de la regle)
 
-_Statut **OK** · observation 2026-09-18 · moteur `macro` · [donnees](../donnees/regle_taylor.csv) · [graphique](../graphiques/regle_taylor/apercu.png)_
+_Statut **OK** · observation 2026-09-23 · moteur `macro` · [donnees](../donnees/regle_taylor.csv) · [graphique](../graphiques/regle_taylor/apercu.png)_
 
 
 ### Chemin taux fed
 
-chemin de taux (pas des probabilites) : DFF=3.88%, prochaine reunion 2026-10-27 (11 a venir dans le calendrier) -- 0-1 mois: +9pb (hausse, confiance faible) | 1-3 mois: +34pb (hausse, confiance faible) | 3-6 mois: +46pb (hausse, confiance faible) | 6-12 mois: +76pb (hausse, confiance faible)
+chemin de taux (pas des probabilites) : DFF=3.88%, prochaine reunion 2026-10-27 (11 a venir dans le calendrier) -- 0-1 mois: +11pb (hausse, confiance faible) | 1-3 mois: +41pb (hausse, confiance faible) | 3-6 mois: +55pb (hausse, confiance faible) | 6-12 mois: +79pb (hausse, confiance faible)
 
-_Statut **OK** · observation 2026-09-22 · moteur `macro` · [donnees](../donnees/chemin_taux_fed.csv) · [graphique](../graphiques/chemin_taux_fed/apercu.png)_
+_Statut **OK** · observation 2026-09-23 · moteur `macro` · [donnees](../donnees/chemin_taux_fed.csv) · [graphique](../graphiques/chemin_taux_fed/apercu.png)_
 
 
 ### Divergence taux directeurs
 
 12 banques centrales : ecart de taux max 4.35pt (Australie 4.35% contre Suisse 0.00%), mediane 2.88% -- cycles alignes dans le meme sens (resserrement) -- divergence limitee
 
-_Statut **OK** · observation 2026-09-15 · moteur `macro` · [donnees](../donnees/divergence_taux_directeurs.csv) · [graphique](../graphiques/divergence_taux_directeurs/apercu.png)_
+_Statut **OK** · observation 2026-09-22 · moteur `macro` · [donnees](../donnees/divergence_taux_directeurs.csv) · [graphique](../graphiques/divergence_taux_directeurs/apercu.png)_
 
 
 ### Bilans banques centrales
 
-9 bilans suivis sur 12 mois : de -14.9% (RBA -- titres locaux) a +8.4% (Fed -- titres du Tresor) -- regimes OPPOSES -- 5 bilan(s) en reduction pendant que 3 s'etendent, la liquidite mondiale ne va pas dans un sens unique
+9 bilans suivis sur 12 mois : de -19.2% (RBA -- titres locaux) a +8.5% (Fed -- titres du Tresor) -- regimes OPPOSES -- 5 bilan(s) en reduction pendant que 3 s'etendent, la liquidite mondiale ne va pas dans un sens unique
 
-_Statut **OK** · observation 2026-09-16 · moteur `macro` · [donnees](../donnees/bilans_banques_centrales.csv) · [graphique](../graphiques/bilans_banques_centrales/apercu.png)_
+_Statut **OK** · observation 2026-09-23 · moteur `macro` · [donnees](../donnees/bilans_banques_centrales.csv) · [graphique](../graphiques/bilans_banques_centrales/apercu.png)_
 
 
 ### Liquidite nette fed
 
-liquidite nette 5.55 T$ au 2026-09-16 (+0.5% sur 3 mois, -0.1% sur 12 mois) -- liquidite stable sur 3 mois. Detail : actif 6.75 T$, compte du Tresor 0.88 T$, reverse repo 0.32 T$
+liquidite nette 5.45 T$ au 2026-09-23 (-0.6% sur 3 mois, -0.6% sur 12 mois) -- liquidite stable sur 3 mois. Detail : actif 6.75 T$, compte du Tresor 0.98 T$, reverse repo 0.32 T$
 
-_Statut **OK** · observation 2026-09-16 · moteur `macro` · [donnees](../donnees/liquidite_nette_fed.csv) · [graphique](../graphiques/liquidite_nette_fed/apercu.png)_
+_Statut **OK** · observation 2026-09-23 · moteur `macro` · [donnees](../donnees/liquidite_nette_fed.csv) · [graphique](../graphiques/liquidite_nette_fed/apercu.png)_
 
 
 ### Ton banques centrales

@@ -2,7 +2,7 @@
 
 Activite, emploi, inflation, immobilier, commerce et finances publiques.
 
-Mis a jour : **2026-09-25 07:53 UTC** · 9 lectures.
+Mis a jour : **2026-09-25 08:04 UTC** · 9 lectures.
 
 [Retour au tableau de bord](../README.md)
 
@@ -15,14 +15,14 @@ _Statut **OK** · observation 2026-08-01 · moteur `macro` · [donnees](../donne
 
 ### Cycle immobilier
 
-mises en chantier=1275.0k (baisse), permis=1394.0k (stable), taux hypothecaire=6.95% -- pas de divergence
+mises en chantier=1275.0k (baisse), permis=1403.0k (stable), taux hypothecaire=7.03% -- pas de divergence
 
 _Statut **OK** · observation 2026-08-01 · moteur `macro` · [donnees](../donnees/cycle_immobilier.csv) · [graphique](../graphiques/cycle_immobilier/apercu.png)_
 
 
 ### Inflation comparee
 
-inflation annuelle sur 12 blocs : mediane 2.88%, dispersion 3.88pt (Nouvelle-Zelande +4.06% au plus haut, Suede +0.18% au plus bas) -- dispersion forte -- les banques centrales sont poussees a diverger, ce qui deplace les differentiels de taux et le change
+inflation annuelle sur 12 blocs : mediane 3.06%, dispersion 3.75pt (Nouvelle-Zelande +4.06% au plus haut, Suede +0.31% au plus bas) -- dispersion forte -- les banques centrales sont poussees a diverger, ce qui deplace les differentiels de taux et le change
 
 _Statut **OK** · observation non exposee par la sortie · moteur `macro` · [donnees](../donnees/inflation_comparee.csv) · [graphique](../graphiques/inflation_comparee/apercu.png)_
 
@@ -36,16 +36,16 @@ _Statut **OK** · observation non exposee par la sortie · moteur `macro` · [do
 
 ### Soutenabilite dette
 
-8 pays. charge la plus lourde : Canada a 25.5% du revenu. taux 10 ans AU-DESSUS de l'inflation dans 5 pays -- Royaume-Uni (+2.5pt), Etats-Unis (+1.6pt), Japon (+1.0pt), Zone euro (+1.0pt), Canada (+0.8pt). Configuration ou le ratio d'endettement monte meme a budget primaire equilibre (approximation : croissance nominale reduite a l'inflation)
+8 pays. charge la plus lourde : Canada a 25.5% du revenu. taux 10 ans AU-DESSUS de l'inflation dans 5 pays -- Royaume-Uni (+2.1pt), Etats-Unis (+1.7pt), Japon (+1.0pt), Canada (+0.9pt), Zone euro (+0.8pt). Configuration ou le ratio d'endettement monte meme a budget primaire equilibre (approximation : croissance nominale reduite a l'inflation)
 
 _Statut **OK** · observation non exposee par la sortie · moteur `macro` · [donnees](../donnees/soutenabilite_dette.csv) · [graphique](../graphiques/soutenabilite_dette/apercu.png)_
 
 
 ### Matieres premieres macro
 
-le ratio cuivre/or monte -- la croissance domine la peur (+6.1% sur 3 mois). Brent 98.9$ (+28.3% sur 3 mois, +48.6% sur 12 mois), gaz -4.4% sur 3 mois, ecart Brent-WTI +8.3$ -- energie nettement plus chere sur un an -- pression inflationniste a venir que les prix a la consommation ne montrent pas encore
+ratio cuivre/or stable -- pas de signal net sur la croissance (+4.2% sur 3 mois). Brent 99.2$ (+37.9% sur 3 mois, +43.0% sur 12 mois), gaz +1.2% sur 3 mois, ecart Brent-WTI +5.7$ -- energie nettement plus chere sur un an -- pression inflationniste a venir que les prix a la consommation ne montrent pas encore
 
-_Statut **OK** · observation 2026-09-22 · moteur `macro` · [donnees](../donnees/matieres_premieres_macro.csv) · [graphique](../graphiques/matieres_premieres_macro/apercu.png)_
+_Statut **OK** · observation 2026-09-25 · moteur `macro` · [donnees](../donnees/matieres_premieres_macro.csv) · [graphique](../graphiques/matieres_premieres_macro/apercu.png)_
 
 
 ### Surprise macro composite
