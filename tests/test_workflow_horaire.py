@@ -16,7 +16,7 @@ def test_une_seule_chaine_de_recherche_est_planifiee():
 
 def test_la_chaine_complete_tourne_toutes_les_heures():
     contenu = CHAINE_HORAIRE.read_text(encoding="utf-8")
-    assert 'cron: "5 * * * *"' in contenu
+    assert 'cron: "17,47 * * * *"' in contenu
     assert "ingestion_marches.py" in contenu
     assert "ingestion_cftc.py" in contenu
     assert "ingestion_fred.py" in contenu

@@ -147,10 +147,12 @@ dérive de documentation corrigée ce jour, le repo tournait déjà depuis une s
 
 - Modèles répartis sur les 8 familles, tous testés sur données réelles, orchestrés par
   `run_all_modeles.py` (un échec isolé n'interrompt jamais les autres).
-- **Chaîne horaire unique** : toutes les sources sont interrogées, les modèles sont recalculés,
-  puis les contrôles et rapports sont publiés dans la même exécution. Le bot `research-bot`
-  pousse uniquement les changements réels. Les sources mensuelles, trimestrielles ou
-  hebdomadaires restent naturellement identiques entre deux publications.
+- **Chaîne horaire unique et redondante** : toutes les sources sont interrogées, les modèles
+  sont recalculés, puis les contrôles et rapports sont publiés dans la même exécution. Deux
+  déclenchements hors du début d'heure absorbent les événements cron que GitHub peut retarder
+  ou supprimer. Le bot `research-bot` pousse uniquement les changements réels. Les sources
+  mensuelles, trimestrielles ou hebdomadaires restent naturellement identiques entre deux
+  publications.
 - **Couverture étendue le 2026-09-14** de 5 à 12 blocs de banques centrales, plus FX, matières
   premières, volatilité de taux et indices non-US (voir « Comment c'est automatisé »).
 

@@ -3,8 +3,10 @@ name: Recherche - Mise a jour complete horaire
 on:
   schedule:
     # Une seule chaine ordonnee : toutes les sources, tous les modeles, puis les rapports.
-    # GitHub Actions utilise UTC et peut decaler legerement le depart des crons.
-    - cron: "5 * * * *"
+    # Deux departs hors du debut d'heure rendent le dispositif tolerant a un evenement cron
+    # retarde ou supprime par GitHub. Le cycle dure environ 6 minutes et le verrou empeche tout
+    # chevauchement : il y a ainsi deux occasions par heure de remettre la recherche a jour.
+    - cron: "17,47 * * * *"
   workflow_dispatch:
 
 permissions:
