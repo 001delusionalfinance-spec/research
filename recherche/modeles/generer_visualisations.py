@@ -206,7 +206,12 @@ def main() -> int:
         except (OSError, ValueError, IndexError) as erreur:
             erreurs.append(f"{nom}: {erreur}")
 
-    n_csv_seuls = len(list(ETAT.glob("*.csv"))) - generes
+    modeles_avec_graphique = {
+        chemin.parent.name for chemin in VISUALISATIONS.rglob("*.png")
+    }
+    n_csv_seuls = sum(
+        1 for chemin in ETAT.glob("*.csv") if chemin.stem not in modeles_avec_graphique
+    )
     print(
         f"OK -- {generes} graphiques selectionnes, {n_csv_seuls} sorties conservees en CSV "
         f"seul, {supprimes} anciens apercus supprimes"
