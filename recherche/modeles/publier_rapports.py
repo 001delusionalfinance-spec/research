@@ -1,9 +1,8 @@
 """Publie toutes les sorties de recherche dans un point d'entree unique.
 
-Les modeles et leurs CSV restent ranges par implementation dans ``recherche/``. Ce module
-construit la couche de lecture destinee a l'utilisateur dans ``rapports/`` : une synthese
-thematique, un rapport par sujet, toutes les donnees publiees, tous les graphiques et un etat
-de qualite. Il ne recalcule aucun signal et ne cree donc pas une seconde verite.
+Les scripts restent ranges par implementation dans ``recherche/``. Leurs sorties vivent
+directement dans ``rapports/`` : ce module construit la synthese thematique, les rapports par
+sujet et l'etat de qualite sans copier les CSV ni les graphiques.
 
 Usage :
     python recherche/modeles/publier_rapports.py
@@ -14,7 +13,6 @@ from __future__ import annotations
 import csv
 import json
 import re
-import shutil
 import sys
 from collections import Counter
 from datetime import date, datetime, timezone
@@ -25,8 +23,8 @@ from _lib import ETAT, REPO_ROOT, VISUALISATIONS  # noqa: E402
 from run_all_modeles import MODELES  # noqa: E402
 
 RAPPORTS = REPO_ROOT / "rapports"
-DONNEES_PUBLIEES = RAPPORTS / "donnees"
-GRAPHIQUES_PUBLIES = RAPPORTS / "graphiques"
+DONNEES_PUBLIEES = ETAT
+GRAPHIQUES_PUBLIES = VISUALISATIONS
 THEMES_DIR = RAPPORTS / "themes"
 
 
@@ -217,31 +215,6 @@ def _derniere_observation(chemin: Path | None) -> str | None:
     return max(dates).isoformat() if dates else None
 
 
-def _synchroniser_sorties() -> None:
-    DONNEES_PUBLIEES.mkdir(parents=True, exist_ok=True)
-    GRAPHIQUES_PUBLIES.mkdir(parents=True, exist_ok=True)
-
-    attendus_csv = set()
-    for source in ETAT.glob("*.csv"):
-        destination = DONNEES_PUBLIEES / source.name
-        shutil.copyfile(source, destination)
-        attendus_csv.add(destination.name)
-    for ancien in DONNEES_PUBLIEES.glob("*.csv"):
-        if ancien.name not in attendus_csv:
-            ancien.unlink()
-
-    attendus_images = set()
-    for source in VISUALISATIONS.rglob("*.png"):
-        relatif = source.relative_to(VISUALISATIONS)
-        destination = GRAPHIQUES_PUBLIES / relatif
-        destination.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copyfile(source, destination)
-        attendus_images.add(relatif.as_posix())
-    for ancien in GRAPHIQUES_PUBLIES.rglob("*.png"):
-        if ancien.relative_to(GRAPHIQUES_PUBLIES).as_posix() not in attendus_images:
-            ancien.unlink()
-
-
 def _resume_fraicheur() -> tuple[Counter, list[dict]]:
     chemin = ETAT / "fraicheur.csv"
     if not chemin.exists():
@@ -283,9 +256,10 @@ def _liens_modele(nom: str, depuis_theme: bool = False) -> str:
     if (DONNEES_PUBLIEES / f"{stem}.csv").exists():
         liens.append(f"[donnees]({prefixe}/donnees/{stem}.csv)")
     dossier = GRAPHIQUES_PUBLIES / stem
-    apercu = dossier / "apercu.png"
-    if apercu.exists():
-        liens.append(f"[graphique]({prefixe}/graphiques/{stem}/apercu.png)")
+    graphiques = sorted(dossier.glob("*.png")) if dossier.exists() else []
+    if graphiques:
+        choisi = next((p for p in graphiques if p.name == "apercu.png"), graphiques[0])
+        liens.append(f"[graphique]({prefixe}/graphiques/{stem}/{choisi.name})")
     return " · ".join(liens)
 
 
@@ -346,7 +320,6 @@ def _ecrire_qualite(genere_le: str, resultats: list[dict]) -> None:
 def publier() -> int:
     verifier_couverture()
     lectures = _lire_lecture()
-    _synchroniser_sorties()
 
     maintenant = datetime.now(timezone.utc)
     genere_le = maintenant.strftime("%Y-%m-%d %H:%M UTC")
@@ -436,8 +409,8 @@ def publier() -> int:
         n = sum(r["theme"] == slug for r in resultats)
         accueil.append(f"- [{theme['titre']}](themes/{slug}.md) — {n} lectures")
     accueil += ["", "## Toutes les sorties", "",
-                "- [Donnees publiees](donnees/) — copie lisible des CSV produits",
-                "- [Graphiques](graphiques/) — toutes les visualisations",
+                "- [Donnees](donnees/) — source unique de tous les CSV produits",
+                "- [Graphiques utiles](graphiques/) — uniquement quand le visuel apporte une lecture",
                 "- [Inventaire automatique](inventaire.md) — couverture du dispositif", ""]
     (RAPPORTS / "README.md").write_text("\n".join(accueil), encoding="utf-8")
     _ecrire_qualite(genere_le, resultats)

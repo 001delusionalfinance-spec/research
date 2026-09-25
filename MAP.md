@@ -1,7 +1,7 @@
 # MAP — repère du dispositif
 
-Ce fichier est le seul point d'orientation de ce dépôt (même convention que
-`global-macro-desk-cloud` — commence toujours ici, humain ou Claude Code).
+Ce fichier décrit l'architecture pour les mainteneurs. Pour lire les résultats, le point
+d'entrée unique est [`rapports/README.md`](rapports/README.md).
 
 ## Ce que c'est, ce que ce n'est pas
 
@@ -51,7 +51,8 @@ construire un signal de trade.
 
 ## Comment c'est automatisé
 
-Même schéma que GMDC (ingestion → modèles → état → visualisations → rapports) :
+Chaîne unique : ingestion → modèles → `rapports/donnees/` → publication thématique. Les
+graphiques ne sont ajoutés que lorsqu'ils rendent une évolution ou une comparaison plus lisible.
 
 - **Ingestion programmée** (`donnees/brut/`), 1×/jour ouvré :
   - `ingestion_fred.py` — séries officielles, dont les **bilans de banques centrales
@@ -111,12 +112,9 @@ Même schéma que GMDC (ingestion → modèles → état → visualisations → 
   identifiants inexistants) pour ne pas être retenté à l'aveugle.
 - **Modèles calculés à intervalle régulier**, orchestrés comme `run_all_modeles.py` dans GMDC —
   un échec isolé n'interrompt jamais les autres.
-- **Vue Fed horaire** (`rapports/fed/`) : les mêmes modèles sont regroupés par question métier
-  — position actuelle, fonction de réaction, anticipations de marché, liquidité/bilan et
-  communication. Chaque mesure publie sa source, sa date, sa fraîcheur, son statut, sa confiance
-  et sa méthodologie. Cette vue est un contrat de sortie ; elle ne recalcule rien en parallèle.
-- **Rapports automatiques** (`rapports/`) : pulse quotidien, revue hebdomadaire, dashboard de
-  régimes — à construire une fois qu'il y a quelque chose à résumer.
+- **Centre de recherche horaire** (`rapports/`) : toutes les lectures sont regroupées par sujet
+  économique, avec les CSV, les graphiques utiles, la fraîcheur, l'inventaire et le classeur.
+  Il n'existe pas de publication parallèle propre à la Fed ni de copie technique des résultats.
 
 ## Combien -- ne pas le chercher ici
 
@@ -133,10 +131,11 @@ Un chiffre qui decrit le depot se compte, il ne s'ecrit pas.
 | Dossier | Rôle |
 |---|---|
 | `donnees/brut/` | Données importées, non retouchées |
-| `recherche/modeles/` | Code des 8 familles, une lane chacune |
-| `recherche/etat/` | Résultat calculé — la donnée, jamais le code |
-| `recherche/visualisations/` | Un graphique par modèle |
-| `rapports/` | Synthèses automatiques, dont le contrat thématique `fed/` |
+| `recherche/modeles/` | Moteur de calcul des 8 familles ; aucun résultat à consulter ici |
+| `rapports/donnees/` | Source unique des CSV calculés |
+| `rapports/graphiques/` | Sélection de graphiques utiles, jamais un graphique par principe |
+| `rapports/themes/` | Lectures regroupées par sujet économique |
+| `rapports/` | Point d'entrée unique : lecture, qualité, inventaire et classeur |
 | `automatisations/` | GitHub Actions + routines Claude |
 
 ## Où on en est
@@ -149,7 +148,7 @@ dérive de documentation corrigée ce jour, le repo tournait déjà depuis une s
 - Modèles répartis sur les 8 familles, tous testés sur données réelles, orchestrés par
   `run_all_modeles.py` (un échec isolé n'interrompt jamais les autres).
 - **Workflows étagés** : ingestion lente à 06h00 UTC, marchés toutes les 30 minutes, COT
-  hebdomadaire, modèles complets à 06h30 UTC et vue Fed toutes les heures, poussés par le bot
+  hebdomadaire et publication complète toutes les heures, poussés par le bot
   `research-bot`. En exploitation normale, les données et états sont actualisés par ce bot ;
   les migrations de schéma restent des changements de code contrôlés et testés.
 - **Couverture étendue le 2026-09-14** de 5 à 12 blocs de banques centrales, plus FX, matières
@@ -165,7 +164,7 @@ dérive de documentation corrigée ce jour, le repo tournait déjà depuis une s
    Le seuil n'est pas configuré série par série mais **déduit du rythme de la série elle-même**
    (écart médian entre observations), parce que cinq seuils posés à la main se sont révélés
    faux le jour même de leur écriture. Calibré contre les six gels réellement observés sur ce
-   dépôt. Sortie : `recherche/etat/fraicheur.csv`.
+   dépôt. Sortie : `rapports/donnees/fraicheur.csv`.
 3. ✅ **Alerte.** Une série classée GELÉE fait échouer le workflow — c'est le signal. Une série
    seulement SUSPECTE est signalée sans faire échouer : une alerte qui crie tous les jours est
    désactivée en une semaine et ne protège plus rien.
@@ -184,20 +183,18 @@ dérive de documentation corrigée ce jour, le repo tournait déjà depuis une s
    semaine à l'autre, et `nombre_effectif_paris` de 8,54 à 13,39 — dans les deux cas
    l'élargissement du COT, pas le marché. Le contrôle distingue un **dénominateur** (rupture)
    d'un **résultat** (variation normale), sans quoi il crierait à chaque mesure.
-8. ✅ **Chaque modèle a une sortie.** Trois formes, toutes generiques — aucune n'a demandé de
-   modifier les modèles un par un :
+8. ✅ **Chaque modèle a une sortie.** Le CSV est la sortie canonique ; les vues suivantes
+   rendent le dispositif lisible sans dupliquer les fichiers :
    - `rapports/lecture-du-jour.md` — la première page. L'orchestrateur capture la phrase
-     interprétable de chaque modèle et les regroupe par famille. Sans elle, ces lectures
+     interprétable de chaque modèle et les regroupe par sujet économique. Sans elle, ces lectures
      n'existaient que dans le journal d'exécution et disparaissaient après le run : le dépôt
      calculait beaucoup et ne disait rien. Les 12 modèles qui **énumèrent sans conclure** y
      sont marqués _(sans synthèse)_ plutôt que masqués.
    - `rapports/etat-recherche.xlsx` — un classeur, une feuille par fichier d'état, valeurs
      écrites comme des nombres et non du texte.
-   - `recherche/visualisations/<modèle>/apercu.png` — un aperçu par sortie. La forme est
-     choisie d'après la structure du fichier (série temporelle ou comparaison), et pour une
-     comparaison la colonne tracée est celle qui **sépare le plus les entités**, mesurée par
-     son coefficient de variation — prendre la première colonne venue donnait des aperçus à
-     côté du sujet.
+   - `rapports/graphiques/` — une sélection explicite. Une figure n'est créée que si elle
+     accélère la lecture d'une évolution temporelle ou d'une comparaison ; les tableaux,
+     contrôles et sorties textuelles restent volontairement en CSV seul.
 9. ✅ **Scheduler réactivé le 2026-09-25.** Les workflows étaient encore marqués `active`, mais
    le dépôt lui-même avait été archivé : GitHub le plaçait en lecture seule et ne lançait plus
    aucun cron depuis le 2026-09-22. Le dépôt a été désarchivé ; la cause n'était ni le YAML, ni

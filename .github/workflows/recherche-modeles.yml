@@ -52,7 +52,7 @@ jobs:
         if: always()
         run: python recherche/modeles/controle_coherence_fed.py
 
-      - name: Generer les apercus graphiques
+      - name: Generer les graphiques utiles
         if: always()
         run: python recherche/modeles/generer_visualisations.py
 
@@ -73,7 +73,7 @@ jobs:
         run: |
           git config user.name "research-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add recherche/etat recherche/visualisations rapports
+          git add rapports
           if git diff --cached --quiet; then
             echo "Aucun changement -- rien a committer."
           else

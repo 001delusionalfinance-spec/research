@@ -4,7 +4,7 @@ Distinction utile : un z-score de +1,5 stable n'est pas la meme situation qu'un 
 vient de passer de 0 a +1,5 en 8 semaines -- le second est un positionnement qui SE CONSTRUIT
 (risque de retournement futur plus eleve si ca continue), le premier est deja stabilise. Compare
 le z-score actuel au z-score d'il y a 8 semaines (~2 mois), sur l'historique brut deja ingere
-par ingestion_cftc.py -- pas besoin d'attendre l'accumulation de recherche/etat/ sur plusieurs
+par ingestion_cftc.py -- pas besoin d'attendre l'accumulation de rapports/donnees/ sur plusieurs
 mois comme volatilite_ewma.
 """
 

@@ -38,7 +38,7 @@ def vol_ewma(rendements: list, lam: float = LAMBDA_EWMA) -> float:
 
 
 def tendance_ewma(historique: list, jours: int = 10) -> str:
-    """'hausse'/'baisse'/'stable' sur les `jours` derniers runs accumules dans recherche/etat/
+    """'hausse'/'baisse'/'stable' sur les `jours` derniers runs accumules dans rapports/donnees/
     -- seuil relatif 10%, pas absolu (une vol a 10% qui monte a 11% n'est pas le meme mouvement
     qu'une vol a 30% qui monte a 33%, meme ecart en points)."""
     if len(historique) < jours + 1:

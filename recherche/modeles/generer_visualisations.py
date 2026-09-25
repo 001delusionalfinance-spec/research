@@ -1,52 +1,96 @@
-"""Generation des apercus graphiques, un par fichier d'etat.
+"""Genere uniquement les graphiques qui ajoutent une information visuelle.
 
-Produit `recherche/visualisations/<modele>/apercu.png` pour chaque sortie de modele.
+Le CSV est la sortie normale d'un modele. Un graphique n'est produit que lorsqu'une evolution
+temporelle ou une comparaison entre entites est plus rapide a comprendre visuellement. La
+selection ci-dessous est explicite : elle evite les apercus automatiques, souvent redondants ou
+trompeurs, qui existaient auparavant.
 
-**Pourquoi generique plutot qu'un graphique ecrit dans chaque modele.** Quatre modeles sur cent
-onze produisaient une figure ; ajouter du code de trace dans les cent sept autres aurait
-demande de les modifier un par un, avec un risque de regression sans rapport avec le besoin.
-Les fichiers d'etat ont deja une structure reguliere -- une colonne de date ou une colonne
-d'entites, puis des colonnes numeriques -- et cette regularite suffit a produire un apercu
-correct sans toucher aux modeles.
-
-Deux formes, choisies d'apres la structure du fichier et non d'apres son nom :
-- **serie temporelle** quand la premiere colonne contient des dates -- courbe par colonne
-  numerique ;
-- **comparaison** quand la premiere colonne contient des entites (pays, devises, contrats) --
-  barres horizontales triees sur la colonne numerique la plus informative.
-
-Un apercu n'est pas une figure d'analyse. Il sert a voir d'un coup d'oeil si une sortie est
-plausible et ou elle en est ; un modele qui merite une figure travaillee garde la sienne, ecrite
-chez lui.
+Les figures propres a certains modeles (COT, correlation glissante, regime monetaire et EWMA)
+restent generees par ces modeles. Ce script gere seulement les graphiques communs selectionnes.
 """
 
 import csv
 import sys
-from datetime import datetime
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _lib import ETAT, VISUALISATIONS, nouvelle_figure, sauvegarder_figure  # noqa: E402
 
-MAX_SERIES_TRACEES = 6      # au-dela, la figure devient illisible
+MAX_SERIES_TRACEES = 6
 MAX_BARRES = 20
 MIN_POINTS_SERIE = 3
-FORMATS_DATE = ("%Y-%m-%d", "%Y-%m")
 
-
-def _est_date(texte: str) -> bool:
-    texte = texte.strip()
-    if "-Q" in texte:
-        return True
-    return any(_essai_date(texte, f) for f in FORMATS_DATE)
-
-
-def _essai_date(texte: str, motif: str) -> bool:
-    try:
-        datetime.strptime(texte, motif)
-        return True
-    except ValueError:
-        return False
+# Chaque graphique doit repondre a une question de lecture identifiable. Les sorties absentes
+# de cette liste restent accessibles sous forme de CSV, sans image decorative.
+CONFIG_GRAPHIQUES = {
+    "conditions_financieres": {
+        "mode": "serie", "colonnes": ["indice_composite"],
+    },
+    "courbe_taux_us": {
+        "mode": "serie", "colonnes": ["taux_10ans", "taux_2ans", "spread_pt"],
+    },
+    "liquidite_nette_fed": {
+        "mode": "serie", "colonnes": ["liquidite_nette_musd"],
+    },
+    "regle_taylor": {
+        "mode": "serie", "colonnes": ["taux_recommande_taylor_pct", "taux_fed_reel_pct"],
+    },
+    "taux_reel_us": {
+        "mode": "serie", "colonnes": ["taux_nominal_pct", "inflation_yoy_pct", "taux_reel_pct"],
+    },
+    "matieres_premieres_macro": {
+        "mode": "serie",
+        "colonnes": ["variation_ratio_3m_pct", "variation_brent_3m_pct", "variation_gaz_3m_pct"],
+    },
+    "facteur_qualite_credit": {
+        "mode": "serie", "colonnes": ["spread_hy", "spread_ig"],
+    },
+    "crowding_cross_asset": {
+        "mode": "serie", "colonnes": ["pct_tendus"],
+    },
+    "var_drawdown": {
+        "mode": "serie", "colonnes": ["var_95_pct", "cvar_95_pct", "drawdown_max_252j_pct"],
+    },
+    "garch": {
+        "mode": "serie", "colonnes": ["vol_garch_annualisee"],
+    },
+    "ornstein_uhlenbeck_vix": {
+        "mode": "serie", "colonnes": ["vix_actuel", "mu_niveau_moyen"],
+    },
+    "hp_filter_taux": {
+        "mode": "serie", "colonnes": ["taux_10ans_observe", "tendance_hp"],
+    },
+    "decomposition_stl": {
+        "mode": "serie", "colonnes": ["tendance", "composante_saisonniere", "residu"],
+    },
+    "bilans_banques_centrales": {
+        "mode": "comparaison", "etiquette": "bilan", "colonnes": ["variation_12m_pct"],
+    },
+    "inflation_comparee": {
+        "mode": "comparaison", "etiquette": "bloc", "colonnes": ["inflation_annuelle_pct"],
+    },
+    "pentes_courbes": {
+        "mode": "comparaison", "etiquette": "bloc", "colonnes": ["pente_pt"],
+    },
+    "indices_mondiaux": {
+        "mode": "comparaison", "etiquette": "indice", "colonnes": ["variation_12m_pct"],
+    },
+    "rotation_sectorielle": {
+        "mode": "comparaison", "etiquette": "secteur", "colonnes": ["rendement_3m_pct"],
+    },
+    "vol_cross_asset": {
+        "mode": "comparaison", "etiquette": "mesure", "colonnes": ["percentile_5_ans"],
+    },
+    "stress_test_historique": {
+        "mode": "comparaison", "etiquette": "scenario", "colonnes": ["chute_pct"],
+    },
+    "positionnement_devises": {
+        "mode": "comparaison", "etiquette": "devise", "colonnes": ["percentile_historique"],
+    },
+    "positionnement_courbe_taux": {
+        "mode": "comparaison", "etiquette": "maturite", "colonnes": ["percentile_historique"],
+    },
+}
 
 
 def _nombre(texte):
@@ -57,122 +101,119 @@ def _nombre(texte):
 
 
 def _lire(chemin: Path):
-    with chemin.open(encoding="utf-8", newline="") as f:
-        lignes = list(csv.reader(f))
+    with chemin.open(encoding="utf-8", newline="") as flux:
+        lignes = list(csv.reader(flux))
     if len(lignes) < 2:
-        return None, None
+        raise ValueError("fichier vide ou sans donnees")
     return lignes[0], lignes[1:]
 
 
-def _colonnes_numeriques(entete: list, donnees: list) -> list:
-    """Indices des colonnes majoritairement numeriques, hors premiere colonne."""
-    retenues = []
-    for i in range(1, len(entete)):
-        valeurs = [_nombre(l[i]) for l in donnees if i < len(l)]
-        exploitables = [v for v in valeurs if v is not None]
-        if valeurs and len(exploitables) / len(valeurs) >= 0.8:
-            retenues.append(i)
-    return retenues
+def _indices(entete: list[str], noms: list[str]) -> list[int]:
+    absentes = [nom for nom in noms if nom not in entete]
+    if absentes:
+        raise ValueError(f"colonnes absentes: {absentes}")
+    return [entete.index(nom) for nom in noms]
 
 
-def _tracer_serie(nom: str, entete: list, donnees: list, colonnes: list) -> Path:
+def _tracer_serie(nom: str, entete: list, donnees: list, colonnes: list[int]) -> Path:
+    if "date" not in entete:
+        raise ValueError("colonne date absente")
+    index_date = entete.index("date")
     plt, fig, ax = nouvelle_figure(figsize=(10, 5))
-    for i in colonnes[:MAX_SERIES_TRACEES]:
-        points = [(l[0], _nombre(l[i])) for l in donnees if i < len(l)]
-        points = [(d, v) for d, v in points if v is not None]
+    tracees = 0
+    for index in colonnes[:MAX_SERIES_TRACEES]:
+        points = [
+            (ligne[index_date], _nombre(ligne[index]))
+            for ligne in donnees
+            if max(index_date, index) < len(ligne)
+        ]
+        points = [(date, valeur) for date, valeur in points if valeur is not None]
         if len(points) < MIN_POINTS_SERIE:
             continue
-        ax.plot([d for d, _ in points], [v for _, v in points], label=entete[i], linewidth=1.2)
+        ax.plot(
+            [date for date, _ in points], [valeur for _, valeur in points],
+            label=entete[index], linewidth=1.2,
+        )
+        tracees += 1
+    if not tracees:
+        raise ValueError("pas assez de points numeriques")
     ax.set_title(nom.replace("_", " "))
     ax.tick_params(axis="x", rotation=45, labelsize=7)
-    # Une serie longue rendrait l'axe illisible : on ne garde qu'une dizaine de reperes.
     etiquettes = ax.get_xticks()
     if len(etiquettes) > 12:
         ax.set_xticks(etiquettes[:: max(1, len(etiquettes) // 10)])
-    if len(colonnes) > 1:
+    if tracees > 1:
         ax.legend(fontsize=7)
     return sauvegarder_figure(plt, fig, nom, "apercu")
 
 
-def _colonne_la_plus_discriminante(donnees: list, colonnes: list) -> int:
-    """Colonne qui separe le mieux les entites, mesuree par son coefficient de variation.
-
-    Prendre la premiere colonne numerique venue donnait des apercus a cote du sujet : sur les
-    pentes de courbes, cela tracait le taux court alors que l'information du modele est la
-    pente elle-meme. Le coefficient de variation (ecart-type rapporte a la moyenne des valeurs
-    absolues) retient la colonne ou les entites different le plus les unes des autres, ce qui
-    est par construction celle qui porte le contraste -- et ce critere se mesure sur les
-    donnees, sans dependre du nom des colonnes.
-    """
-    meilleure, meilleur_score = colonnes[0], -1.0
-    for i in colonnes:
-        valeurs = [v for v in (_nombre(l[i]) for l in donnees if i < len(l)) if v is not None]
-        if len(valeurs) < 2:
+def _tracer_comparaison(
+    nom: str, entete: list, donnees: list, colonne: int, index_etiquette: int,
+) -> Path:
+    # Les historiques peuvent contenir plusieurs dates par entite. La derniere occurrence est
+    # l'etat courant et remplace les precedentes dans la photographie comparative.
+    dernieres = {}
+    for ligne in donnees:
+        if max(colonne, index_etiquette) >= len(ligne):
             continue
-        moyenne_abs = sum(abs(v) for v in valeurs) / len(valeurs)
-        if moyenne_abs == 0:
-            continue
-        centre = sum(valeurs) / len(valeurs)
-        ecart = (sum((v - centre) ** 2 for v in valeurs) / (len(valeurs) - 1)) ** 0.5
-        score = ecart / moyenne_abs
-        if score > meilleur_score:
-            meilleure, meilleur_score = i, score
-    return meilleure
-
-
-def _tracer_comparaison(nom: str, entete: list, donnees: list, colonnes: list) -> Path:
-    colonne = _colonne_la_plus_discriminante(donnees, colonnes)
-    paires = [(l[0], _nombre(l[colonne])) for l in donnees if colonne < len(l)]
-    paires = [(e, v) for e, v in paires if v is not None][:MAX_BARRES]
+        valeur = _nombre(ligne[colonne])
+        etiquette = ligne[index_etiquette].strip()
+        if etiquette and valeur is not None:
+            dernieres[etiquette] = valeur
+    paires = sorted(dernieres.items(), key=lambda paire: paire[1])[-MAX_BARRES:]
     if not paires:
         raise ValueError("aucune valeur numerique a tracer")
-    paires.sort(key=lambda t: t[1])
     plt, fig, ax = nouvelle_figure(figsize=(9, max(3, 0.35 * len(paires) + 1)))
-    ax.barh([e for e, _ in paires], [v for _, v in paires],
-            color=["#b02418" if v < 0 else "#1f5f8b" for _, v in paires])
+    ax.barh(
+        [etiquette for etiquette, _ in paires], [valeur for _, valeur in paires],
+        color=["#b02418" if valeur < 0 else "#1f5f8b" for _, valeur in paires],
+    )
     ax.set_title(f"{nom.replace('_', ' ')} -- {entete[colonne]}")
     ax.tick_params(axis="y", labelsize=8)
     ax.axvline(0, color="black", linewidth=0.8)
-    # La grille par defaut du depot est active sur les deux axes ; sur un graphique en barres
-    # horizontales, les lignes horizontales traversent le milieu de chaque barre et donnent
-    # l'impression d'une barre coupee en deux. On ne garde que la grille verticale, qui elle
-    # aide vraiment a lire la valeur.
     ax.grid(axis="y", visible=False)
     ax.set_axisbelow(True)
     return sauvegarder_figure(plt, fig, nom, "apercu")
 
 
-def main() -> int:
-    fichiers = sorted(ETAT.glob("*.csv"))
-    if not fichiers:
-        print(f"echec -- aucun fichier d'etat dans {ETAT}")
-        return 1
+def _nettoyer_apercus_non_selectionnes() -> int:
+    supprimes = 0
+    for chemin in VISUALISATIONS.glob("*/apercu.png"):
+        if chemin.parent.name not in CONFIG_GRAPHIQUES:
+            chemin.unlink()
+            supprimes += 1
+    for dossier in sorted(VISUALISATIONS.glob("*"), reverse=True):
+        if dossier.is_dir() and not any(dossier.iterdir()):
+            dossier.rmdir()
+    return supprimes
 
-    n_series, n_comparaisons, ignores = 0, 0, []
-    for chemin in fichiers:
-        nom = chemin.stem
+
+def main() -> int:
+    VISUALISATIONS.mkdir(parents=True, exist_ok=True)
+    supprimes = _nettoyer_apercus_non_selectionnes()
+    generes, erreurs = 0, []
+    for nom, config in CONFIG_GRAPHIQUES.items():
+        chemin = ETAT / f"{nom}.csv"
         try:
             entete, donnees = _lire(chemin)
-            if not entete:
-                ignores.append((nom, "fichier vide ou sans donnees"))
-                continue
-            colonnes = _colonnes_numeriques(entete, donnees)
-            if not colonnes:
-                ignores.append((nom, "aucune colonne numerique"))
-                continue
-            if _est_date(donnees[0][0]) and len(donnees) >= MIN_POINTS_SERIE:
+            colonnes = _indices(entete, config["colonnes"])
+            if config["mode"] == "serie":
                 _tracer_serie(nom, entete, donnees, colonnes)
-                n_series += 1
             else:
-                _tracer_comparaison(nom, entete, donnees, colonnes)
-                n_comparaisons += 1
-        except (OSError, ValueError, IndexError) as e:
-            ignores.append((nom, str(e)))
+                index_etiquette = _indices(entete, [config["etiquette"]])[0]
+                _tracer_comparaison(nom, entete, donnees, colonnes[0], index_etiquette)
+            generes += 1
+        except (OSError, ValueError, IndexError) as erreur:
+            erreurs.append(f"{nom}: {erreur}")
 
-    print(f"OK -- {n_series + n_comparaisons} apercus generes dans {VISUALISATIONS.name}/ "
-          f"({n_series} series temporelles, {n_comparaisons} comparaisons)")
-    if ignores:
-        print(f"   {len(ignores)} sortie(s) sans apercu : {[n for n, _ in ignores][:8]}")
+    n_csv_seuls = len(list(ETAT.glob("*.csv"))) - generes
+    print(
+        f"OK -- {generes} graphiques selectionnes, {n_csv_seuls} sorties conservees en CSV "
+        f"seul, {supprimes} anciens apercus supprimes"
+    )
+    if erreurs:
+        print("Echecs de generation : " + "; ".join(erreurs))
+        return 1
     return 0
 
 

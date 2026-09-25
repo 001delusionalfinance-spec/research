@@ -1,3 +1,0 @@
-date,n_observations,pct_variance_pc1,pct_variance_pc2,poids_pc1
-2026-05-01,59,95.02,2.82,"{'Chine': -0.088, 'Japon': 0.03, 'Royaume-Uni': 0.615, 'US': 0.594, 'Zone_euro': 0.511}"
-2026-07-01,61,94.69,2.98,"{'Chine': -0.095, 'Japon': 0.035, 'Royaume-Uni': 0.616, 'US': 0.592, 'Zone_euro': 0.51}"

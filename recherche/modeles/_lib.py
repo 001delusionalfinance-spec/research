@@ -8,8 +8,8 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 BRUT = REPO_ROOT / "donnees" / "brut"
-ETAT = REPO_ROOT / "recherche" / "etat"
-VISUALISATIONS = REPO_ROOT / "recherche" / "visualisations"
+ETAT = REPO_ROOT / "rapports" / "donnees"
+VISUALISATIONS = REPO_ROOT / "rapports" / "graphiques"
 
 
 class SerieVide(Exception):
@@ -263,7 +263,7 @@ def nouvelle_figure(figsize=(8, 5), nrows=1, ncols=1):
 
 
 def sauvegarder_figure(plt, fig, modele: str, nom: str) -> Path:
-    """Ecrit recherche/visualisations/<modele>/<nom>.png -- un sous-dossier par modele."""
+    """Ecrit rapports/graphiques/<modele>/<nom>.png -- un sous-dossier par modele."""
     dossier = VISUALISATIONS / modele
     dossier.mkdir(parents=True, exist_ok=True)
     out_path = dossier / f"{nom}.png"

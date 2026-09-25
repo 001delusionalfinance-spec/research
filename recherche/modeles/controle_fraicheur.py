@@ -27,7 +27,7 @@ alimente le taux coreen avec davantage de retard que ses autres taux. Le control
 memes tolerances que leurs scripts d'ingestion afin de ne pas appeler "suspecte" une source que
 l'ingestion vient de valider.
 
-Sortie : `recherche/etat/fraicheur.csv` (une ligne par serie) et un resume lisible. Le code de
+Sortie : `rapports/donnees/fraicheur.csv` (une ligne par serie) et un resume lisible. Le code de
 retour vaut 1 si au moins une serie est classee GELEE : c'est le signal d'alerte, il fait
 passer le workflow au rouge. Une serie seulement SUSPECTE ne fait pas echouer -- sinon
 l'alerte crierait en permanence et serait desactivee au bout d'une semaine.
@@ -44,7 +44,7 @@ from pathlib import Path
 
 RACINE = Path(__file__).resolve().parents[2]
 BRUT_DIR = RACINE / "donnees" / "brut"
-SORTIE = RACINE / "recherche" / "etat" / "fraicheur.csv"
+SORTIE = RACINE / "rapports" / "donnees" / "fraicheur.csv"
 
 # Multiples de l'ecart median de la serie. CALIBRES CONTRE LES GELS REELLEMENT OBSERVES sur ce
 # depot, pas choisis a vue -- c'est la seule facon d'obtenir une alerte qu'on ne finira pas par

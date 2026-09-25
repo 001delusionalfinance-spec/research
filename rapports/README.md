@@ -2,7 +2,7 @@
 
 **C'est le point d'entree unique du depot.** Les scripts et fichiers techniques restent hors de cette vue ; toutes les conclusions, donnees publiees et visualisations sont rassemblees ici.
 
-Derniere publication : **2026-09-25 08:10 UTC** · Etat **OK** · 112/112 modeles reussis.
+Derniere publication : **2026-09-25 08:20 UTC** · Etat **OK** · 112/112 modeles reussis.
 
 ## Commencer ici
 
@@ -22,6 +22,6 @@ Derniere publication : **2026-09-25 08:10 UTC** · Etat **OK** · 112/112 modele
 
 ## Toutes les sorties
 
-- [Donnees publiees](donnees/) — copie lisible des CSV produits
-- [Graphiques](graphiques/) — toutes les visualisations
+- [Donnees](donnees/) — source unique de tous les CSV produits
+- [Graphiques utiles](graphiques/) — uniquement quand le visuel apporte une lecture
 - [Inventaire automatique](inventaire.md) — couverture du dispositif

@@ -1,7 +1,7 @@
 """Controle des ruptures de perimetre dans les series accumulees.
 
 **Le probleme, constate le 2026-09-14 lors d'un audit.** Beaucoup de modeles accumulent une
-ligne par execution dans `recherche/etat/`. Quand l'univers de donnees change -- un contrat
+ligne par execution dans `rapports/donnees/`. Quand l'univers de donnees change -- un contrat
 ajoute, un historique rallonge -- la nouvelle ligne n'est plus comparable aux precedentes, et
 rien ne le signale. Deux cas reels sur ce depot :
 

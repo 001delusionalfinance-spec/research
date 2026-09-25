@@ -67,7 +67,7 @@ def main() -> int:
     ]
     total_donnees = len(list(BRUT.rglob("*.csv")))
     n_etat = len(list(ETAT.glob("*.csv")))
-    n_apercus = len(list(VISUALISATIONS.glob("*/apercu.png")))
+    n_graphiques = len(list(VISUALISATIONS.rglob("*.png")))
 
     # Fraicheur, si le controle a deja tourne.
     fraicheur = ETAT / "fraicheur.csv"
@@ -94,15 +94,15 @@ def main() -> int:
     lignes += [f"| {fam} | {n} |" for fam, n in sorted(par_famille.items())]
     lignes += [f"| **Total** | **{n_modeles}** |", "",
                "## Sorties", "",
-               f"- {n_etat} fichiers d'etat (`recherche/etat/`)",
-               f"- {n_apercus} apercus graphiques (`recherche/visualisations/`)",
+               f"- {n_etat} fichiers de donnees (`rapports/donnees/`)",
+               f"- {n_graphiques} graphiques utiles (`rapports/graphiques/`)",
                "- `rapports/lecture-du-jour.md`, `rapports/etat-recherche.xlsx`", ""]
 
     SORTIE.parent.mkdir(parents=True, exist_ok=True)
     SORTIE.write_text("\n".join(lignes), encoding="utf-8")
 
     print(f"OK -- inventaire ecrit : {total_donnees} fichiers de donnees, {n_modeles} modeles "
-          f"sur {len(par_famille)} familles, {n_etat} sorties, {n_apercus} apercus -> "
+          f"sur {len(par_famille)} familles, {n_etat} sorties, {n_graphiques} graphiques -> "
           f"{SORTIE.name}")
     return 0
 

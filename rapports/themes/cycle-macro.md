@@ -2,7 +2,7 @@
 
 Activite, emploi, inflation, immobilier, commerce et finances publiques.
 
-Mis a jour : **2026-09-25 08:10 UTC** · 9 lectures.
+Mis a jour : **2026-09-25 08:20 UTC** · 9 lectures.
 
 [Retour au tableau de bord](../README.md)
 
@@ -10,14 +10,14 @@ Mis a jour : **2026-09-25 08:10 UTC** · 9 lectures.
 
 MM3 chomage=4.13%, plus bas 12m=4.13%, ecart=0.00pt (seuil 0.5pt) -- non declenchee
 
-_Statut **OK** · observation 2026-08-01 · moteur `macro` · [donnees](../donnees/sahm_rule.csv) · [graphique](../graphiques/sahm_rule/apercu.png)_
+_Statut **OK** · observation 2026-08-01 · moteur `macro` · [donnees](../donnees/sahm_rule.csv)_
 
 
 ### Cycle immobilier
 
 mises en chantier=1275.0k (baisse), permis=1403.0k (stable), taux hypothecaire=7.03% -- pas de divergence
 
-_Statut **OK** · observation 2026-08-01 · moteur `macro` · [donnees](../donnees/cycle_immobilier.csv) · [graphique](../graphiques/cycle_immobilier/apercu.png)_
+_Statut **OK** · observation 2026-08-01 · moteur `macro` · [donnees](../donnees/cycle_immobilier.csv)_
 
 
 ### Inflation comparee
@@ -31,14 +31,14 @@ _Statut **OK** · observation non exposee par la sortie · moteur `macro` · [do
 
 zone euro : Production industrielle -0.2 % sur 12 mois, Ventes de detail +0.8 % sur 12 mois, Taux de chomage +0.1 pt sur 12 mois, Confiance industrielle +1.2 pt vs moyenne longue -- production industrielle DIVERGENTE entre grands pays -- en hausse : Espagne ; en baisse : Allemagne, France, Italie
 
-_Statut **OK** · observation non exposee par la sortie · moteur `macro` · [donnees](../donnees/activite_zone_euro.csv) · [graphique](../graphiques/activite_zone_euro/apercu.png)_
+_Statut **OK** · observation non exposee par la sortie · moteur `macro` · [donnees](../donnees/activite_zone_euro.csv)_
 
 
 ### Soutenabilite dette
 
 8 pays. charge la plus lourde : Canada a 25.5% du revenu. taux 10 ans AU-DESSUS de l'inflation dans 5 pays -- Royaume-Uni (+2.1pt), Etats-Unis (+1.7pt), Japon (+1.0pt), Canada (+0.9pt), Zone euro (+0.8pt). Configuration ou le ratio d'endettement monte meme a budget primaire equilibre (approximation : croissance nominale reduite a l'inflation)
 
-_Statut **OK** · observation non exposee par la sortie · moteur `macro` · [donnees](../donnees/soutenabilite_dette.csv) · [graphique](../graphiques/soutenabilite_dette/apercu.png)_
+_Statut **OK** · observation non exposee par la sortie · moteur `macro` · [donnees](../donnees/soutenabilite_dette.csv)_
 
 
 ### Matieres premieres macro
@@ -52,19 +52,19 @@ _Statut **OK** · observation 2026-09-25 · moteur `macro` · [donnees](../donne
 
 indice de surprise macro=-0.33 ({'chomage': 1, 'credit_bancaire': -1, 'inflation': -1}) -- negatif (surprises defavorables dominent)
 
-_Statut **OK** · observation 2026-08-01 · moteur `macro` · [donnees](../donnees/surprise_macro_composite.csv) · [graphique](../graphiques/surprise_macro_composite/apercu.png)_
+_Statut **OK** · observation 2026-08-01 · moteur `macro` · [donnees](../donnees/surprise_macro_composite.csv)_
 
 
 ### Balance commerciale
 
 balance commerciale=-88,576M$ (rang percentile=1), deficit se creuse
 
-_Statut **OK** · observation 2026-07-01 · moteur `macro` · [donnees](../donnees/balance_commerciale.csv) · [graphique](../graphiques/balance_commerciale/apercu.png)_
+_Statut **OK** · observation 2026-07-01 · moteur `macro` · [donnees](../donnees/balance_commerciale.csv)_
 
 
 ### Surprise inflation
 
 CPI MoM=+0.396%, prevision naive=+0.316%, surprise=+0.080pt -- surprise haussiere (inflation plus forte qu'attendu)
 
-_Statut **OK** · observation 2026-08-01 · moteur `macro` · [donnees](../donnees/surprise_inflation.csv) · [graphique](../graphiques/surprise_inflation/apercu.png)_
+_Statut **OK** · observation 2026-08-01 · moteur `macro` · [donnees](../donnees/surprise_inflation.csv)_
 

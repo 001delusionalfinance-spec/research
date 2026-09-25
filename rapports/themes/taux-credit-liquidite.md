@@ -2,7 +2,7 @@
 
 Courbes souveraines, conditions financieres, credit, emission et taux reels.
 
-Mis a jour : **2026-09-25 08:10 UTC** · 13 lectures.
+Mis a jour : **2026-09-25 08:20 UTC** · 13 lectures.
 
 [Retour au tableau de bord](../README.md)
 
@@ -24,7 +24,7 @@ _Statut **OK** · observation 2026-09-23 · moteur `macro` · [donnees](../donne
 
 credit bancaire total croissance YoY=+6.24%, rang percentile historique=40.18691588785047, lecture=normal
 
-_Statut **OK** · observation 2026-09-09 · moteur `macro` · [donnees](../donnees/cycle_credit.csv) · [graphique](../graphiques/cycle_credit/apercu.png)_
+_Statut **OK** · observation 2026-09-09 · moteur `macro` · [donnees](../donnees/cycle_credit.csv)_
 
 
 ### Conditions financieres
@@ -38,7 +38,7 @@ _Statut **OK** · observation 2026-09-23 · moteur `macro` · [donnees](../donne
 
 84 derniers jours, 7886 Mds$ offerts : court (moins d'un an) 6798 Mds$ (86%), intermediaire (2 a 10 ans) 969 Mds$ (12%), long (20 a 30 ans) 119 Mds$ (2%) -- financement concentre sur le court et l'intermediaire, part longue a 2% -- peu de pression par la duration
 
-_Statut **OK** · observation non exposee par la sortie · moteur `macro` · [donnees](../donnees/emission_tresor_us.csv) · [graphique](../graphiques/emission_tresor_us/apercu.png)_
+_Statut **OK** · observation non exposee par la sortie · moteur `macro` · [donnees](../donnees/emission_tresor_us.csv)_
 
 
 ### Pentes courbes
@@ -52,21 +52,21 @@ _Statut **OK** · observation 2026-09-24 · moteur `series-temporelles` · [donn
 
 1/5 series stationnaires (niveau, pas en difference) -- a garder en tete avant toute correlation/regression sur ces series telles quelles  _(sans synthese)_
 
-_Statut **OK** · observation 2026-09-23 · moteur `statistique` · [donnees](../donnees/stationnarite_taux.csv) · [graphique](../graphiques/stationnarite_taux/apercu.png)_
+_Statut **OK** · observation 2026-09-23 · moteur `statistique` · [donnees](../donnees/stationnarite_taux.csv)_
 
 
 ### Cointegration taux
 
 1/10 paires cointegrees  _(sans synthese)_
 
-_Statut **OK** · observation 2026-09-23 · moteur `statistique` · [donnees](../donnees/cointegration_taux.csv) · [graphique](../graphiques/cointegration_taux/apercu.png)_
+_Statut **OK** · observation 2026-09-23 · moteur `statistique` · [donnees](../donnees/cointegration_taux.csv)_
 
 
 ### Pca taux
 
 61 dates communes -- PC1 explique 94.7% de la variance conjointe (vs 20% attendu si les 5 blocs etaient independants) -- synchronisation forte -- un facteur commun domine largement le mouvement conjoint, poids PC1={'Chine': -0.095, 'Japon': 0.035, 'Royaume-Uni': 0.616, 'US': 0.592, 'Zone_euro': 0.51}
 
-_Statut **OK** · observation 2026-07-01 · moteur `statistique` · [donnees](../donnees/pca_taux.csv) · [graphique](../graphiques/pca_taux/apercu.png)_
+_Statut **OK** · observation 2026-07-01 · moteur `statistique` · [donnees](../donnees/pca_taux.csv)_
 
 
 ### Hp filter taux
@@ -87,12 +87,12 @@ _Statut **OK** · observation 2026-09-23 · moteur `factorielle` · [donnees](..
 
 spread HY actuel=2.73, niveau moyen estime=3.01, demi-vie=43.7j, ecart actuel=-0.28 -- spread HY actuel en-dessous de son niveau moyen de long terme
 
-_Statut **OK** · observation 2026-09-23 · moteur `series-temporelles` · [donnees](../donnees/ornstein_uhlenbeck_credit.csv) · [graphique](../graphiques/ornstein_uhlenbeck_credit/apercu.png)_
+_Statut **OK** · observation 2026-09-23 · moteur `series-temporelles` · [donnees](../donnees/ornstein_uhlenbeck_credit.csv)_
 
 
 ### Momentum credit
 
 momentum credit 12-1 mois=-0.02pt -- stable
 
-_Statut **OK** · observation 2026-09-23 · moteur `factorielle` · [donnees](../donnees/momentum_credit.csv) · [graphique](../graphiques/momentum_credit/apercu.png)_
+_Statut **OK** · observation 2026-09-23 · moteur `factorielle` · [donnees](../donnees/momentum_credit.csv)_
 

@@ -3,7 +3,7 @@
 Produit `rapports/etat-recherche.xlsx` : une feuille de garde qui reprend la lecture du jour,
 puis une feuille par fichier d'etat.
 
-**Pourquoi un classeur plutot que de laisser cent CSV.** Les fichiers de `recherche/etat/` sont
+**Pourquoi un classeur en plus des CSV.** Les fichiers de `rapports/donnees/` sont
 faits pour etre relus par du code. Les ouvrir un par un pour comprendre ce que dit le
 dispositif ne se fait pas en pratique -- c'est le meme probleme que celui resolu par la lecture
 du jour, vu sous un autre angle : la donnee existait, elle n'etait pas consultable. Un classeur

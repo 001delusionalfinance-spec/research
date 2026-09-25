@@ -7,7 +7,7 @@ conditionnelle (GARCH), saisonnalité. Voir `MAP.md` (racine).
 
 Volatilité réalisée S&P 500 (5/20/60j) + volatilité EWMA (RiskMetrics, lambda=0.94, poids
 décroissant exponentiellement — plus réactive à un choc récent qu'une fenêtre fixe). Tendance
-mesurée sur les 10 derniers runs accumulés dans `recherche/etat/` (10% de variation relative,
+mesurée sur les 10 derniers runs accumulés dans `rapports/donnees/` (10% de variation relative,
 pas un seuil absolu).
 
 Nécessite `ingestion_yfinance_indices.py` (SP500, VIX — même pattern d'appel direct à l'API

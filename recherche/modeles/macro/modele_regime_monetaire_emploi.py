@@ -33,7 +33,7 @@ SEUIL_CHOMAGE_PT = 0.30  # variation jugee significative pour un taux de chomage
 # chomage ALLEMAND (cf. le commentaire dans ingestion_fred.py -- "DE" = code pays, pas zone),
 # pas un agregat zone euro. Aucune serie FRED "zone euro" fiable n'a ete testee/retenue ici --
 # le vrai chiffre zone euro (Eurostat, EA21) vit dans modele_activite_zone_euro.py /
-# recherche/etat/activite_zone_euro.csv, pas ici. Mettre a None plutot que de fabriquer un
+# rapports/donnees/activite_zone_euro.csv, pas ici. Mettre a None plutot que de fabriquer un
 # proxy : mieux vaut "non_couvert" que "faux et silencieux" (meme principe que la Chine
 # ci-dessous, qui n'a jamais eu de serie chomage exploitable).
 BLOCS = [
