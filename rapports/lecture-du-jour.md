@@ -1,4 +1,4 @@
-# Rapport global — 2026-09-26 05:35 UTC
+# Rapport global — 2026-09-26 10:09 UTC
 
 **Etat global : OK** · 112/112 modeles reussis · 0 source(s) suspecte(s) · 0 source(s) gelee(s).
 
@@ -55,7 +55,7 @@ Courbes souveraines, conditions financieres, credit, emission et taux reels.
 - **Cycle credit** — credit bancaire total croissance YoY=+6.15%, rang percentile historique=39.7196261682243, lecture=normal _(observation : 2026-09-16)_
 - **Conditions financieres** — indice conditions financieres=+0.064 (3 composantes: {'taux_directeur': 0.5985724560125544, 'courbe_inversee': 0.2531563730537784, 'vix': -0.6597998970697634}) -- conditions proches de la normale _(observation : 2026-09-24)_
 - **Emission tresor us** — 84 derniers jours, 7886 Mds$ offerts : court (moins d'un an) 6798 Mds$ (86%), intermediaire (2 a 10 ans) 969 Mds$ (12%), long (20 a 30 ans) 119 Mds$ (2%) -- financement concentre sur le court et l'intermediaire, part longue a 2% -- peu de pression par la duration _(observation : date non exposee)_
-- **Pentes courbes** — 7 courbes : pente de +0.30pt (Australie) a +1.20pt (Japon) -- aucune courbe inversee -- pas de signal recessif par la pente _(observation : 2026-09-24)_
+- **Pentes courbes** — 7 courbes : pente de +0.30pt (Australie) a +1.20pt (Japon) -- aucune courbe inversee -- pas de signal recessif par la pente _(observation : 2026-09-25)_
 - **Stationnarite taux** — 1/5 series stationnaires (niveau, pas en difference) -- a garder en tete avant toute correlation/regression sur ces series telles quelles  _(sans synthese)_ _(observation : 2026-09-24)_
 - **Cointegration taux** — 1/10 paires cointegrees  _(sans synthese)_ _(observation : 2026-09-24)_
 - **Pca taux** — 61 dates communes -- PC1 explique 94.7% de la variance conjointe (vs 20% attendu si les 5 blocs etaient independants) -- synchronisation forte -- un facteur commun domine largement le mouvement conjoint, poids PC1={'Chine': -0.095, 'Japon': 0.035, 'Royaume-Uni': 0.616, 'US': 0.592, 'Zone_euro': 0.51} _(observation : 2026-07-01)_
@@ -116,7 +116,7 @@ Volatilite, queues, drawdowns, stress, contagion et changements de regime.
 - **Ornstein uhlenbeck vix** — VIX actuel=14.87, niveau moyen estime (mu)=20.20, demi-vie=28.8j, ecart actuel=-5.33 -- VIX actuel en-dessous de son niveau moyen de long terme _(observation : 2026-09-25)_
 - **Changepoint volatilite** — rupture detectee le 2011-12-21 -- vol avant=0.2129, vol apres=0.1666 (reduction SSE=0.5%) -- baisse de la vol au point de rupture (-21.7%) _(observation : 2026-09-25)_
 - **Kalman niveau local** — VIX observe=14.87, filtre Kalman=14.98 (ecart-type=0.62), ratio signal/bruit=0.2051 -- le filtre lisse fortement le bruit, reagit lentement (ecart obs.-filtre=-0.11) _(observation : 2026-09-25)_
-- **Var sp500 vix** — VAR ordre choisi par AIC=10 -- coef SP500(t-1)->VIX(t)=0.3769116249569233 (SP500(t-1) en hausse -> VIX(t) tend aussi a monter), coef VIX(t-1)->SP500(t)=-0.05237241130035915 (VIX(t-1) en hausse -> SP500(t) tend a baisser) _(observation : 2026-09-25)_
+- **Var sp500 vix** — VAR ordre choisi par AIC=10 -- coef SP500(t-1)->VIX(t)=0.3769116249569233 (SP500(t-1) en hausse -> VIX(t) tend aussi a monter), coef VIX(t-1)->SP500(t)=-0.052372411300360217 (VIX(t-1) en hausse -> SP500(t) tend a baisser) _(observation : 2026-09-25)_
 - **Analyse spectrale** — 3 periodes dominantes (jours de bourse) : [2.2, 4.0, 5.3] -- cycle(s) connu(s) qui ressortent : 4.0j~hebdomadaire, 5.3j~hebdomadaire _(observation : 2026-09-25)_
 - **Var drawdown** — VaR95=-1.45% CVaR95=-1.80% VaR99=-2.08% CVaR99=-2.50% drawdown_max_252j=-9.10% -- soit l'equivalent de ~6 jours de VaR95 d'affilee _(observation : 2026-09-25)_
 - **Skew kurtosis** — skewness=-0.201 (asymetrie negative (pertes extremes > gains extremes)), kurtosis exces=+1.031 (queues epaisses (risque extreme sous-estime par une hypothese normale)) _(observation : 2026-09-25)_

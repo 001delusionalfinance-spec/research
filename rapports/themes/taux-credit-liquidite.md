@@ -2,7 +2,7 @@
 
 Courbes souveraines, conditions financieres, credit, emission et taux reels.
 
-Mis a jour : **2026-09-26 05:35 UTC** · 13 lectures.
+Mis a jour : **2026-09-26 10:09 UTC** · 13 lectures.
 
 [Retour au tableau de bord](../README.md)
 
@@ -45,7 +45,7 @@ _Statut **OK** · observation non exposee par la sortie · moteur `macro` · [do
 
 7 courbes : pente de +0.30pt (Australie) a +1.20pt (Japon) -- aucune courbe inversee -- pas de signal recessif par la pente
 
-_Statut **OK** · observation 2026-09-24 · moteur `series-temporelles` · [donnees](../donnees/pentes_courbes.csv) · [graphique](../graphiques/pentes_courbes/apercu.png)_
+_Statut **OK** · observation 2026-09-25 · moteur `series-temporelles` · [donnees](../donnees/pentes_courbes.csv) · [graphique](../graphiques/pentes_courbes/apercu.png)_
 
 
 ### Stationnarite taux

@@ -213,9 +213,6 @@ souverains/CANADA_10A.csv,2026-09-24,2,1.0,42,6435,OK
 souverains/CANADA_2A.csv,2026-09-24,2,1,42,6434,OK
 souverains/CANADA_5A.csv,2026-09-24,2,1,42,6434,OK
 souverains/CANADA_LONG.csv,2026-09-24,2,1,42,6434,OK
-souverains/SUEDE_10A.csv,2026-09-24,2,1.0,42,9201,OK
-souverains/SUEDE_2A.csv,2026-09-24,2,1.0,42,9201,OK
-souverains/SUEDE_5A.csv,2026-09-24,2,1.0,42,9203,OK
 souverains/ZONE_EURO_AAA_10A.csv,2026-09-24,2,1,42,5638,OK
 souverains/ZONE_EURO_AAA_1A.csv,2026-09-24,2,1,42,5638,OK
 souverains/ZONE_EURO_AAA_20A.csv,2026-09-24,2,1,42,5638,OK
@@ -232,10 +229,7 @@ fred/RRPONTSYD.csv,2026-09-25,1,1,42,3000,OK
 fred/T10YIE.csv,2026-09-25,1,1,42,3000,OK
 marches/fx/DXY.csv,2026-09-25,1,1.0,42,3773,OK
 marches/fx/EURCHF.csv,2026-09-25,1,1.0,42,3907,OK
-marches/fx/EURGBP.csv,2026-09-25,1,1.0,42,3909,OK
 marches/fx/EURJPY.csv,2026-09-25,1,1.0,42,3909,OK
-marches/fx/EURUSD.csv,2026-09-25,1,1,42,3906,OK
-marches/fx/GBPUSD.csv,2026-09-25,1,1.0,42,3907,OK
 marches/fx/USDCHF.csv,2026-09-25,1,1,42,3904,OK
 marches/indices/DAX.csv,2026-09-25,1,1.0,42,3803,OK
 marches/indices/EUROSTOXX50.csv,2026-09-25,1,1,42,3760,OK
@@ -253,6 +247,9 @@ marches/volatilite/MOVE.csv,2026-09-25,1,1.0,42,3691,OK
 marches/volatilite/OVX.csv,2026-09-25,1,1,42,3772,OK
 marches/volatilite/VVIX.csv,2026-09-25,1,1,42,3764,OK
 marches/volatilite/VXN.csv,2026-09-25,1,1,42,3772,OK
+souverains/SUEDE_10A.csv,2026-09-25,1,1,42,9202,OK
+souverains/SUEDE_2A.csv,2026-09-25,1,1,42,9202,OK
+souverains/SUEDE_5A.csv,2026-09-25,1,1,42,9204,OK
 yfinance/SP500.csv,2026-09-25,1,1.0,42,7547,OK
 yfinance/VIX.csv,2026-09-25,1,1,42,7550,OK
 yfinance/XLB.csv,2026-09-25,1,1.0,42,501,OK
@@ -267,6 +264,9 @@ yfinance/XLV.csv,2026-09-25,1,1.0,42,501,OK
 yfinance/XLY.csv,2026-09-25,1,1.0,42,501,OK
 marches/fx/AUDJPY.csv,2026-09-26,0,1,42,3910,OK
 marches/fx/AUDUSD.csv,2026-09-26,0,1,42,3906,OK
+marches/fx/EURGBP.csv,2026-09-26,0,1.0,42,3909,OK
+marches/fx/EURUSD.csv,2026-09-26,0,1,42,3906,OK
+marches/fx/GBPUSD.csv,2026-09-26,0,1.0,42,3907,OK
 marches/fx/NZDUSD.csv,2026-09-26,0,1.0,42,3907,OK
 marches/fx/USDCAD.csv,2026-09-26,0,1,42,3906,OK
 marches/fx/USDCNY.csv,2026-09-26,0,1,42,3906,OK
