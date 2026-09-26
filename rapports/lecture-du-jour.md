@@ -1,4 +1,4 @@
-# Rapport global — 2026-09-25 22:44 UTC
+# Rapport global — 2026-09-26 00:44 UTC
 
 **Etat global : OK** · 112/112 modeles reussis · 0 source(s) suspecte(s) · 0 source(s) gelee(s).
 
@@ -77,13 +77,13 @@ Change, actions, secteurs, facteurs, rotations et signaux d'allocation.
 - **Momentum prix** — SP500 momentum 12-1 mois = 16.22% -- haussier (momentum positif), detail 1/3/6/12m = [0.88, 5.29, 21.58, 17.24] _(observation : 2026-09-25)_
 - **Carry proxy** — Chine : 1.54% vs US 3.88% -- diff=-2.34pt (carry negatif (taux < US))  _(sans synthese)_ _(observation : 2026-09-24)_
 - **Beta vol** — beta SP500/VIX (60j) = -0.00484 (rendement SP500 pour +1pt VIX) -- sensibilite normale, relation inverse attendue (normale) _(observation : 2026-09-25)_
-- **Rotation sectorielle** — classement momentum 3 mois (10 secteurs) : 1. Energie (XLE) : +15.23% | 2. Technologie (XLK) : +8.37% | 3. Sante (XLV) : +6.46% | 4. Finance (XLF) : +2.37% | 5. Consommation de base (XLP) : -3.13% _(observation : 2026-09-25)_
+- **Rotation sectorielle** — classement momentum 3 mois (10 secteurs) : 1. Energie (XLE) : +15.73% | 2. Sante (XLV) : +9.15% | 3. Technologie (XLK) : +5.49% | 4. Finance (XLF) : +2.02% | 5. Consommation de base (XLP) : -2.67% _(observation : 2026-09-25)_
 - **Saisonnalite** — rendement journalier moyen ete=+0.0182%, hiver=+0.0465% (t=-1.02, p=0.3081) -- non significatif (attendu vu la faible puissance sur seulement ~2 ans) _(observation : 2026-09-25)_
-- **Dispersion sectorielle** — 10 secteurs, rendement moyen 3m=-0.61%, dispersion (ecart-type)=8.31pt, etendue=29.71pt -- dispersion intermediaire _(observation : 2026-09-25)_
-- **Low volatility** — tercile bas-vol ['XLF', 'XLRE', 'XLU'] Sharpe=-0.566 vs tercile haut-vol ['XLY', 'XLE', 'XLK'] Sharpe=0.218 -- anomalie low-vol non confirmee sur cet echantillon (puissance statistique faible, n petit -- limite assumee) _(observation : 2026-09-25)_
-- **Momentum cross sectional** — panier gagnant ['XLE', 'XLK', 'XLV'] (+10.02%) vs panier perdant ['XLI', 'XLRE', 'XLU'] (-9.52%) -- spread momentum=+19.54pt _(observation : 2026-09-25)_
+- **Dispersion sectorielle** — 10 secteurs, rendement moyen 3m=-0.62%, dispersion (ecart-type)=8.40pt, etendue=29.89pt -- dispersion intermediaire _(observation : 2026-09-25)_
+- **Low volatility** — tercile bas-vol ['XLF', 'XLRE', 'XLU'] Sharpe=-0.443 vs tercile haut-vol ['XLY', 'XLE', 'XLK'] Sharpe=0.258 -- anomalie low-vol non confirmee sur cet echantillon (puissance statistique faible, n petit -- limite assumee) _(observation : 2026-09-25)_
+- **Momentum cross sectional** — panier gagnant ['XLE', 'XLV', 'XLK'] (+10.13%) vs panier perdant ['XLRE', 'XLI', 'XLU'] (-9.68%) -- spread momentum=+19.81pt _(observation : 2026-09-25)_
 - **Cointegration secteurs** — 0/10 secteurs cointegres avec SP500 -- decouples : ['XLK', 'XLF', 'XLE', 'XLV', 'XLI', 'XLY', 'XLP', 'XLU', 'XLB', 'XLRE']  _(sans synthese)_ _(observation : 2026-09-25)_
-- **Correlation facteurs** — correlation entre momentum 3m et beta-VIX, 10 secteurs : +0.062 (facteurs largement independants) _(observation : 2026-09-25)_
+- **Correlation facteurs** — correlation entre momentum 3m et beta-VIX, 10 secteurs : +0.174 (facteurs largement independants) _(observation : 2026-09-25)_
 
 ## [Positionnement et comportement](themes/positionnement.md)
 
