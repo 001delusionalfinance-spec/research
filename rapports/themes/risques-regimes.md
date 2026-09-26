@@ -2,7 +2,7 @@
 
 Volatilite, queues, drawdowns, stress, contagion et changements de regime.
 
-Mis a jour : **2026-09-26 14:50 UTC** · 23 lectures.
+Mis a jour : **2026-09-26 17:52 UTC** · 23 lectures.
 
 [Retour au tableau de bord](../README.md)
 
@@ -57,7 +57,7 @@ _Statut **OK** · observation 2026-09-25 · moteur `series-temporelles` · [donn
 
 ### Var sp500 vix
 
-VAR ordre choisi par AIC=10 -- coef SP500(t-1)->VIX(t)=0.3769116249569233 (SP500(t-1) en hausse -> VIX(t) tend aussi a monter), coef VIX(t-1)->SP500(t)=-0.05237241130035915 (VIX(t-1) en hausse -> SP500(t) tend a baisser)
+VAR ordre choisi par AIC=10 -- coef SP500(t-1)->VIX(t)=0.3769116249569233 (SP500(t-1) en hausse -> VIX(t) tend aussi a monter), coef VIX(t-1)->SP500(t)=-0.052372411300360217 (VIX(t-1) en hausse -> SP500(t) tend a baisser)
 
 _Statut **OK** · observation 2026-09-25 · moteur `series-temporelles` · [donnees](../donnees/var_sp500_vix.csv)_
 
