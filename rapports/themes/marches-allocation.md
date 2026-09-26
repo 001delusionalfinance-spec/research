@@ -2,7 +2,7 @@
 
 Change, actions, secteurs, facteurs, rotations et signaux d'allocation.
 
-Mis a jour : **2026-09-26 00:44 UTC** · 16 lectures.
+Mis a jour : **2026-09-26 05:35 UTC** · 16 lectures.
 
 [Retour au tableau de bord](../README.md)
 
@@ -22,7 +22,7 @@ _Statut **OK** · observation 2026-09-24 · moteur `statistique` · [donnees](..
 
 ### Indices mondiaux
 
-7 indices (devise locale) : Coree (KOSPI) +103.1% en tete sur 12 mois, Hong Kong (Hang Seng) -6.6% en queue -- ecart tres large entre blocs sur 12 mois (110pt) -- les cycles economiques ou les flux divergent nettement. ROTATION en cours : Coree (KOSPI) mene sur 12 mois mais Hong Kong (Hang Seng) a repris la tete sur 3 mois
+7 indices (devise locale) : Coree (KOSPI) +103.1% en tete sur 12 mois, Hong Kong (Hang Seng) -7.5% en queue -- ecart tres large entre blocs sur 12 mois (111pt) -- les cycles economiques ou les flux divergent nettement. ROTATION en cours : Coree (KOSPI) mene sur 12 mois mais Hong Kong (Hang Seng) a repris la tete sur 3 mois
 
 _Statut **OK** · observation 2026-09-25 · moteur `factorielle` · [donnees](../donnees/indices_mondiaux.csv) · [graphique](../graphiques/indices_mondiaux/apercu.png)_
 
@@ -71,7 +71,7 @@ _Statut **OK** · observation 2026-09-25 · moteur `factorielle` · [donnees](..
 
 ### Rotation sectorielle
 
-classement momentum 3 mois (10 secteurs) : 1. Energie (XLE) : +15.73% | 2. Sante (XLV) : +9.15% | 3. Technologie (XLK) : +5.49% | 4. Finance (XLF) : +2.02% | 5. Consommation de base (XLP) : -2.67%
+classement momentum 3 mois (10 secteurs) : 1. Energie (XLE) : +15.23% | 2. Technologie (XLK) : +8.37% | 3. Sante (XLV) : +6.46% | 4. Finance (XLF) : +2.37% | 5. Consommation de base (XLP) : -3.13%
 
 _Statut **OK** · observation 2026-09-25 · moteur `factorielle` · [donnees](../donnees/rotation_sectorielle.csv) · [graphique](../graphiques/rotation_sectorielle/apercu.png)_
 
@@ -85,21 +85,21 @@ _Statut **OK** · observation 2026-09-25 · moteur `factorielle` · [donnees](..
 
 ### Dispersion sectorielle
 
-10 secteurs, rendement moyen 3m=-0.62%, dispersion (ecart-type)=8.40pt, etendue=29.89pt -- dispersion intermediaire
+10 secteurs, rendement moyen 3m=-0.61%, dispersion (ecart-type)=8.31pt, etendue=29.71pt -- dispersion intermediaire
 
 _Statut **OK** · observation 2026-09-25 · moteur `factorielle` · [donnees](../donnees/dispersion_sectorielle.csv)_
 
 
 ### Low volatility
 
-tercile bas-vol ['XLF', 'XLRE', 'XLU'] Sharpe=-0.443 vs tercile haut-vol ['XLY', 'XLE', 'XLK'] Sharpe=0.258 -- anomalie low-vol non confirmee sur cet echantillon (puissance statistique faible, n petit -- limite assumee)
+tercile bas-vol ['XLF', 'XLRE', 'XLU'] Sharpe=-0.566 vs tercile haut-vol ['XLY', 'XLE', 'XLK'] Sharpe=0.218 -- anomalie low-vol non confirmee sur cet echantillon (puissance statistique faible, n petit -- limite assumee)
 
 _Statut **OK** · observation 2026-09-25 · moteur `factorielle` · [donnees](../donnees/low_volatility.csv)_
 
 
 ### Momentum cross sectional
 
-panier gagnant ['XLE', 'XLV', 'XLK'] (+10.13%) vs panier perdant ['XLRE', 'XLI', 'XLU'] (-9.68%) -- spread momentum=+19.81pt
+panier gagnant ['XLE', 'XLK', 'XLV'] (+10.02%) vs panier perdant ['XLI', 'XLRE', 'XLU'] (-9.52%) -- spread momentum=+19.54pt
 
 _Statut **OK** · observation 2026-09-25 · moteur `factorielle` · [donnees](../donnees/momentum_cross_sectional.csv)_
 
@@ -113,7 +113,7 @@ _Statut **OK** · observation 2026-09-25 · moteur `statistique` · [donnees](..
 
 ### Correlation facteurs
 
-correlation entre momentum 3m et beta-VIX, 10 secteurs : +0.174 (facteurs largement independants)
+correlation entre momentum 3m et beta-VIX, 10 secteurs : +0.062 (facteurs largement independants)
 
 _Statut **OK** · observation 2026-09-25 · moteur `factorielle` · [donnees](../donnees/correlation_facteurs.csv)_
 
