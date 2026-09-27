@@ -2,7 +2,7 @@
 
 Decisions, fonctions de reaction, bilan, communication et trajectoires de taux.
 
-Mis a jour : **2026-09-26 23:45 UTC** · 19 lectures.
+Mis a jour : **2026-09-27 00:58 UTC** · 19 lectures.
 
 [Retour au tableau de bord](../README.md)
 
