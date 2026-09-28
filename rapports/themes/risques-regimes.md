@@ -2,7 +2,7 @@
 
 Volatilite, queues, drawdowns, stress, contagion et changements de regime.
 
-Mis a jour : **2026-09-28 11:47 UTC** · 23 lectures.
+Mis a jour : **2026-09-28 12:10 UTC** · 23 lectures.
 
 [Retour au tableau de bord](../README.md)
 
@@ -36,7 +36,7 @@ _Statut **OK** · observation 2026-09-25 · moteur `series-temporelles` · [donn
 
 ### Ornstein uhlenbeck vix
 
-VIX actuel=16.25, niveau moyen estime (mu)=20.20, demi-vie=28.8j, ecart actuel=-3.95 -- VIX actuel en-dessous de son niveau moyen de long terme
+VIX actuel=16.27, niveau moyen estime (mu)=20.20, demi-vie=28.8j, ecart actuel=-3.93 -- VIX actuel en-dessous de son niveau moyen de long terme
 
 _Statut **OK** · observation 2026-09-28 · moteur `series-temporelles` · [donnees](../donnees/ornstein_uhlenbeck_vix.csv) · [graphique](../graphiques/ornstein_uhlenbeck_vix/apercu.png)_
 
@@ -50,14 +50,14 @@ _Statut **OK** · observation 2026-09-25 · moteur `series-temporelles` · [donn
 
 ### Kalman niveau local
 
-VIX observe=16.25, filtre Kalman=16.06 (ecart-type=0.62), ratio signal/bruit=0.2052 -- le filtre lisse fortement le bruit, reagit lentement (ecart obs.-filtre=+0.19)
+VIX observe=16.27, filtre Kalman=16.08 (ecart-type=0.62), ratio signal/bruit=0.2052 -- le filtre lisse fortement le bruit, reagit lentement (ecart obs.-filtre=+0.19)
 
 _Statut **OK** · observation 2026-09-28 · moteur `series-temporelles` · [donnees](../donnees/kalman_niveau_local.csv)_
 
 
 ### Var sp500 vix
 
-VAR ordre choisi par AIC=10 -- coef SP500(t-1)->VIX(t)=0.37012183452205605 (SP500(t-1) en hausse -> VIX(t) tend aussi a monter), coef VIX(t-1)->SP500(t)=-0.05233908530492189 (VIX(t-1) en hausse -> SP500(t) tend a baisser)
+VAR ordre choisi par AIC=10 -- coef SP500(t-1)->VIX(t)=0.37012183452189085 (SP500(t-1) en hausse -> VIX(t) tend aussi a monter), coef VIX(t-1)->SP500(t)=-0.05233908530492146 (VIX(t-1) en hausse -> SP500(t) tend a baisser)
 
 _Statut **OK** · observation 2026-09-25 · moteur `series-temporelles` · [donnees](../donnees/var_sp500_vix.csv)_
 
@@ -148,7 +148,7 @@ _Statut **OK** · observation 2026-09-25 · moteur `risque` · [donnees](../donn
 
 ### Decomposition stl
 
-VIX : tendance=15.59, composante saisonniere (periode 5j)=+0.177, residu=+0.480 -- la saisonnalite explique 0.72% de la variance totale (negligeable)
+VIX : tendance=15.60, composante saisonniere (periode 5j)=+0.181, residu=+0.493 -- la saisonnalite explique 0.72% de la variance totale (negligeable)
 
 _Statut **OK** · observation 2026-09-28 · moteur `series-temporelles` · [donnees](../donnees/decomposition_stl.csv) · [graphique](../graphiques/decomposition_stl/apercu.png)_
 

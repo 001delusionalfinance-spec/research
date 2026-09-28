@@ -117,5 +117,5 @@ date,bloc_a,bloc_b,stat_eg,p_valeur,cointegrees
 2026-09-24,Japon,US,-0.3664,0.9726,False
 2026-09-24,Japon,Zone_euro,-0.7129,0.9452,False
 2026-09-24,Royaume-Uni,US,-1.9783,0.5399,False
-2026-09-24,Royaume-Uni,Zone_euro,-2.213,0.4177,False
-2026-09-24,US,Zone_euro,-1.6022,0.72,False
+2026-09-24,Royaume-Uni,Zone_euro,-2.2116,0.4184,False
+2026-09-24,US,Zone_euro,-1.6032,0.7195,False
