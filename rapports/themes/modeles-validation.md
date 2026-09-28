@@ -2,7 +2,7 @@
 
 Relations statistiques, previsions, tests hors echantillon et robustesse des modeles.
 
-Mis a jour : **2026-09-28 05:32 UTC** · 17 lectures.
+Mis a jour : **2026-09-28 11:47 UTC** · 17 lectures.
 
 [Retour au tableau de bord](../README.md)
 
@@ -15,7 +15,7 @@ _Statut **OK** · observation 2026-09-25 · moteur `statistique` · [donnees](..
 
 ### Dependance queue
 
-518/7546 jours conjointement extremes (SP500 pire 10% ET VIX pire 10%), P observee=0.0686 vs P sous independance=0.0100 -- coefficient de dependance de queue=6.86 (dependance reelle)
+518/7544 jours conjointement extremes (SP500 pire 10% ET VIX pire 10%), P observee=0.0687 vs P sous independance=0.0100 -- coefficient de dependance de queue=6.87 (dependance reelle)
 
 _Statut **OK** · observation 2026-09-25 · moteur `statistique` · [donnees](../donnees/dependance_queue.csv)_
 
@@ -57,7 +57,7 @@ _Statut **OK** · observation 2026-09-24 · moteur `ml` · [donnees](../donnees/
 
 ### Ensemble signaux
 
-7516 predictions -- momentum=0.4960, vix=0.4988, ensemble=0.4988, baseline=0.5375 -- ensemble NE BAT PAS la baseline
+7514 predictions -- momentum=0.4959, vix=0.4988, ensemble=0.4988, baseline=0.5374 -- ensemble NE BAT PAS la baseline
 
 _Statut **OK** · observation 2026-09-25 · moteur `ml` · [donnees](../donnees/ensemble_signaux.csv)_
 
@@ -78,7 +78,7 @@ _Statut **OK** · observation 2026-09-25 · moteur `ml` · [donnees](../donnees/
 
 ### Regression multifeatures
 
-coefs (intercept=0.00029, momentum5j=-0.0325, var_vix=0.00027) -- R2 out-of-sample=0.0103 (modele bat la moyenne)
+coefs (intercept=0.00029, momentum5j=-0.0326, var_vix=0.00027) -- R2 out-of-sample=0.0102 (modele bat la moyenne)
 
 _Statut **OK** · observation 2026-09-25 · moteur `ml` · [donnees](../donnees/regression_multifeatures.csv)_
 
@@ -99,9 +99,9 @@ _Statut **OK** · observation 2026-09-24 · moteur `statistique` · [donnees](..
 
 ### Arima
 
-ARIMA(1,1,1) sur 100 previsions 1-jour test : RMSE=2.325 vs baseline naive MSE=5.474 -- ARIMA bat la persistance simple
+ARIMA(1,1,1) sur 100 previsions 1-jour test : RMSE=2.327 vs baseline naive MSE=5.430 -- ARIMA bat la persistance simple
 
-_Statut **OK** · observation 2026-09-25 · moteur `series-temporelles` · [donnees](../donnees/arima.csv)_
+_Statut **OK** · observation 2026-09-28 · moteur `series-temporelles` · [donnees](../donnees/arima.csv)_
 
 
 ### Stacking
@@ -113,14 +113,14 @@ _Statut **OK** · observation 2026-09-25 · moteur `ml` · [donnees](../donnees/
 
 ### Decision stump
 
-seuil appris=-1.530 (sens=False) -- accuracy stump=0.5459 vs baseline=0.5477 sur 2264 points test -- stump NE BAT PAS la baseline
+seuil appris=-1.530 (sens=False) -- accuracy stump=0.5457 vs baseline=0.5475 sur 2263 points test -- stump NE BAT PAS la baseline
 
 _Statut **OK** · observation 2026-09-25 · moteur `ml` · [donnees](../donnees/decision_stump.csv)_
 
 
 ### Importance permutation
 
-R2 base=0.0103 -- importance momentum5j=0.00424, importance variation_vix=0.01648 -- VIX plus important
+R2 base=0.0102 -- importance momentum5j=-0.00094, importance variation_vix=0.01231 -- VIX plus important
 
 _Statut **OK** · observation 2026-09-25 · moteur `ml` · [donnees](../donnees/importance_permutation.csv)_
 

@@ -2,7 +2,7 @@
 
 Change, actions, secteurs, facteurs, rotations et signaux d'allocation.
 
-Mis a jour : **2026-09-28 05:32 UTC** · 16 lectures.
+Mis a jour : **2026-09-28 11:47 UTC** · 16 lectures.
 
 [Retour au tableau de bord](../README.md)
 
@@ -22,7 +22,7 @@ _Statut **OK** · observation 2026-09-24 · moteur `statistique` · [donnees](..
 
 ### Indices mondiaux
 
-7 indices (devise locale) : Coree (KOSPI) +105.0% en tete sur 12 mois, Hong Kong (Hang Seng) -5.5% en queue -- ecart tres large entre blocs sur 12 mois (110pt) -- les cycles economiques ou les flux divergent nettement. ROTATION en cours : Coree (KOSPI) mene sur 12 mois mais Hong Kong (Hang Seng) a repris la tete sur 3 mois
+7 indices (devise locale) : Coree (KOSPI) +103.5% en tete sur 12 mois, Hong Kong (Hang Seng) -5.7% en queue -- ecart tres large entre blocs sur 12 mois (109pt) -- les cycles economiques ou les flux divergent nettement. ROTATION en cours : Coree (KOSPI) mene sur 12 mois mais Hong Kong (Hang Seng) a repris la tete sur 3 mois
 
 _Statut **OK** · observation 2026-09-28 · moteur `factorielle` · [donnees](../donnees/indices_mondiaux.csv) · [graphique](../graphiques/indices_mondiaux/apercu.png)_
 

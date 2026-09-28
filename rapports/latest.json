@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-28T05:32:17.567894+00:00",
+  "generated_at": "2026-09-28T11:47:25.658411+00:00",
   "status": "ok",
   "models": [
     {
@@ -84,7 +84,7 @@
       "titre": "Conditions financieres",
       "theme": "taux-credit-liquidite",
       "lane": "macro",
-      "lecture": "indice conditions financieres=+0.064 (3 composantes: {'taux_directeur': 0.5985724560125544, 'courbe_inversee': 0.2531563730537784, 'vix': -0.6597998970697634}) -- conditions proches de la normale",
+      "lecture": "indice conditions financieres=+0.121 (3 composantes: {'taux_directeur': 0.5985724560125544, 'courbe_inversee': 0.2531563730537784, 'vix': -0.48919720777532755}) -- conditions proches de la normale",
       "ok": true,
       "synthese": true,
       "sortie": "conditions_financieres.csv",
@@ -172,7 +172,7 @@
       "titre": "Soutenabilite dette",
       "theme": "cycle-macro",
       "lane": "macro",
-      "lecture": "8 pays. charge la plus lourde : Canada a 25.5% du revenu. taux 10 ans AU-DESSUS de l'inflation dans 5 pays -- Royaume-Uni (+2.2pt), Etats-Unis (+1.8pt), Japon (+1.0pt), Canada (+0.9pt), Zone euro (+0.8pt). Configuration ou le ratio d'endettement monte meme a budget primaire equilibre (approximation : croissance nominale reduite a l'inflation)",
+      "lecture": "8 pays. charge la plus lourde : Canada a 25.5% du revenu. taux 10 ans AU-DESSUS de l'inflation dans 5 pays -- Royaume-Uni (+2.3pt), Etats-Unis (+1.8pt), Japon (+1.0pt), Canada (+0.9pt), Zone euro (+0.9pt). Configuration ou le ratio d'endettement monte meme a budget primaire equilibre (approximation : croissance nominale reduite a l'inflation)",
       "ok": true,
       "synthese": true,
       "sortie": "soutenabilite_dette.csv",
@@ -183,7 +183,7 @@
       "titre": "Matieres premieres macro",
       "theme": "cycle-macro",
       "lane": "macro",
-      "lecture": "ratio cuivre/or stable -- pas de signal net sur la croissance (+4.6% sur 3 mois). Brent 99.2$ (+35.7% sur 3 mois, +41.5% sur 12 mois), gaz -1.9% sur 3 mois, ecart Brent-WTI +5.1$ -- energie nettement plus chere sur un an -- pression inflationniste a venir que les prix a la consommation ne montrent pas encore",
+      "lecture": "le ratio cuivre/or monte -- la croissance domine la peur (+5.0% sur 3 mois). Brent 100.4$ (+37.3% sur 3 mois, +43.2% sur 12 mois), gaz -1.9% sur 3 mois, ecart Brent-WTI +4.7$ -- energie nettement plus chere sur un an -- pression inflationniste a venir que les prix a la consommation ne montrent pas encore",
       "ok": true,
       "synthese": true,
       "sortie": "matieres_premieres_macro.csv",
@@ -227,7 +227,7 @@
       "titre": "Indices mondiaux",
       "theme": "marches-allocation",
       "lane": "factorielle",
-      "lecture": "7 indices (devise locale) : Coree (KOSPI) +105.0% en tete sur 12 mois, Hong Kong (Hang Seng) -5.5% en queue -- ecart tres large entre blocs sur 12 mois (110pt) -- les cycles economiques ou les flux divergent nettement. ROTATION en cours : Coree (KOSPI) mene sur 12 mois mais Hong Kong (Hang Seng) a repris la tete sur 3 mois",
+      "lecture": "7 indices (devise locale) : Coree (KOSPI) +103.5% en tete sur 12 mois, Hong Kong (Hang Seng) -5.7% en queue -- ecart tres large entre blocs sur 12 mois (109pt) -- les cycles economiques ou les flux divergent nettement. ROTATION en cours : Coree (KOSPI) mene sur 12 mois mais Hong Kong (Hang Seng) a repris la tete sur 3 mois",
       "ok": true,
       "synthese": true,
       "sortie": "indices_mondiaux.csv",
@@ -238,11 +238,11 @@
       "titre": "Vol cross asset",
       "theme": "risques-regimes",
       "lane": "risque",
-      "lecture": "6 mesures de volatilite : Petrole (OVX) 88e pct, Or (GVZ) 80e pct, Taux US (MOVE) 43e pct, Nasdaq (VXN) 38e pct, Vol de la vol (VVIX) 27e pct, Actions US (VIX) 21e pct -- stress LOCALISE sur Petrole (OVX), Or (GVZ) pendant que le reste ne l'est pas -- episode propre a cette classe d'actifs, pas une aversion au risque d'ensemble",
+      "lecture": "6 mesures de volatilite : Petrole (OVX) 88e pct, Or (GVZ) 80e pct, Taux US (MOVE) 43e pct, Nasdaq (VXN) 38e pct, Actions US (VIX) 34e pct, Vol de la vol (VVIX) 27e pct -- stress LOCALISE sur Petrole (OVX), Or (GVZ) pendant que le reste ne l'est pas -- episode propre a cette classe d'actifs, pas une aversion au risque d'ensemble",
       "ok": true,
       "synthese": true,
       "sortie": "vol_cross_asset.csv",
-      "derniere_observation": "2026-09-25"
+      "derniere_observation": "2026-09-28"
     },
     {
       "nom": "positionnement_courbe_taux",
@@ -458,7 +458,7 @@
       "titre": "Dependance queue",
       "theme": "modeles-validation",
       "lane": "statistique",
-      "lecture": "518/7546 jours conjointement extremes (SP500 pire 10% ET VIX pire 10%), P observee=0.0686 vs P sous independance=0.0100 -- coefficient de dependance de queue=6.86 (dependance reelle)",
+      "lecture": "518/7544 jours conjointement extremes (SP500 pire 10% ET VIX pire 10%), P observee=0.0687 vs P sous independance=0.0100 -- coefficient de dependance de queue=6.87 (dependance reelle)",
       "ok": true,
       "synthese": true,
       "sortie": "dependance_queue.csv",
@@ -513,11 +513,11 @@
       "titre": "Ornstein uhlenbeck vix",
       "theme": "risques-regimes",
       "lane": "series-temporelles",
-      "lecture": "VIX actuel=14.87, niveau moyen estime (mu)=20.20, demi-vie=28.8j, ecart actuel=-5.33 -- VIX actuel en-dessous de son niveau moyen de long terme",
+      "lecture": "VIX actuel=16.25, niveau moyen estime (mu)=20.20, demi-vie=28.8j, ecart actuel=-3.95 -- VIX actuel en-dessous de son niveau moyen de long terme",
       "ok": true,
       "synthese": true,
       "sortie": "ornstein_uhlenbeck_vix.csv",
-      "derniere_observation": "2026-09-25"
+      "derniere_observation": "2026-09-28"
     },
     {
       "nom": "changepoint_volatilite",
@@ -535,11 +535,11 @@
       "titre": "Kalman niveau local",
       "theme": "risques-regimes",
       "lane": "series-temporelles",
-      "lecture": "VIX observe=14.87, filtre Kalman=14.98 (ecart-type=0.62), ratio signal/bruit=0.2051 -- le filtre lisse fortement le bruit, reagit lentement (ecart obs.-filtre=-0.11)",
+      "lecture": "VIX observe=16.25, filtre Kalman=16.06 (ecart-type=0.62), ratio signal/bruit=0.2052 -- le filtre lisse fortement le bruit, reagit lentement (ecart obs.-filtre=+0.19)",
       "ok": true,
       "synthese": true,
       "sortie": "kalman_niveau_local.csv",
-      "derniere_observation": "2026-09-25"
+      "derniere_observation": "2026-09-28"
     },
     {
       "nom": "hp_filter_taux",
@@ -557,7 +557,7 @@
       "titre": "Var sp500 vix",
       "theme": "risques-regimes",
       "lane": "series-temporelles",
-      "lecture": "VAR ordre choisi par AIC=10 -- coef SP500(t-1)->VIX(t)=0.3769116249569233 (SP500(t-1) en hausse -> VIX(t) tend aussi a monter), coef VIX(t-1)->SP500(t)=-0.052372411300360217 (VIX(t-1) en hausse -> SP500(t) tend a baisser)",
+      "lecture": "VAR ordre choisi par AIC=10 -- coef SP500(t-1)->VIX(t)=0.37012183452205605 (SP500(t-1) en hausse -> VIX(t) tend aussi a monter), coef VIX(t-1)->SP500(t)=-0.05233908530492189 (VIX(t-1) en hausse -> SP500(t) tend a baisser)",
       "ok": true,
       "synthese": true,
       "sortie": "var_sp500_vix.csv",
@@ -568,11 +568,11 @@
       "titre": "Analyse spectrale",
       "theme": "risques-regimes",
       "lane": "series-temporelles",
-      "lecture": "3 periodes dominantes (jours de bourse) : [2.2, 4.0, 5.3] -- cycle(s) connu(s) qui ressortent : 4.0j~hebdomadaire, 5.3j~hebdomadaire",
+      "lecture": "3 periodes dominantes (jours de bourse) : [2.2, 3.0, 2.4] -- aucune des 3 periodes dominantes ne correspond a un cycle connu (hebdo/mensuel/trimestriel)",
       "ok": true,
       "synthese": true,
       "sortie": "analyse_spectrale.csv",
-      "derniere_observation": "2026-09-25"
+      "derniere_observation": "2026-09-28"
     },
     {
       "nom": "momentum_prix",
@@ -931,7 +931,7 @@
       "titre": "Ensemble signaux",
       "theme": "modeles-validation",
       "lane": "ml",
-      "lecture": "7516 predictions -- momentum=0.4960, vix=0.4988, ensemble=0.4988, baseline=0.5375 -- ensemble NE BAT PAS la baseline",
+      "lecture": "7514 predictions -- momentum=0.4959, vix=0.4988, ensemble=0.4988, baseline=0.5374 -- ensemble NE BAT PAS la baseline",
       "ok": true,
       "synthese": true,
       "sortie": "ensemble_signaux.csv",
@@ -964,7 +964,7 @@
       "titre": "Regression multifeatures",
       "theme": "modeles-validation",
       "lane": "ml",
-      "lecture": "coefs (intercept=0.00029, momentum5j=-0.0325, var_vix=0.00027) -- R2 out-of-sample=0.0103 (modele bat la moyenne)",
+      "lecture": "coefs (intercept=0.00029, momentum5j=-0.0326, var_vix=0.00027) -- R2 out-of-sample=0.0102 (modele bat la moyenne)",
       "ok": true,
       "synthese": true,
       "sortie": "regression_multifeatures.csv",
@@ -1074,18 +1074,18 @@
       "titre": "Arima",
       "theme": "modeles-validation",
       "lane": "series-temporelles",
-      "lecture": "ARIMA(1,1,1) sur 100 previsions 1-jour test : RMSE=2.325 vs baseline naive MSE=5.474 -- ARIMA bat la persistance simple",
+      "lecture": "ARIMA(1,1,1) sur 100 previsions 1-jour test : RMSE=2.327 vs baseline naive MSE=5.430 -- ARIMA bat la persistance simple",
       "ok": true,
       "synthese": true,
       "sortie": "arima.csv",
-      "derniere_observation": "2026-09-25"
+      "derniere_observation": "2026-09-28"
     },
     {
       "nom": "qualite_regime_macro",
       "titre": "Qualite regime macro",
       "theme": "risques-regimes",
       "lane": "factorielle",
-      "lecture": "instabilite taux=0.0088, instabilite VIX=0.0679 -- score qualite du regime=-0.0383 (plus haut = regime plus stable/previsible)",
+      "lecture": "instabilite taux=0.0088, instabilite VIX=0.0686 -- score qualite du regime=-0.0387 (plus haut = regime plus stable/previsible)",
       "ok": true,
       "synthese": true,
       "sortie": "qualite_regime_macro.csv",
@@ -1118,11 +1118,11 @@
       "titre": "Decomposition stl",
       "theme": "risques-regimes",
       "lane": "series-temporelles",
-      "lecture": "VIX : tendance=15.52, composante saisonniere (periode 5j)=-0.665, residu=+0.016 -- la saisonnalite explique 0.71% de la variance totale (negligeable)",
+      "lecture": "VIX : tendance=15.59, composante saisonniere (periode 5j)=+0.177, residu=+0.480 -- la saisonnalite explique 0.72% de la variance totale (negligeable)",
       "ok": true,
       "synthese": true,
       "sortie": "decomposition_stl.csv",
-      "derniere_observation": "2026-09-25"
+      "derniere_observation": "2026-09-28"
     },
     {
       "nom": "ornstein_uhlenbeck_credit",
@@ -1162,7 +1162,7 @@
       "titre": "Ratios conditionnels regime",
       "theme": "risques-regimes",
       "lane": "risque",
-      "lecture": "Sharpe regime haut-vol=-1.107, bas-vol=2.406, global=0.423 -- meilleur en regime calme, comme attendu",
+      "lecture": "Sharpe regime haut-vol=-1.107, bas-vol=2.406, global=0.422 -- meilleur en regime calme, comme attendu",
       "ok": true,
       "synthese": true,
       "sortie": "ratios_conditionnels_regime.csv",
@@ -1217,7 +1217,7 @@
       "titre": "Decision stump",
       "theme": "modeles-validation",
       "lane": "ml",
-      "lecture": "seuil appris=-1.530 (sens=False) -- accuracy stump=0.5459 vs baseline=0.5477 sur 2264 points test -- stump NE BAT PAS la baseline",
+      "lecture": "seuil appris=-1.530 (sens=False) -- accuracy stump=0.5457 vs baseline=0.5475 sur 2263 points test -- stump NE BAT PAS la baseline",
       "ok": true,
       "synthese": true,
       "sortie": "decision_stump.csv",
@@ -1228,7 +1228,7 @@
       "titre": "Importance permutation",
       "theme": "modeles-validation",
       "lane": "ml",
-      "lecture": "R2 base=0.0103 -- importance momentum5j=0.00424, importance variation_vix=0.01648 -- VIX plus important",
+      "lecture": "R2 base=0.0102 -- importance momentum5j=-0.00094, importance variation_vix=0.01231 -- VIX plus important",
       "ok": true,
       "synthese": true,
       "sortie": "importance_permutation.csv",
