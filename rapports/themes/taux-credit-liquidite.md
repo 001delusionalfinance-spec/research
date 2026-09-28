@@ -2,7 +2,7 @@
 
 Courbes souveraines, conditions financieres, credit, emission et taux reels.
 
-Mis a jour : **2026-09-28 18:49 UTC** · 13 lectures.
+Mis a jour : **2026-09-28 19:47 UTC** · 13 lectures.
 
 [Retour au tableau de bord](../README.md)
 
@@ -29,7 +29,7 @@ _Statut **OK** · observation 2026-09-16 · moteur `macro` · [donnees](../donne
 
 ### Conditions financieres
 
-indice conditions financieres=+0.106 (3 composantes: {'taux_directeur': 0.5985724560125544, 'courbe_inversee': 0.2531563730537784, 'vix': -0.5337130261637928}) -- conditions proches de la normale
+indice conditions financieres=+0.111 (3 composantes: {'taux_directeur': 0.5985724560125544, 'courbe_inversee': 0.2531563730537784, 'vix': -0.5188744650175076}) -- conditions proches de la normale
 
 _Statut **OK** · observation 2026-09-24 · moteur `macro` · [donnees](../donnees/conditions_financieres.csv) · [graphique](../graphiques/conditions_financieres/apercu.png)_
 

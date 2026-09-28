@@ -2,7 +2,7 @@
 
 Change, actions, secteurs, facteurs, rotations et signaux d'allocation.
 
-Mis a jour : **2026-09-28 18:49 UTC** · 16 lectures.
+Mis a jour : **2026-09-28 19:47 UTC** · 16 lectures.
 
 [Retour au tableau de bord](../README.md)
 
@@ -50,7 +50,7 @@ _Statut **OK** · observation 2026-09-24 · moteur `statistique` · [donnees](..
 
 ### Momentum prix
 
-SP500 momentum 12-1 mois = 16.08% -- haussier (momentum positif), detail 1/3/6/12m = [-0.17, 3.47, 21.35, 15.87]
+SP500 momentum 12-1 mois = 16.08% -- haussier (momentum positif), detail 1/3/6/12m = [-0.38, 3.25, 21.1, 15.63]
 
 _Statut **OK** · observation 2026-09-28 · moteur `factorielle` · [donnees](../donnees/momentum_prix.csv)_
 
@@ -64,42 +64,42 @@ _Statut **OK** · observation 2026-09-24 · moteur `factorielle` · [donnees](..
 
 ### Beta vol
 
-beta SP500/VIX (60j) = -0.00488 (rendement SP500 pour +1pt VIX) -- sensibilite normale, relation inverse attendue (normale)
+beta SP500/VIX (60j) = -0.00490 (rendement SP500 pour +1pt VIX) -- sensibilite normale, relation inverse attendue (normale)
 
 _Statut **OK** · observation 2026-09-28 · moteur `factorielle` · [donnees](../donnees/beta_vol.csv)_
 
 
 ### Rotation sectorielle
 
-classement momentum 3 mois (10 secteurs) : 1. Energie (XLE) : +15.97% | 2. Sante (XLV) : +6.53% | 3. Technologie (XLK) : +5.06% | 4. Finance (XLF) : +1.09% | 5. Materiaux (XLB) : -2.06%
+classement momentum 3 mois (10 secteurs) : 1. Energie (XLE) : +16.10% | 2. Sante (XLV) : +6.54% | 3. Technologie (XLK) : +4.82% | 4. Finance (XLF) : +0.92% | 5. Materiaux (XLB) : -2.20%
 
 _Statut **OK** · observation 2026-09-28 · moteur `factorielle` · [donnees](../donnees/rotation_sectorielle.csv) · [graphique](../graphiques/rotation_sectorielle/apercu.png)_
 
 
 ### Saisonnalite
 
-rendement journalier moyen ete=+0.0180%, hiver=+0.0465% (t=-1.03, p=0.3047) -- non significatif (attendu vu la faible puissance sur seulement ~2 ans)
+rendement journalier moyen ete=+0.0179%, hiver=+0.0465% (t=-1.03, p=0.3038) -- non significatif (attendu vu la faible puissance sur seulement ~2 ans)
 
 _Statut **OK** · observation 2026-09-28 · moteur `factorielle` · [donnees](../donnees/saisonnalite.csv)_
 
 
 ### Dispersion sectorielle
 
-10 secteurs, rendement moyen 3m=-1.24%, dispersion (ecart-type)=8.31pt, etendue=30.42pt -- dispersion intermediaire
+10 secteurs, rendement moyen 3m=-1.33%, dispersion (ecart-type)=8.38pt, etendue=30.71pt -- dispersion intermediaire
 
 _Statut **OK** · observation 2026-09-28 · moteur `factorielle` · [donnees](../donnees/dispersion_sectorielle.csv)_
 
 
 ### Low volatility
 
-tercile bas-vol ['XLF', 'XLRE', 'XLU'] Sharpe=-0.682 vs tercile haut-vol ['XLY', 'XLE', 'XLK'] Sharpe=0.175 -- anomalie low-vol non confirmee sur cet echantillon (puissance statistique faible, n petit -- limite assumee)
+tercile bas-vol ['XLF', 'XLRE', 'XLU'] Sharpe=-0.712 vs tercile haut-vol ['XLY', 'XLE', 'XLK'] Sharpe=0.164 -- anomalie low-vol non confirmee sur cet echantillon (puissance statistique faible, n petit -- limite assumee)
 
 _Statut **OK** · observation 2026-09-28 · moteur `factorielle` · [donnees](../donnees/low_volatility.csv)_
 
 
 ### Momentum cross sectional
 
-panier gagnant ['XLE', 'XLV', 'XLK'] (+9.18%) vs panier perdant ['XLI', 'XLRE', 'XLU'] (-9.95%) -- spread momentum=+19.13pt
+panier gagnant ['XLE', 'XLV', 'XLK'] (+9.15%) vs panier perdant ['XLI', 'XLRE', 'XLU'] (-10.09%) -- spread momentum=+19.25pt
 
 _Statut **OK** · observation 2026-09-28 · moteur `factorielle` · [donnees](../donnees/momentum_cross_sectional.csv)_
 
@@ -113,7 +113,7 @@ _Statut **OK** · observation 2026-09-28 · moteur `statistique` · [donnees](..
 
 ### Correlation facteurs
 
-correlation entre momentum 3m et beta-VIX, 10 secteurs : +0.206 (facteurs largement independants)
+correlation entre momentum 3m et beta-VIX, 10 secteurs : +0.219 (facteurs largement independants)
 
 _Statut **OK** · observation 2026-09-28 · moteur `factorielle` · [donnees](../donnees/correlation_facteurs.csv)_
 
