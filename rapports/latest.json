@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-28T05:20:42.495741+00:00",
+  "generated_at": "2026-09-28T05:32:17.567894+00:00",
   "status": "ok",
   "models": [
     {
@@ -183,7 +183,7 @@
       "titre": "Matieres premieres macro",
       "theme": "cycle-macro",
       "lane": "macro",
-      "lecture": "ratio cuivre/or stable -- pas de signal net sur la croissance (+4.6% sur 3 mois). Brent 99.2$ (+35.6% sur 3 mois, +41.4% sur 12 mois), gaz -2.0% sur 3 mois, ecart Brent-WTI +5.1$ -- energie nettement plus chere sur un an -- pression inflationniste a venir que les prix a la consommation ne montrent pas encore",
+      "lecture": "ratio cuivre/or stable -- pas de signal net sur la croissance (+4.6% sur 3 mois). Brent 99.2$ (+35.7% sur 3 mois, +41.5% sur 12 mois), gaz -1.9% sur 3 mois, ecart Brent-WTI +5.1$ -- energie nettement plus chere sur un an -- pression inflationniste a venir que les prix a la consommation ne montrent pas encore",
       "ok": true,
       "synthese": true,
       "sortie": "matieres_premieres_macro.csv",
@@ -227,7 +227,7 @@
       "titre": "Indices mondiaux",
       "theme": "marches-allocation",
       "lane": "factorielle",
-      "lecture": "7 indices (devise locale) : Coree (KOSPI) +104.5% en tete sur 12 mois, Hong Kong (Hang Seng) -5.6% en queue -- ecart tres large entre blocs sur 12 mois (110pt) -- les cycles economiques ou les flux divergent nettement. ROTATION en cours : Coree (KOSPI) mene sur 12 mois mais Hong Kong (Hang Seng) a repris la tete sur 3 mois",
+      "lecture": "7 indices (devise locale) : Coree (KOSPI) +105.0% en tete sur 12 mois, Hong Kong (Hang Seng) -5.5% en queue -- ecart tres large entre blocs sur 12 mois (110pt) -- les cycles economiques ou les flux divergent nettement. ROTATION en cours : Coree (KOSPI) mene sur 12 mois mais Hong Kong (Hang Seng) a repris la tete sur 3 mois",
       "ok": true,
       "synthese": true,
       "sortie": "indices_mondiaux.csv",
