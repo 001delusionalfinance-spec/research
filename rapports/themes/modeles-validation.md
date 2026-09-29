@@ -2,7 +2,7 @@
 
 Relations statistiques, previsions, tests hors echantillon et robustesse des modeles.
 
-Mis a jour : **2026-09-29 15:30 UTC** · 17 lectures.
+Mis a jour : **2026-09-29 17:08 UTC** · 17 lectures.
 
 [Retour au tableau de bord](../README.md)
 
@@ -29,7 +29,7 @@ _Statut **OK** · observation 2026-09-29 · moteur `ml` · [donnees](../donnees/
 
 ### Anomalie multivariee
 
-distance de Mahalanobis=0.853 (seuil 3.0) -- jour ordinaire
+distance de Mahalanobis=0.694 (seuil 3.0) -- jour ordinaire
 
 _Statut **OK** · observation 2026-09-29 · moteur `ml` · [donnees](../donnees/anomalie_multivariee.csv)_
 
@@ -120,7 +120,7 @@ _Statut **OK** · observation 2026-09-29 · moteur `ml` · [donnees](../donnees/
 
 ### Importance permutation
 
-R2 base=0.0103 -- importance momentum5j=0.00088, importance variation_vix=0.01377 -- VIX plus important
+R2 base=0.0103 -- importance momentum5j=0.00088, importance variation_vix=0.01376 -- VIX plus important
 
 _Statut **OK** · observation 2026-09-29 · moteur `ml` · [donnees](../donnees/importance_permutation.csv)_
 

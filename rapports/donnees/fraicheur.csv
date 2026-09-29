@@ -212,6 +212,7 @@ fred/BAMLHE00EHYIEY.csv,2026-09-28,1,1.0,42,793,OK
 fred/BAMLHE00EHYIOAS.csv,2026-09-28,1,1.0,42,793,OK
 fred/RRPONTSYD.csv,2026-09-28,1,1,42,3000,OK
 fred/T10YIE.csv,2026-09-28,1,1,42,3000,OK
+marches/indices/HANGSENG.csv,2026-09-28,1,1,42,3688,OK
 marches/indices/KOSPI.csv,2026-09-28,1,1,42,3680,OK
 marches/indices/NIKKEI225.csv,2026-09-28,1,1,42,3666,OK
 souverains/CANADA_10A.csv,2026-09-28,1,1.0,42,6437,OK
@@ -250,11 +251,10 @@ marches/fx/USDSEK.csv,2026-09-29,0,1.0,42,3905,OK
 marches/indices/DAX.csv,2026-09-29,0,1,42,3802,OK
 marches/indices/EUROSTOXX50.csv,2026-09-29,0,1.0,42,3759,OK
 marches/indices/FTSE100.csv,2026-09-29,0,1,42,3788,OK
-marches/indices/HANGSENG.csv,2026-09-29,0,1.0,42,3689,OK
 marches/matieres/BRENT.csv,2026-09-29,0,1.0,42,3751,OK
 marches/matieres/CUIVRE.csv,2026-09-29,0,1.0,42,3771,OK
 marches/matieres/GAZ_HENRY_HUB.csv,2026-09-29,0,1,42,3772,OK
-marches/matieres/OR.csv,2026-09-29,0,1.0,42,3771,OK
+marches/matieres/OR.csv,2026-09-29,0,1,42,3770,OK
 marches/matieres/WTI.csv,2026-09-29,0,1.0,42,3771,OK
 marches/taux_futures/FED_FUNDS_FRONT.csv,2026-09-29,0,1,42,3772,OK
 marches/volatilite/GVZ.csv,2026-09-29,0,1.0,42,3771,OK
