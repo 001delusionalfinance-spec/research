@@ -1,8 +1,4 @@
 record_date,account_type,close_today_bal,open_today_bal
-2024-09-27,Treasury General Account (TGA) Opening Balance,null,746699
-2024-09-27,Total TGA Deposits (Table II),null,47584
-2024-09-27,Total TGA Withdrawals (Table II) (-),null,21579
-2024-09-27,Treasury General Account (TGA) Closing Balance,null,772704
 2024-09-30,Treasury General Account (TGA) Opening Balance,null,772704
 2024-09-30,Total TGA Deposits (Table II),null,265951
 2024-09-30,Total TGA Withdrawals (Table II) (-),null,152930
@@ -1999,3 +1995,7 @@ record_date,account_type,close_today_bal,open_today_bal
 2026-09-25,Total TGA Deposits (Table II),null,49518
 2026-09-25,Total TGA Withdrawals (Table II) (-),null,28854
 2026-09-25,Treasury General Account (TGA) Closing Balance,null,945290
+2026-09-28,Treasury General Account (TGA) Opening Balance,null,945290
+2026-09-28,Total TGA Deposits (Table II),null,34933
+2026-09-28,Total TGA Withdrawals (Table II) (-),null,20651
+2026-09-28,Treasury General Account (TGA) Closing Balance,null,959572
