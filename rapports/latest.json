@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-29T21:30:57.831446+00:00",
+  "generated_at": "2026-09-29T23:41:17.207719+00:00",
   "status": "ok",
   "models": [
     {
@@ -183,7 +183,7 @@
       "titre": "Matieres premieres macro",
       "theme": "cycle-macro",
       "lane": "macro",
-      "lecture": "ratio cuivre/or stable -- pas de signal net sur la croissance (+3.0% sur 3 mois). Brent 95.7$ (+31.2% sur 3 mois, +40.8% sur 12 mois), gaz -8.0% sur 3 mois, ecart Brent-WTI +6.7$ -- energie nettement plus chere sur un an -- pression inflationniste a venir que les prix a la consommation ne montrent pas encore",
+      "lecture": "ratio cuivre/or stable -- pas de signal net sur la croissance (+3.1% sur 3 mois). Brent 96.1$ (+31.8% sur 3 mois, +41.4% sur 12 mois), gaz -7.6% sur 3 mois, ecart Brent-WTI +6.8$ -- energie nettement plus chere sur un an -- pression inflationniste a venir que les prix a la consommation ne montrent pas encore",
       "ok": true,
       "synthese": true,
       "sortie": "matieres_premieres_macro.csv",
