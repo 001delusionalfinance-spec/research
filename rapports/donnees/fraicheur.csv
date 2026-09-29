@@ -212,9 +212,6 @@ souverains/CANADA_10A.csv,2026-09-25,4,1,42,6436,OK
 souverains/CANADA_2A.csv,2026-09-25,4,1.0,42,6435,OK
 souverains/CANADA_5A.csv,2026-09-25,4,1.0,42,6435,OK
 souverains/CANADA_LONG.csv,2026-09-25,4,1.0,42,6435,OK
-souverains/SUEDE_10A.csv,2026-09-25,4,1,42,9202,OK
-souverains/SUEDE_2A.csv,2026-09-25,4,1,42,9202,OK
-souverains/SUEDE_5A.csv,2026-09-25,4,1,42,9204,OK
 souverains/ZONE_EURO_AAA_10A.csv,2026-09-25,4,1.0,42,5639,OK
 souverains/ZONE_EURO_AAA_1A.csv,2026-09-25,4,1.0,42,5639,OK
 souverains/ZONE_EURO_AAA_20A.csv,2026-09-25,4,1.0,42,5639,OK
@@ -237,6 +234,9 @@ marches/volatilite/MOVE.csv,2026-09-28,1,1.0,42,3689,OK
 marches/volatilite/OVX.csv,2026-09-28,1,1,42,3770,OK
 marches/volatilite/VVIX.csv,2026-09-28,1,1,42,3762,OK
 marches/volatilite/VXN.csv,2026-09-28,1,1,42,3770,OK
+souverains/SUEDE_10A.csv,2026-09-28,1,1.0,42,9203,OK
+souverains/SUEDE_2A.csv,2026-09-28,1,1.0,42,9203,OK
+souverains/SUEDE_5A.csv,2026-09-28,1,1.0,42,9205,OK
 yfinance/SP500.csv,2026-09-28,1,1,42,7546,OK
 yfinance/VIX.csv,2026-09-28,1,1,42,7548,OK
 yfinance/XLB.csv,2026-09-28,1,1,42,500,OK
@@ -251,7 +251,7 @@ yfinance/XLV.csv,2026-09-28,1,1,42,500,OK
 yfinance/XLY.csv,2026-09-28,1,1,42,500,OK
 marches/fx/AUDJPY.csv,2026-09-29,0,1,42,3908,OK
 marches/fx/AUDUSD.csv,2026-09-29,0,1,42,3904,OK
-marches/fx/DXY.csv,2026-09-29,0,1.0,42,3773,OK
+marches/fx/DXY.csv,2026-09-29,0,1,42,3772,OK
 marches/fx/EURCHF.csv,2026-09-29,0,1.0,42,3905,OK
 marches/fx/EURGBP.csv,2026-09-29,0,1.0,42,3907,OK
 marches/fx/EURJPY.csv,2026-09-29,0,1.0,42,3907,OK
@@ -269,10 +269,10 @@ marches/indices/HANGSENG.csv,2026-09-29,0,1.0,42,3689,OK
 marches/indices/KOSPI.csv,2026-09-29,0,1.0,42,3681,OK
 marches/indices/NIKKEI225.csv,2026-09-29,0,1.0,42,3667,OK
 marches/matieres/BRENT.csv,2026-09-29,0,1.0,42,3751,OK
-marches/matieres/CUIVRE.csv,2026-09-29,0,1,42,3772,OK
-marches/matieres/GAZ_HENRY_HUB.csv,2026-09-29,0,1.0,42,3773,OK
-marches/matieres/OR.csv,2026-09-29,0,1,42,3772,OK
-marches/matieres/WTI.csv,2026-09-29,0,1,42,3772,OK
+marches/matieres/CUIVRE.csv,2026-09-29,0,1.0,42,3771,OK
+marches/matieres/GAZ_HENRY_HUB.csv,2026-09-29,0,1,42,3772,OK
+marches/matieres/OR.csv,2026-09-29,0,1.0,42,3771,OK
+marches/matieres/WTI.csv,2026-09-29,0,1.0,42,3771,OK
 marches/taux_futures/FED_FUNDS_FRONT.csv,2026-09-29,0,1,42,3772,OK
 tresor_us/adjudications.csv,2026-10-01,-2,2,42,124,OK
 fomc/calendrier.csv,2027-12-07,-434,42.0,378.0,55,OK
