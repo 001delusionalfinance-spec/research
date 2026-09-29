@@ -2,7 +2,7 @@
 
 Change, actions, secteurs, facteurs, rotations et signaux d'allocation.
 
-Mis a jour : **2026-09-29 20:09 UTC** · 16 lectures.
+Mis a jour : **2026-09-29 21:30 UTC** · 16 lectures.
 
 [Retour au tableau de bord](../README.md)
 
@@ -15,9 +15,9 @@ _Statut **OK** · observation 2026-07-01 · moteur `macro` · [donnees](../donne
 
 ### Differentiel taux change
 
-8 paires testees sur variations a 21 jours -- le lien taux/change tient sur 6 paire(s) apres correction pour tests multiples : EURUSD, USDJPY, USDCAD, AUDUSD, USDSEK, EURJPY
+8 paires testees sur variations a 21 jours -- le lien taux/change tient sur 5 paire(s) apres correction pour tests multiples : EURUSD, USDJPY, USDCAD, AUDUSD, EURJPY
 
-_Statut **OK** · observation 2026-09-24 · moteur `statistique` · [donnees](../donnees/differentiel_taux_change.csv)_
+_Statut **OK** · observation 2026-09-28 · moteur `statistique` · [donnees](../donnees/differentiel_taux_change.csv)_
 
 
 ### Indices mondiaux
@@ -43,9 +43,9 @@ _Statut **OK** · observation 2026-09-22 · moteur `statistique` · [donnees](..
 
 ### Beta facteur macro
 
-beta SP500/DGS10 (60j) = -0.0794 (rendement SP500 pour +1pt de taux 10 ans, 57/60 jours avec variation reelle) -- sensibilite elevee au facteur macro (choc de +100pb extrapole = -7.6%)
+beta SP500/DGS10 (60j) = -0.0810 (rendement SP500 pour +1pt de taux 10 ans, 57/60 jours avec variation reelle) -- sensibilite elevee au facteur macro (choc de +100pb extrapole = -7.8%)
 
-_Statut **OK** · observation 2026-09-25 · moteur `statistique` · [donnees](../donnees/beta_facteur_macro.csv)_
+_Statut **OK** · observation 2026-09-28 · moteur `statistique` · [donnees](../donnees/beta_facteur_macro.csv)_
 
 
 ### Momentum prix
@@ -59,19 +59,19 @@ _Statut **OK** · observation 2026-09-29 · moteur `factorielle` · [donnees](..
 
 Chine : 1.54% vs US 3.88% -- diff=-2.34pt (carry negatif (taux < US))  _(sans synthese)_
 
-_Statut **OK** · observation 2026-09-25 · moteur `factorielle` · [donnees](../donnees/carry_proxy.csv)_
+_Statut **OK** · observation 2026-09-28 · moteur `factorielle` · [donnees](../donnees/carry_proxy.csv)_
 
 
 ### Beta vol
 
-beta SP500/VIX (60j) = -0.00487 (rendement SP500 pour +1pt VIX) -- sensibilite normale, relation inverse attendue (normale)
+beta SP500/VIX (60j) = -0.00486 (rendement SP500 pour +1pt VIX) -- sensibilite normale, relation inverse attendue (normale)
 
 _Statut **OK** · observation 2026-09-29 · moteur `factorielle` · [donnees](../donnees/beta_vol.csv)_
 
 
 ### Rotation sectorielle
 
-classement momentum 3 mois (10 secteurs) : 1. Energie (XLE) : +15.89% | 2. Sante (XLV) : +7.61% | 3. Technologie (XLK) : +2.08% | 4. Finance (XLF) : +0.75% | 5. Consommation de base (XLP) : -1.48%
+classement momentum 3 mois (10 secteurs) : 1. Energie (XLE) : +15.87% | 2. Sante (XLV) : +7.61% | 3. Technologie (XLK) : +2.09% | 4. Finance (XLF) : +0.75% | 5. Consommation de base (XLP) : -1.47%
 
 _Statut **OK** · observation 2026-09-29 · moteur `factorielle` · [donnees](../donnees/rotation_sectorielle.csv) · [graphique](../graphiques/rotation_sectorielle/apercu.png)_
 
@@ -92,14 +92,14 @@ _Statut **OK** · observation 2026-09-29 · moteur `factorielle` · [donnees](..
 
 ### Low volatility
 
-tercile bas-vol ['XLF', 'XLRE', 'XLU'] Sharpe=-0.838 vs tercile haut-vol ['XLY', 'XLE', 'XLK'] Sharpe=0.040 -- anomalie low-vol non confirmee sur cet echantillon (puissance statistique faible, n petit -- limite assumee)
+tercile bas-vol ['XLF', 'XLRE', 'XLU'] Sharpe=-0.842 vs tercile haut-vol ['XLY', 'XLE', 'XLK'] Sharpe=0.040 -- anomalie low-vol non confirmee sur cet echantillon (puissance statistique faible, n petit -- limite assumee)
 
 _Statut **OK** · observation 2026-09-29 · moteur `factorielle` · [donnees](../donnees/low_volatility.csv)_
 
 
 ### Momentum cross sectional
 
-panier gagnant ['XLE', 'XLV', 'XLK'] (+8.53%) vs panier perdant ['XLY', 'XLI', 'XLU'] (-9.34%) -- spread momentum=+17.87pt
+panier gagnant ['XLE', 'XLV', 'XLK'] (+8.52%) vs panier perdant ['XLY', 'XLI', 'XLU'] (-9.35%) -- spread momentum=+17.87pt
 
 _Statut **OK** · observation 2026-09-29 · moteur `factorielle` · [donnees](../donnees/momentum_cross_sectional.csv)_
 
@@ -113,7 +113,7 @@ _Statut **OK** · observation 2026-09-29 · moteur `statistique` · [donnees](..
 
 ### Correlation facteurs
 
-correlation entre momentum 3m et beta-VIX, 10 secteurs : +0.360 (facteurs largement independants)
+correlation entre momentum 3m et beta-VIX, 10 secteurs : +0.361 (facteurs largement independants)
 
 _Statut **OK** · observation 2026-09-29 · moteur `factorielle` · [donnees](../donnees/correlation_facteurs.csv)_
 
