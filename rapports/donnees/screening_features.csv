@@ -51,3 +51,7 @@ date,feature,correlation,p_valeur,significatif
 2026-09-28,momentum_20j,-0.0112,0.3294,False
 2026-09-28,niveau_vix,-0.0036,0.7515,False
 2026-09-28,variation_vix,0.0306,0.008,True
+2026-09-29,momentum_5j,-0.0294,0.0106,True
+2026-09-29,momentum_20j,-0.0112,0.3309,False
+2026-09-29,niveau_vix,-0.0036,0.7564,False
+2026-09-29,variation_vix,0.0305,0.0082,True
