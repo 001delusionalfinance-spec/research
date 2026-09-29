@@ -183,7 +183,6 @@ fred/WTREGEN.csv,2026-09-23,6,7.0,63.0,2125,OK
 souverains/AUSTRALIE_10A.csv,2026-09-23,6,1.0,42,3361,OK
 souverains/AUSTRALIE_2A.csv,2026-09-23,6,1.0,42,3283,OK
 souverains/AUSTRALIE_5A.csv,2026-09-23,6,1.0,42,3283,OK
-fred/IUDSOIA.csv,2026-09-24,5,1,42,3000,OK
 fred/MORTGAGE30US.csv,2026-09-24,5,7,63.0,2896,OK
 fred/BAMLC0A0CM.csv,2026-09-25,4,1.0,42,793,OK
 fred/BAMLC0A0CMEY.csv,2026-09-25,4,1.0,42,793,OK
@@ -205,6 +204,7 @@ fred/DGS30.csv,2026-09-25,4,1,42,3000,OK
 fred/DGS3MO.csv,2026-09-25,4,1,42,3000,OK
 fred/DGS5.csv,2026-09-25,4,1,42,3000,OK
 fred/DGS6MO.csv,2026-09-25,4,1,42,3000,OK
+fred/IUDSOIA.csv,2026-09-25,4,1,42,3000,OK
 souverains/CANADA_10A.csv,2026-09-25,4,1,42,6436,OK
 souverains/CANADA_2A.csv,2026-09-25,4,1.0,42,6435,OK
 souverains/CANADA_5A.csv,2026-09-25,4,1.0,42,6435,OK
@@ -212,15 +212,6 @@ souverains/CANADA_LONG.csv,2026-09-25,4,1.0,42,6435,OK
 souverains/UK_10A.csv,2026-09-25,4,1,42,9284,OK
 souverains/UK_20A.csv,2026-09-25,4,1.0,42,6755,OK
 souverains/UK_5A.csv,2026-09-25,4,1,42,8292,OK
-souverains/ZONE_EURO_AAA_10A.csv,2026-09-25,4,1.0,42,5639,OK
-souverains/ZONE_EURO_AAA_1A.csv,2026-09-25,4,1.0,42,5639,OK
-souverains/ZONE_EURO_AAA_20A.csv,2026-09-25,4,1.0,42,5639,OK
-souverains/ZONE_EURO_AAA_2A.csv,2026-09-25,4,1.0,42,5639,OK
-souverains/ZONE_EURO_AAA_30A.csv,2026-09-25,4,1.0,42,5639,OK
-souverains/ZONE_EURO_AAA_3A.csv,2026-09-25,4,1.0,42,5639,OK
-souverains/ZONE_EURO_AAA_5A.csv,2026-09-25,4,1.0,42,5639,OK
-souverains/ZONE_EURO_AAA_7A.csv,2026-09-25,4,1.0,42,5639,OK
-souverains/ZONE_EURO_TOUS_10A.csv,2026-09-25,4,1.0,42,5639,OK
 tresor_us/dette_quotidienne.csv,2026-09-25,4,1,42,2000,OK
 tresor_us/solde_tresorerie.csv,2026-09-25,4,1,42,500,OK
 fred/ECBDFR.csv,2026-09-28,1,1,42,3000,OK
@@ -234,6 +225,15 @@ marches/volatilite/VXN.csv,2026-09-28,1,1,42,3770,OK
 souverains/SUEDE_10A.csv,2026-09-28,1,1.0,42,9203,OK
 souverains/SUEDE_2A.csv,2026-09-28,1,1.0,42,9203,OK
 souverains/SUEDE_5A.csv,2026-09-28,1,1.0,42,9205,OK
+souverains/ZONE_EURO_AAA_10A.csv,2026-09-28,1,1,42,5640,OK
+souverains/ZONE_EURO_AAA_1A.csv,2026-09-28,1,1,42,5640,OK
+souverains/ZONE_EURO_AAA_20A.csv,2026-09-28,1,1,42,5640,OK
+souverains/ZONE_EURO_AAA_2A.csv,2026-09-28,1,1,42,5640,OK
+souverains/ZONE_EURO_AAA_30A.csv,2026-09-28,1,1,42,5640,OK
+souverains/ZONE_EURO_AAA_3A.csv,2026-09-28,1,1,42,5640,OK
+souverains/ZONE_EURO_AAA_5A.csv,2026-09-28,1,1,42,5640,OK
+souverains/ZONE_EURO_AAA_7A.csv,2026-09-28,1,1,42,5640,OK
+souverains/ZONE_EURO_TOUS_10A.csv,2026-09-28,1,1,42,5640,OK
 yfinance/SP500.csv,2026-09-28,1,1,42,7546,OK
 yfinance/XLB.csv,2026-09-28,1,1,42,500,OK
 yfinance/XLE.csv,2026-09-28,1,1,42,500,OK
@@ -270,7 +270,7 @@ marches/indices/NIKKEI225.csv,2026-09-29,0,1.0,42,3667,OK
 marches/matieres/BRENT.csv,2026-09-29,0,1.0,42,3751,OK
 marches/matieres/CUIVRE.csv,2026-09-29,0,1.0,42,3771,OK
 marches/matieres/GAZ_HENRY_HUB.csv,2026-09-29,0,1,42,3772,OK
-marches/matieres/OR.csv,2026-09-29,0,1,42,3770,OK
+marches/matieres/OR.csv,2026-09-29,0,1.0,42,3771,OK
 marches/matieres/WTI.csv,2026-09-29,0,1.0,42,3771,OK
 marches/taux_futures/FED_FUNDS_FRONT.csv,2026-09-29,0,1,42,3772,OK
 yfinance/VIX.csv,2026-09-29,0,1.0,42,7549,OK
