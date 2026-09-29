@@ -1,4 +1,4 @@
-# Rapport global — 2026-09-28 23:35 UTC
+# Rapport global — 2026-09-29 00:04 UTC
 
 **Etat global : OK** · 112/112 modeles reussis · 0 source(s) suspecte(s) · 0 source(s) gelee(s).
 
@@ -41,7 +41,7 @@ Activite, emploi, inflation, immobilier, commerce et finances publiques.
 - **Inflation comparee** — inflation annuelle sur 12 blocs : mediane 3.06%, dispersion 3.75pt (Nouvelle-Zelande +4.06% au plus haut, Suede +0.31% au plus bas) -- dispersion forte -- les banques centrales sont poussees a diverger, ce qui deplace les differentiels de taux et le change _(observation : date non exposee)_
 - **Activite zone euro** — zone euro : Production industrielle -0.2 % sur 12 mois, Ventes de detail +0.8 % sur 12 mois, Taux de chomage +0.1 pt sur 12 mois, Confiance industrielle +1.2 pt vs moyenne longue -- production industrielle DIVERGENTE entre grands pays -- en hausse : Espagne ; en baisse : Allemagne, France, Italie _(observation : date non exposee)_
 - **Soutenabilite dette** — 8 pays. charge la plus lourde : Canada a 25.5% du revenu. taux 10 ans AU-DESSUS de l'inflation dans 5 pays -- Royaume-Uni (+2.3pt), Etats-Unis (+1.8pt), Japon (+1.0pt), Canada (+0.9pt), Zone euro (+0.9pt). Configuration ou le ratio d'endettement monte meme a budget primaire equilibre (approximation : croissance nominale reduite a l'inflation) _(observation : date non exposee)_
-- **Matieres premieres macro** — le ratio cuivre/or monte -- la croissance domine la peur (+5.5% sur 3 mois). Brent 98.5$ (+34.7% sur 3 mois, +40.5% sur 12 mois), gaz -1.2% sur 3 mois, ecart Brent-WTI +5.4$ -- energie nettement plus chere sur un an -- pression inflationniste a venir que les prix a la consommation ne montrent pas encore _(observation : 2026-09-28)_
+- **Matieres premieres macro** — le ratio cuivre/or monte -- la croissance domine la peur (+5.5% sur 3 mois). Brent 98.6$ (+34.8% sur 3 mois, +40.6% sur 12 mois), gaz -1.3% sur 3 mois, ecart Brent-WTI +5.4$ -- energie nettement plus chere sur un an -- pression inflationniste a venir que les prix a la consommation ne montrent pas encore _(observation : 2026-09-28)_
 - **Surprise macro composite** — indice de surprise macro=-0.33 ({'chomage': 1, 'credit_bancaire': -1, 'inflation': -1}) -- negatif (surprises defavorables dominent) _(observation : 2026-08-01)_
 - **Balance commerciale** — balance commerciale=-88,576M$ (rang percentile=1), deficit se creuse _(observation : 2026-07-01)_
 - **Surprise inflation** — CPI MoM=+0.396%, prevision naive=+0.316%, surprise=+0.080pt -- surprise haussiere (inflation plus forte qu'attendu) _(observation : 2026-08-01)_
@@ -54,7 +54,7 @@ Courbes souveraines, conditions financieres, credit, emission et taux reels.
 - **Courbe taux us** — 10 ans=5.17%, 2 ans=4.81%, spread=+0.36pt -- normale (0 run(s) consecutif(s) dans l'historique accumule) _(observation : 2026-09-25)_
 - **Cycle credit** — credit bancaire total croissance YoY=+6.15%, rang percentile historique=39.7196261682243, lecture=normal _(observation : 2026-09-16)_
 - **Conditions financieres** — indice conditions financieres=+0.086 (3 composantes: {'taux_directeur': 0.5982151864455719, 'courbe_inversee': 0.17031877422284264, 'vix': -0.5114551673321737}) -- conditions proches de la normale _(observation : 2026-09-25)_
-- **Emission tresor us** — 84 derniers jours, 7886 Mds$ offerts : court (moins d'un an) 6798 Mds$ (86%), intermediaire (2 a 10 ans) 969 Mds$ (12%), long (20 a 30 ans) 119 Mds$ (2%) -- financement concentre sur le court et l'intermediaire, part longue a 2% -- peu de pression par la duration _(observation : date non exposee)_
+- **Emission tresor us** — 84 derniers jours, 7715 Mds$ offerts : court (moins d'un an) 6627 Mds$ (86%), intermediaire (2 a 10 ans) 969 Mds$ (13%), long (20 a 30 ans) 119 Mds$ (2%) -- financement concentre sur le court et l'intermediaire, part longue a 2% -- peu de pression par la duration _(observation : date non exposee)_
 - **Pentes courbes** — 7 courbes : pente de +0.30pt (Australie) a +1.20pt (Japon) -- aucune courbe inversee -- pas de signal recessif par la pente _(observation : 2026-09-25)_
 - **Stationnarite taux** — 1/5 series stationnaires (niveau, pas en difference) -- a garder en tete avant toute correlation/regression sur ces series telles quelles  _(sans synthese)_ _(observation : 2026-09-25)_
 - **Cointegration taux** — 1/10 paires cointegrees  _(sans synthese)_ _(observation : 2026-09-25)_
@@ -116,7 +116,7 @@ Volatilite, queues, drawdowns, stress, contagion et changements de regime.
 - **Ornstein uhlenbeck vix** — VIX actuel=16.07, niveau moyen estime (mu)=20.20, demi-vie=28.8j, ecart actuel=-4.13 -- VIX actuel en-dessous de son niveau moyen de long terme _(observation : 2026-09-28)_
 - **Changepoint volatilite** — rupture detectee le 2011-12-21 -- vol avant=0.2130, vol apres=0.1666 (reduction SSE=0.5%) -- baisse de la vol au point de rupture (-21.8%) _(observation : 2026-09-28)_
 - **Kalman niveau local** — VIX observe=16.07, filtre Kalman=15.91 (ecart-type=0.62), ratio signal/bruit=0.2052 -- le filtre lisse fortement le bruit, reagit lentement (ecart obs.-filtre=+0.16) _(observation : 2026-09-28)_
-- **Var sp500 vix** — VAR ordre choisi par AIC=10 -- coef SP500(t-1)->VIX(t)=0.3730169650835773 (SP500(t-1) en hausse -> VIX(t) tend aussi a monter), coef VIX(t-1)->SP500(t)=-0.052364093738951525 (VIX(t-1) en hausse -> SP500(t) tend a baisser) _(observation : 2026-09-28)_
+- **Var sp500 vix** — VAR ordre choisi par AIC=10 -- coef SP500(t-1)->VIX(t)=0.37301696508358795 (SP500(t-1) en hausse -> VIX(t) tend aussi a monter), coef VIX(t-1)->SP500(t)=-0.05236409373895107 (VIX(t-1) en hausse -> SP500(t) tend a baisser) _(observation : 2026-09-28)_
 - **Analyse spectrale** — 3 periodes dominantes (jours de bourse) : [2.2, 3.0, 2.4] -- aucune des 3 periodes dominantes ne correspond a un cycle connu (hebdo/mensuel/trimestriel) _(observation : 2026-09-28)_
 - **Var drawdown** — VaR95=-1.45% CVaR95=-1.80% VaR99=-2.08% CVaR99=-2.50% drawdown_max_252j=-9.10% -- soit l'equivalent de ~6 jours de VaR95 d'affilee _(observation : 2026-09-28)_
 - **Skew kurtosis** — skewness=-0.200 (asymetrie negative (pertes extremes > gains extremes)), kurtosis exces=+1.015 (queues epaisses (risque extreme sous-estime par une hypothese normale)) _(observation : 2026-09-28)_
