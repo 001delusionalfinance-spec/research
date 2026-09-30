@@ -1,7 +1,6 @@
 # factorielle/
 
-Exposition value/momentum/carry/quality, cross-asset (pas limité aux actions détenues comme
-dans GMDC — ici l'univers est libre). Voir `MAP.md` (racine).
+Exposition value/momentum/carry/quality, cross-asset (univers libre, sans restriction). Voir `MAP.md` (racine).
 
 ## `modele_momentum_prix.py` (2026-09-08)
 

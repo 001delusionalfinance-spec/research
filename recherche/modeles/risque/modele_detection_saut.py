@@ -7,7 +7,7 @@ inclus) a la variation bipower (BV, robuste aux sauts par construction -- utilis
 rendements consecutifs, qu'un saut isole ne peut pas gonfler de la meme facon). Un ecart RV-BV
 statistiquement significatif = presence d'un saut ce jour-la, distinct d'un choc de volatilite
 diffuse (deja mesure par modele_changepoint_volatilite.py -- un vrai krach general en cluster
-de vol peut echapper a CE test, cf. limite trouvee par GMDC sur COVID -- teste ici aussi).
+de vol peut echapper a CE test, cf. limite observee sur COVID -- teste ici aussi).
 
 Formule standard (theta=pi^2/4+pi-5, mu_(4/3)=2^(2/3)*Gamma(7/6)/Gamma(1/2)) -- Z-stat asymptotique
 normale sous H0 (pas de saut). Fenetre de 22 jours (~1 mois de bourse).

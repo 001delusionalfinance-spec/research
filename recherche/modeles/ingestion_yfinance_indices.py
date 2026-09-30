@@ -8,8 +8,8 @@ plus d'historique -- ex. modele_saisonnalite.py, dont la limite documentee "seul
 est resolue par ce changement). Secteurs restes a 2 ans (pas de modele qui en a besoin plus
 long pour l'instant, pas d'ingestion excessive sans usage reel).
 
-Meme choix technique que global-macro-desk-cloud : appel direct a l'API chart de Yahoo
-(`requests`), pas la librairie `yfinance` -- deja trouve chez eux (audit 2026-08-23) que la
+Choix technique : appel direct a l'API chart de Yahoo
+(`requests`), pas la librairie `yfinance` -- constate (audit 2026-08-23) que la
 librairie renvoie des donnees tronquees pour certains tickers alors que ce meme endpoint
 interroge directement est fiable. Verifie a nouveau ici le 2026-09-08 sur ^VIX et ^GSPC :
 fonctionne, frais au jour meme.
@@ -52,7 +52,7 @@ SECTEURS = {
 }
 
 MIN_LIGNES = 5
-MAX_JOURS_RETARD = 7  # meme garde-fou que GMDC : un fournisseur peut arreter de mettre a jour
+MAX_JOURS_RETARD = 7  # garde-fou : un fournisseur peut arreter de mettre a jour
                        # un ticker sans jamais renvoyer d'erreur ni d'historique vide.
 
 

@@ -1,5 +1,5 @@
 """Orchestrateur -- appelle main() de chaque modele en sequence, un modele casse n'interrompt
-jamais les autres (meme discipline que global-macro-desk-cloud).
+jamais les autres.
 
 Usage :
     python run_all_modeles.py

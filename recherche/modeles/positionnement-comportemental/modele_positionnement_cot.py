@@ -2,8 +2,8 @@
 change, or, petrole, vol).
 
 Z-score du positionnement net non-commercial sur une fenetre de 78 semaines (~1,5 an) --
-|z| > 2 marque un positionnement extreme, lu comme un signal contrarien classique. Porte depuis
-global-macro-desk-cloud, univers etendu de 4 a 9 contrats (voir ingestion_cftc.py).
+|z| > 2 marque un positionnement extreme, lu comme un signal contrarien classique. Univers de
+9 contrats (voir ingestion_cftc.py).
 
 
 NOTE DE PERIMETRE (2026-09-14) : ce modele PARCOURT le dossier des donnees COT, il ne

@@ -1,6 +1,6 @@
 """Ingestion CFTC -- positionnement speculatif (Commitments of Traders), hebdomadaire.
 
-Meme choix technique que global-macro-desk-cloud : API Socrata (publicreporting.cftc.gov,
+Choix technique : API Socrata (publicreporting.cftc.gov,
 JSON propre), aucune cle requise.
 
 Univers plus large qu'un desk mono-fonds -- 9 contrats couvrant actions (S&P), taux (UST 10Y),

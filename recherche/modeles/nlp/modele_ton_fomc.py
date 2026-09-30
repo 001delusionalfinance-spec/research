@@ -1,8 +1,7 @@
 """Modele -- diff de ton entre les 2 derniers communiques FOMC + changement de vote/taux.
 
 Consomme donnees/brut/fomc/ (ingestion_fomc_statements.py). Lexique de ton construit a la
-main (~30 mots, PAS le Loughran-McDonald academique -- meme choix assume que
-nlp_earnings_diff.py dans GMDC, un lexique generaliste financier serait mal calibre pour le
+main (~30 mots, PAS le Loughran-McDonald academique -- choix assume : un lexique generaliste financier serait mal calibre pour le
 registre specifique des communiques de banque centrale). Score en pour-mille (mots de ton /
 total mots x 1000), pas en pourcentage -- la difference entre deux communiques tient
 generalement a 1-2 mots changes sur ~180, un pourcentage arrondirait a 0,0%.

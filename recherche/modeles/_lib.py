@@ -1,7 +1,7 @@
 """Logique partagee par les modeles de recherche/modeles/ -- lue une fois, pas reimplementee
-dans chaque modele. Porte depuis global-macro-desk-cloud (2026-09-08) : uniquement la partie
-generique (lecture de serie, statistiques, graphiques) -- rien de specifique au fonds souverain
-(pas de blotter/positions, aucune notion de book, ce depot n'en a pas)."""
+dans chaque modele. Uniquement la partie
+generique (lecture de serie, statistiques, graphiques) : aucune notion de positions ni de
+portefeuille, ce depot n'en a pas."""
 
 import math
 from pathlib import Path

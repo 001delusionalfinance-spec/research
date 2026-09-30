@@ -4,10 +4,9 @@ Complete volatilite_ewma.py : l'EWMA a un lambda fixe impose (0,94, convention R
 GARCH(1,1) ESTIME ses parametres (omega/alpha/beta) par maximum de vraisemblance sur les
 donnees -- persistance et vitesse de retour a la moyenne mesurees, pas supposees.
 
-Piege connu, deja documente par GMDC en construisant leur propre GARCH (recherche-refonte.md,
-09-05) : la librairie `arch` recommande de mettre les rendements a l'echelle (x100, rendements
+Piege connu : la librairie `arch` recommande de mettre les rendements a l'echelle (x100, rendements
 en pourcentage) pour la stabilite numerique de l'optimiseur -- oublier de re-diviser par 100 au
-moment de lire la volatilite en sortie produit une volatilite ~100x trop grande (leur bug exact :
+moment de lire la volatilite en sortie produit une volatilite ~100x trop grande (exemple de bug :
 4473% au lieu de ~45%). Verifie ici explicitement en comparant le resultat a la vol realisee deja
 calculee par volatilite_ewma.py -- si l'ordre de grandeur diverge, c'est le signe de ce bug.
 """

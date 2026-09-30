@@ -1,8 +1,8 @@
 """Modele -- clustering non supervise (k-means, k=3) des regimes de marche, sur 3 dimensions :
 niveau VIX, spread de courbe (10-2 ans), taux directeur US.
 
-Contrairement aux modeles a seuils fixes (modele_regime_volatilite dans GMDC, ou meme
-modele_conditions_financieres.py ici) qui DEFINISSENT les regimes a l'avance, k-means les
+Contrairement aux modeles a seuils fixes (comme
+modele_conditions_financieres.py) qui DEFINISSENT les regimes a l'avance, k-means les
 DECOUVRE a partir des donnees -- peut reveler des regroupements non intuitifs. Implementation a
 la main (Lloyd standard, pas sklearn -- 3 dimensions, k=3, pas besoin d'une librairie ML),
 validee sur cas synthetique a 3 clusters bien separes avant le test reel.

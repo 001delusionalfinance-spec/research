@@ -11,8 +11,7 @@ chomage zone euro vit dans modele_activite_zone_euro.py, source Eurostat).
 
 Tendance mesuree sur ~6 mois calendaires (182 jours), pas sur un nombre de points fixe --
 necessaire ici parce que les series melangent frequences quotidienne (DFF, ECBDFR, IUDSOIA) et
-mensuelle (les 6 autres), contrairement au modele equivalent de global-macro-desk-cloud qui n'a
-que des series homogenes.
+mensuelle (les 6 autres).
 """
 
 import sys

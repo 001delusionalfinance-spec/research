@@ -2,8 +2,8 @@
 
 Complete `ingestion_yfinance_indices.py` (qui couvre S&P 500 / VIX / secteurs US) et
 `ingestion_fred.py` (series macro officielles). Meme technique que les deux autres : appel
-direct a l'API chart de Yahoo via `requests`, jamais la librairie `yfinance` (deja trouvee
-chez GMDC le 2026-08-23 comme renvoyant des donnees tronquees sur certains tickers alors que
+direct a l'API chart de Yahoo via `requests`, jamais la librairie `yfinance` (constatee
+le 2026-08-23 comme renvoyant des donnees tronquees sur certains tickers alors que
 ce meme endpoint interroge directement est fiable).
 
 Pourquoi cet univers precis -- couverture d'un desk macro, pas un scan exhaustif :

@@ -14,10 +14,8 @@ Testé avec de vraies données, cohérence vérifiée (CVaR toujours pire que la
 99% toujours pire que 95%) : VaR95=-1,45%, CVaR95=-1,80%, VaR99=-2,08%, CVaR99=-2,50%,
 drawdown max 252j=-9,10%.
 
-Détection de saut (Barndorff-Nielsen & Shephard) volontairement pas construite dans cette
-première passe — demande realized variance + bipower variation + tripower quarticity, plus
-lourd à valider correctement (GMDC l'a fait en validant d'abord sur données synthétiques à
-paramètres connus). À reprendre si utile.
+Détection de saut (Barndorff-Nielsen & Shephard) : voir `modele_detection_saut.py`
+(realized variance, bipower variation, tripower quarticity).
 
 ## `modele_skew_kurtosis.py` (2026-09-08)
 

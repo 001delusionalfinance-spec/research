@@ -11,7 +11,7 @@ mesurée sur les 10 derniers runs accumulés dans `rapports/donnees/` (10% de va
 pas un seuil absolu).
 
 Nécessite `ingestion_yfinance_indices.py` (SP500, VIX — même pattern d'appel direct à l'API
-chart Yahoo que GMDC, vérifié fonctionnel et frais le 2026-09-08).
+chart Yahoo, vérifié fonctionnel et frais le 2026-09-08).
 
 Testé avec de vraies données (vol réalisée 60j ≈ 11,8%, EWMA ≈ 10,4%, cohérent avec un VIX à
 ~15 le même jour) et la logique de classification de tendance testée sur des cas synthétiques
@@ -22,7 +22,7 @@ Testé avec de vraies données (vol réalisée 60j ≈ 11,8%, EWMA ≈ 10,4%, co
 GARCH(1,1) sur les rendements S&P 500 (librairie `arch`) — paramètres estimés par maximum de
 vraisemblance, pas un lambda fixé comme l'EWMA. Piège connu et vérifié explicitement : la
 librairie recommande des rendements ×100 pour la stabilité numérique, oublier de re-diviser
-donne une vol ~100x trop grande (bug réel déjà trouvé par GMDC sur leur propre GARCH — évité
+donne une vol ~100x trop grande (bug réel classique — évité
 ici en comparant le résultat à la vol réalisée). Testé réel : 12,10% annualisée, persistance
 0,921 — cohérent avec EWMA/réalisée.
 

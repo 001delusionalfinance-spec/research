@@ -1,6 +1,6 @@
 # ml/
 
-Walk-forward strict uniquement — même discipline anti-overfitting déjà démontrée dans GMDC
+Walk-forward strict uniquement — discipline anti-overfitting
 (validation sur données synthétiques à paramètres connus avant tout test réel ; un modèle qui
 ne bat pas une baseline naïve se documente honnêtement, ne se cache pas). Voir `MAP.md`
 (racine).
@@ -13,7 +13,7 @@ un jour, n'utilise jamais une donnée postérieure) : règle simple de momentum 
 passé disponible à chaque étape). Aucune librairie ML — stdlib seulement, la logique testée sur
 cas synthétiques à résultat connu avant le test réel.
 
-**Résultat honnête, comme dans GMDC** : sur 470 prédictions walk-forward (2 ans d'historique
+**Résultat honnête** : sur 470 prédictions walk-forward (2 ans d'historique
 initial), momentum 5j = 48,30% de précision, baseline majoritaire = 55,74% — **le momentum NE
 BAT PAS la baseline**. Recalculé depuis l'extension à 30 ans (2026-09-08 après-midi, voir
 `risque/modele_stress_test_historique.py`) sur 7516 prédictions : 49,63% vs 53,78% — même

@@ -1,9 +1,9 @@
 """Modele -- prediction de la direction du S&P 500 (hausse/baisse), walk-forward strict.
 
-Discipline reprise de GMDC (Q1 famille 6, ML) : validation walk-forward uniquement (pour
+Discipline (famille ML) : validation walk-forward uniquement (pour
 predire le jour t+1, n'utilise jamais une donnee posterieure a t -- aucune fuite d'information
 du futur), comparaison honnete a une baseline naive, resultat rapporte tel quel meme si le
-modele ne bat pas la baseline (GMDC : "le modele (59.0%) NE BAT PAS la baseline naive (59.2%)"
+modele ne bat pas la baseline (exemple : "le modele (59.0%) NE BAT PAS la baseline naive (59.2%)"
 -- documente comme un resultat, pas cache).
 
 Regle testee ici, volontairement simple (pas de librairie ML -- stdlib seulement) : momentum de

@@ -6,6 +6,5 @@ racine pour le détail des 8 familles) :
 `macro/` · `statistique/` · `series-temporelles/` · `factorielle/` · `risque/` ·
 `positionnement-comportemental/` · `nlp/` · `ml/`
 
-Rien construit pour l'instant. Une fois les premiers modèles écrits, un orchestrateur
-(`run_all_modeles.py`, même principe que GMDC : un échec isolé n'interrompt jamais les autres)
-viendra ici.
+L'orchestrateur `run_all_modeles.py` appelle les modèles un à un : un échec isolé n'interrompt
+jamais les autres. Les résultats sont publiés dans `rapports/`.

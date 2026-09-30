@@ -1,13 +1,13 @@
 # nlp/
 
 Discours de banques centrales, minutes FOMC/BCE, texte réglementaire (10-K/10-Q si un module
-single-name est un jour récupéré depuis GMDC). Voir `MAP.md` (racine).
+single-name est un jour ajouté). Voir `MAP.md` (racine).
 
 ## `modele_ton_fomc.py` (2026-09-08)
 
 Diff de ton entre les 2 derniers communiqués FOMC (source officielle federalreserve.gov,
 `ingestion_fomc_statements.py`) : score de ton en pour-mille (lexique de ~30 mots construit à
-la main, même logique que `nlp_earnings_diff.py` dans GMDC), + changement de taux cible et de
+la main), + changement de taux cible et de
 vote (unanimité vs dissidents, noms extraits).
 
 **Trois bugs réels trouvés en testant sur les 2 vrais communiqués** (2026-06-17, 2026-07-29),

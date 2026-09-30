@@ -3,8 +3,8 @@
 Distinction macro classique : un taux nominal de 3,63% n'est "restrictif" que si l'inflation
 est plus basse -- le taux REEL (ex ante idealement via breakeven, ici ex post via CPI realise
 faute de source breakeven ingeree) mesure la condition monetaire effective. Limite assumee :
-CPI realise, pas anticipe -- un vrai taux reel ex ante utiliserait les breakevens (T10YIE, deja
-dans GMDC mais pas encore ici), a ajouter si utile.
+CPI realise, pas anticipe -- un vrai taux reel ex ante utiliserait les breakevens (T10YIE, pas encore
+ingere ici), a ajouter si utile.
 """
 
 import sys

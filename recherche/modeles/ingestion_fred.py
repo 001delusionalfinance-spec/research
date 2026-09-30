@@ -1,7 +1,7 @@
 """
 Ingestion FRED -- API officielle authentifiee, jamais le endpoint CSV public.
 
-Meme choix que global-macro-desk-cloud, et pour la meme raison verifiee a nouveau ici le
+Choix retenu, verifie le
 2026-09-08 : `fred.stlouisfed.org/graph/fredgraph.csv` (public, sans cle) a servi a explorer
 quelles series existent et sont fraiches avant d'ecrire ce fichier, et s'est deja montre
 instable sous une rafale d'appels (une reponse tronquee au milieu d'une requete). L'API

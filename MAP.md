@@ -5,8 +5,7 @@ d'entrée unique est [`rapports/README.md`](rapports/README.md).
 
 ## Ce que c'est, ce que ce n'est pas
 
-Hub de recherche macroéconomique **complètement séparé** du fonds souverain
-(`global-macro-desk-cloud`, mécanique, zéro décision liée à ici). **Uniquement de la
+Hub de recherche macroéconomique. **Uniquement de la
 recherche** — comprendre où en est l'économie mondiale et comment ça se voit dans les prix.
 Pas de thèse de trade, pas d'exécution, pas de comptabilité, pas de capital engagé, ici ou
 ailleurs.
@@ -25,8 +24,7 @@ Régions : US, Zone Euro, UK, Japon, Chine, Émergents (agrégé).
 nominal), change, matières premières (énergie, métaux, agri), crédit, volatilité
 (actions/taux/change), corrélations et rotations inter-marchés.
 
-## Comment c'est recherché (le "comment") — 8 familles, même taxonomie que le Q1/Q2 déjà
-## validé pendant la refonte de GMDC (2026-09-05), appliquée ici sans restriction cette fois
+## Comment c'est recherché (le "comment") — 8 familles
 
 1. **Macro** — régimes croissance/inflation par bloc, cycle de politique monétaire, courbes de
    taux. (`recherche/modeles/macro/`)
@@ -42,7 +40,7 @@ nominal), change, matières premières (énergie, métaux, agri), crédit, volat
    (`recherche/modeles/positionnement-comportemental/`)
 7. **NLP** — discours de banques centrales, minutes FOMC/BCE, texte réglementaire.
    (`recherche/modeles/nlp/`)
-8. **ML** — walk-forward strict, même discipline anti-overfitting déjà démontrée dans GMDC
+8. **ML** — walk-forward strict, discipline anti-overfitting
    (un modèle qui ne bat pas la baseline se documente honnêtement, ne se cache pas).
    (`recherche/modeles/ml/`)
 
@@ -110,7 +108,7 @@ graphiques ne sont ajoutés que lorsqu'ils rendent une évolution ou une compara
   Règle tenue depuis le premier jour : **aucune série n'entre sans avoir été testée en direct**,
   et chaque rejet reste documenté avec sa raison dans le fichier concerné (séries gelées,
   identifiants inexistants) pour ne pas être retenté à l'aveugle.
-- **Modèles calculés à intervalle régulier**, orchestrés comme `run_all_modeles.py` dans GMDC —
+- **Modèles calculés à intervalle régulier**, orchestrés par `run_all_modeles.py` —
   un échec isolé n'interrompt jamais les autres.
 - **Centre de recherche horaire** (`rapports/`) : toutes les lectures sont regroupées par sujet
   économique, avec les CSV, les graphiques utiles, la fraîcheur, l'inventaire et le classeur.
