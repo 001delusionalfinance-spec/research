@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-30T22:24:18.407312+00:00",
+  "generated_at": "2026-09-30T23:43:57.352444+00:00",
   "status": "ok",
   "models": [
     {
@@ -183,7 +183,7 @@
       "titre": "Matieres premieres macro",
       "theme": "cycle-macro",
       "lane": "macro",
-      "lecture": "le ratio cuivre/or monte -- la croissance domine la peur (+5.6% sur 3 mois). Brent 97.7$ (+36.6% sur 3 mois, +45.8% sur 12 mois), gaz -6.6% sur 3 mois, ecart Brent-WTI +7.5$ -- energie nettement plus chere sur un an -- pression inflationniste a venir que les prix a la consommation ne montrent pas encore",
+      "lecture": "le ratio cuivre/or monte -- la croissance domine la peur (+5.6% sur 3 mois). Brent 97.7$ (+36.5% sur 3 mois, +45.7% sur 12 mois), gaz -6.6% sur 3 mois, ecart Brent-WTI +7.6$ -- energie nettement plus chere sur un an -- pression inflationniste a venir que les prix a la consommation ne montrent pas encore",
       "ok": true,
       "synthese": true,
       "sortie": "matieres_premieres_macro.csv",
