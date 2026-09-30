@@ -2,7 +2,7 @@
 
 Courbes souveraines, conditions financieres, credit, emission et taux reels.
 
-Mis a jour : **2026-09-30 20:08 UTC** · 13 lectures.
+Mis a jour : **2026-09-30 22:24 UTC** · 13 lectures.
 
 [Retour au tableau de bord](../README.md)
 
@@ -10,14 +10,14 @@ Mis a jour : **2026-09-30 20:08 UTC** · 13 lectures.
 
 nominal=3.88%, inflation YoY=3.35%, reel=0.53% -- restrictif (taux reel positif et eleve)
 
-_Statut **OK** · observation 2026-09-28 · moteur `macro` · [donnees](../donnees/taux_reel_us.csv) · [graphique](../graphiques/taux_reel_us/apercu.png)_
+_Statut **OK** · observation 2026-09-29 · moteur `macro` · [donnees](../donnees/taux_reel_us.csv) · [graphique](../graphiques/taux_reel_us/apercu.png)_
 
 
 ### Courbe taux us
 
-10 ans=5.24%, 2 ans=4.92%, spread=+0.32pt -- normale (0 run(s) consecutif(s) dans l'historique accumule)
+10 ans=5.26%, 2 ans=4.89%, spread=+0.37pt -- normale (0 run(s) consecutif(s) dans l'historique accumule)
 
-_Statut **OK** · observation 2026-09-28 · moteur `macro` · [donnees](../donnees/courbe_taux_us.csv) · [graphique](../graphiques/courbe_taux_us/apercu.png)_
+_Statut **OK** · observation 2026-09-29 · moteur `macro` · [donnees](../donnees/courbe_taux_us.csv) · [graphique](../graphiques/courbe_taux_us/apercu.png)_
 
 
 ### Cycle credit
@@ -29,9 +29,9 @@ _Statut **OK** · observation 2026-09-16 · moteur `macro` · [donnees](../donne
 
 ### Conditions financieres
 
-indice conditions financieres=+0.113 (3 composantes: {'taux_directeur': 0.5971439233898245, 'courbe_inversee': 0.23568763984021313, 'vix': -0.49281910275629404}) -- conditions proches de la normale
+indice conditions financieres=+0.091 (3 composantes: {'taux_directeur': 0.5967870171242431, 'courbe_inversee': 0.15278119545281305, 'vix': -0.4779788474932477}) -- conditions proches de la normale
 
-_Statut **OK** · observation 2026-09-28 · moteur `macro` · [donnees](../donnees/conditions_financieres.csv) · [graphique](../graphiques/conditions_financieres/apercu.png)_
+_Statut **OK** · observation 2026-09-29 · moteur `macro` · [donnees](../donnees/conditions_financieres.csv) · [graphique](../graphiques/conditions_financieres/apercu.png)_
 
 
 ### Emission tresor us
@@ -52,14 +52,14 @@ _Statut **OK** · observation 2026-09-29 · moteur `series-temporelles` · [donn
 
 1/5 series stationnaires (niveau, pas en difference) -- a garder en tete avant toute correlation/regression sur ces series telles quelles  _(sans synthese)_
 
-_Statut **OK** · observation 2026-09-28 · moteur `statistique` · [donnees](../donnees/stationnarite_taux.csv)_
+_Statut **OK** · observation 2026-09-29 · moteur `statistique` · [donnees](../donnees/stationnarite_taux.csv)_
 
 
 ### Cointegration taux
 
 1/10 paires cointegrees  _(sans synthese)_
 
-_Statut **OK** · observation 2026-09-28 · moteur `statistique` · [donnees](../donnees/cointegration_taux.csv)_
+_Statut **OK** · observation 2026-09-29 · moteur `statistique` · [donnees](../donnees/cointegration_taux.csv)_
 
 
 ### Pca taux
@@ -71,9 +71,9 @@ _Statut **OK** · observation 2026-07-01 · moteur `statistique` · [donnees](..
 
 ### Hp filter taux
 
-taux 10 ans observe=5.240%, tendance HP=5.011%, ecart cyclique=+0.229pt -- au-dessus de sa tendance locale
+taux 10 ans observe=5.260%, tendance HP=5.038%, ecart cyclique=+0.222pt -- au-dessus de sa tendance locale
 
-_Statut **OK** · observation 2026-09-28 · moteur `series-temporelles` · [donnees](../donnees/hp_filter_taux.csv) · [graphique](../graphiques/hp_filter_taux/apercu.png)_
+_Statut **OK** · observation 2026-09-29 · moteur `series-temporelles` · [donnees](../donnees/hp_filter_taux.csv) · [graphique](../graphiques/hp_filter_taux/apercu.png)_
 
 
 ### Facteur qualite credit
