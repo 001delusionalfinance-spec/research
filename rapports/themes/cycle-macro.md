@@ -2,7 +2,7 @@
 
 Activite, emploi, inflation, immobilier, commerce et finances publiques.
 
-Mis a jour : **2026-09-29 23:41 UTC** · 9 lectures.
+Mis a jour : **2026-09-30 00:51 UTC** · 9 lectures.
 
 [Retour au tableau de bord](../README.md)
 
@@ -43,9 +43,9 @@ _Statut **OK** · observation non exposee par la sortie · moteur `macro` · [do
 
 ### Matieres premieres macro
 
-ratio cuivre/or stable -- pas de signal net sur la croissance (+3.1% sur 3 mois). Brent 96.1$ (+31.8% sur 3 mois, +41.4% sur 12 mois), gaz -7.6% sur 3 mois, ecart Brent-WTI +6.8$ -- energie nettement plus chere sur un an -- pression inflationniste a venir que les prix a la consommation ne montrent pas encore
+le ratio cuivre/or monte -- la croissance domine la peur (+5.3% sur 3 mois). Brent 96.0$ (+34.2% sur 3 mois, +43.3% sur 12 mois), gaz -6.2% sur 3 mois, ecart Brent-WTI +6.7$ -- energie nettement plus chere sur un an -- pression inflationniste a venir que les prix a la consommation ne montrent pas encore
 
-_Statut **OK** · observation 2026-09-29 · moteur `macro` · [donnees](../donnees/matieres_premieres_macro.csv) · [graphique](../graphiques/matieres_premieres_macro/apercu.png)_
+_Statut **OK** · observation 2026-09-30 · moteur `macro` · [donnees](../donnees/matieres_premieres_macro.csv) · [graphique](../graphiques/matieres_premieres_macro/apercu.png)_
 
 
 ### Surprise macro composite

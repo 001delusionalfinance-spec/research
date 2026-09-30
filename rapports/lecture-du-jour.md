@@ -1,4 +1,4 @@
-# Rapport global — 2026-09-29 23:41 UTC
+# Rapport global — 2026-09-30 00:51 UTC
 
 **Etat global : OK** · 112/112 modeles reussis · 0 source(s) suspecte(s) · 0 source(s) gelee(s).
 
@@ -41,7 +41,7 @@ Activite, emploi, inflation, immobilier, commerce et finances publiques.
 - **Inflation comparee** — inflation annuelle sur 12 blocs : mediane 3.06%, dispersion 3.75pt (Nouvelle-Zelande +4.06% au plus haut, Suede +0.31% au plus bas) -- dispersion forte -- les banques centrales sont poussees a diverger, ce qui deplace les differentiels de taux et le change _(observation : date non exposee)_
 - **Activite zone euro** — zone euro : Production industrielle -0.2 % sur 12 mois, Ventes de detail +0.8 % sur 12 mois, Taux de chomage +0.1 pt sur 12 mois, Confiance industrielle +2.7 pt vs moyenne longue -- production industrielle DIVERGENTE entre grands pays -- en hausse : Espagne ; en baisse : Allemagne, France, Italie _(observation : date non exposee)_
 - **Soutenabilite dette** — 8 pays. charge la plus lourde : Canada a 25.5% du revenu. taux 10 ans AU-DESSUS de l'inflation dans 5 pays -- Royaume-Uni (+2.3pt), Etats-Unis (+1.8pt), Japon (+1.0pt), Canada (+0.9pt), Zone euro (+0.9pt). Configuration ou le ratio d'endettement monte meme a budget primaire equilibre (approximation : croissance nominale reduite a l'inflation) _(observation : date non exposee)_
-- **Matieres premieres macro** — ratio cuivre/or stable -- pas de signal net sur la croissance (+3.1% sur 3 mois). Brent 96.1$ (+31.8% sur 3 mois, +41.4% sur 12 mois), gaz -7.6% sur 3 mois, ecart Brent-WTI +6.8$ -- energie nettement plus chere sur un an -- pression inflationniste a venir que les prix a la consommation ne montrent pas encore _(observation : 2026-09-29)_
+- **Matieres premieres macro** — le ratio cuivre/or monte -- la croissance domine la peur (+5.3% sur 3 mois). Brent 96.0$ (+34.2% sur 3 mois, +43.3% sur 12 mois), gaz -6.2% sur 3 mois, ecart Brent-WTI +6.7$ -- energie nettement plus chere sur un an -- pression inflationniste a venir que les prix a la consommation ne montrent pas encore _(observation : 2026-09-30)_
 - **Surprise macro composite** — indice de surprise macro=-0.33 ({'chomage': 1, 'credit_bancaire': -1, 'inflation': -1}) -- negatif (surprises defavorables dominent) _(observation : 2026-08-01)_
 - **Balance commerciale** — balance commerciale=-88,576M$ (rang percentile=1), deficit se creuse _(observation : 2026-07-01)_
 - **Surprise inflation** — CPI MoM=+0.396%, prevision naive=+0.316%, surprise=+0.080pt -- surprise haussiere (inflation plus forte qu'attendu) _(observation : 2026-08-01)_
@@ -54,7 +54,7 @@ Courbes souveraines, conditions financieres, credit, emission et taux reels.
 - **Courbe taux us** — 10 ans=5.24%, 2 ans=4.92%, spread=+0.32pt -- normale (0 run(s) consecutif(s) dans l'historique accumule) _(observation : 2026-09-28)_
 - **Cycle credit** — credit bancaire total croissance YoY=+6.15%, rang percentile historique=39.7196261682243, lecture=normal _(observation : 2026-09-16)_
 - **Conditions financieres** — indice conditions financieres=+0.106 (3 composantes: {'taux_directeur': 0.5971439233898245, 'courbe_inversee': 0.23568763984021313, 'vix': -0.5151221380662802}) -- conditions proches de la normale _(observation : 2026-09-28)_
-- **Emission tresor us** — 84 derniers jours, 7985 Mds$ offerts : court (moins d'un an) 6897 Mds$ (86%), intermediaire (2 a 10 ans) 969 Mds$ (12%), long (20 a 30 ans) 119 Mds$ (2%) -- financement concentre sur le court et l'intermediaire, part longue a 2% -- peu de pression par la duration _(observation : date non exposee)_
+- **Emission tresor us** — 84 derniers jours, 7785 Mds$ offerts : court (moins d'un an) 6755 Mds$ (87%), intermediaire (2 a 10 ans) 911 Mds$ (12%), long (20 a 30 ans) 119 Mds$ (2%) -- financement concentre sur le court et l'intermediaire, part longue a 2% -- peu de pression par la duration _(observation : date non exposee)_
 - **Pentes courbes** — 7 courbes : pente de +0.30pt (Australie) a +1.20pt (Japon) -- aucune courbe inversee -- pas de signal recessif par la pente _(observation : 2026-09-28)_
 - **Stationnarite taux** — 1/5 series stationnaires (niveau, pas en difference) -- a garder en tete avant toute correlation/regression sur ces series telles quelles  _(sans synthese)_ _(observation : 2026-09-28)_
 - **Cointegration taux** — 1/10 paires cointegrees  _(sans synthese)_ _(observation : 2026-09-28)_
@@ -70,20 +70,20 @@ Change, actions, secteurs, facteurs, rotations et signaux d'allocation.
 
 - **Reer us** — REER US=108.25 (rang percentile=94, variation YoY=+0.90%) -- dollar reel fort (competitivite reduite) _(observation : 2026-07-01)_
 - **Differentiel taux change** — 8 paires testees sur variations a 21 jours -- le lien taux/change tient sur 5 paire(s) apres correction pour tests multiples : EURUSD, USDJPY, USDCAD, AUDUSD, EURJPY _(observation : 2026-09-28)_
-- **Indices mondiaux** — 7 indices (devise locale) : Coree (KOSPI) +103.5% en tete sur 12 mois, Hong Kong (Hang Seng) -5.7% en queue -- ecart tres large entre blocs sur 12 mois (109pt) -- les cycles economiques ou les flux divergent nettement. ROTATION en cours : Coree (KOSPI) mene sur 12 mois mais Hong Kong (Hang Seng) a repris la tete sur 3 mois _(observation : 2026-09-29)_
+- **Indices mondiaux** — 7 indices (devise locale) : Coree (KOSPI) +102.5% en tete sur 12 mois, Hong Kong (Hang Seng) -5.7% en queue -- ecart tres large entre blocs sur 12 mois (108pt) -- les cycles economiques ou les flux divergent nettement. ROTATION en cours : Coree (KOSPI) mene sur 12 mois mais Hong Kong (Hang Seng) a repris la tete sur 3 mois _(observation : 2026-09-30)_
 - **Correlation glissante** — correlation glissante 60j SP500/VIX = -0.759 (min=-0.955, max=-0.429 sur la fenetre d'historique disponible) -- dans la zone intermediaire de sa fourchette historique _(observation : 2026-09-29)_
 - **Clustering marches** — 32 marches, 4 clusters (average linkage, distance=1-|r|) : cluster 1 : ['CORN', 'GBP_FX', 'NAT_GAS', 'PALLADIUM', 'SOFR_3M', 'SOYBEANS'] | cluster 2 : ['AUD_FX', 'BRENT_CRUDE', 'CAD_FX', 'CHF_FX', 'COPPER', 'GOLD', 'JPY_FX', 'MXN_FX', 'NASDAQ_MINI', 'NZD_FX', 'PLATINUM', 'RUSSELL_MINI', 'SILVER', 'USD_INDEX', 'UST_10Y', 'UST_2Y', 'UST_5Y', 'UST_ULTRA_10Y', 'UST_ULTRA_BOND', 'VIX_FUT', 'WHEAT', 'WTI_CRUDE'] | cluster 3 : ['EUR_FX', 'SP500_EMINI'] | cluster 4 : ['FED_FUNDS', 'UST_BOND'] _(observation : 2026-09-22)_
 - **Beta facteur macro** — beta SP500/DGS10 (60j) = -0.0810 (rendement SP500 pour +1pt de taux 10 ans, 57/60 jours avec variation reelle) -- sensibilite elevee au facteur macro (choc de +100pb extrapole = -7.8%) _(observation : 2026-09-28)_
 - **Momentum prix** — SP500 momentum 12-1 mois = 15.77% -- haussier (momentum positif), detail 1/3/6/12m = [-0.53, 2.29, 17.5, 15.16] _(observation : 2026-09-29)_
 - **Carry proxy** — Chine : 1.54% vs US 3.88% -- diff=-2.34pt (carry negatif (taux < US))  _(sans synthese)_ _(observation : 2026-09-28)_
 - **Beta vol** — beta SP500/VIX (60j) = -0.00486 (rendement SP500 pour +1pt VIX) -- sensibilite normale, relation inverse attendue (normale) _(observation : 2026-09-29)_
-- **Rotation sectorielle** — classement momentum 3 mois (10 secteurs) : 1. Energie (XLE) : +15.87% | 2. Sante (XLV) : +7.61% | 3. Technologie (XLK) : +2.09% | 4. Finance (XLF) : +0.75% | 5. Consommation de base (XLP) : -1.47% _(observation : 2026-09-29)_
+- **Rotation sectorielle** — classement momentum 3 mois (10 secteurs) : 1. Energie (XLE) : +15.90% | 2. Sante (XLV) : +6.54% | 3. Technologie (XLK) : +4.92% | 4. Finance (XLF) : +0.88% | 5. Materiaux (XLB) : -2.35% _(observation : 2026-09-29)_
 - **Saisonnalite** — rendement journalier moyen ete=+0.0179%, hiver=+0.0465% (t=-1.03, p=0.3030) -- non significatif (attendu vu la faible puissance sur seulement ~2 ans) _(observation : 2026-09-29)_
-- **Dispersion sectorielle** — 10 secteurs, rendement moyen 3m=-1.27%, dispersion (ecart-type)=7.92pt, etendue=28.29pt -- dispersion intermediaire _(observation : 2026-09-29)_
-- **Low volatility** — tercile bas-vol ['XLF', 'XLRE', 'XLU'] Sharpe=-0.842 vs tercile haut-vol ['XLY', 'XLE', 'XLK'] Sharpe=0.040 -- anomalie low-vol non confirmee sur cet echantillon (puissance statistique faible, n petit -- limite assumee) _(observation : 2026-09-29)_
-- **Momentum cross sectional** — panier gagnant ['XLE', 'XLV', 'XLK'] (+8.52%) vs panier perdant ['XLY', 'XLI', 'XLU'] (-9.35%) -- spread momentum=+17.87pt _(observation : 2026-09-29)_
+- **Dispersion sectorielle** — 10 secteurs, rendement moyen 3m=-1.38%, dispersion (ecart-type)=8.36pt, etendue=30.61pt -- dispersion intermediaire _(observation : 2026-09-29)_
+- **Low volatility** — tercile bas-vol ['XLF', 'XLRE', 'XLU'] Sharpe=-0.720 vs tercile haut-vol ['XLY', 'XLE', 'XLK'] Sharpe=0.153 -- anomalie low-vol non confirmee sur cet echantillon (puissance statistique faible, n petit -- limite assumee) _(observation : 2026-09-29)_
+- **Momentum cross sectional** — panier gagnant ['XLE', 'XLV', 'XLK'] (+9.12%) vs panier perdant ['XLI', 'XLRE', 'XLU'] (-10.10%) -- spread momentum=+19.22pt _(observation : 2026-09-29)_
 - **Cointegration secteurs** — 0/10 secteurs cointegres avec SP500 -- decouples : ['XLK', 'XLF', 'XLE', 'XLV', 'XLI', 'XLY', 'XLP', 'XLU', 'XLB', 'XLRE']  _(sans synthese)_ _(observation : 2026-09-29)_
-- **Correlation facteurs** — correlation entre momentum 3m et beta-VIX, 10 secteurs : +0.361 (facteurs largement independants) _(observation : 2026-09-29)_
+- **Correlation facteurs** — correlation entre momentum 3m et beta-VIX, 10 secteurs : +0.215 (facteurs largement independants) _(observation : 2026-09-29)_
 
 ## [Positionnement et comportement](themes/positionnement.md)
 

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-29T23:41:17.207719+00:00",
+  "generated_at": "2026-09-30T00:51:49.393752+00:00",
   "status": "ok",
   "models": [
     {
@@ -183,18 +183,18 @@
       "titre": "Matieres premieres macro",
       "theme": "cycle-macro",
       "lane": "macro",
-      "lecture": "ratio cuivre/or stable -- pas de signal net sur la croissance (+3.1% sur 3 mois). Brent 96.1$ (+31.8% sur 3 mois, +41.4% sur 12 mois), gaz -7.6% sur 3 mois, ecart Brent-WTI +6.8$ -- energie nettement plus chere sur un an -- pression inflationniste a venir que les prix a la consommation ne montrent pas encore",
+      "lecture": "le ratio cuivre/or monte -- la croissance domine la peur (+5.3% sur 3 mois). Brent 96.0$ (+34.2% sur 3 mois, +43.3% sur 12 mois), gaz -6.2% sur 3 mois, ecart Brent-WTI +6.7$ -- energie nettement plus chere sur un an -- pression inflationniste a venir que les prix a la consommation ne montrent pas encore",
       "ok": true,
       "synthese": true,
       "sortie": "matieres_premieres_macro.csv",
-      "derniere_observation": "2026-09-29"
+      "derniere_observation": "2026-09-30"
     },
     {
       "nom": "emission_tresor_us",
       "titre": "Emission tresor us",
       "theme": "taux-credit-liquidite",
       "lane": "macro",
-      "lecture": "84 derniers jours, 7985 Mds$ offerts : court (moins d'un an) 6897 Mds$ (86%), intermediaire (2 a 10 ans) 969 Mds$ (12%), long (20 a 30 ans) 119 Mds$ (2%) -- financement concentre sur le court et l'intermediaire, part longue a 2% -- peu de pression par la duration",
+      "lecture": "84 derniers jours, 7785 Mds$ offerts : court (moins d'un an) 6755 Mds$ (87%), intermediaire (2 a 10 ans) 911 Mds$ (12%), long (20 a 30 ans) 119 Mds$ (2%) -- financement concentre sur le court et l'intermediaire, part longue a 2% -- peu de pression par la duration",
       "ok": true,
       "synthese": true,
       "sortie": "emission_tresor_us.csv",
@@ -227,11 +227,11 @@
       "titre": "Indices mondiaux",
       "theme": "marches-allocation",
       "lane": "factorielle",
-      "lecture": "7 indices (devise locale) : Coree (KOSPI) +103.5% en tete sur 12 mois, Hong Kong (Hang Seng) -5.7% en queue -- ecart tres large entre blocs sur 12 mois (109pt) -- les cycles economiques ou les flux divergent nettement. ROTATION en cours : Coree (KOSPI) mene sur 12 mois mais Hong Kong (Hang Seng) a repris la tete sur 3 mois",
+      "lecture": "7 indices (devise locale) : Coree (KOSPI) +102.5% en tete sur 12 mois, Hong Kong (Hang Seng) -5.7% en queue -- ecart tres large entre blocs sur 12 mois (108pt) -- les cycles economiques ou les flux divergent nettement. ROTATION en cours : Coree (KOSPI) mene sur 12 mois mais Hong Kong (Hang Seng) a repris la tete sur 3 mois",
       "ok": true,
       "synthese": true,
       "sortie": "indices_mondiaux.csv",
-      "derniere_observation": "2026-09-29"
+      "derniere_observation": "2026-09-30"
     },
     {
       "nom": "vol_cross_asset",
@@ -612,7 +612,7 @@
       "titre": "Rotation sectorielle",
       "theme": "marches-allocation",
       "lane": "factorielle",
-      "lecture": "classement momentum 3 mois (10 secteurs) : 1. Energie (XLE) : +15.87% | 2. Sante (XLV) : +7.61% | 3. Technologie (XLK) : +2.09% | 4. Finance (XLF) : +0.75% | 5. Consommation de base (XLP) : -1.47%",
+      "lecture": "classement momentum 3 mois (10 secteurs) : 1. Energie (XLE) : +15.90% | 2. Sante (XLV) : +6.54% | 3. Technologie (XLK) : +4.92% | 4. Finance (XLF) : +0.88% | 5. Materiaux (XLB) : -2.35%",
       "ok": true,
       "synthese": true,
       "sortie": "rotation_sectorielle.csv",
@@ -634,7 +634,7 @@
       "titre": "Dispersion sectorielle",
       "theme": "marches-allocation",
       "lane": "factorielle",
-      "lecture": "10 secteurs, rendement moyen 3m=-1.27%, dispersion (ecart-type)=7.92pt, etendue=28.29pt -- dispersion intermediaire",
+      "lecture": "10 secteurs, rendement moyen 3m=-1.38%, dispersion (ecart-type)=8.36pt, etendue=30.61pt -- dispersion intermediaire",
       "ok": true,
       "synthese": true,
       "sortie": "dispersion_sectorielle.csv",
@@ -645,7 +645,7 @@
       "titre": "Low volatility",
       "theme": "marches-allocation",
       "lane": "factorielle",
-      "lecture": "tercile bas-vol ['XLF', 'XLRE', 'XLU'] Sharpe=-0.842 vs tercile haut-vol ['XLY', 'XLE', 'XLK'] Sharpe=0.040 -- anomalie low-vol non confirmee sur cet echantillon (puissance statistique faible, n petit -- limite assumee)",
+      "lecture": "tercile bas-vol ['XLF', 'XLRE', 'XLU'] Sharpe=-0.720 vs tercile haut-vol ['XLY', 'XLE', 'XLK'] Sharpe=0.153 -- anomalie low-vol non confirmee sur cet echantillon (puissance statistique faible, n petit -- limite assumee)",
       "ok": true,
       "synthese": true,
       "sortie": "low_volatility.csv",
@@ -667,7 +667,7 @@
       "titre": "Momentum cross sectional",
       "theme": "marches-allocation",
       "lane": "factorielle",
-      "lecture": "panier gagnant ['XLE', 'XLV', 'XLK'] (+8.52%) vs panier perdant ['XLY', 'XLI', 'XLU'] (-9.35%) -- spread momentum=+17.87pt",
+      "lecture": "panier gagnant ['XLE', 'XLV', 'XLK'] (+9.12%) vs panier perdant ['XLI', 'XLRE', 'XLU'] (-10.10%) -- spread momentum=+19.22pt",
       "ok": true,
       "synthese": true,
       "sortie": "momentum_cross_sectional.csv",
@@ -1151,7 +1151,7 @@
       "titre": "Correlation facteurs",
       "theme": "marches-allocation",
       "lane": "factorielle",
-      "lecture": "correlation entre momentum 3m et beta-VIX, 10 secteurs : +0.361 (facteurs largement independants)",
+      "lecture": "correlation entre momentum 3m et beta-VIX, 10 secteurs : +0.215 (facteurs largement independants)",
       "ok": true,
       "synthese": true,
       "sortie": "correlation_facteurs.csv",
