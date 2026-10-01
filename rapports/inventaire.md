@@ -1,4 +1,4 @@
-# Inventaire du dispositif -- 2026-10-01 15:35 UTC
+# Inventaire du dispositif -- 2026-10-01 20:38 UTC
 
 Genere par `inventaire.py`. **Ne pas recopier ces chiffres ailleurs** : ils changent a chaque ajout, et une copie manuelle derive le jour meme (constate le 2026-09-14).
 

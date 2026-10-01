@@ -1,7 +1,7 @@
 mesure,date,niveau,percentile_5_ans,n_observations,etat
-Petrole (OVX),2026-10-01,52.0,82.6,1260,tendu
-Or (GVZ),2026-10-01,23.58,82.1,1260,tendu
-Taux US (MOVE),2026-10-01,109.02,61.5,1260,median
-Nasdaq (VXN),2026-10-01,23.71,58.6,1260,median
-Vol de la vol (VVIX),2026-10-01,94.79,49.6,1260,median
-Actions US (VIX),2026-10-01,17.37,47.3,1260,median
+Petrole (OVX),2026-10-01,51.69,82.0,1260,tendu
+Or (GVZ),2026-10-01,23.32,81.3,1260,tendu
+Taux US (MOVE),2026-10-01,108.13,59.7,1260,median
+Nasdaq (VXN),2026-10-01,22.51,50.8,1260,median
+Vol de la vol (VVIX),2026-10-01,92.01,41.4,1260,median
+Actions US (VIX),2026-10-01,16.39,36.4,1260,median
