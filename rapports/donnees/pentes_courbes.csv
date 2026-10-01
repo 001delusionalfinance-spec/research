@@ -1,8 +1,8 @@
 bloc,date,taux_court_pct,taux_long_pct,pente_pt,variation_pente_3m_pt,variation_jambe_courte_3m_pt,variation_jambe_longue_3m_pt,mouvement,forme
 Australie,2026-09-23,4.947,5.245,0.298,-0.03,0.503,0.473,stable,normale
 Etats-Unis,2026-09-29,4.89,5.26,0.37,0.07,0.75,0.82,stable,normale
-Zone euro,2026-09-29,3.211,3.608,0.397,-0.051,0.735,0.683,stable,normale
+Zone euro,2026-09-30,3.159,3.582,0.422,-0.067,0.685,0.618,stable,normale
 Royaume-Uni (5s10s),2026-09-29,4.936,5.381,0.445,-0.104,0.658,0.554,aplatissement,normale
 Suede,2026-09-30,2.747,3.239,0.492,-0.067,0.605,0.538,stable,normale
-Canada,2026-09-28,3.37,3.96,0.59,-0.05,0.64,0.59,stable,normale
+Canada,2026-09-29,3.37,3.99,0.62,-0.02,0.63,0.61,stable,normale
 Japon,2026-08-31,1.743,2.943,1.2,-0.082,0.343,0.261,stable,normale
