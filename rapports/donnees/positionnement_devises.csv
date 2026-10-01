@@ -1,5 +1,5 @@
 devise,contrat,date,position_nette_speculative,percentile_historique,differentiel_taux_vs_us_pt,sens,nature_de_la_position,extremite
-Yen,JPY_FX,2026-09-22,71982,96.9,-2.88,long,pari directionnel couteux (long une devise moins remuneree),extreme haut
+Yen,JPY_FX,2026-09-22,71982,96.9,-2.62,long,pari directionnel couteux (long une devise moins remuneree),extreme haut
 Peso mexicain,MXN_FX,2026-09-22,75167,71.1,,long,differentiel inconnu,median
 Dollar neo-zelandais,NZD_FX,2026-09-22,-11380,47.5,-1.12,short,short adosse au differentiel,median
 Euro,EUR_FX,2026-09-22,-52334,27.9,-1.38,short,short adosse au differentiel,median

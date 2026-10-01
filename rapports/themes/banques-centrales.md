@@ -2,7 +2,7 @@
 
 Decisions, fonctions de reaction, bilan, communication et trajectoires de taux.
 
-Mis a jour : **2026-10-01 07:56 UTC** · 19 lectures.
+Mis a jour : **2026-10-01 09:09 UTC** · 19 lectures.
 
 [Retour au tableau de bord](../README.md)
 
@@ -29,9 +29,9 @@ _Statut **OK** · observation 2026-09-29 · moteur `macro` · [donnees](../donne
 
 ### Divergence taux directeurs
 
-12 banques centrales : ecart de taux max 4.35pt (Australie 4.35% contre Suisse 0.00%), mediane 2.88% -- cycles alignes dans le meme sens (resserrement) -- divergence limitee
+12 banques centrales : ecart de taux max 4.50pt (Norvege 4.50% contre Suisse 0.00%), mediane 2.88% -- cycles alignes dans le meme sens (resserrement) -- divergence limitee
 
-_Statut **OK** · observation 2026-09-22 · moteur `macro` · [donnees](../donnees/divergence_taux_directeurs.csv)_
+_Statut **OK** · observation 2026-09-29 · moteur `macro` · [donnees](../donnees/divergence_taux_directeurs.csv)_
 
 
 ### Bilans banques centrales
