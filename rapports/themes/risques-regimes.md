@@ -2,7 +2,7 @@
 
 Volatilite, queues, drawdowns, stress, contagion et changements de regime.
 
-Mis a jour : **2026-10-01 20:38 UTC** · 23 lectures.
+Mis a jour : **2026-10-02 00:21 UTC** · 23 lectures.
 
 [Retour au tableau de bord](../README.md)
 

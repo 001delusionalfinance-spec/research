@@ -2,7 +2,7 @@
 
 **C'est le point d'entree unique du depot.** Les scripts et fichiers techniques restent hors de cette vue ; toutes les conclusions, donnees publiees et visualisations sont rassemblees ici.
 
-Derniere publication : **2026-10-01 20:38 UTC** · Etat **OK** · 112/112 modeles reussis.
+Derniere publication : **2026-10-02 00:21 UTC** · Etat **ATTENTION** · 112/112 modeles reussis.
 
 ## Commencer ici
 
