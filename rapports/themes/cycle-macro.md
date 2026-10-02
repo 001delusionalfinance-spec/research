@@ -2,7 +2,7 @@
 
 Activite, emploi, inflation, immobilier, commerce et finances publiques.
 
-Mis a jour : **2026-10-02 00:21 UTC** · 9 lectures.
+Mis a jour : **2026-10-02 05:55 UTC** · 9 lectures.
 
 [Retour au tableau de bord](../README.md)
 
@@ -36,14 +36,14 @@ _Statut **OK** · observation non exposee par la sortie · moteur `macro` · [do
 
 ### Soutenabilite dette
 
-8 pays. charge la plus lourde : Canada a 25.5% du revenu. taux 10 ans AU-DESSUS de l'inflation dans 5 pays -- Royaume-Uni (+2.3pt), Etats-Unis (+1.9pt), Japon (+1.0pt), Canada (+1.0pt), Zone euro (+0.9pt). Configuration ou le ratio d'endettement monte meme a budget primaire equilibre (approximation : croissance nominale reduite a l'inflation)
+8 pays. charge la plus lourde : Canada a 25.5% du revenu. taux 10 ans AU-DESSUS de l'inflation dans 5 pays -- Royaume-Uni (+2.3pt), Etats-Unis (+1.9pt), Japon (+1.2pt), Canada (+1.0pt), Zone euro (+0.9pt). Configuration ou le ratio d'endettement monte meme a budget primaire equilibre (approximation : croissance nominale reduite a l'inflation)
 
 _Statut **OK** · observation non exposee par la sortie · moteur `macro` · [donnees](../donnees/soutenabilite_dette.csv)_
 
 
 ### Matieres premieres macro
 
-le ratio cuivre/or monte -- la croissance domine la peur (+5.5% sur 3 mois). Brent 102.6$ (+42.8% sur 3 mois, +60.0% sur 12 mois), gaz -7.8% sur 3 mois, ecart Brent-WTI +9.6$ -- energie nettement plus chere sur un an -- pression inflationniste a venir que les prix a la consommation ne montrent pas encore
+le ratio cuivre/or monte -- la croissance domine la peur (+5.3% sur 3 mois). Brent 102.0$ (+42.1% sur 3 mois, +59.1% sur 12 mois), gaz -8.7% sur 3 mois, ecart Brent-WTI +9.6$ -- energie nettement plus chere sur un an -- pression inflationniste a venir que les prix a la consommation ne montrent pas encore
 
 _Statut **OK** · observation 2026-10-02 · moteur `macro` · [donnees](../donnees/matieres_premieres_macro.csv) · [graphique](../graphiques/matieres_premieres_macro/apercu.png)_
 
