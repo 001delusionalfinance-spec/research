@@ -2,13 +2,13 @@
 
 Volatilite, queues, drawdowns, stress, contagion et changements de regime.
 
-Mis a jour : **2026-10-02 12:30 UTC** · 23 lectures.
+Mis a jour : **2026-10-02 12:47 UTC** · 23 lectures.
 
 [Retour au tableau de bord](../README.md)
 
 ### Vol cross asset
 
-6 mesures de volatilite : Petrole (OVX) 82e pct, Or (GVZ) 81e pct, Taux US (MOVE) 60e pct, Nasdaq (VXN) 51e pct, Vol de la vol (VVIX) 41e pct, Actions US (VIX) 33e pct -- stress LOCALISE sur Petrole (OVX), Or (GVZ) pendant que le reste ne l'est pas -- episode propre a cette classe d'actifs, pas une aversion au risque d'ensemble
+6 mesures de volatilite : Petrole (OVX) 82e pct, Or (GVZ) 81e pct, Taux US (MOVE) 60e pct, Nasdaq (VXN) 51e pct, Vol de la vol (VVIX) 41e pct, Actions US (VIX) 32e pct -- stress LOCALISE sur Petrole (OVX), Or (GVZ) pendant que le reste ne l'est pas -- episode propre a cette classe d'actifs, pas une aversion au risque d'ensemble
 
 _Statut **OK** · observation 2026-10-02 · moteur `risque` · [donnees](../donnees/vol_cross_asset.csv) · [graphique](../graphiques/vol_cross_asset/apercu.png)_
 
@@ -36,7 +36,7 @@ _Statut **OK** · observation 2026-10-01 · moteur `series-temporelles` · [donn
 
 ### Ornstein uhlenbeck vix
 
-VIX actuel=16.09, niveau moyen estime (mu)=20.20, demi-vie=28.8j, ecart actuel=-4.11 -- VIX actuel en-dessous de son niveau moyen de long terme
+VIX actuel=16.03, niveau moyen estime (mu)=20.20, demi-vie=28.8j, ecart actuel=-4.17 -- VIX actuel en-dessous de son niveau moyen de long terme
 
 _Statut **OK** · observation 2026-10-02 · moteur `series-temporelles` · [donnees](../donnees/ornstein_uhlenbeck_vix.csv) · [graphique](../graphiques/ornstein_uhlenbeck_vix/apercu.png)_
 
@@ -50,14 +50,14 @@ _Statut **OK** · observation 2026-10-01 · moteur `series-temporelles` · [donn
 
 ### Kalman niveau local
 
-VIX observe=16.09, filtre Kalman=16.13 (ecart-type=0.62), ratio signal/bruit=0.2052 -- le filtre lisse fortement le bruit, reagit lentement (ecart obs.-filtre=-0.04)
+VIX observe=16.03, filtre Kalman=16.08 (ecart-type=0.62), ratio signal/bruit=0.2052 -- le filtre lisse fortement le bruit, reagit lentement (ecart obs.-filtre=-0.05)
 
 _Statut **OK** · observation 2026-10-02 · moteur `series-temporelles` · [donnees](../donnees/kalman_niveau_local.csv)_
 
 
 ### Var sp500 vix
 
-VAR ordre choisi par AIC=10 -- coef SP500(t-1)->VIX(t)=0.36546728852295374 (SP500(t-1) en hausse -> VIX(t) tend aussi a monter), coef VIX(t-1)->SP500(t)=-0.05232405597092514 (VIX(t-1) en hausse -> SP500(t) tend a baisser)
+VAR ordre choisi par AIC=10 -- coef SP500(t-1)->VIX(t)=0.3654672885226713 (SP500(t-1) en hausse -> VIX(t) tend aussi a monter), coef VIX(t-1)->SP500(t)=-0.052324055970924155 (VIX(t-1) en hausse -> SP500(t) tend a baisser)
 
 _Statut **OK** · observation 2026-10-01 · moteur `series-temporelles` · [donnees](../donnees/var_sp500_vix.csv)_
 
@@ -148,7 +148,7 @@ _Statut **OK** · observation 2026-10-01 · moteur `risque` · [donnees](../donn
 
 ### Decomposition stl
 
-VIX : tendance=15.98, composante saisonniere (periode 5j)=-0.587, residu=+0.701 -- la saisonnalite explique 0.71% de la variance totale (negligeable)
+VIX : tendance=15.97, composante saisonniere (periode 5j)=-0.593, residu=+0.651 -- la saisonnalite explique 0.71% de la variance totale (negligeable)
 
 _Statut **OK** · observation 2026-10-02 · moteur `series-temporelles` · [donnees](../donnees/decomposition_stl.csv) · [graphique](../graphiques/decomposition_stl/apercu.png)_
 

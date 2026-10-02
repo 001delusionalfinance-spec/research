@@ -2,7 +2,7 @@
 
 Activite, emploi, inflation, immobilier, commerce et finances publiques.
 
-Mis a jour : **2026-10-02 12:30 UTC** · 9 lectures.
+Mis a jour : **2026-10-02 12:47 UTC** · 9 lectures.
 
 [Retour au tableau de bord](../README.md)
 
@@ -43,7 +43,7 @@ _Statut **OK** · observation non exposee par la sortie · moteur `macro` · [do
 
 ### Matieres premieres macro
 
-le ratio cuivre/or monte -- la croissance domine la peur (+5.2% sur 3 mois). Brent 100.0$ (+39.2% sur 3 mois, +56.0% sur 12 mois), gaz -8.3% sur 3 mois, ecart Brent-WTI +10.0$ -- energie nettement plus chere sur un an -- pression inflationniste a venir que les prix a la consommation ne montrent pas encore
+ratio cuivre/or stable -- pas de signal net sur la croissance (+4.7% sur 3 mois). Brent 99.8$ (+39.0% sur 3 mois, +55.7% sur 12 mois), gaz -8.0% sur 3 mois, ecart Brent-WTI +10.0$ -- energie nettement plus chere sur un an -- pression inflationniste a venir que les prix a la consommation ne montrent pas encore
 
 _Statut **OK** · observation 2026-10-02 · moteur `macro` · [donnees](../donnees/matieres_premieres_macro.csv) · [graphique](../graphiques/matieres_premieres_macro/apercu.png)_
 
