@@ -2,7 +2,7 @@
 
 Relations statistiques, previsions, tests hors echantillon et robustesse des modeles.
 
-Mis a jour : **2026-10-02 18:01 UTC** · 17 lectures.
+Mis a jour : **2026-10-02 18:09 UTC** · 17 lectures.
 
 [Retour au tableau de bord](../README.md)
 
@@ -29,7 +29,7 @@ _Statut **OK** · observation 2026-10-02 · moteur `ml` · [donnees](../donnees/
 
 ### Anomalie multivariee
 
-distance de Mahalanobis=0.956 (seuil 3.0) -- jour ordinaire
+distance de Mahalanobis=0.850 (seuil 3.0) -- jour ordinaire
 
 _Statut **OK** · observation 2026-10-02 · moteur `ml` · [donnees](../donnees/anomalie_multivariee.csv)_
 
