@@ -2,7 +2,7 @@
 
 Courbes souveraines, conditions financieres, credit, emission et taux reels.
 
-Mis a jour : **2026-10-02 05:55 UTC** · 13 lectures.
+Mis a jour : **2026-10-02 12:30 UTC** · 13 lectures.
 
 [Retour au tableau de bord](../README.md)
 
@@ -29,7 +29,7 @@ _Statut **OK** · observation 2026-09-16 · moteur `macro` · [donnees](../donne
 
 ### Conditions financieres
 
-indice conditions financieres=+0.070 (3 composantes: {'taux_directeur': 0.5964302013377618, 'courbe_inversee': 0.08635332509829612, 'vix': -0.4717835015716578}) -- conditions proches de la normale
+indice conditions financieres=+0.058 (3 composantes: {'taux_directeur': 0.5964302013377618, 'courbe_inversee': 0.08635332509829612, 'vix': -0.5088703238807334}) -- conditions proches de la normale
 
 _Statut **OK** · observation 2026-09-30 · moteur `macro` · [donnees](../donnees/conditions_financieres.csv) · [graphique](../graphiques/conditions_financieres/apercu.png)_
 
@@ -45,7 +45,7 @@ _Statut **OK** · observation non exposee par la sortie · moteur `macro` · [do
 
 7 courbes : pente de +0.40pt (Australie) a +1.10pt (Japon) -- aucune courbe inversee -- pas de signal recessif par la pente
 
-_Statut **OK** · observation 2026-09-30 · moteur `series-temporelles` · [donnees](../donnees/pentes_courbes.csv) · [graphique](../graphiques/pentes_courbes/apercu.png)_
+_Statut **OK** · observation 2026-10-01 · moteur `series-temporelles` · [donnees](../donnees/pentes_courbes.csv) · [graphique](../graphiques/pentes_courbes/apercu.png)_
 
 
 ### Stationnarite taux

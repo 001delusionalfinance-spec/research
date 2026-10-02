@@ -2,7 +2,7 @@
 
 Decisions, fonctions de reaction, bilan, communication et trajectoires de taux.
 
-Mis a jour : **2026-10-02 05:55 UTC** · 19 lectures.
+Mis a jour : **2026-10-02 12:30 UTC** · 19 lectures.
 
 [Retour au tableau de bord](../README.md)
 
@@ -36,7 +36,7 @@ _Statut **OK** · observation 2026-09-29 · moteur `macro` · [donnees](../donne
 
 ### Bilans banques centrales
 
-9 bilans suivis sur 12 mois : de -19.2% (RBA -- titres locaux) a +8.6% (Fed -- titres du Tresor) -- regimes OPPOSES -- 5 bilan(s) en reduction pendant que 4 s'etendent, la liquidite mondiale ne va pas dans un sens unique
+9 bilans suivis sur 12 mois : de -17.7% (RBA -- titres locaux) a +8.6% (Fed -- titres du Tresor) -- regimes OPPOSES -- 5 bilan(s) en reduction pendant que 4 s'etendent, la liquidite mondiale ne va pas dans un sens unique
 
 _Statut **OK** · observation 2026-09-30 · moteur `macro` · [donnees](../donnees/bilans_banques_centrales.csv) · [graphique](../graphiques/bilans_banques_centrales/apercu.png)_
 
