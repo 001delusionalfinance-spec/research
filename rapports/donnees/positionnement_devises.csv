@@ -1,9 +1,9 @@
 devise,contrat,date,position_nette_speculative,percentile_historique,differentiel_taux_vs_us_pt,sens,nature_de_la_position,extremite
-Yen,JPY_FX,2026-09-22,71982,96.9,-2.62,long,pari directionnel couteux (long une devise moins remuneree),extreme haut
-Peso mexicain,MXN_FX,2026-09-22,75167,71.1,,long,differentiel inconnu,median
-Dollar neo-zelandais,NZD_FX,2026-09-22,-11380,47.5,-1.12,short,short adosse au differentiel,median
-Euro,EUR_FX,2026-09-22,-52334,27.9,-1.38,short,short adosse au differentiel,median
-Dollar australien,AUD_FX,2026-09-22,-46814,24.3,0.47,short,short contre le carry (position qui coute a porter),median
-Dollar canadien,CAD_FX,2026-09-22,-53210,16.5,-1.62,short,short adosse au differentiel,median
-Franc suisse,CHF_FX,2026-09-22,-26752,13.6,-3.88,short,short adosse au differentiel,extreme bas
-Livre sterling,GBP_FX,2026-09-22,-82568,2.5,-0.12,short,short adosse au differentiel,extreme bas
+Yen,JPY_FX,2026-09-29,55440,93.0,-2.62,long,pari directionnel couteux (long une devise moins remuneree),extreme haut
+Peso mexicain,MXN_FX,2026-09-29,52402,56.9,,long,differentiel inconnu,median
+Dollar neo-zelandais,NZD_FX,2026-09-29,-17315,36.2,-1.12,short,short adosse au differentiel,median
+Euro,EUR_FX,2026-09-29,-63256,23.2,-1.38,short,short adosse au differentiel,median
+Franc suisse,CHF_FX,2026-09-29,-24617,16.0,-3.88,short,short adosse au differentiel,median
+Dollar australien,AUD_FX,2026-09-29,-63239,12.1,0.47,short,short contre le carry (position qui coute a porter),extreme bas
+Dollar canadien,CAD_FX,2026-09-29,-78671,9.2,-1.62,short,short adosse au differentiel,extreme bas
+Livre sterling,GBP_FX,2026-09-29,-91075,1.6,-0.12,short,short adosse au differentiel,extreme bas

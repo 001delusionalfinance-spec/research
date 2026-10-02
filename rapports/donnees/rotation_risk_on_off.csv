@@ -3,3 +3,4 @@ date,zscore_moyen_risque,zscore_moyen_refuge,ecart,posture
 2026-09-08,0.337,0.406,-0.068,mixte/neutre
 2026-09-15,0.495,0.462,0.033,mixte/neutre
 2026-09-22,0.769,0.453,0.316,mixte/neutre
+2026-09-29,0.548,-0.132,0.68,risk-on

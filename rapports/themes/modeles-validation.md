@@ -2,7 +2,7 @@
 
 Relations statistiques, previsions, tests hors echantillon et robustesse des modeles.
 
-Mis a jour : **2026-10-02 18:09 UTC** · 17 lectures.
+Mis a jour : **2026-10-02 21:34 UTC** · 17 lectures.
 
 [Retour au tableau de bord](../README.md)
 
@@ -15,49 +15,49 @@ _Statut **OK** · observation 2026-10-02 · moteur `statistique` · [donnees](..
 
 ### Dependance queue
 
-518/7547 jours conjointement extremes (SP500 pire 10% ET VIX pire 10%), P observee=0.0686 vs P sous independance=0.0100 -- coefficient de dependance de queue=6.86 (dependance reelle)
+518/7546 jours conjointement extremes (SP500 pire 10% ET VIX pire 10%), P observee=0.0686 vs P sous independance=0.0100 -- coefficient de dependance de queue=6.86 (dependance reelle)
 
 _Statut **OK** · observation 2026-10-02 · moteur `statistique` · [donnees](../donnees/dependance_queue.csv)_
 
 
 ### Walkforward direction
 
-7517 predictions walk-forward -- momentum 5j=0.4958 vs baseline majoritaire=0.5372 -- NE BAT PAS la baseline (resultat honnete, pas ajuste pour paraitre mieux)
+7516 predictions walk-forward -- momentum 5j=0.4957 vs baseline majoritaire=0.5371 -- NE BAT PAS la baseline (resultat honnete, pas ajuste pour paraitre mieux)
 
 _Statut **OK** · observation 2026-10-02 · moteur `ml` · [donnees](../donnees/walkforward_direction_sp500.csv)_
 
 
 ### Anomalie multivariee
 
-distance de Mahalanobis=0.850 (seuil 3.0) -- jour ordinaire
+distance de Mahalanobis=0.826 (seuil 3.0) -- jour ordinaire
 
 _Statut **OK** · observation 2026-10-02 · moteur `ml` · [donnees](../donnees/anomalie_multivariee.csv)_
 
 
 ### Test overfitting
 
-meilleure fenetre in-sample=23j (accuracy=0.5162) vs meme fenetre en walk-forward=0.5159 -- ecart=+0.0003 (ecart faible)
+meilleure fenetre in-sample=23j (accuracy=0.5162) vs meme fenetre en walk-forward=0.5158 -- ecart=+0.0003 (ecart faible)
 
 _Statut **OK** · observation 2026-10-02 · moteur `ml` · [donnees](../donnees/test_overfitting_momentum.csv)_
 
 
 ### Prevision vol regression
 
-regression AR(1) (a=0.000116, b=0.2097) MSE=2.9835e-07 vs baseline persistance MSE=3.8327e-07 -- BAT la baseline (resultat honnete, pas ajuste)
+regression AR(1) (a=0.000116, b=0.2097) MSE=2.9847e-07 vs baseline persistance MSE=3.8344e-07 -- BAT la baseline (resultat honnete, pas ajuste)
 
 _Statut **OK** · observation 2026-10-02 · moteur `ml` · [donnees](../donnees/prevision_vol_regression.csv)_
 
 
 ### Kmeans regimes
 
-2049 points, k=3 -- point actuel (VIX=16.3, spread=+0.41, taux=3.88%) -> cluster 1 (tailles : {0: 357, 1: 1368, 2: 324}) -- regime calme (VIX du cluster en-dessous de la moyenne historique)
+2050 points, k=3 -- point actuel (VIX=16.4, spread=+0.46, taux=3.88%) -> cluster 1 (tailles : {0: 357, 1: 1369, 2: 324}) -- regime calme (VIX du cluster en-dessous de la moyenne historique)
 
-_Statut **OK** · observation 2026-09-30 · moteur `ml` · [donnees](../donnees/kmeans_regimes.csv)_
+_Statut **OK** · observation 2026-10-01 · moteur `ml` · [donnees](../donnees/kmeans_regimes.csv)_
 
 
 ### Ensemble signaux
 
-7517 predictions -- momentum=0.4958, vix=0.4987, ensemble=0.4987, baseline=0.5372 -- ensemble NE BAT PAS la baseline
+7516 predictions -- momentum=0.4957, vix=0.4987, ensemble=0.4987, baseline=0.5371 -- ensemble NE BAT PAS la baseline
 
 _Statut **OK** · observation 2026-10-02 · moteur `ml` · [donnees](../donnees/ensemble_signaux.csv)_
 
@@ -71,7 +71,7 @@ _Statut **OK** · observation 2026-10-02 · moteur `ml` · [donnees](../donnees/
 
 ### Couts transaction
 
-7517 predictions, 1513 changements de position (5pb/changement) -- rendement cumule brut=-93.23%, cout total=53.08%, net=-96.82% -- les frais mangent une part importante du rendement (>50% du brut)
+7516 predictions, 1513 changements de position (5pb/changement) -- rendement cumule brut=-93.27%, cout total=53.08%, net=-96.84% -- les frais mangent une part importante du rendement (>50% du brut)
 
 _Statut **OK** · observation 2026-10-02 · moteur `ml` · [donnees](../donnees/couts_transaction.csv)_
 
@@ -85,16 +85,16 @@ _Statut **OK** · observation 2026-10-02 · moteur `ml` · [donnees](../donnees/
 
 ### Decomposition variance
 
-R² SP500~DGS10 (60j) = 0.2758 -- 27.6% de la variance des rendements SP500 expliquee par les variations du taux 10 ans (le reste = idiosyncratique/autres facteurs)
+R² SP500~DGS10 (60j) = 0.2739 -- 27.4% de la variance des rendements SP500 expliquee par les variations du taux 10 ans (le reste = idiosyncratique/autres facteurs)
 
-_Statut **OK** · observation 2026-09-30 · moteur `statistique` · [donnees](../donnees/decomposition_variance.csv)_
+_Statut **OK** · observation 2026-10-01 · moteur `statistique` · [donnees](../donnees/decomposition_variance.csv)_
 
 
 ### Test chow
 
-test de Chow (taux 10 ans, 1ere vs 2eme moitie des 12 derniers mois) : F=530.017, p=0.0000 -- RUPTURE structurelle significative
+test de Chow (taux 10 ans, 1ere vs 2eme moitie des 12 derniers mois) : F=530.634, p=0.0000 -- RUPTURE structurelle significative
 
-_Statut **OK** · observation 2026-09-30 · moteur `statistique` · [donnees](../donnees/test_chow.csv)_
+_Statut **OK** · observation 2026-10-01 · moteur `statistique` · [donnees](../donnees/test_chow.csv)_
 
 
 ### Arima
@@ -106,7 +106,7 @@ _Statut **OK** · observation 2026-10-02 · moteur `series-temporelles` · [donn
 
 ### Stacking
 
-poids appris (momentum=-0.081, baseline=0.088, biais=0.092) -- accuracy stacking=0.5461 vs momentum seul=0.5022, baseline seule=0.5461 sur 2256 points test -- stacking NE BAT PAS la baseline, meilleur=stacking / baseline (ex-aequo)
+poids appris (momentum=-0.081, baseline=0.087, biais=0.092) -- accuracy stacking=0.5459 vs momentum seul=0.5020, baseline seule=0.5459 sur 2255 points test -- stacking NE BAT PAS la baseline, meilleur=stacking / baseline (ex-aequo)
 
 _Statut **OK** · observation 2026-10-02 · moteur `ml` · [donnees](../donnees/stacking.csv)_
 
@@ -120,7 +120,7 @@ _Statut **OK** · observation 2026-10-02 · moteur `ml` · [donnees](../donnees/
 
 ### Importance permutation
 
-R2 base=0.0103 -- importance momentum5j=-0.00045, importance variation_vix=0.00928 -- VIX plus important
+R2 base=0.0103 -- importance momentum5j=-0.00045, importance variation_vix=0.00929 -- VIX plus important
 
 _Statut **OK** · observation 2026-10-02 · moteur `ml` · [donnees](../donnees/importance_permutation.csv)_
 
