@@ -1,6 +1,6 @@
 # Qualite et fraicheur
 
-Derniere publication : **2026-10-02 22:22 UTC**.
+Derniere publication : **2026-10-03 00:43 UTC**.
 
 La date de publication indique quand les modeles ont ete recalcules. La date de derniere observation indique quand la source a publie sa derniere valeur ; une serie mensuelle ou trimestrielle peut donc etre saine sans porter la date du jour.
 
@@ -12,14 +12,15 @@ La date de publication indique quand les modeles ont ete recalcules. La date de 
 ## Sources
 
 - 277 series controlees
-- 276 normales
-- 1 suspectes
+- 275 normales
+- 2 suspectes
 - 0 gelees
 
 ### Sources a examiner
 
 | Serie | Derniere observation | Statut |
 |---|---:|---|
+| `fred/LRHUTTTTGBM156S.csv` | 2026-05-01 | **SUSPECTE** |
 | `bis/taux_directeurs/KR.csv` | 2026-08-28 | **SUSPECTE** |
 
 ## Controles de coherence et de perimetre

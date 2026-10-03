@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-02T22:22:32.442021+00:00",
+  "generated_at": "2026-10-03T00:43:22.611680+00:00",
   "status": "attention",
   "models": [
     {
@@ -557,7 +557,7 @@
       "titre": "Var sp500 vix",
       "theme": "risques-regimes",
       "lane": "series-temporelles",
-      "lecture": "VAR ordre choisi par AIC=10 -- coef SP500(t-1)->VIX(t)=0.36204528144518555 (SP500(t-1) en hausse -> VIX(t) tend aussi a monter), coef VIX(t-1)->SP500(t)=-0.052307333099690295 (VIX(t-1) en hausse -> SP500(t) tend a baisser)",
+      "lecture": "VAR ordre choisi par AIC=10 -- coef SP500(t-1)->VIX(t)=0.3620452814450932 (SP500(t-1) en hausse -> VIX(t) tend aussi a monter), coef VIX(t-1)->SP500(t)=-0.05230733309968992 (VIX(t-1) en hausse -> SP500(t) tend a baisser)",
       "ok": true,
       "synthese": true,
       "sortie": "var_sp500_vix.csv",
@@ -612,7 +612,7 @@
       "titre": "Rotation sectorielle",
       "theme": "marches-allocation",
       "lane": "factorielle",
-      "lecture": "classement momentum 3 mois (10 secteurs) : 1. Energie (XLE) : +18.04% | 2. Technologie (XLK) : +10.64% | 3. Sante (XLV) : +1.49% | 4. Finance (XLF) : -3.83% | 5. Consommation de base (XLP) : -5.25%",
+      "lecture": "classement momentum 3 mois (10 secteurs) : 1. Energie (XLE) : +17.81% | 2. Technologie (XLK) : +9.54% | 3. Sante (XLV) : +1.50% | 4. Finance (XLF) : -3.88% | 5. Consommation de base (XLP) : -5.48%",
       "ok": true,
       "synthese": true,
       "sortie": "rotation_sectorielle.csv",
@@ -634,7 +634,7 @@
       "titre": "Dispersion sectorielle",
       "theme": "marches-allocation",
       "lane": "factorielle",
-      "lecture": "10 secteurs, rendement moyen 3m=-2.02%, dispersion (ecart-type)=9.03pt, etendue=31.00pt -- dispersion intermediaire",
+      "lecture": "10 secteurs, rendement moyen 3m=-2.48%, dispersion (ecart-type)=9.02pt, etendue=31.10pt -- dispersion intermediaire",
       "ok": true,
       "synthese": true,
       "sortie": "dispersion_sectorielle.csv",
@@ -645,7 +645,7 @@
       "titre": "Low volatility",
       "theme": "marches-allocation",
       "lane": "factorielle",
-      "lecture": "tercile bas-vol ['XLF', 'XLRE', 'XLU'] Sharpe=-1.155 vs tercile haut-vol ['XLY', 'XLE', 'XLK'] Sharpe=0.202 -- anomalie low-vol non confirmee sur cet echantillon (puissance statistique faible, n petit -- limite assumee)",
+      "lecture": "tercile bas-vol ['XLF', 'XLRE', 'XLU'] Sharpe=-1.197 vs tercile haut-vol ['XLY', 'XLE', 'XLK'] Sharpe=0.071 -- anomalie low-vol non confirmee sur cet echantillon (puissance statistique faible, n petit -- limite assumee)",
       "ok": true,
       "synthese": true,
       "sortie": "low_volatility.csv",
@@ -667,7 +667,7 @@
       "titre": "Momentum cross sectional",
       "theme": "marches-allocation",
       "lane": "factorielle",
-      "lecture": "panier gagnant ['XLE', 'XLK', 'XLV'] (+10.06%) vs panier perdant ['XLI', 'XLRE', 'XLU'] (-9.74%) -- spread momentum=+19.79pt",
+      "lecture": "panier gagnant ['XLE', 'XLK', 'XLV'] (+9.62%) vs panier perdant ['XLI', 'XLRE', 'XLU'] (-10.18%) -- spread momentum=+19.80pt",
       "ok": true,
       "synthese": true,
       "sortie": "momentum_cross_sectional.csv",
@@ -1151,7 +1151,7 @@
       "titre": "Correlation facteurs",
       "theme": "marches-allocation",
       "lane": "factorielle",
-      "lecture": "correlation entre momentum 3m et beta-VIX, 10 secteurs : +0.038 (facteurs largement independants)",
+      "lecture": "correlation entre momentum 3m et beta-VIX, 10 secteurs : +0.072 (facteurs largement independants)",
       "ok": true,
       "synthese": true,
       "sortie": "correlation_facteurs.csv",
@@ -1236,7 +1236,7 @@
     }
   ],
   "freshness": {
-    "OK": 276,
-    "SUSPECTE": 1
+    "OK": 275,
+    "SUSPECTE": 2
   }
 }

@@ -2,7 +2,7 @@
 
 Activite, emploi, inflation, immobilier, commerce et finances publiques.
 
-Mis a jour : **2026-10-02 22:22 UTC** · 9 lectures.
+Mis a jour : **2026-10-03 00:43 UTC** · 9 lectures.
 
 [Retour au tableau de bord](../README.md)
 
