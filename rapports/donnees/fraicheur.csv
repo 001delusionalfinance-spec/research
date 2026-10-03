@@ -250,14 +250,12 @@ marches/fx/AUDUSD.csv,2026-10-02,1,1,42,3906,OK
 marches/fx/DXY.csv,2026-10-02,1,1.0,42,3773,OK
 marches/fx/EURCHF.csv,2026-10-02,1,1.0,42,3907,OK
 marches/fx/EURGBP.csv,2026-10-02,1,1.0,42,3909,OK
-marches/fx/EURJPY.csv,2026-10-02,1,1.0,42,3909,OK
 marches/fx/EURUSD.csv,2026-10-02,1,1,42,3906,OK
 marches/fx/GBPUSD.csv,2026-10-02,1,1.0,42,3907,OK
 marches/fx/NZDUSD.csv,2026-10-02,1,1.0,42,3907,OK
 marches/fx/USDCAD.csv,2026-10-02,1,1,42,3906,OK
 marches/fx/USDCHF.csv,2026-10-02,1,1,42,3904,OK
 marches/fx/USDCNY.csv,2026-10-02,1,1,42,3906,OK
-marches/fx/USDJPY.csv,2026-10-02,1,1.0,42,3907,OK
 marches/fx/USDKRW.csv,2026-10-02,1,1,42,3906,OK
 marches/fx/USDNOK.csv,2026-10-02,1,1.0,42,3907,OK
 marches/fx/USDSEK.csv,2026-10-02,1,1.0,42,3907,OK
@@ -274,5 +272,7 @@ marches/volatilite/VVIX.csv,2026-10-02,1,1,42,3764,OK
 marches/volatilite/VXN.csv,2026-10-02,1,1,42,3772,OK
 yfinance/SP500.csv,2026-10-02,1,1.0,42,7547,OK
 yfinance/VIX.csv,2026-10-02,1,1,42,7550,OK
+marches/fx/EURJPY.csv,2026-10-03,0,1.0,42,3909,OK
+marches/fx/USDJPY.csv,2026-10-03,0,1.0,42,3907,OK
 tresor_us/adjudications.csv,2026-10-15,-12,2,42,124,OK
 fomc/calendrier.csv,2027-12-07,-430,42.0,378.0,55,OK
