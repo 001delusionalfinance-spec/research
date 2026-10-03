@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-03T06:42:29.306565+00:00",
+  "generated_at": "2026-10-03T10:43:35.448510+00:00",
   "status": "attention",
   "models": [
     {
@@ -209,7 +209,7 @@
       "ok": true,
       "synthese": true,
       "sortie": "pentes_courbes.csv",
-      "derniere_observation": "2026-10-01"
+      "derniere_observation": "2026-10-02"
     },
     {
       "nom": "differentiel_taux_change",

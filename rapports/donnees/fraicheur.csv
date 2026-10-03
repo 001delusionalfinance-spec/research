@@ -212,9 +212,6 @@ souverains/CANADA_10A.csv,2026-10-01,2,1.0,42,6439,OK
 souverains/CANADA_2A.csv,2026-10-01,2,1,42,6438,OK
 souverains/CANADA_5A.csv,2026-10-01,2,1,42,6438,OK
 souverains/CANADA_LONG.csv,2026-10-01,2,1,42,6438,OK
-souverains/SUEDE_10A.csv,2026-10-01,2,1,42,9206,OK
-souverains/SUEDE_2A.csv,2026-10-01,2,1,42,9206,OK
-souverains/SUEDE_5A.csv,2026-10-01,2,1,42,9208,OK
 souverains/ZONE_EURO_AAA_10A.csv,2026-10-01,2,1.0,42,5643,OK
 souverains/ZONE_EURO_AAA_1A.csv,2026-10-01,2,1.0,42,5643,OK
 souverains/ZONE_EURO_AAA_20A.csv,2026-10-01,2,1.0,42,5643,OK
@@ -253,6 +250,9 @@ marches/volatilite/MOVE.csv,2026-10-02,1,1.0,42,3691,OK
 marches/volatilite/OVX.csv,2026-10-02,1,1,42,3772,OK
 marches/volatilite/VVIX.csv,2026-10-02,1,1,42,3764,OK
 marches/volatilite/VXN.csv,2026-10-02,1,1,42,3772,OK
+souverains/SUEDE_10A.csv,2026-10-02,1,1.0,42,9207,OK
+souverains/SUEDE_2A.csv,2026-10-02,1,1.0,42,9207,OK
+souverains/SUEDE_5A.csv,2026-10-02,1,1.0,42,9209,OK
 yfinance/SP500.csv,2026-10-02,1,1.0,42,7547,OK
 yfinance/VIX.csv,2026-10-02,1,1,42,7550,OK
 yfinance/XLB.csv,2026-10-02,1,1.0,42,501,OK

@@ -1,4 +1,4 @@
-# Rapport global — 2026-10-03 06:42 UTC
+# Rapport global — 2026-10-03 10:43 UTC
 
 **Etat global : ATTENTION** · 112/112 modeles reussis · 2 source(s) suspecte(s) · 0 source(s) gelee(s).
 
@@ -55,7 +55,7 @@ Courbes souveraines, conditions financieres, credit, emission et taux reels.
 - **Cycle credit** — credit bancaire total croissance YoY=+6.02%, rang percentile historique=38.006230529595015, lecture=normal _(observation : 2026-09-23)_
 - **Conditions financieres** — indice conditions financieres=-0.002 (3 composantes: {'taux_directeur': 0.5960734758921187, 'courbe_inversee': 0.003384125958412214, 'vix': -0.6053288580101447}) -- conditions proches de la normale _(observation : 2026-10-01)_
 - **Emission tresor us** — 84 derniers jours, 7848 Mds$ offerts : court (moins d'un an) 6760 Mds$ (86%), intermediaire (2 a 10 ans) 969 Mds$ (12%), long (20 a 30 ans) 119 Mds$ (2%) -- financement concentre sur le court et l'intermediaire, part longue a 2% -- peu de pression par la duration _(observation : date non exposee)_
-- **Pentes courbes** — 7 courbes : pente de +0.40pt (Australie) a +1.10pt (Japon) -- aucune courbe inversee -- pas de signal recessif par la pente _(observation : 2026-10-01)_
+- **Pentes courbes** — 7 courbes : pente de +0.40pt (Australie) a +1.10pt (Japon) -- aucune courbe inversee -- pas de signal recessif par la pente _(observation : 2026-10-02)_
 - **Stationnarite taux** — 1/5 series stationnaires (niveau, pas en difference) -- a garder en tete avant toute correlation/regression sur ces series telles quelles  _(sans synthese)_ _(observation : 2026-10-01)_
 - **Cointegration taux** — 1/10 paires cointegrees  _(sans synthese)_ _(observation : 2026-10-01)_
 - **Pca taux** — 61 dates communes -- PC1 explique 94.7% de la variance conjointe (vs 20% attendu si les 5 blocs etaient independants) -- synchronisation forte -- un facteur commun domine largement le mouvement conjoint, poids PC1={'Chine': -0.095, 'Japon': 0.035, 'Royaume-Uni': 0.616, 'US': 0.592, 'Zone_euro': 0.51} _(observation : 2026-07-01)_
