@@ -232,7 +232,6 @@ marches/fx/EURGBP.csv,2026-10-02,2,1.0,42,3909,OK
 marches/fx/EURUSD.csv,2026-10-02,2,1,42,3906,OK
 marches/fx/GBPUSD.csv,2026-10-02,2,1.0,42,3907,OK
 marches/fx/USDCHF.csv,2026-10-02,2,1,42,3904,OK
-marches/fx/USDKRW.csv,2026-10-02,2,1,42,3906,OK
 marches/indices/DAX.csv,2026-10-02,2,1.0,42,3803,OK
 marches/indices/EUROSTOXX50.csv,2026-10-02,2,1,42,3760,OK
 marches/indices/FTSE100.csv,2026-10-02,2,1.0,42,3789,OK
@@ -272,6 +271,7 @@ marches/fx/NZDUSD.csv,2026-10-04,0,1.0,42,3907,OK
 marches/fx/USDCAD.csv,2026-10-04,0,1,42,3906,OK
 marches/fx/USDCNY.csv,2026-10-04,0,1,42,3906,OK
 marches/fx/USDJPY.csv,2026-10-04,0,1.0,42,3907,OK
+marches/fx/USDKRW.csv,2026-10-04,0,1,42,3906,OK
 marches/fx/USDNOK.csv,2026-10-04,0,1.0,42,3907,OK
 marches/fx/USDSEK.csv,2026-10-04,0,1.0,42,3907,OK
 tresor_us/adjudications.csv,2026-10-15,-11,2,42,124,OK
