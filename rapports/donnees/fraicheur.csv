@@ -270,9 +270,9 @@ marches/fx/AUDUSD.csv,2026-10-03,1,1,42,3906,OK
 marches/fx/EURJPY.csv,2026-10-03,1,1.0,42,3909,OK
 marches/fx/NZDUSD.csv,2026-10-03,1,1.0,42,3907,OK
 marches/fx/USDCAD.csv,2026-10-03,1,1,42,3906,OK
-marches/fx/USDCNY.csv,2026-10-03,1,1,42,3906,OK
 marches/fx/USDJPY.csv,2026-10-03,1,1.0,42,3907,OK
 marches/fx/USDNOK.csv,2026-10-03,1,1.0,42,3907,OK
 marches/fx/USDSEK.csv,2026-10-03,1,1.0,42,3907,OK
+marches/fx/USDCNY.csv,2026-10-04,0,1,42,3906,OK
 tresor_us/adjudications.csv,2026-10-15,-11,2,42,124,OK
 fomc/calendrier.csv,2027-12-07,-429,42.0,378.0,55,OK
