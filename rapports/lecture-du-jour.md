@@ -1,4 +1,4 @@
-# Rapport global — 2026-10-04 18:20 UTC
+# Rapport global — 2026-10-04 18:28 UTC
 
 **Etat global : ATTENTION** · 112/112 modeles reussis · 2 source(s) suspecte(s) · 0 source(s) gelee(s).
 
@@ -116,7 +116,7 @@ Volatilite, queues, drawdowns, stress, contagion et changements de regime.
 - **Ornstein uhlenbeck vix** — VIX actuel=15.31, niveau moyen estime (mu)=20.20, demi-vie=28.8j, ecart actuel=-4.89 -- VIX actuel en-dessous de son niveau moyen de long terme _(observation : 2026-10-02)_
 - **Changepoint volatilite** — rupture detectee le 2011-12-21 -- vol avant=0.2131, vol apres=0.1666 (reduction SSE=0.5%) -- baisse de la vol au point de rupture (-21.8%) _(observation : 2026-10-02)_
 - **Kalman niveau local** — VIX observe=15.31, filtre Kalman=15.47 (ecart-type=0.62), ratio signal/bruit=0.2052 -- le filtre lisse fortement le bruit, reagit lentement (ecart obs.-filtre=-0.16) _(observation : 2026-10-02)_
-- **Var sp500 vix** — VAR ordre choisi par AIC=10 -- coef SP500(t-1)->VIX(t)=0.36204528144518555 (SP500(t-1) en hausse -> VIX(t) tend aussi a monter), coef VIX(t-1)->SP500(t)=-0.052307333099690295 (VIX(t-1) en hausse -> SP500(t) tend a baisser) _(observation : 2026-10-02)_
+- **Var sp500 vix** — VAR ordre choisi par AIC=10 -- coef SP500(t-1)->VIX(t)=0.3620452814450932 (SP500(t-1) en hausse -> VIX(t) tend aussi a monter), coef VIX(t-1)->SP500(t)=-0.05230733309968992 (VIX(t-1) en hausse -> SP500(t) tend a baisser) _(observation : 2026-10-02)_
 - **Analyse spectrale** — 3 periodes dominantes (jours de bourse) : [2.2, 4.0, 5.3] -- cycle(s) connu(s) qui ressortent : 4.0j~hebdomadaire, 5.3j~hebdomadaire _(observation : 2026-10-02)_
 - **Var drawdown** — VaR95=-1.45% CVaR95=-1.80% VaR99=-2.08% CVaR99=-2.50% drawdown_max_252j=-9.10% -- soit l'equivalent de ~6 jours de VaR95 d'affilee _(observation : 2026-10-02)_
 - **Skew kurtosis** — skewness=-0.183 (asymetrie negative (pertes extremes > gains extremes)), kurtosis exces=+1.007 (queues epaisses (risque extreme sous-estime par une hypothese normale)) _(observation : 2026-10-02)_
