@@ -2,7 +2,7 @@
 
 Courbes souveraines, conditions financieres, credit, emission et taux reels.
 
-Mis a jour : **2026-10-04 08:35 UTC** · 13 lectures.
+Mis a jour : **2026-10-04 14:30 UTC** · 13 lectures.
 
 [Retour au tableau de bord](../README.md)
 
