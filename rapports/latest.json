@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-04T00:01:31.734463+00:00",
+  "generated_at": "2026-10-04T02:06:01.464830+00:00",
   "status": "attention",
   "models": [
     {
@@ -557,7 +557,7 @@
       "titre": "Var sp500 vix",
       "theme": "risques-regimes",
       "lane": "series-temporelles",
-      "lecture": "VAR ordre choisi par AIC=10 -- coef SP500(t-1)->VIX(t)=0.36204528144518555 (SP500(t-1) en hausse -> VIX(t) tend aussi a monter), coef VIX(t-1)->SP500(t)=-0.052307333099690295 (VIX(t-1) en hausse -> SP500(t) tend a baisser)",
+      "lecture": "VAR ordre choisi par AIC=10 -- coef SP500(t-1)->VIX(t)=0.3620452814450932 (SP500(t-1) en hausse -> VIX(t) tend aussi a monter), coef VIX(t-1)->SP500(t)=-0.05230733309968992 (VIX(t-1) en hausse -> SP500(t) tend a baisser)",
       "ok": true,
       "synthese": true,
       "sortie": "var_sp500_vix.csv",
