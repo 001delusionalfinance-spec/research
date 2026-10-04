@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-04T02:59:50.871901+00:00",
+  "generated_at": "2026-10-04T08:35:58.461706+00:00",
   "status": "attention",
   "models": [
     {
@@ -62,7 +62,7 @@
       "titre": "Chemin taux fed",
       "theme": "banques-centrales",
       "lane": "macro",
-      "lecture": "chemin de taux (pas des probabilites) : DFF=3.88%, prochaine reunion 2026-10-27 (11 a venir dans le calendrier) -- mois_en_cours: -0pb (statu quo, confiance moyenne) | 0-1 mois: +18pb (hausse, confiance faible) | 1-3 mois: +34pb (hausse, confiance faible) | 3-6 mois: +49pb (hausse, confiance faible) | 6-12 mois: +73pb (hausse, confiance faible)",
+      "lecture": "chemin de taux (pas des probabilites) : DFF=3.88%, prochaine reunion 2026-10-27 (11 a venir dans le calendrier) -- mois_en_cours: +39pb (hausse, confiance moyenne) | 0-1 mois: +18pb (hausse, confiance faible) | 1-3 mois: +34pb (hausse, confiance faible) | 3-6 mois: +49pb (hausse, confiance faible) | 6-12 mois: +73pb (hausse, confiance faible)",
       "ok": true,
       "synthese": true,
       "sortie": "chemin_taux_fed.csv",
@@ -183,7 +183,7 @@
       "titre": "Matieres premieres macro",
       "theme": "cycle-macro",
       "lane": "macro",
-      "lecture": "le ratio cuivre/or monte -- la croissance domine la peur (+5.2% sur 3 mois). Brent 102.2$ (+42.4% sur 3 mois, +59.5% sur 12 mois), gaz -5.0% sur 3 mois, ecart Brent-WTI +11.1$ -- energie nettement plus chere sur un an -- pression inflationniste a venir que les prix a la consommation ne montrent pas encore",
+      "lecture": "le ratio cuivre/or monte -- la croissance domine la peur (+6.2% sur 3 mois). Brent 102.2$ (+42.4% sur 3 mois, +59.5% sur 12 mois), gaz -5.0% sur 3 mois, ecart Brent-WTI +11.1$ -- energie nettement plus chere sur un an -- pression inflationniste a venir que les prix a la consommation ne montrent pas encore",
       "ok": true,
       "synthese": true,
       "sortie": "matieres_premieres_macro.csv",
