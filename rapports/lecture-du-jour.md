@@ -1,4 +1,4 @@
-# Rapport global — 2026-10-05 11:43 UTC
+# Rapport global — 2026-10-05 16:09 UTC
 
 **Etat global : ATTENTION** · 112/112 modeles reussis · 2 source(s) suspecte(s) · 0 source(s) gelee(s).
 
@@ -14,7 +14,7 @@ Decisions, fonctions de reaction, bilan, communication et trajectoires de taux.
 
 - **Regime monetaire emploi** — Chine : taux 1.54% (stable, niveau bas) -- chomage non_couvert  _(sans synthese)_ _(observation : 2026-10-01)_
 - **Regle taylor** — Taylor (2 termes, sans output gap)=6.03%, Fed reel=3.88%, ecart=-2.15pt -- accommodant (Fed en-dessous de la regle) _(observation : 2026-10-01)_
-- **Chemin taux fed** — chemin de taux (pas des probabilites) : DFF=3.88%, prochaine reunion 2026-10-27 (11 a venir dans le calendrier) -- mois_en_cours: +35pb (hausse, confiance moyenne) | 0-1 mois: +18pb (hausse, confiance faible) | 1-3 mois: +34pb (hausse, confiance faible) | 3-6 mois: +49pb (hausse, confiance faible) | 6-12 mois: +73pb (hausse, confiance faible) _(observation : 2026-10-01)_
+- **Chemin taux fed** — chemin de taux (pas des probabilites) : DFF=3.88%, prochaine reunion 2026-10-27 (11 a venir dans le calendrier) -- mois_en_cours: +50pb (hausse, confiance moyenne) | 0-1 mois: +18pb (hausse, confiance faible) | 1-3 mois: +34pb (hausse, confiance faible) | 3-6 mois: +49pb (hausse, confiance faible) | 6-12 mois: +73pb (hausse, confiance faible) _(observation : 2026-10-01)_
 - **Divergence taux directeurs** — 12 banques centrales : ecart de taux max 4.50pt (Norvege 4.50% contre Suisse 0.00%), mediane 2.88% -- cycles alignes dans le meme sens (resserrement) -- divergence limitee _(observation : 2026-09-29)_
 - **Bilans banques centrales** — 9 bilans suivis sur 12 mois : de -17.7% (RBA -- titres locaux) a +8.6% (Fed -- titres du Tresor) -- regimes OPPOSES -- 5 bilan(s) en reduction pendant que 4 s'etendent, la liquidite mondiale ne va pas dans un sens unique _(observation : 2026-09-30)_
 - **Liquidite nette fed** — liquidite nette 5.43 T$ au 2026-09-30 (-1.3% sur 3 mois, +0.7% sur 12 mois) -- liquidite en retrait sur 3 mois -- conditions de financement qui se durcissent. Detail : actif 6.74 T$, compte du Tresor 0.95 T$, reverse repo 0.36 T$ _(observation : 2026-09-30)_
@@ -40,8 +40,8 @@ Activite, emploi, inflation, immobilier, commerce et finances publiques.
 - **Cycle immobilier** — mises en chantier=1275.0k (baisse), permis=1403.0k (stable), taux hypothecaire=7.28% -- pas de divergence _(observation : 2026-08-01)_
 - **Inflation comparee** — inflation annuelle sur 12 blocs : mediane 3.06%, dispersion 3.75pt (Nouvelle-Zelande +4.06% au plus haut, Suede +0.31% au plus bas) -- dispersion forte -- les banques centrales sont poussees a diverger, ce qui deplace les differentiels de taux et le change _(observation : date non exposee)_
 - **Activite zone euro** — zone euro : Production industrielle -0.2 % sur 12 mois, Ventes de detail +0.8 % sur 12 mois, Taux de chomage +0.1 pt sur 12 mois, Confiance industrielle +2.7 pt vs moyenne longue -- production industrielle DIVERGENTE entre grands pays -- en hausse : Espagne ; en baisse : Allemagne, France, Italie _(observation : date non exposee)_
-- **Soutenabilite dette** — 8 pays. charge la plus lourde : Canada a 25.5% du revenu. taux 10 ans AU-DESSUS de l'inflation dans 5 pays -- Royaume-Uni (+2.3pt), Etats-Unis (+1.8pt), Japon (+1.2pt), Zone euro (+0.9pt), Canada (+0.9pt). Configuration ou le ratio d'endettement monte meme a budget primaire equilibre (approximation : croissance nominale reduite a l'inflation) _(observation : date non exposee)_
-- **Matieres premieres macro** — le ratio cuivre/or monte -- la croissance domine la peur (+6.5% sur 3 mois). Brent 102.3$ (+42.1% sur 3 mois, +58.5% sur 12 mois), gaz -6.8% sur 3 mois, ecart Brent-WTI +12.2$ -- energie nettement plus chere sur un an -- pression inflationniste a venir que les prix a la consommation ne montrent pas encore _(observation : 2026-10-05)_
+- **Soutenabilite dette** — 8 pays. charge la plus lourde : Canada a 25.5% du revenu. taux 10 ans AU-DESSUS de l'inflation dans 5 pays -- Royaume-Uni (+2.3pt), Etats-Unis (+1.8pt), Japon (+1.2pt), Canada (+0.9pt), Zone euro (+0.9pt). Configuration ou le ratio d'endettement monte meme a budget primaire equilibre (approximation : croissance nominale reduite a l'inflation) _(observation : date non exposee)_
+- **Matieres premieres macro** — le ratio cuivre/or monte -- la croissance domine la peur (+7.6% sur 3 mois). Brent 101.3$ (+40.7% sur 3 mois, +57.0% sur 12 mois), gaz -5.8% sur 3 mois, ecart Brent-WTI +11.0$ -- energie nettement plus chere sur un an -- pression inflationniste a venir que les prix a la consommation ne montrent pas encore _(observation : 2026-10-05)_
 - **Surprise macro composite** — indice de surprise macro=-1.00 ({'chomage': -1, 'credit_bancaire': -1, 'inflation': -1}) -- negatif (surprises defavorables dominent) _(observation : 2026-09-01)_
 - **Balance commerciale** — balance commerciale=-88,576M$ (rang percentile=1), deficit se creuse _(observation : 2026-07-01)_
 - **Surprise inflation** — CPI MoM=+0.396%, prevision naive=+0.316%, surprise=+0.080pt -- surprise haussiere (inflation plus forte qu'attendu) _(observation : 2026-08-01)_
@@ -53,16 +53,16 @@ Courbes souveraines, conditions financieres, credit, emission et taux reels.
 - **Taux reel us** — nominal=3.88%, inflation YoY=3.35%, reel=0.53% -- restrictif (taux reel positif et eleve) _(observation : 2026-10-01)_
 - **Courbe taux us** — 10 ans=5.24%, 2 ans=4.78%, spread=+0.46pt -- normale (0 run(s) consecutif(s) dans l'historique accumule) _(observation : 2026-10-01)_
 - **Cycle credit** — credit bancaire total croissance YoY=+6.02%, rang percentile historique=38.006230529595015, lecture=normal _(observation : 2026-09-23)_
-- **Conditions financieres** — indice conditions financieres=+0.034 (3 composantes: {'taux_directeur': 0.5960734758921187, 'courbe_inversee': 0.003384125958412214, 'vix': -0.49780967720386593}) -- conditions proches de la normale _(observation : 2026-10-01)_
+- **Conditions financieres** — indice conditions financieres=+0.010 (3 composantes: {'taux_directeur': 0.5960734758921187, 'courbe_inversee': 0.003384125958412214, 'vix': -0.57076472708709}) -- conditions proches de la normale _(observation : 2026-10-01)_
 - **Emission tresor us** — 84 derniers jours, 7848 Mds$ offerts : court (moins d'un an) 6760 Mds$ (86%), intermediaire (2 a 10 ans) 969 Mds$ (12%), long (20 a 30 ans) 119 Mds$ (2%) -- financement concentre sur le court et l'intermediaire, part longue a 2% -- peu de pression par la duration _(observation : date non exposee)_
 - **Pentes courbes** — 7 courbes : pente de +0.40pt (Australie) a +1.10pt (Japon) -- aucune courbe inversee -- pas de signal recessif par la pente _(observation : 2026-10-02)_
 - **Stationnarite taux** — 1/5 series stationnaires (niveau, pas en difference) -- a garder en tete avant toute correlation/regression sur ces series telles quelles  _(sans synthese)_ _(observation : 2026-10-01)_
 - **Cointegration taux** — 1/10 paires cointegrees  _(sans synthese)_ _(observation : 2026-10-01)_
 - **Pca taux** — 61 dates communes -- PC1 explique 94.7% de la variance conjointe (vs 20% attendu si les 5 blocs etaient independants) -- synchronisation forte -- un facteur commun domine largement le mouvement conjoint, poids PC1={'Chine': -0.095, 'Japon': 0.035, 'Royaume-Uni': 0.616, 'US': 0.592, 'Zone_euro': 0.51} _(observation : 2026-07-01)_
 - **Hp filter taux** — taux 10 ans observe=5.240%, tendance HP=5.090%, ecart cyclique=+0.150pt -- au-dessus de sa tendance locale _(observation : 2026-10-01)_
-- **Facteur qualite credit** — spread HY=3.24, IG=0.86, ecart=2.38pt (niveau contenu), variation 6m=+3.0% -- s'ecarte (risque credit percu en hausse) _(observation : 2026-10-01)_
-- **Ornstein uhlenbeck credit** — spread HY actuel=3.24, niveau moyen estime=3.04, demi-vie=35.8j, ecart actuel=+0.20 -- spread HY actuel au-dessus de son niveau moyen de long terme _(observation : 2026-10-01)_
-- **Momentum credit** — momentum credit 12-1 mois=-0.16pt -- spread qui se resserre (risque credit percu en baisse) _(observation : 2026-10-01)_
+- **Facteur qualite credit** — spread HY=3.10, IG=0.85, ecart=2.25pt (niveau contenu), variation 6m=-0.9% -- se resserre (risque credit percu en baisse) _(observation : 2026-10-02)_
+- **Ornstein uhlenbeck credit** — spread HY actuel=3.10, niveau moyen estime=3.02, demi-vie=33.3j, ecart actuel=+0.08 -- spread HY actuel au-dessus de son niveau moyen de long terme _(observation : 2026-10-02)_
+- **Momentum credit** — momentum credit 12-1 mois=-0.15pt -- spread qui se resserre (risque credit percu en baisse) _(observation : 2026-10-02)_
 
 ## [Marches, facteurs et allocation](themes/marches-allocation.md)
 
@@ -70,20 +70,20 @@ Change, actions, secteurs, facteurs, rotations et signaux d'allocation.
 
 - **Reer us** — REER US=108.25 (rang percentile=94, variation YoY=+0.90%) -- dollar reel fort (competitivite reduite) _(observation : 2026-07-01)_
 - **Differentiel taux change** — 8 paires testees sur variations a 21 jours -- le lien taux/change tient sur 5 paire(s) apres correction pour tests multiples : EURUSD, USDJPY, USDCAD, USDSEK, EURJPY _(observation : 2026-10-01)_
-- **Indices mondiaux** — 7 indices (devise locale) : Coree (KOSPI) +97.3% en tete sur 12 mois, Hong Kong (Hang Seng) -11.4% en queue -- ecart tres large entre blocs sur 12 mois (109pt) -- les cycles economiques ou les flux divergent nettement. ROTATION en cours : Coree (KOSPI) mene sur 12 mois mais Etats-Unis (S&P 500) a repris la tete sur 3 mois _(observation : 2026-10-05)_
-- **Correlation glissante** — correlation glissante 60j SP500/VIX = -0.755 (min=-0.955, max=-0.429 sur la fenetre d'historique disponible) -- dans la zone intermediaire de sa fourchette historique _(observation : 2026-10-02)_
+- **Indices mondiaux** — 7 indices (devise locale) : Coree (KOSPI) +97.3% en tete sur 12 mois, Hong Kong (Hang Seng) -12.2% en queue -- ecart tres large entre blocs sur 12 mois (109pt) -- les cycles economiques ou les flux divergent nettement. ROTATION en cours : Coree (KOSPI) mene sur 12 mois mais Etats-Unis (S&P 500) a repris la tete sur 3 mois _(observation : 2026-10-05)_
+- **Correlation glissante** — correlation glissante 60j SP500/VIX = -0.755 (min=-0.955, max=-0.429 sur la fenetre d'historique disponible) -- dans la zone intermediaire de sa fourchette historique _(observation : 2026-10-05)_
 - **Clustering marches** — 32 marches, 4 clusters (average linkage, distance=1-|r|) : cluster 1 : ['AUD_FX', 'BRENT_CRUDE', 'CAD_FX', 'CHF_FX', 'COPPER', 'GOLD', 'JPY_FX', 'MXN_FX', 'NASDAQ_MINI', 'NZD_FX', 'RUSSELL_MINI', 'SILVER', 'USD_INDEX', 'UST_10Y', 'UST_2Y', 'UST_5Y', 'UST_ULTRA_10Y', 'UST_ULTRA_BOND', 'VIX_FUT', 'WHEAT', 'WTI_CRUDE'] | cluster 2 : ['CORN', 'GBP_FX', 'NAT_GAS', 'PALLADIUM', 'PLATINUM', 'SOFR_3M', 'SOYBEANS'] | cluster 3 : ['EUR_FX', 'SP500_EMINI'] | cluster 4 : ['FED_FUNDS', 'UST_BOND'] _(observation : 2026-09-29)_
 - **Beta facteur macro** — beta SP500/DGS10 (60j) = -0.0788 (rendement SP500 pour +1pt de taux 10 ans, 57/60 jours avec variation reelle) -- sensibilite elevee au facteur macro (choc de +100pb extrapole = -7.6%) _(observation : 2026-10-01)_
-- **Momentum prix** — SP500 momentum 12-1 mois = 14.17% -- haussier (momentum positif), detail 1/3/6/12m = [0.73, 3.2, 17.32, 15.0] _(observation : 2026-10-02)_
+- **Momentum prix** — SP500 momentum 12-1 mois = 14.93% -- haussier (momentum positif), detail 1/3/6/12m = [0.52, 2.94, 17.35, 15.53] _(observation : 2026-10-05)_
 - **Carry proxy** — Chine : 1.54% vs US 3.88% -- diff=-2.34pt (carry negatif (taux < US))  _(sans synthese)_ _(observation : 2026-10-01)_
-- **Beta vol** — beta SP500/VIX (60j) = -0.00485 (rendement SP500 pour +1pt VIX) -- sensibilite normale, relation inverse attendue (normale) _(observation : 2026-10-02)_
-- **Rotation sectorielle** — classement momentum 3 mois (10 secteurs) : 1. Energie (XLE) : +18.04% | 2. Technologie (XLK) : +10.64% | 3. Sante (XLV) : +1.49% | 4. Finance (XLF) : -3.83% | 5. Consommation de base (XLP) : -5.25% _(observation : 2026-10-02)_
-- **Saisonnalite** — rendement journalier moyen ete=+0.0179%, hiver=+0.0465% (t=-1.03, p=0.3025) -- non significatif (attendu vu la faible puissance sur seulement ~2 ans) _(observation : 2026-10-02)_
-- **Dispersion sectorielle** — 10 secteurs, rendement moyen 3m=-2.02%, dispersion (ecart-type)=9.03pt, etendue=31.00pt -- dispersion intermediaire _(observation : 2026-10-02)_
-- **Low volatility** — tercile bas-vol ['XLF', 'XLRE', 'XLU'] Sharpe=-1.155 vs tercile haut-vol ['XLY', 'XLE', 'XLK'] Sharpe=0.202 -- anomalie low-vol non confirmee sur cet echantillon (puissance statistique faible, n petit -- limite assumee) _(observation : 2026-10-02)_
-- **Momentum cross sectional** — panier gagnant ['XLE', 'XLK', 'XLV'] (+10.06%) vs panier perdant ['XLI', 'XLRE', 'XLU'] (-9.74%) -- spread momentum=+19.79pt _(observation : 2026-10-02)_
-- **Cointegration secteurs** — 0/10 secteurs cointegres avec SP500 -- decouples : ['XLK', 'XLF', 'XLE', 'XLV', 'XLI', 'XLY', 'XLP', 'XLU', 'XLB', 'XLRE']  _(sans synthese)_ _(observation : 2026-10-02)_
-- **Correlation facteurs** — correlation entre momentum 3m et beta-VIX, 10 secteurs : +0.038 (facteurs largement independants) _(observation : 2026-10-02)_
+- **Beta vol** — beta SP500/VIX (60j) = -0.00482 (rendement SP500 pour +1pt VIX) -- sensibilite normale, relation inverse attendue (normale) _(observation : 2026-10-05)_
+- **Rotation sectorielle** — classement momentum 3 mois (10 secteurs) : 1. Energie (XLE) : +19.64% | 2. Technologie (XLK) : +9.21% | 3. Sante (XLV) : +2.82% | 4. Consommation de base (XLP) : -3.98% | 5. Finance (XLF) : -4.28% _(observation : 2026-10-05)_
+- **Saisonnalite** — rendement journalier moyen ete=+0.0176%, hiver=+0.0465% (t=-1.04, p=0.2981) -- non significatif (attendu vu la faible puissance sur seulement ~2 ans) _(observation : 2026-10-05)_
+- **Dispersion sectorielle** — 10 secteurs, rendement moyen 3m=-1.62%, dispersion (ecart-type)=9.07pt, etendue=31.13pt -- dispersion intermediaire _(observation : 2026-10-05)_
+- **Low volatility** — tercile bas-vol ['XLF', 'XLRE', 'XLU'] Sharpe=-0.993 vs tercile haut-vol ['XLY', 'XLE', 'XLK'] Sharpe=0.258 -- anomalie low-vol non confirmee sur cet echantillon (puissance statistique faible, n petit -- limite assumee) _(observation : 2026-10-05)_
+- **Momentum cross sectional** — panier gagnant ['XLE', 'XLK', 'XLV'] (+10.56%) vs panier perdant ['XLRE', 'XLI', 'XLU'] (-9.23%) -- spread momentum=+19.79pt _(observation : 2026-10-05)_
+- **Cointegration secteurs** — 0/10 secteurs cointegres avec SP500 -- decouples : ['XLK', 'XLF', 'XLE', 'XLV', 'XLI', 'XLY', 'XLP', 'XLU', 'XLB', 'XLRE']  _(sans synthese)_ _(observation : 2026-10-05)_
+- **Correlation facteurs** — correlation entre momentum 3m et beta-VIX, 10 secteurs : +0.132 (facteurs largement independants) _(observation : 2026-10-05)_
 
 ## [Positionnement et comportement](themes/positionnement.md)
 
@@ -94,7 +94,7 @@ COT, crowding, devises, courbe, extremes et divergences entre prix et positions.
 - **Positionnement cot** — WTI_CRUDE : net=109463.0, z=-0.43, extreme=False  _(sans synthese)_ _(observation : 2026-09-29)_
 - **Momentum positionnement** — WTI_CRUDE : z=-0.43 (il y a 8sem: -0.46), momentum=+0.03 -- positionnement se degonfle (l'extreme diminue)  _(sans synthese)_ _(observation : 2026-09-29)_
 - **Crowding cross asset** — 9/32 marches avec |z|>=1.5 simultanement : COPPER(+1.71);CORN(+2.08);EUR_FX(-1.99);NASDAQ_MINI(+1.52);NAT_GAS(-1.95);RUSSELL_MINI(-1.50);SOFR_3M(-1.57);UST_2Y(+2.49);UST_5Y(+1.90) _(observation : 2026-09-29)_
-- **Divergence cot prix** — SP500 +0.73% sur 30j, COT net -67994 -> -142499 -- DIVERGENCE (prix monte, positionnement recule) _(observation : 2026-10-02)_
+- **Divergence cot prix** — SP500 +0.52% sur 30j, COT net -67994 -> -142499 -- DIVERGENCE (prix monte, positionnement recule) _(observation : 2026-10-05)_
 - **Ratio commercial speculatif** — WTI_CRUDE : commercial=-142618, speculatif=+109463, ratio=1.30, sens_oppose=True  _(sans synthese)_ _(observation : 2026-09-29)_
 - **Rotation risk on off** — z-score moyen risque=+0.55 ({'SP500_EMINI': -0.4267883179141355, 'NASDAQ_MINI': 1.5220931196458065}), refuge=-0.13 ({'GOLD': 0.5924661545566637, 'UST_10Y': -0.8566067063170019}) -- posture=risk-on _(observation : 2026-09-29)_
 - **Concentration traders** — WTI_CRUDE : 304 traders, position nette moyenne/trader=360 -- diffus (large base de traders) (mediane du groupe : 401)  _(sans synthese)_ _(observation : 2026-09-29)_
@@ -109,48 +109,48 @@ COT, crowding, devises, courbe, extremes et divergences entre prix et positions.
 
 Volatilite, queues, drawdowns, stress, contagion et changements de regime.
 
-- **Vol cross asset** — 6 mesures de volatilite : Or (GVZ) 81e pct, Petrole (OVX) 81e pct, Taux US (MOVE) 59e pct, Nasdaq (VXN) 40e pct, Actions US (VIX) 34e pct, Vol de la vol (VVIX) 24e pct -- stress LOCALISE sur Or (GVZ), Petrole (OVX) pendant que le reste ne l'est pas -- episode propre a cette classe d'actifs, pas une aversion au risque d'ensemble _(observation : 2026-10-05)_
-- **Volatilite ewma** — vol realisee 60j=0.11135639333926553, EWMA=0.1013 (tendance 10 runs: stable) _(observation : 2026-10-02)_
-- **Garch** — vol GARCH(1,1) annualisee=0.1084 (alpha=0.114, beta=0.868, persistance=0.983 -- tres proche de 1 -- chocs de volatilite tres durables) _(observation : 2026-10-02)_
-- **Hurst** — Hurst=0.5532 (R2 regression=0.999) -- persistant (tendanciel) _(observation : 2026-10-02)_
-- **Ornstein uhlenbeck vix** — VIX actuel=16.18, niveau moyen estime (mu)=20.21, demi-vie=28.8j, ecart actuel=-4.03 -- VIX actuel en-dessous de son niveau moyen de long terme _(observation : 2026-10-05)_
-- **Changepoint volatilite** — rupture detectee le 2011-12-21 -- vol avant=0.2131, vol apres=0.1666 (reduction SSE=0.5%) -- baisse de la vol au point de rupture (-21.8%) _(observation : 2026-10-02)_
-- **Kalman niveau local** — VIX observe=16.18, filtre Kalman=16.07 (ecart-type=0.62), ratio signal/bruit=0.2052 -- le filtre lisse fortement le bruit, reagit lentement (ecart obs.-filtre=+0.11) _(observation : 2026-10-05)_
-- **Var sp500 vix** — VAR ordre choisi par AIC=10 -- coef SP500(t-1)->VIX(t)=0.3562459887568963 (SP500(t-1) en hausse -> VIX(t) tend aussi a monter), coef VIX(t-1)->SP500(t)=-0.05232944475325191 (VIX(t-1) en hausse -> SP500(t) tend a baisser) _(observation : 2026-10-02)_
+- **Vol cross asset** — 6 mesures de volatilite : Or (GVZ) 82e pct, Petrole (OVX) 78e pct, Taux US (MOVE) 68e pct, Nasdaq (VXN) 45e pct, Actions US (VIX) 28e pct, Vol de la vol (VVIX) 21e pct -- stress LOCALISE sur Or (GVZ) pendant que le reste ne l'est pas -- episode propre a cette classe d'actifs, pas une aversion au risque d'ensemble _(observation : 2026-10-05)_
+- **Volatilite ewma** — vol realisee 60j=0.1114302605798963, EWMA=0.0999 (tendance 10 runs: stable) _(observation : 2026-10-05)_
+- **Garch** — vol GARCH(1,1) annualisee=0.1111 (alpha=0.114, beta=0.868, persistance=0.983 -- tres proche de 1 -- chocs de volatilite tres durables) _(observation : 2026-10-05)_
+- **Hurst** — Hurst=0.5470 (R2 regression=0.999) -- proche de la marche aleatoire (H~0.5) _(observation : 2026-10-05)_
+- **Ornstein uhlenbeck vix** — VIX actuel=15.59, niveau moyen estime (mu)=20.21, demi-vie=28.8j, ecart actuel=-4.62 -- VIX actuel en-dessous de son niveau moyen de long terme _(observation : 2026-10-05)_
+- **Changepoint volatilite** — rupture detectee le 2011-12-21 -- vol avant=0.2131, vol apres=0.1665 (reduction SSE=0.5%) -- baisse de la vol au point de rupture (-21.8%) _(observation : 2026-10-05)_
+- **Kalman niveau local** — VIX observe=15.59, filtre Kalman=15.57 (ecart-type=0.62), ratio signal/bruit=0.2052 -- le filtre lisse fortement le bruit, reagit lentement (ecart obs.-filtre=+0.02) _(observation : 2026-10-05)_
+- **Var sp500 vix** — VAR ordre choisi par AIC=10 -- coef SP500(t-1)->VIX(t)=0.3564901976843391 (SP500(t-1) en hausse -> VIX(t) tend aussi a monter), coef VIX(t-1)->SP500(t)=-0.05231370473663073 (VIX(t-1) en hausse -> SP500(t) tend a baisser) _(observation : 2026-10-05)_
 - **Analyse spectrale** — 3 periodes dominantes (jours de bourse) : [2.2, 3.0, 2.4] -- aucune des 3 periodes dominantes ne correspond a un cycle connu (hebdo/mensuel/trimestriel) _(observation : 2026-10-05)_
-- **Var drawdown** — VaR95=-1.45% CVaR95=-1.80% VaR99=-2.08% CVaR99=-2.50% drawdown_max_252j=-9.10% -- soit l'equivalent de ~6 jours de VaR95 d'affilee _(observation : 2026-10-02)_
-- **Skew kurtosis** — skewness=-0.183 (asymetrie negative (pertes extremes > gains extremes)), kurtosis exces=+1.007 (queues epaisses (risque extreme sous-estime par une hypothese normale)) _(observation : 2026-10-02)_
-- **Ratios performance** — Sharpe=1.078 (bon), Sortino=1.069 (bon), Calmar=1.542 (bon) -- lecture sur fenetre 252j (~1 an, echantillon limite), seuils academiques standards, taux sans risque suppose nul _(observation : 2026-10-02)_
-- **Covar** — VaR95 inconditionnelle=-1.84%, VaR95|VIX detresse(>=29.5)=-4.37%, VaR95|VIX normal=-1.52% -- DeltaCoVaR=-2.86pt (755 jours de detresse dans l'echantillon) -- contagion notable -- VaR 2.9x plus severe en detresse _(observation : 2026-10-02)_
-- **Stress test historique** — COVID_2020 (2020-02-19 -> 2020-03-23) : chute historique=-33.9% -- rejouee sur le niveau actuel (7723) -> 5103  _(sans synthese)_ _(observation : 2026-10-02)_
-- **Sizing robuste** — vol point estimate=0.1299, IC90%=[0.1177, 0.1415] (1000 tirages bootstrap) -- intervalle etroit (18% du point estimate) -- estimation relativement fiable _(observation : 2026-10-02)_
+- **Var drawdown** — VaR95=-1.45% CVaR95=-1.80% VaR99=-2.08% CVaR99=-2.50% drawdown_max_252j=-9.10% -- soit l'equivalent de ~6 jours de VaR95 d'affilee _(observation : 2026-10-05)_
+- **Skew kurtosis** — skewness=-0.188 (asymetrie negative (pertes extremes > gains extremes)), kurtosis exces=+1.001 (queues epaisses (risque extreme sous-estime par une hypothese normale)) _(observation : 2026-10-05)_
+- **Ratios performance** — Sharpe=1.113 (bon), Sortino=1.105 (bon), Calmar=1.593 (bon) -- lecture sur fenetre 252j (~1 an, echantillon limite), seuils academiques standards, taux sans risque suppose nul _(observation : 2026-10-05)_
+- **Covar** — VaR95 inconditionnelle=-1.84%, VaR95|VIX detresse(>=29.5)=-4.37%, VaR95|VIX normal=-1.52% -- DeltaCoVaR=-2.86pt (755 jours de detresse dans l'echantillon) -- contagion notable -- VaR 2.9x plus severe en detresse _(observation : 2026-10-05)_
+- **Stress test historique** — COVID_2020 (2020-02-19 -> 2020-03-23) : chute historique=-33.9% -- rejouee sur le niveau actuel (7759) -> 5127  _(sans synthese)_ _(observation : 2026-10-05)_
+- **Sizing robuste** — vol point estimate=0.1300, IC90%=[0.1175, 0.1412] (1000 tirages bootstrap) -- intervalle etroit (18% du point estimate) -- estimation relativement fiable _(observation : 2026-10-05)_
 - **Nombre effectif paris** — 32 marches, nombre effectif de paris independants=13.46 (42% du maximum theorique de 32) -- moderement concentre -- redondance significative entre plusieurs paris _(observation : 2026-09-29)_
-- **Detection saut** — Z-stat BNS (fenetre 22j)=1.544 (seuil ±1.96) -- pas de saut isole detecte _(observation : 2026-10-02)_
+- **Detection saut** — Z-stat BNS (fenetre 22j)=1.782 (seuil ±1.96) -- pas de saut isole detecte _(observation : 2026-10-05)_
 - **Choc taux** — beta SP500/DGS10=-0.0788 -- choc +100pb : -7.88% (SP500 7666 -> 7063) ; choc -100pb : +7.88% (-> 8270) _(observation : 2026-10-01)_
-- **Qualite regime macro** — instabilite taux=0.0087, instabilite VIX=0.0658 -- score qualite du regime=-0.0373 (plus haut = regime plus stable/previsible) _(observation : 2026-10-01)_
-- **Var conditionnelle regime** — regime VIX actuel=bas (rang percentile=34) -- VaR95 applicable maintenant=-1.14% (vs VaR95 globale non-conditionnelle=-1.84%) _(observation : 2026-10-02)_
-- **Decomposition stl** — VIX : tendance=15.97, composante saisonniere (periode 5j)=+0.089, residu=+0.119 -- la saisonnalite explique 0.71% de la variance totale (negligeable) _(observation : 2026-10-05)_
-- **Ratios conditionnels regime** — Sharpe regime haut-vol=-1.107, bas-vol=2.395, global=0.418 -- meilleur en regime calme, comme attendu _(observation : 2026-10-02)_
-- **Choc vol parametrique** — vol actuelle=12.99%, scenarios x1/x2/x3 calcules -- pire scenario (x3) = -3.98%/jour, soit 3.1x le scenario de base _(observation : 2026-10-02)_
+- **Qualite regime macro** — instabilite taux=0.0087, instabilite VIX=0.0655 -- score qualite du regime=-0.0371 (plus haut = regime plus stable/previsible) _(observation : 2026-10-01)_
+- **Var conditionnelle regime** — regime VIX actuel=bas (rang percentile=34) -- VaR95 applicable maintenant=-1.14% (vs VaR95 globale non-conditionnelle=-1.84%) _(observation : 2026-10-05)_
+- **Decomposition stl** — VIX : tendance=15.89, composante saisonniere (periode 5j)=-0.043, residu=-0.255 -- la saisonnalite explique 0.71% de la variance totale (negligeable) _(observation : 2026-10-05)_
+- **Ratios conditionnels regime** — Sharpe regime haut-vol=-1.107, bas-vol=2.396, global=0.419 -- meilleur en regime calme, comme attendu _(observation : 2026-10-05)_
+- **Choc vol parametrique** — vol actuelle=13.00%, scenarios x1/x2/x3 calcules -- pire scenario (x3) = -3.98%/jour, soit 3.1x le scenario de base _(observation : 2026-10-05)_
 
 ## [Modeles predictifs et validation](themes/modeles-validation.md)
 
 Relations statistiques, previsions, tests hors echantillon et robustesse des modeles.
 
-- **Causalite granger** — causalite Granger detectee : SP500_cause_VIX (lag=5) _(observation : 2026-10-02)_
-- **Dependance queue** — 518/7544 jours conjointement extremes (SP500 pire 10% ET VIX pire 10%), P observee=0.0687 vs P sous independance=0.0100 -- coefficient de dependance de queue=6.87 (dependance reelle) _(observation : 2026-10-02)_
-- **Walkforward direction** — 7516 predictions walk-forward -- momentum 5j=0.4957 vs baseline majoritaire=0.5371 -- NE BAT PAS la baseline (resultat honnete, pas ajuste pour paraitre mieux) _(observation : 2026-10-02)_
-- **Anomalie multivariee** — distance de Mahalanobis=0.826 (seuil 3.0) -- jour ordinaire _(observation : 2026-10-02)_
-- **Test overfitting** — meilleure fenetre in-sample=23j (accuracy=0.5162) vs meme fenetre en walk-forward=0.5158 -- ecart=+0.0003 (ecart faible) _(observation : 2026-10-02)_
-- **Prevision vol regression** — regression AR(1) (a=0.000116, b=0.2097) MSE=2.9847e-07 vs baseline persistance MSE=3.8344e-07 -- BAT la baseline (resultat honnete, pas ajuste) _(observation : 2026-10-02)_
+- **Causalite granger** — causalite Granger detectee : SP500_cause_VIX (lag=5) _(observation : 2026-10-05)_
+- **Dependance queue** — 518/7545 jours conjointement extremes (SP500 pire 10% ET VIX pire 10%), P observee=0.0687 vs P sous independance=0.0100 -- coefficient de dependance de queue=6.87 (dependance reelle) _(observation : 2026-10-05)_
+- **Walkforward direction** — 7515 predictions walk-forward -- momentum 5j=0.4957 vs baseline majoritaire=0.5372 -- NE BAT PAS la baseline (resultat honnete, pas ajuste pour paraitre mieux) _(observation : 2026-10-05)_
+- **Anomalie multivariee** — distance de Mahalanobis=1.158 (seuil 3.0) -- jour ordinaire _(observation : 2026-10-05)_
+- **Test overfitting** — meilleure fenetre in-sample=23j (accuracy=0.5161) vs meme fenetre en walk-forward=0.5159 -- ecart=+0.0002 (ecart faible) _(observation : 2026-10-05)_
+- **Prevision vol regression** — regression AR(1) (a=0.000116, b=0.2097) MSE=2.9847e-07 vs baseline persistance MSE=3.8344e-07 -- BAT la baseline (resultat honnete, pas ajuste) _(observation : 2026-10-05)_
 - **Kmeans regimes** — 2050 points, k=3 -- point actuel (VIX=16.4, spread=+0.46, taux=3.88%) -> cluster 1 (tailles : {0: 357, 1: 1369, 2: 324}) -- regime calme (VIX du cluster en-dessous de la moyenne historique) _(observation : 2026-10-01)_
-- **Ensemble signaux** — 7514 predictions -- momentum=0.4957, vix=0.4985, ensemble=0.4985, baseline=0.5371 -- ensemble NE BAT PAS la baseline _(observation : 2026-10-02)_
-- **Screening features** — 2/4 features avec un lien univarie significatif (p<0.05, sans correction multiple-testing ici -- seulement 4 tests)  _(sans synthese)_ _(observation : 2026-10-02)_
-- **Couts transaction** — 7516 predictions, 1513 changements de position (5pb/changement) -- rendement cumule brut=-93.27%, cout total=53.08%, net=-96.84% -- les frais mangent une part importante du rendement (>50% du brut) _(observation : 2026-10-02)_
-- **Regression multifeatures** — coefs (intercept=0.00029, momentum5j=-0.0325, var_vix=0.00027) -- R2 out-of-sample=0.0103 (modele bat la moyenne) _(observation : 2026-10-02)_
+- **Ensemble signaux** — 7515 predictions -- momentum=0.4957, vix=0.4986, ensemble=0.4986, baseline=0.5372 -- ensemble NE BAT PAS la baseline _(observation : 2026-10-05)_
+- **Screening features** — 2/4 features avec un lien univarie significatif (p<0.05, sans correction multiple-testing ici -- seulement 4 tests)  _(sans synthese)_ _(observation : 2026-10-05)_
+- **Couts transaction** — 7515 predictions, 1513 changements de position (5pb/changement) -- rendement cumule brut=-93.31%, cout total=53.08%, net=-96.86% -- les frais mangent une part importante du rendement (>50% du brut) _(observation : 2026-10-05)_
+- **Regression multifeatures** — coefs (intercept=0.00029, momentum5j=-0.0325, var_vix=0.00027) -- R2 out-of-sample=0.0103 (modele bat la moyenne) _(observation : 2026-10-05)_
 - **Decomposition variance** — R² SP500~DGS10 (60j) = 0.2739 -- 27.4% de la variance des rendements SP500 expliquee par les variations du taux 10 ans (le reste = idiosyncratique/autres facteurs) _(observation : 2026-10-01)_
 - **Test chow** — test de Chow (taux 10 ans, 1ere vs 2eme moitie des 12 derniers mois) : F=530.634, p=0.0000 -- RUPTURE structurelle significative _(observation : 2026-10-01)_
 - **Arima** — ARIMA(1,1,1) sur 100 previsions 1-jour test : RMSE=2.443 vs baseline naive MSE=6.051 -- ARIMA bat la persistance simple _(observation : 2026-10-05)_
-- **Stacking** — poids appris (momentum=-0.081, baseline=0.087, biais=0.092) -- accuracy stacking=0.5459 vs momentum seul=0.5020, baseline seule=0.5459 sur 2255 points test -- stacking NE BAT PAS la baseline, meilleur=stacking / baseline (ex-aequo) _(observation : 2026-10-02)_
-- **Decision stump** — seuil appris=-1.530 (sens=False) -- accuracy stump=0.5449 vs baseline=0.5466 sur 2263 points test -- stump NE BAT PAS la baseline _(observation : 2026-10-02)_
-- **Importance permutation** — R2 base=0.0103 -- importance momentum5j=0.00275, importance variation_vix=0.00785 -- VIX plus important _(observation : 2026-10-02)_
+- **Stacking** — poids appris (momentum=-0.082, baseline=0.088, biais=0.092) -- accuracy stacking=0.5463 vs momentum seul=0.5020, baseline seule=0.5463 sur 2255 points test -- stacking NE BAT PAS la baseline, meilleur=stacking / baseline (ex-aequo) _(observation : 2026-10-05)_
+- **Decision stump** — seuil appris=-1.530 (sens=False) -- accuracy stump=0.5451 vs baseline=0.5468 sur 2264 points test -- stump NE BAT PAS la baseline _(observation : 2026-10-05)_
+- **Importance permutation** — R2 base=0.0103 -- importance momentum5j=0.00473, importance variation_vix=0.01301 -- VIX plus important _(observation : 2026-10-05)_

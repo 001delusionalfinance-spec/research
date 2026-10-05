@@ -16,3 +16,4 @@ date,hurst,r2_regression,lecture
 2026-09-30,0.5517,0.9995,persistant (tendanciel)
 2026-10-01,0.5552,0.9993,persistant (tendanciel)
 2026-10-02,0.5532,0.9992,persistant (tendanciel)
+2026-10-05,0.547,0.999,proche de la marche aleatoire (H~0.5)
