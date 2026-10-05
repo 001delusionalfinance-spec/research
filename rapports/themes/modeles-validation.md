@@ -2,7 +2,7 @@
 
 Relations statistiques, previsions, tests hors echantillon et robustesse des modeles.
 
-Mis a jour : **2026-10-05 04:24 UTC** · 17 lectures.
+Mis a jour : **2026-10-05 07:14 UTC** · 17 lectures.
 
 [Retour au tableau de bord](../README.md)
 
@@ -15,7 +15,7 @@ _Statut **OK** · observation 2026-10-02 · moteur `statistique` · [donnees](..
 
 ### Dependance queue
 
-518/7546 jours conjointement extremes (SP500 pire 10% ET VIX pire 10%), P observee=0.0686 vs P sous independance=0.0100 -- coefficient de dependance de queue=6.86 (dependance reelle)
+518/7544 jours conjointement extremes (SP500 pire 10% ET VIX pire 10%), P observee=0.0687 vs P sous independance=0.0100 -- coefficient de dependance de queue=6.87 (dependance reelle)
 
 _Statut **OK** · observation 2026-10-02 · moteur `statistique` · [donnees](../donnees/dependance_queue.csv)_
 
@@ -57,7 +57,7 @@ _Statut **OK** · observation 2026-10-01 · moteur `ml` · [donnees](../donnees/
 
 ### Ensemble signaux
 
-7516 predictions -- momentum=0.4957, vix=0.4987, ensemble=0.4987, baseline=0.5371 -- ensemble NE BAT PAS la baseline
+7514 predictions -- momentum=0.4957, vix=0.4985, ensemble=0.4985, baseline=0.5371 -- ensemble NE BAT PAS la baseline
 
 _Statut **OK** · observation 2026-10-02 · moteur `ml` · [donnees](../donnees/ensemble_signaux.csv)_
 
@@ -113,14 +113,14 @@ _Statut **OK** · observation 2026-10-02 · moteur `ml` · [donnees](../donnees/
 
 ### Decision stump
 
-seuil appris=-1.530 (sens=False) -- accuracy stump=0.5451 vs baseline=0.5468 sur 2264 points test -- stump NE BAT PAS la baseline
+seuil appris=-1.530 (sens=False) -- accuracy stump=0.5449 vs baseline=0.5466 sur 2263 points test -- stump NE BAT PAS la baseline
 
 _Statut **OK** · observation 2026-10-02 · moteur `ml` · [donnees](../donnees/decision_stump.csv)_
 
 
 ### Importance permutation
 
-R2 base=0.0103 -- importance momentum5j=-0.00045, importance variation_vix=0.00929 -- VIX plus important
+R2 base=0.0103 -- importance momentum5j=0.00275, importance variation_vix=0.00785 -- VIX plus important
 
 _Statut **OK** · observation 2026-10-02 · moteur `ml` · [donnees](../donnees/importance_permutation.csv)_
 

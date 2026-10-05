@@ -63,7 +63,7 @@ date,feature,correlation,p_valeur,significatif
 2026-10-01,momentum_20j,-0.0112,0.3323,False
 2026-10-01,niveau_vix,-0.0035,0.7638,False
 2026-10-01,variation_vix,0.0304,0.0082,True
-2026-10-02,momentum_5j,-0.0292,0.0112,True
-2026-10-02,momentum_20j,-0.0112,0.3311,False
-2026-10-02,niveau_vix,-0.0036,0.756,False
-2026-10-02,variation_vix,0.0304,0.0082,True
+2026-10-02,momentum_5j,-0.0292,0.0113,True
+2026-10-02,momentum_20j,-0.0112,0.333,False
+2026-10-02,niveau_vix,-0.0034,0.7649,False
+2026-10-02,variation_vix,0.0306,0.0078,True

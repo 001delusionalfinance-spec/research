@@ -1,6 +1,6 @@
 # Qualite et fraicheur
 
-Derniere publication : **2026-10-05 04:24 UTC**.
+Derniere publication : **2026-10-05 07:14 UTC**.
 
 La date de publication indique quand les modeles ont ete recalcules. La date de derniere observation indique quand la source a publie sa derniere valeur ; une serie mensuelle ou trimestrielle peut donc etre saine sans porter la date du jour.
 

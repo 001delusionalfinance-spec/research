@@ -226,11 +226,10 @@ tresor_us/solde_tresorerie.csv,2026-10-01,4,1,42,500,OK
 fred/ECBDFR.csv,2026-10-02,3,1,42,3000,OK
 fred/RRPONTSYD.csv,2026-10-02,3,1,42,3000,OK
 fred/T10YIE.csv,2026-10-02,3,1,42,3000,OK
-marches/indices/DAX.csv,2026-10-02,3,1.0,42,3803,OK
-marches/indices/EUROSTOXX50.csv,2026-10-02,3,1,42,3760,OK
-marches/indices/FTSE100.csv,2026-10-02,3,1.0,42,3789,OK
+marches/indices/DAX.csv,2026-10-02,3,1,42,3802,OK
+marches/indices/EUROSTOXX50.csv,2026-10-02,3,1,42,3758,OK
+marches/indices/FTSE100.csv,2026-10-02,3,1.0,42,3787,OK
 marches/indices/KOSPI.csv,2026-10-02,3,1,42,3682,OK
-marches/taux_futures/FED_FUNDS_FRONT.csv,2026-10-02,3,1.0,42,3771,OK
 marches/volatilite/GVZ.csv,2026-10-02,3,1,42,3772,OK
 marches/volatilite/MOVE.csv,2026-10-02,3,1.0,42,3691,OK
 marches/volatilite/OVX.csv,2026-10-02,3,1,42,3772,OK
@@ -240,7 +239,7 @@ souverains/SUEDE_10A.csv,2026-10-02,3,1.0,42,9207,OK
 souverains/SUEDE_2A.csv,2026-10-02,3,1.0,42,9207,OK
 souverains/SUEDE_5A.csv,2026-10-02,3,1.0,42,9209,OK
 yfinance/SP500.csv,2026-10-02,3,1.0,42,7547,OK
-yfinance/VIX.csv,2026-10-02,3,1,42,7550,OK
+yfinance/VIX.csv,2026-10-02,3,1.0,42,7547,OK
 yfinance/XLB.csv,2026-10-02,3,1.0,42,501,OK
 yfinance/XLE.csv,2026-10-02,3,1.0,42,501,OK
 yfinance/XLF.csv,2026-10-02,3,1.0,42,501,OK
@@ -274,5 +273,6 @@ marches/matieres/CUIVRE.csv,2026-10-05,0,1.0,42,3771,OK
 marches/matieres/GAZ_HENRY_HUB.csv,2026-10-05,0,1,42,3772,OK
 marches/matieres/OR.csv,2026-10-05,0,1.0,42,3771,OK
 marches/matieres/WTI.csv,2026-10-05,0,1.0,42,3771,OK
+marches/taux_futures/FED_FUNDS_FRONT.csv,2026-10-05,0,1,42,3772,OK
 tresor_us/adjudications.csv,2026-10-15,-10,2,42,124,OK
 fomc/calendrier.csv,2027-12-07,-428,42.0,378.0,55,OK
