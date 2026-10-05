@@ -169,3 +169,13 @@ date,bloc_a,bloc_b,stat_eg,p_valeur,cointegrees
 2026-10-01,Royaume-Uni,US,-1.9878,0.5349,False
 2026-10-01,Royaume-Uni,Zone_euro,-2.212,0.4182,False
 2026-10-01,US,Zone_euro,-1.6095,0.7169,False
+2026-10-02,Chine,Japon,-3.6969,0.0185,True
+2026-10-02,Chine,Royaume-Uni,-2.1909,0.429,False
+2026-10-02,Chine,US,-2.0335,0.5111,False
+2026-10-02,Chine,Zone_euro,-2.1259,0.4628,False
+2026-10-02,Japon,Royaume-Uni,-1.9716,0.5433,False
+2026-10-02,Japon,US,-0.3664,0.9726,False
+2026-10-02,Japon,Zone_euro,-0.7129,0.9452,False
+2026-10-02,Royaume-Uni,US,-1.9893,0.5341,False
+2026-10-02,Royaume-Uni,Zone_euro,-2.212,0.4182,False
+2026-10-02,US,Zone_euro,-1.6097,0.7168,False

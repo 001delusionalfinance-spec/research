@@ -1,6 +1,6 @@
 bloc,date,taux_court_pct,taux_long_pct,pente_pt,variation_pente_3m_pt,variation_jambe_courte_3m_pt,variation_jambe_longue_3m_pt,mouvement,forme
 Australie,2026-09-30,4.942,5.344,0.402,0.062,0.484,0.546,stable,normale
-Etats-Unis,2026-10-01,4.78,5.24,0.46,0.11,0.64,0.75,repentification par l'arriere (jambe longue en hausse -- prime de terme),normale
+Etats-Unis,2026-10-02,4.83,5.28,0.45,0.1,0.69,0.79,stable,normale
 Zone euro,2026-10-02,2.992,3.464,0.472,-0.063,0.521,0.458,stable,normale
 Suede,2026-10-02,2.658,3.138,0.48,-0.117,0.496,0.379,aplatissement,normale
 Royaume-Uni (5s10s),2026-10-01,4.913,5.424,0.511,-0.064,0.651,0.587,stable,normale

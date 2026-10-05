@@ -16,4 +16,4 @@ date,rendement_sp500,variation_vix,distance_mahalanobis,anomalie
 2026-09-30,-0.00252,0.3,0.428,False
 2026-10-01,0.00195,0.05,0.35,False
 2026-10-02,0.00731,-1.08,0.826,False
-2026-10-05,0.00468,0.28,1.158,False
+2026-10-05,0.00661,0.21,1.497,False

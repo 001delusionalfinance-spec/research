@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-05T16:09:41.521390+00:00",
+  "generated_at": "2026-10-05T22:46:36.971761+00:00",
   "status": "attention",
   "models": [
     {
@@ -11,7 +11,7 @@
       "ok": true,
       "synthese": false,
       "sortie": "regime_monetaire_emploi.csv",
-      "derniere_observation": "2026-10-01"
+      "derniere_observation": "2026-10-02"
     },
     {
       "nom": "sahm_rule",
@@ -33,7 +33,7 @@
       "ok": true,
       "synthese": true,
       "sortie": "taux_reel_us.csv",
-      "derniere_observation": "2026-10-01"
+      "derniere_observation": "2026-10-02"
     },
     {
       "nom": "regle_taylor",
@@ -44,29 +44,29 @@
       "ok": true,
       "synthese": true,
       "sortie": "regle_taylor.csv",
-      "derniere_observation": "2026-10-01"
+      "derniere_observation": "2026-10-02"
     },
     {
       "nom": "courbe_taux_us",
       "titre": "Courbe taux us",
       "theme": "taux-credit-liquidite",
       "lane": "macro",
-      "lecture": "10 ans=5.24%, 2 ans=4.78%, spread=+0.46pt -- normale (0 run(s) consecutif(s) dans l'historique accumule)",
+      "lecture": "10 ans=5.28%, 2 ans=4.83%, spread=+0.45pt -- normale (0 run(s) consecutif(s) dans l'historique accumule)",
       "ok": true,
       "synthese": true,
       "sortie": "courbe_taux_us.csv",
-      "derniere_observation": "2026-10-01"
+      "derniere_observation": "2026-10-02"
     },
     {
       "nom": "chemin_taux_fed",
       "titre": "Chemin taux fed",
       "theme": "banques-centrales",
       "lane": "macro",
-      "lecture": "chemin de taux (pas des probabilites) : DFF=3.88%, prochaine reunion 2026-10-27 (11 a venir dans le calendrier) -- mois_en_cours: +50pb (hausse, confiance moyenne) | 0-1 mois: +18pb (hausse, confiance faible) | 1-3 mois: +34pb (hausse, confiance faible) | 3-6 mois: +49pb (hausse, confiance faible) | 6-12 mois: +73pb (hausse, confiance faible)",
+      "lecture": "chemin de taux (pas des probabilites) : DFF=3.88%, prochaine reunion 2026-10-27 (11 a venir dans le calendrier) -- mois_en_cours: +43pb (hausse, confiance moyenne) | 0-1 mois: +16pb (hausse, confiance faible) | 1-3 mois: +38pb (hausse, confiance faible) | 3-6 mois: +47pb (hausse, confiance faible) | 6-12 mois: +77pb (hausse, confiance faible)",
       "ok": true,
       "synthese": true,
       "sortie": "chemin_taux_fed.csv",
-      "derniere_observation": "2026-10-01"
+      "derniere_observation": "2026-10-02"
     },
     {
       "nom": "cycle_credit",
@@ -84,11 +84,11 @@
       "titre": "Conditions financieres",
       "theme": "taux-credit-liquidite",
       "lane": "macro",
-      "lecture": "indice conditions financieres=+0.010 (3 composantes: {'taux_directeur': 0.5960734758921187, 'courbe_inversee': 0.003384125958412214, 'vix': -0.57076472708709}) -- conditions proches de la normale",
+      "lecture": "indice conditions financieres=+0.012 (3 composantes: {'taux_directeur': 0.5957168406491713, 'courbe_inversee': 0.01936573764563786, 'vix': -0.5794203338430658}) -- conditions proches de la normale",
       "ok": true,
       "synthese": true,
       "sortie": "conditions_financieres.csv",
-      "derniere_observation": "2026-10-01"
+      "derniere_observation": "2026-10-02"
     },
     {
       "nom": "reer_us",
@@ -172,7 +172,7 @@
       "titre": "Soutenabilite dette",
       "theme": "cycle-macro",
       "lane": "macro",
-      "lecture": "8 pays. charge la plus lourde : Canada a 25.5% du revenu. taux 10 ans AU-DESSUS de l'inflation dans 5 pays -- Royaume-Uni (+2.3pt), Etats-Unis (+1.8pt), Japon (+1.2pt), Canada (+0.9pt), Zone euro (+0.9pt). Configuration ou le ratio d'endettement monte meme a budget primaire equilibre (approximation : croissance nominale reduite a l'inflation)",
+      "lecture": "8 pays. charge la plus lourde : Canada a 25.5% du revenu. taux 10 ans AU-DESSUS de l'inflation dans 5 pays -- Royaume-Uni (+2.3pt), Etats-Unis (+1.9pt), Japon (+1.2pt), Canada (+0.9pt), Zone euro (+0.9pt). Configuration ou le ratio d'endettement monte meme a budget primaire equilibre (approximation : croissance nominale reduite a l'inflation)",
       "ok": true,
       "synthese": true,
       "sortie": "soutenabilite_dette.csv",
@@ -183,7 +183,7 @@
       "titre": "Matieres premieres macro",
       "theme": "cycle-macro",
       "lane": "macro",
-      "lecture": "le ratio cuivre/or monte -- la croissance domine la peur (+7.6% sur 3 mois). Brent 101.3$ (+40.7% sur 3 mois, +57.0% sur 12 mois), gaz -5.8% sur 3 mois, ecart Brent-WTI +11.0$ -- energie nettement plus chere sur un an -- pression inflationniste a venir que les prix a la consommation ne montrent pas encore",
+      "lecture": "le ratio cuivre/or monte -- la croissance domine la peur (+7.5% sur 3 mois). Brent 100.2$ (+39.2% sur 3 mois, +55.3% sur 12 mois), gaz -5.1% sur 3 mois, ecart Brent-WTI +11.0$ -- energie nettement plus chere sur un an -- pression inflationniste a venir que les prix a la consommation ne montrent pas encore",
       "ok": true,
       "synthese": true,
       "sortie": "matieres_premieres_macro.csv",
@@ -238,7 +238,7 @@
       "titre": "Vol cross asset",
       "theme": "risques-regimes",
       "lane": "risque",
-      "lecture": "6 mesures de volatilite : Or (GVZ) 82e pct, Petrole (OVX) 78e pct, Taux US (MOVE) 68e pct, Nasdaq (VXN) 45e pct, Actions US (VIX) 28e pct, Vol de la vol (VVIX) 21e pct -- stress LOCALISE sur Or (GVZ) pendant que le reste ne l'est pas -- episode propre a cette classe d'actifs, pas une aversion au risque d'ensemble",
+      "lecture": "6 mesures de volatilite : Or (GVZ) 81e pct, Petrole (OVX) 76e pct, Taux US (MOVE) 69e pct, Nasdaq (VXN) 44e pct, Actions US (VIX) 27e pct, Vol de la vol (VVIX) 20e pct -- stress LOCALISE sur Or (GVZ) pendant que le reste ne l'est pas -- episode propre a cette classe d'actifs, pas une aversion au risque d'ensemble",
       "ok": true,
       "synthese": true,
       "sortie": "vol_cross_asset.csv",
@@ -315,7 +315,7 @@
       "titre": "Divergence cot prix",
       "theme": "positionnement",
       "lane": "positionnement-comportemental",
-      "lecture": "SP500 +0.52% sur 30j, COT net -67994 -> -142499 -- DIVERGENCE (prix monte, positionnement recule)",
+      "lecture": "SP500 +0.72% sur 30j, COT net -67994 -> -142499 -- DIVERGENCE (prix monte, positionnement recule)",
       "ok": true,
       "synthese": true,
       "sortie": "divergence_cot_prix.csv",
@@ -396,7 +396,7 @@
       "ok": true,
       "synthese": false,
       "sortie": "stationnarite_taux.csv",
-      "derniere_observation": "2026-10-01"
+      "derniere_observation": "2026-10-02"
     },
     {
       "nom": "correlation_glissante",
@@ -418,7 +418,7 @@
       "ok": true,
       "synthese": false,
       "sortie": "cointegration_taux.csv",
-      "derniere_observation": "2026-10-01"
+      "derniere_observation": "2026-10-02"
     },
     {
       "nom": "pca_taux",
@@ -469,18 +469,18 @@
       "titre": "Beta facteur macro",
       "theme": "marches-allocation",
       "lane": "statistique",
-      "lecture": "beta SP500/DGS10 (60j) = -0.0788 (rendement SP500 pour +1pt de taux 10 ans, 57/60 jours avec variation reelle) -- sensibilite elevee au facteur macro (choc de +100pb extrapole = -7.6%)",
+      "lecture": "beta SP500/DGS10 (60j) = -0.0755 (rendement SP500 pour +1pt de taux 10 ans, 57/60 jours avec variation reelle) -- sensibilite elevee au facteur macro (choc de +100pb extrapole = -7.3%)",
       "ok": true,
       "synthese": true,
       "sortie": "beta_facteur_macro.csv",
-      "derniere_observation": "2026-10-01"
+      "derniere_observation": "2026-10-02"
     },
     {
       "nom": "volatilite_ewma",
       "titre": "Volatilite ewma",
       "theme": "risques-regimes",
       "lane": "series-temporelles",
-      "lecture": "vol realisee 60j=0.1114302605798963, EWMA=0.0999 (tendance 10 runs: stable)",
+      "lecture": "vol realisee 60j=0.11181748009030573, EWMA=0.1015 (tendance 10 runs: stable)",
       "ok": true,
       "synthese": true,
       "sortie": "volatilite_ewma.csv",
@@ -513,7 +513,7 @@
       "titre": "Ornstein uhlenbeck vix",
       "theme": "risques-regimes",
       "lane": "series-temporelles",
-      "lecture": "VIX actuel=15.59, niveau moyen estime (mu)=20.21, demi-vie=28.8j, ecart actuel=-4.62 -- VIX actuel en-dessous de son niveau moyen de long terme",
+      "lecture": "VIX actuel=15.52, niveau moyen estime (mu)=20.21, demi-vie=28.8j, ecart actuel=-4.69 -- VIX actuel en-dessous de son niveau moyen de long terme",
       "ok": true,
       "synthese": true,
       "sortie": "ornstein_uhlenbeck_vix.csv",
@@ -535,7 +535,7 @@
       "titre": "Kalman niveau local",
       "theme": "risques-regimes",
       "lane": "series-temporelles",
-      "lecture": "VIX observe=15.59, filtre Kalman=15.57 (ecart-type=0.62), ratio signal/bruit=0.2052 -- le filtre lisse fortement le bruit, reagit lentement (ecart obs.-filtre=+0.02)",
+      "lecture": "VIX observe=15.52, filtre Kalman=15.51 (ecart-type=0.62), ratio signal/bruit=0.2052 -- le filtre lisse fortement le bruit, reagit lentement (ecart obs.-filtre=+0.01)",
       "ok": true,
       "synthese": true,
       "sortie": "kalman_niveau_local.csv",
@@ -546,18 +546,18 @@
       "titre": "Hp filter taux",
       "theme": "taux-credit-liquidite",
       "lane": "series-temporelles",
-      "lecture": "taux 10 ans observe=5.240%, tendance HP=5.090%, ecart cyclique=+0.150pt -- au-dessus de sa tendance locale",
+      "lecture": "taux 10 ans observe=5.280%, tendance HP=5.115%, ecart cyclique=+0.165pt -- au-dessus de sa tendance locale",
       "ok": true,
       "synthese": true,
       "sortie": "hp_filter_taux.csv",
-      "derniere_observation": "2026-10-01"
+      "derniere_observation": "2026-10-02"
     },
     {
       "nom": "var_sp500_vix",
       "titre": "Var sp500 vix",
       "theme": "risques-regimes",
       "lane": "series-temporelles",
-      "lecture": "VAR ordre choisi par AIC=10 -- coef SP500(t-1)->VIX(t)=0.3564901976843391 (SP500(t-1) en hausse -> VIX(t) tend aussi a monter), coef VIX(t-1)->SP500(t)=-0.05231370473663073 (VIX(t-1) en hausse -> SP500(t) tend a baisser)",
+      "lecture": "VAR ordre choisi par AIC=10 -- coef SP500(t-1)->VIX(t)=0.3562738442137139 (SP500(t-1) en hausse -> VIX(t) tend aussi a monter), coef VIX(t-1)->SP500(t)=-0.05230772322273468 (VIX(t-1) en hausse -> SP500(t) tend a baisser)",
       "ok": true,
       "synthese": true,
       "sortie": "var_sp500_vix.csv",
@@ -579,7 +579,7 @@
       "titre": "Momentum prix",
       "theme": "marches-allocation",
       "lane": "factorielle",
-      "lecture": "SP500 momentum 12-1 mois = 14.93% -- haussier (momentum positif), detail 1/3/6/12m = [0.52, 2.94, 17.35, 15.53]",
+      "lecture": "SP500 momentum 12-1 mois = 14.93% -- haussier (momentum positif), detail 1/3/6/12m = [0.72, 3.14, 17.58, 15.76]",
       "ok": true,
       "synthese": true,
       "sortie": "momentum_prix.csv",
@@ -594,14 +594,14 @@
       "ok": true,
       "synthese": false,
       "sortie": "carry_proxy.csv",
-      "derniere_observation": "2026-10-01"
+      "derniere_observation": "2026-10-02"
     },
     {
       "nom": "beta_vol",
       "titre": "Beta vol",
       "theme": "marches-allocation",
       "lane": "factorielle",
-      "lecture": "beta SP500/VIX (60j) = -0.00482 (rendement SP500 pour +1pt VIX) -- sensibilite normale, relation inverse attendue (normale)",
+      "lecture": "beta SP500/VIX (60j) = -0.00483 (rendement SP500 pour +1pt VIX) -- sensibilite normale, relation inverse attendue (normale)",
       "ok": true,
       "synthese": true,
       "sortie": "beta_vol.csv",
@@ -612,7 +612,7 @@
       "titre": "Rotation sectorielle",
       "theme": "marches-allocation",
       "lane": "factorielle",
-      "lecture": "classement momentum 3 mois (10 secteurs) : 1. Energie (XLE) : +19.64% | 2. Technologie (XLK) : +9.21% | 3. Sante (XLV) : +2.82% | 4. Consommation de base (XLP) : -3.98% | 5. Finance (XLF) : -4.28%",
+      "lecture": "classement momentum 3 mois (10 secteurs) : 1. Energie (XLE) : +19.42% | 2. Technologie (XLK) : +9.46% | 3. Sante (XLV) : +3.34% | 4. Consommation de base (XLP) : -3.64% | 5. Finance (XLF) : -4.03%",
       "ok": true,
       "synthese": true,
       "sortie": "rotation_sectorielle.csv",
@@ -623,7 +623,7 @@
       "titre": "Saisonnalite",
       "theme": "marches-allocation",
       "lane": "factorielle",
-      "lecture": "rendement journalier moyen ete=+0.0176%, hiver=+0.0465% (t=-1.04, p=0.2981) -- non significatif (attendu vu la faible puissance sur seulement ~2 ans)",
+      "lecture": "rendement journalier moyen ete=+0.0177%, hiver=+0.0465% (t=-1.04, p=0.2989) -- non significatif (attendu vu la faible puissance sur seulement ~2 ans)",
       "ok": true,
       "synthese": true,
       "sortie": "saisonnalite.csv",
@@ -634,7 +634,7 @@
       "titre": "Dispersion sectorielle",
       "theme": "marches-allocation",
       "lane": "factorielle",
-      "lecture": "10 secteurs, rendement moyen 3m=-1.62%, dispersion (ecart-type)=9.07pt, etendue=31.13pt -- dispersion intermediaire",
+      "lecture": "10 secteurs, rendement moyen 3m=-1.49%, dispersion (ecart-type)=9.08pt, etendue=31.19pt -- dispersion intermediaire",
       "ok": true,
       "synthese": true,
       "sortie": "dispersion_sectorielle.csv",
@@ -645,7 +645,7 @@
       "titre": "Low volatility",
       "theme": "marches-allocation",
       "lane": "factorielle",
-      "lecture": "tercile bas-vol ['XLF', 'XLRE', 'XLU'] Sharpe=-0.993 vs tercile haut-vol ['XLY', 'XLE', 'XLK'] Sharpe=0.258 -- anomalie low-vol non confirmee sur cet echantillon (puissance statistique faible, n petit -- limite assumee)",
+      "lecture": "tercile bas-vol ['XLF', 'XLRE', 'XLU'] Sharpe=-1.010 vs tercile haut-vol ['XLY', 'XLE', 'XLK'] Sharpe=0.270 -- anomalie low-vol non confirmee sur cet echantillon (puissance statistique faible, n petit -- limite assumee)",
       "ok": true,
       "synthese": true,
       "sortie": "low_volatility.csv",
@@ -667,7 +667,7 @@
       "titre": "Momentum cross sectional",
       "theme": "marches-allocation",
       "lane": "factorielle",
-      "lecture": "panier gagnant ['XLE', 'XLK', 'XLV'] (+10.56%) vs panier perdant ['XLRE', 'XLI', 'XLU'] (-9.23%) -- spread momentum=+19.79pt",
+      "lecture": "panier gagnant ['XLE', 'XLK', 'XLV'] (+10.74%) vs panier perdant ['XLRE', 'XLI', 'XLU'] (-9.42%) -- spread momentum=+20.16pt",
       "ok": true,
       "synthese": true,
       "sortie": "momentum_cross_sectional.csv",
@@ -689,7 +689,7 @@
       "titre": "Skew kurtosis",
       "theme": "risques-regimes",
       "lane": "risque",
-      "lecture": "skewness=-0.188 (asymetrie negative (pertes extremes > gains extremes)), kurtosis exces=+1.001 (queues epaisses (risque extreme sous-estime par une hypothese normale))",
+      "lecture": "skewness=-0.190 (asymetrie negative (pertes extremes > gains extremes)), kurtosis exces=+0.993 (queues epaisses (risque extreme sous-estime par une hypothese normale))",
       "ok": true,
       "synthese": true,
       "sortie": "skew_kurtosis.csv",
@@ -700,7 +700,7 @@
       "titre": "Ratios performance",
       "theme": "risques-regimes",
       "lane": "risque",
-      "lecture": "Sharpe=1.113 (bon), Sortino=1.105 (bon), Calmar=1.593 (bon) -- lecture sur fenetre 252j (~1 an, echantillon limite), seuils academiques standards, taux sans risque suppose nul",
+      "lecture": "Sharpe=1.127 (bon), Sortino=1.119 (bon), Calmar=1.615 (bon) -- lecture sur fenetre 252j (~1 an, echantillon limite), seuils academiques standards, taux sans risque suppose nul",
       "ok": true,
       "synthese": true,
       "sortie": "ratios_performance.csv",
@@ -722,7 +722,7 @@
       "titre": "Stress test historique",
       "theme": "risques-regimes",
       "lane": "risque",
-      "lecture": "COVID_2020 (2020-02-19 -> 2020-03-23) : chute historique=-33.9% -- rejouee sur le niveau actuel (7759) -> 5127  _(sans synthese)_",
+      "lecture": "COVID_2020 (2020-02-19 -> 2020-03-23) : chute historique=-33.9% -- rejouee sur le niveau actuel (7774) -> 5137  _(sans synthese)_",
       "ok": true,
       "synthese": false,
       "sortie": "stress_test_historique.csv",
@@ -733,7 +733,7 @@
       "titre": "Sizing robuste",
       "theme": "risques-regimes",
       "lane": "risque",
-      "lecture": "vol point estimate=0.1300, IC90%=[0.1175, 0.1412] (1000 tirages bootstrap) -- intervalle etroit (18% du point estimate) -- estimation relativement fiable",
+      "lecture": "vol point estimate=0.1300, IC90%=[0.1176, 0.1412] (1000 tirages bootstrap) -- intervalle etroit (18% du point estimate) -- estimation relativement fiable",
       "ok": true,
       "synthese": true,
       "sortie": "sizing_robuste.csv",
@@ -755,7 +755,7 @@
       "titre": "Detection saut",
       "theme": "risques-regimes",
       "lane": "risque",
-      "lecture": "Z-stat BNS (fenetre 22j)=1.782 (seuil ±1.96) -- pas de saut isole detecte",
+      "lecture": "Z-stat BNS (fenetre 22j)=1.726 (seuil ±1.96) -- pas de saut isole detecte",
       "ok": true,
       "synthese": true,
       "sortie": "detection_saut.csv",
@@ -766,11 +766,11 @@
       "titre": "Choc taux",
       "theme": "risques-regimes",
       "lane": "risque",
-      "lecture": "beta SP500/DGS10=-0.0788 -- choc +100pb : -7.88% (SP500 7666 -> 7063) ; choc -100pb : +7.88% (-> 8270)",
+      "lecture": "beta SP500/DGS10=-0.0755 -- choc +100pb : -7.55% (SP500 7723 -> 7140) ; choc -100pb : +7.55% (-> 8306)",
       "ok": true,
       "synthese": true,
       "sortie": "choc_taux.csv",
-      "derniere_observation": "2026-10-01"
+      "derniere_observation": "2026-10-02"
     },
     {
       "nom": "ton_fomc",
@@ -887,7 +887,7 @@
       "titre": "Anomalie multivariee",
       "theme": "modeles-validation",
       "lane": "ml",
-      "lecture": "distance de Mahalanobis=1.158 (seuil 3.0) -- jour ordinaire",
+      "lecture": "distance de Mahalanobis=1.497 (seuil 3.0) -- jour ordinaire",
       "ok": true,
       "synthese": true,
       "sortie": "anomalie_multivariee.csv",
@@ -920,11 +920,11 @@
       "titre": "Kmeans regimes",
       "theme": "modeles-validation",
       "lane": "ml",
-      "lecture": "2050 points, k=3 -- point actuel (VIX=16.4, spread=+0.46, taux=3.88%) -> cluster 1 (tailles : {0: 357, 1: 1369, 2: 324}) -- regime calme (VIX du cluster en-dessous de la moyenne historique)",
+      "lecture": "2050 points, k=3 -- point actuel (VIX=15.3, spread=+0.45, taux=3.88%) -> cluster 1 (tailles : {0: 358, 1: 1368, 2: 324}) -- regime calme (VIX du cluster en-dessous de la moyenne historique)",
       "ok": true,
       "synthese": true,
       "sortie": "kmeans_regimes.csv",
-      "derniere_observation": "2026-10-01"
+      "derniere_observation": "2026-10-02"
     },
     {
       "nom": "ensemble_signaux",
@@ -953,7 +953,7 @@
       "titre": "Couts transaction",
       "theme": "modeles-validation",
       "lane": "ml",
-      "lecture": "7515 predictions, 1513 changements de position (5pb/changement) -- rendement cumule brut=-93.31%, cout total=53.08%, net=-96.86% -- les frais mangent une part importante du rendement (>50% du brut)",
+      "lecture": "7515 predictions, 1513 changements de position (5pb/changement) -- rendement cumule brut=-93.33%, cout total=53.08%, net=-96.87% -- les frais mangent une part importante du rendement (>50% du brut)",
       "ok": true,
       "synthese": true,
       "sortie": "couts_transaction.csv",
@@ -1041,22 +1041,22 @@
       "titre": "Decomposition variance",
       "theme": "modeles-validation",
       "lane": "statistique",
-      "lecture": "R² SP500~DGS10 (60j) = 0.2739 -- 27.4% de la variance des rendements SP500 expliquee par les variations du taux 10 ans (le reste = idiosyncratique/autres facteurs)",
+      "lecture": "R² SP500~DGS10 (60j) = 0.2521 -- 25.2% de la variance des rendements SP500 expliquee par les variations du taux 10 ans (le reste = idiosyncratique/autres facteurs)",
       "ok": true,
       "synthese": true,
       "sortie": "decomposition_variance.csv",
-      "derniere_observation": "2026-10-01"
+      "derniere_observation": "2026-10-02"
     },
     {
       "nom": "test_chow",
       "titre": "Test chow",
       "theme": "modeles-validation",
       "lane": "statistique",
-      "lecture": "test de Chow (taux 10 ans, 1ere vs 2eme moitie des 12 derniers mois) : F=530.634, p=0.0000 -- RUPTURE structurelle significative",
+      "lecture": "test de Chow (taux 10 ans, 1ere vs 2eme moitie des 12 derniers mois) : F=526.913, p=0.0000 -- RUPTURE structurelle significative",
       "ok": true,
       "synthese": true,
       "sortie": "test_chow.csv",
-      "derniere_observation": "2026-10-01"
+      "derniere_observation": "2026-10-02"
     },
     {
       "nom": "cointegration_secteurs",
@@ -1089,7 +1089,7 @@
       "ok": true,
       "synthese": true,
       "sortie": "qualite_regime_macro.csv",
-      "derniere_observation": "2026-10-01"
+      "derniere_observation": "2026-10-02"
     },
     {
       "nom": "var_conditionnelle_regime",
@@ -1118,7 +1118,7 @@
       "titre": "Decomposition stl",
       "theme": "risques-regimes",
       "lane": "series-temporelles",
-      "lecture": "VIX : tendance=15.89, composante saisonniere (periode 5j)=-0.043, residu=-0.255 -- la saisonnalite explique 0.71% de la variance totale (negligeable)",
+      "lecture": "VIX : tendance=15.88, composante saisonniere (periode 5j)=-0.057, residu=-0.300 -- la saisonnalite explique 0.71% de la variance totale (negligeable)",
       "ok": true,
       "synthese": true,
       "sortie": "decomposition_stl.csv",
@@ -1151,7 +1151,7 @@
       "titre": "Correlation facteurs",
       "theme": "marches-allocation",
       "lane": "factorielle",
-      "lecture": "correlation entre momentum 3m et beta-VIX, 10 secteurs : +0.132 (facteurs largement independants)",
+      "lecture": "correlation entre momentum 3m et beta-VIX, 10 secteurs : +0.123 (facteurs largement independants)",
       "ok": true,
       "synthese": true,
       "sortie": "correlation_facteurs.csv",
@@ -1162,7 +1162,7 @@
       "titre": "Ratios conditionnels regime",
       "theme": "risques-regimes",
       "lane": "risque",
-      "lecture": "Sharpe regime haut-vol=-1.107, bas-vol=2.396, global=0.419 -- meilleur en regime calme, comme attendu",
+      "lecture": "Sharpe regime haut-vol=-1.107, bas-vol=2.397, global=0.419 -- meilleur en regime calme, comme attendu",
       "ok": true,
       "synthese": true,
       "sortie": "ratios_conditionnels_regime.csv",
@@ -1228,7 +1228,7 @@
       "titre": "Importance permutation",
       "theme": "modeles-validation",
       "lane": "ml",
-      "lecture": "R2 base=0.0103 -- importance momentum5j=0.00473, importance variation_vix=0.01301 -- VIX plus important",
+      "lecture": "R2 base=0.0103 -- importance momentum5j=0.00473, importance variation_vix=0.01300 -- VIX plus important",
       "ok": true,
       "synthese": true,
       "sortie": "importance_permutation.csv",
