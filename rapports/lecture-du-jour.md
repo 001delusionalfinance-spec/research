@@ -1,4 +1,4 @@
-# Rapport global — 2026-10-04 22:04 UTC
+# Rapport global — 2026-10-05 00:06 UTC
 
 **Etat global : ATTENTION** · 112/112 modeles reussis · 2 source(s) suspecte(s) · 0 source(s) gelee(s).
 
@@ -14,7 +14,7 @@ Decisions, fonctions de reaction, bilan, communication et trajectoires de taux.
 
 - **Regime monetaire emploi** — Chine : taux 1.54% (stable, niveau bas) -- chomage non_couvert  _(sans synthese)_ _(observation : 2026-10-01)_
 - **Regle taylor** — Taylor (2 termes, sans output gap)=6.03%, Fed reel=3.88%, ecart=-2.15pt -- accommodant (Fed en-dessous de la regle) _(observation : 2026-10-01)_
-- **Chemin taux fed** — chemin de taux (pas des probabilites) : DFF=3.88%, prochaine reunion 2026-10-27 (11 a venir dans le calendrier) -- mois_en_cours: +39pb (hausse, confiance moyenne) | 0-1 mois: +18pb (hausse, confiance faible) | 1-3 mois: +34pb (hausse, confiance faible) | 3-6 mois: +49pb (hausse, confiance faible) | 6-12 mois: +73pb (hausse, confiance faible) _(observation : 2026-10-01)_
+- **Chemin taux fed** — chemin de taux (pas des probabilites) : DFF=3.88%, prochaine reunion 2026-10-27 (11 a venir dans le calendrier) -- mois_en_cours: +35pb (hausse, confiance moyenne) | 0-1 mois: +18pb (hausse, confiance faible) | 1-3 mois: +34pb (hausse, confiance faible) | 3-6 mois: +49pb (hausse, confiance faible) | 6-12 mois: +73pb (hausse, confiance faible) _(observation : 2026-10-01)_
 - **Divergence taux directeurs** — 12 banques centrales : ecart de taux max 4.50pt (Norvege 4.50% contre Suisse 0.00%), mediane 2.88% -- cycles alignes dans le meme sens (resserrement) -- divergence limitee _(observation : 2026-09-29)_
 - **Bilans banques centrales** — 9 bilans suivis sur 12 mois : de -17.7% (RBA -- titres locaux) a +8.6% (Fed -- titres du Tresor) -- regimes OPPOSES -- 5 bilan(s) en reduction pendant que 4 s'etendent, la liquidite mondiale ne va pas dans un sens unique _(observation : 2026-09-30)_
 - **Liquidite nette fed** — liquidite nette 5.43 T$ au 2026-09-30 (-1.3% sur 3 mois, +0.7% sur 12 mois) -- liquidite en retrait sur 3 mois -- conditions de financement qui se durcissent. Detail : actif 6.74 T$, compte du Tresor 0.95 T$, reverse repo 0.36 T$ _(observation : 2026-09-30)_
@@ -41,7 +41,7 @@ Activite, emploi, inflation, immobilier, commerce et finances publiques.
 - **Inflation comparee** — inflation annuelle sur 12 blocs : mediane 3.06%, dispersion 3.75pt (Nouvelle-Zelande +4.06% au plus haut, Suede +0.31% au plus bas) -- dispersion forte -- les banques centrales sont poussees a diverger, ce qui deplace les differentiels de taux et le change _(observation : date non exposee)_
 - **Activite zone euro** — zone euro : Production industrielle -0.2 % sur 12 mois, Ventes de detail +0.8 % sur 12 mois, Taux de chomage +0.1 pt sur 12 mois, Confiance industrielle +2.7 pt vs moyenne longue -- production industrielle DIVERGENTE entre grands pays -- en hausse : Espagne ; en baisse : Allemagne, France, Italie _(observation : date non exposee)_
 - **Soutenabilite dette** — 8 pays. charge la plus lourde : Canada a 25.5% du revenu. taux 10 ans AU-DESSUS de l'inflation dans 5 pays -- Royaume-Uni (+2.3pt), Etats-Unis (+1.8pt), Japon (+1.2pt), Zone euro (+0.9pt), Canada (+0.9pt). Configuration ou le ratio d'endettement monte meme a budget primaire equilibre (approximation : croissance nominale reduite a l'inflation) _(observation : date non exposee)_
-- **Matieres premieres macro** — le ratio cuivre/or monte -- la croissance domine la peur (+6.2% sur 3 mois). Brent 102.2$ (+42.4% sur 3 mois, +59.5% sur 12 mois), gaz -5.0% sur 3 mois, ecart Brent-WTI +11.1$ -- energie nettement plus chere sur un an -- pression inflationniste a venir que les prix a la consommation ne montrent pas encore _(observation : 2026-10-02)_
+- **Matieres premieres macro** — le ratio cuivre/or monte -- la croissance domine la peur (+6.5% sur 3 mois). Brent 102.4$ (+42.7% sur 3 mois, +58.8% sur 12 mois), gaz -5.8% sur 3 mois, ecart Brent-WTI +11.5$ -- energie nettement plus chere sur un an -- pression inflationniste a venir que les prix a la consommation ne montrent pas encore _(observation : 2026-10-04)_
 - **Surprise macro composite** — indice de surprise macro=-1.00 ({'chomage': -1, 'credit_bancaire': -1, 'inflation': -1}) -- negatif (surprises defavorables dominent) _(observation : 2026-09-01)_
 - **Balance commerciale** — balance commerciale=-88,576M$ (rang percentile=1), deficit se creuse _(observation : 2026-07-01)_
 - **Surprise inflation** — CPI MoM=+0.396%, prevision naive=+0.316%, surprise=+0.080pt -- surprise haussiere (inflation plus forte qu'attendu) _(observation : 2026-08-01)_
