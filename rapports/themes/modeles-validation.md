@@ -2,7 +2,7 @@
 
 Relations statistiques, previsions, tests hors echantillon et robustesse des modeles.
 
-Mis a jour : **2026-10-06 19:28 UTC** · 17 lectures.
+Mis a jour : **2026-10-06 21:08 UTC** · 17 lectures.
 
 [Retour au tableau de bord](../README.md)
 
@@ -29,7 +29,7 @@ _Statut **OK** · observation 2026-10-06 · moteur `ml` · [donnees](../donnees/
 
 ### Anomalie multivariee
 
-distance de Mahalanobis=0.892 (seuil 3.0) -- jour ordinaire
+distance de Mahalanobis=0.717 (seuil 3.0) -- jour ordinaire
 
 _Statut **OK** · observation 2026-10-06 · moteur `ml` · [donnees](../donnees/anomalie_multivariee.csv)_
 
@@ -43,16 +43,16 @@ _Statut **OK** · observation 2026-10-06 · moteur `ml` · [donnees](../donnees/
 
 ### Prevision vol regression
 
-regression AR(1) (a=0.000116, b=0.2097) MSE=2.9846e-07 vs baseline persistance MSE=3.8344e-07 -- BAT la baseline (resultat honnete, pas ajuste)
+regression AR(1) (a=0.000116, b=0.2097) MSE=2.9847e-07 vs baseline persistance MSE=3.8344e-07 -- BAT la baseline (resultat honnete, pas ajuste)
 
 _Statut **OK** · observation 2026-10-06 · moteur `ml` · [donnees](../donnees/prevision_vol_regression.csv)_
 
 
 ### Kmeans regimes
 
-2050 points, k=3 -- point actuel (VIX=15.3, spread=+0.45, taux=3.88%) -> cluster 1 (tailles : {0: 358, 1: 1368, 2: 324}) -- regime calme (VIX du cluster en-dessous de la moyenne historique)
+2048 points, k=3 -- point actuel (VIX=15.5, spread=+0.47, taux=3.88%) -> cluster 1 (tailles : {0: 358, 1: 1366, 2: 324}) -- regime calme (VIX du cluster en-dessous de la moyenne historique)
 
-_Statut **OK** · observation 2026-10-02 · moteur `ml` · [donnees](../donnees/kmeans_regimes.csv)_
+_Statut **OK** · observation 2026-10-05 · moteur `ml` · [donnees](../donnees/kmeans_regimes.csv)_
 
 
 ### Ensemble signaux
@@ -71,7 +71,7 @@ _Statut **OK** · observation 2026-10-06 · moteur `ml` · [donnees](../donnees/
 
 ### Couts transaction
 
-7516 predictions, 1514 changements de position (5pb/changement) -- rendement cumule brut=-93.28%, cout total=53.10%, net=-96.85% -- les frais mangent une part importante du rendement (>50% du brut)
+7516 predictions, 1514 changements de position (5pb/changement) -- rendement cumule brut=-93.29%, cout total=53.10%, net=-96.85% -- les frais mangent une part importante du rendement (>50% du brut)
 
 _Statut **OK** · observation 2026-10-06 · moteur `ml` · [donnees](../donnees/couts_transaction.csv)_
 
@@ -85,16 +85,16 @@ _Statut **OK** · observation 2026-10-06 · moteur `ml` · [donnees](../donnees/
 
 ### Decomposition variance
 
-R² SP500~DGS10 (60j) = 0.2521 -- 25.2% de la variance des rendements SP500 expliquee par les variations du taux 10 ans (le reste = idiosyncratique/autres facteurs)
+R² SP500~DGS10 (60j) = 0.2454 -- 24.5% de la variance des rendements SP500 expliquee par les variations du taux 10 ans (le reste = idiosyncratique/autres facteurs)
 
-_Statut **OK** · observation 2026-10-02 · moteur `statistique` · [donnees](../donnees/decomposition_variance.csv)_
+_Statut **OK** · observation 2026-10-05 · moteur `statistique` · [donnees](../donnees/decomposition_variance.csv)_
 
 
 ### Test chow
 
-test de Chow (taux 10 ans, 1ere vs 2eme moitie des 12 derniers mois) : F=526.913, p=0.0000 -- RUPTURE structurelle significative
+test de Chow (taux 10 ans, 1ere vs 2eme moitie des 12 derniers mois) : F=519.503, p=0.0000 -- RUPTURE structurelle significative
 
-_Statut **OK** · observation 2026-10-02 · moteur `statistique` · [donnees](../donnees/test_chow.csv)_
+_Statut **OK** · observation 2026-10-05 · moteur `statistique` · [donnees](../donnees/test_chow.csv)_
 
 
 ### Arima
