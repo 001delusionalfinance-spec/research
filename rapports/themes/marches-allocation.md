@@ -2,7 +2,7 @@
 
 Change, actions, secteurs, facteurs, rotations et signaux d'allocation.
 
-Mis a jour : **2026-10-05 22:46 UTC** · 16 lectures.
+Mis a jour : **2026-10-06 01:02 UTC** · 16 lectures.
 
 [Retour au tableau de bord](../README.md)
 
@@ -15,16 +15,16 @@ _Statut **OK** · observation 2026-07-01 · moteur `macro` · [donnees](../donne
 
 ### Differentiel taux change
 
-8 paires testees sur variations a 21 jours -- le lien taux/change tient sur 5 paire(s) apres correction pour tests multiples : EURUSD, USDJPY, USDCAD, USDSEK, EURJPY
+8 paires testees sur variations a 21 jours -- le lien taux/change tient sur 6 paire(s) apres correction pour tests multiples : EURUSD, USDJPY, USDCAD, USDSEK, EURJPY, EURGBP
 
 _Statut **OK** · observation 2026-10-01 · moteur `statistique` · [donnees](../donnees/differentiel_taux_change.csv)_
 
 
 ### Indices mondiaux
 
-7 indices (devise locale) : Coree (KOSPI) +97.3% en tete sur 12 mois, Hong Kong (Hang Seng) -12.2% en queue -- ecart tres large entre blocs sur 12 mois (109pt) -- les cycles economiques ou les flux divergent nettement. ROTATION en cours : Coree (KOSPI) mene sur 12 mois mais Etats-Unis (S&P 500) a repris la tete sur 3 mois
+7 indices (devise locale) : Coree (KOSPI) +97.8% en tete sur 12 mois, Hong Kong (Hang Seng) -12.2% en queue -- ecart tres large entre blocs sur 12 mois (110pt) -- les cycles economiques ou les flux divergent nettement. ROTATION en cours : Coree (KOSPI) mene sur 12 mois mais Etats-Unis (S&P 500) a repris la tete sur 3 mois
 
-_Statut **OK** · observation 2026-10-05 · moteur `factorielle` · [donnees](../donnees/indices_mondiaux.csv) · [graphique](../graphiques/indices_mondiaux/apercu.png)_
+_Statut **OK** · observation 2026-10-06 · moteur `factorielle` · [donnees](../donnees/indices_mondiaux.csv) · [graphique](../graphiques/indices_mondiaux/apercu.png)_
 
 
 ### Correlation glissante
@@ -71,7 +71,7 @@ _Statut **OK** · observation 2026-10-05 · moteur `factorielle` · [donnees](..
 
 ### Rotation sectorielle
 
-classement momentum 3 mois (10 secteurs) : 1. Energie (XLE) : +19.42% | 2. Technologie (XLK) : +9.46% | 3. Sante (XLV) : +3.34% | 4. Consommation de base (XLP) : -3.64% | 5. Finance (XLF) : -4.03%
+classement momentum 3 mois (10 secteurs) : 1. Energie (XLE) : +18.04% | 2. Technologie (XLK) : +10.64% | 3. Sante (XLV) : +1.49% | 4. Finance (XLF) : -3.83% | 5. Consommation de base (XLP) : -5.25%
 
 _Statut **OK** · observation 2026-10-05 · moteur `factorielle` · [donnees](../donnees/rotation_sectorielle.csv) · [graphique](../graphiques/rotation_sectorielle/apercu.png)_
 
@@ -85,21 +85,21 @@ _Statut **OK** · observation 2026-10-05 · moteur `factorielle` · [donnees](..
 
 ### Dispersion sectorielle
 
-10 secteurs, rendement moyen 3m=-1.49%, dispersion (ecart-type)=9.08pt, etendue=31.19pt -- dispersion intermediaire
+10 secteurs, rendement moyen 3m=-2.02%, dispersion (ecart-type)=9.03pt, etendue=31.00pt -- dispersion intermediaire
 
 _Statut **OK** · observation 2026-10-05 · moteur `factorielle` · [donnees](../donnees/dispersion_sectorielle.csv)_
 
 
 ### Low volatility
 
-tercile bas-vol ['XLF', 'XLRE', 'XLU'] Sharpe=-1.010 vs tercile haut-vol ['XLY', 'XLE', 'XLK'] Sharpe=0.270 -- anomalie low-vol non confirmee sur cet echantillon (puissance statistique faible, n petit -- limite assumee)
+tercile bas-vol ['XLF', 'XLRE', 'XLU'] Sharpe=-1.155 vs tercile haut-vol ['XLY', 'XLE', 'XLK'] Sharpe=0.202 -- anomalie low-vol non confirmee sur cet echantillon (puissance statistique faible, n petit -- limite assumee)
 
 _Statut **OK** · observation 2026-10-05 · moteur `factorielle` · [donnees](../donnees/low_volatility.csv)_
 
 
 ### Momentum cross sectional
 
-panier gagnant ['XLE', 'XLK', 'XLV'] (+10.74%) vs panier perdant ['XLRE', 'XLI', 'XLU'] (-9.42%) -- spread momentum=+20.16pt
+panier gagnant ['XLE', 'XLK', 'XLV'] (+10.06%) vs panier perdant ['XLI', 'XLRE', 'XLU'] (-9.74%) -- spread momentum=+19.79pt
 
 _Statut **OK** · observation 2026-10-05 · moteur `factorielle` · [donnees](../donnees/momentum_cross_sectional.csv)_
 
@@ -113,7 +113,7 @@ _Statut **OK** · observation 2026-10-05 · moteur `statistique` · [donnees](..
 
 ### Correlation facteurs
 
-correlation entre momentum 3m et beta-VIX, 10 secteurs : +0.123 (facteurs largement independants)
+correlation entre momentum 3m et beta-VIX, 10 secteurs : +0.038 (facteurs largement independants)
 
 _Statut **OK** · observation 2026-10-05 · moteur `factorielle` · [donnees](../donnees/correlation_facteurs.csv)_
 
