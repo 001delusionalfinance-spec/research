@@ -2,7 +2,7 @@
 
 Courbes souveraines, conditions financieres, credit, emission et taux reels.
 
-Mis a jour : **2026-10-06 14:11 UTC** · 13 lectures.
+Mis a jour : **2026-10-06 16:22 UTC** · 13 lectures.
 
 [Retour au tableau de bord](../README.md)
 
@@ -29,14 +29,14 @@ _Statut **OK** · observation 2026-09-23 · moteur `macro` · [donnees](../donne
 
 ### Conditions financieres
 
-indice conditions financieres=+0.007 (3 composantes: {'taux_directeur': 0.5957168406491713, 'courbe_inversee': 0.01936573764563786, 'vix': -0.5942078683510615}) -- conditions proches de la normale
+indice conditions financieres=-0.002 (3 composantes: {'taux_directeur': 0.5957168406491713, 'courbe_inversee': 0.01936573764563786, 'vix': -0.6214121918895908}) -- conditions proches de la normale
 
 _Statut **OK** · observation 2026-10-02 · moteur `macro` · [donnees](../donnees/conditions_financieres.csv) · [graphique](../graphiques/conditions_financieres/apercu.png)_
 
 
 ### Emission tresor us
 
-84 derniers jours, 7677 Mds$ offerts : court (moins d'un an) 6589 Mds$ (86%), intermediaire (2 a 10 ans) 969 Mds$ (13%), long (20 a 30 ans) 119 Mds$ (2%) -- financement concentre sur le court et l'intermediaire, part longue a 2% -- peu de pression par la duration
+84 derniers jours, 7967 Mds$ offerts : court (moins d'un an) 6879 Mds$ (86%), intermediaire (2 a 10 ans) 969 Mds$ (12%), long (20 a 30 ans) 119 Mds$ (2%) -- financement concentre sur le court et l'intermediaire, part longue a 2% -- peu de pression par la duration
 
 _Statut **OK** · observation non exposee par la sortie · moteur `macro` · [donnees](../donnees/emission_tresor_us.csv)_
 
@@ -78,21 +78,21 @@ _Statut **OK** · observation 2026-10-02 · moteur `series-temporelles` · [donn
 
 ### Facteur qualite credit
 
-spread HY=3.10, IG=0.85, ecart=2.25pt (niveau contenu), variation 6m=-0.9% -- se resserre (risque credit percu en baisse)
+spread HY=3.12, IG=0.84, ecart=2.28pt (niveau contenu), variation 6m=+3.6% -- s'ecarte (risque credit percu en hausse)
 
-_Statut **OK** · observation 2026-10-02 · moteur `factorielle` · [donnees](../donnees/facteur_qualite_credit.csv) · [graphique](../graphiques/facteur_qualite_credit/apercu.png)_
+_Statut **OK** · observation 2026-10-05 · moteur `factorielle` · [donnees](../donnees/facteur_qualite_credit.csv) · [graphique](../graphiques/facteur_qualite_credit/apercu.png)_
 
 
 ### Ornstein uhlenbeck credit
 
-spread HY actuel=3.10, niveau moyen estime=3.02, demi-vie=33.3j, ecart actuel=+0.08 -- spread HY actuel au-dessus de son niveau moyen de long terme
+spread HY actuel=3.12, niveau moyen estime=3.02, demi-vie=32.7j, ecart actuel=+0.10 -- spread HY actuel au-dessus de son niveau moyen de long terme
 
-_Statut **OK** · observation 2026-10-02 · moteur `series-temporelles` · [donnees](../donnees/ornstein_uhlenbeck_credit.csv)_
+_Statut **OK** · observation 2026-10-05 · moteur `series-temporelles` · [donnees](../donnees/ornstein_uhlenbeck_credit.csv)_
 
 
 ### Momentum credit
 
-momentum credit 12-1 mois=-0.15pt -- spread qui se resserre (risque credit percu en baisse)
+momentum credit 12-1 mois=-0.12pt -- spread qui se resserre (risque credit percu en baisse)
 
-_Statut **OK** · observation 2026-10-02 · moteur `factorielle` · [donnees](../donnees/momentum_credit.csv)_
+_Statut **OK** · observation 2026-10-05 · moteur `factorielle` · [donnees](../donnees/momentum_credit.csv)_
 
