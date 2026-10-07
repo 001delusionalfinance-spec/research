@@ -4,5 +4,9 @@ crowding_cross_asset,n_marches_tendus,2026-09-01,3.0,2026-09-08,15.0,400.0,a ver
 crowding_cross_asset,n_marches_tendus,2026-09-08,15.0,2026-09-15,11.0,26.7,a verifier (peut etre un resultat)
 crowding_cross_asset,n_marches_total,2026-09-01,15.0,2026-09-08,32.0,113.3,perimetre
 dollar_smile,n_devises_non_usd_courtes,2026-09-01,3.0,2026-09-08,2.0,33.3,a verifier (peut etre un resultat)
+intensite_desaccord,n_dissidents_vote,20260729,3.0,20260916,0.0,100.0,a verifier (peut etre un resultat)
+langage_prudence,n_mots_prudence,20260729,74.0,20260916,56.0,24.3,a verifier (peut etre un resultat)
 nombre_effectif_paris,n_marches,2026-09-01,15.0,2026-09-08,32.0,113.3,perimetre
 nombre_effectif_paris,nombre_effectif_paris,2026-09-01,8.54,2026-09-08,13.39,56.8,a verifier (peut etre un resultat)
+similarite_vocabulaire_minutes,n_mots_nouveaux,20260729,368.0,20260916,259.0,29.6,a verifier (peut etre un resultat)
+similarite_vocabulaire_minutes,n_mots_disparus,20260729,228.0,20260916,384.0,68.4,a verifier (peut etre un resultat)
