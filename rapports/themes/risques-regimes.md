@@ -2,15 +2,15 @@
 
 Volatilite, queues, drawdowns, stress, contagion et changements de regime.
 
-Mis a jour : **2026-10-07 06:40 UTC** · 23 lectures.
+Mis a jour : **2026-10-07 08:48 UTC** · 23 lectures.
 
 [Retour au tableau de bord](../README.md)
 
 ### Vol cross asset
 
-6 mesures de volatilite : Or (GVZ) 81e pct, Petrole (OVX) 76e pct, Taux US (MOVE) 55e pct, Nasdaq (VXN) 39e pct, Actions US (VIX) 22e pct, Vol de la vol (VVIX) 12e pct -- stress LOCALISE sur Or (GVZ) pendant que le reste ne l'est pas -- episode propre a cette classe d'actifs, pas une aversion au risque d'ensemble
+6 mesures de volatilite : Or (GVZ) 81e pct, Petrole (OVX) 76e pct, Taux US (MOVE) 55e pct, Nasdaq (VXN) 39e pct, Actions US (VIX) 24e pct, Vol de la vol (VVIX) 12e pct -- stress LOCALISE sur Or (GVZ) pendant que le reste ne l'est pas -- episode propre a cette classe d'actifs, pas une aversion au risque d'ensemble
 
-_Statut **OK** · observation 2026-10-06 · moteur `risque` · [donnees](../donnees/vol_cross_asset.csv) · [graphique](../graphiques/vol_cross_asset/apercu.png)_
+_Statut **OK** · observation 2026-10-07 · moteur `risque` · [donnees](../donnees/vol_cross_asset.csv) · [graphique](../graphiques/vol_cross_asset/apercu.png)_
 
 
 ### Volatilite ewma
@@ -36,9 +36,9 @@ _Statut **OK** · observation 2026-10-06 · moteur `series-temporelles` · [donn
 
 ### Ornstein uhlenbeck vix
 
-VIX actuel=15.01, niveau moyen estime (mu)=20.20, demi-vie=28.8j, ecart actuel=-5.19 -- VIX actuel en-dessous de son niveau moyen de long terme
+VIX actuel=15.26, niveau moyen estime (mu)=20.21, demi-vie=28.8j, ecart actuel=-4.95 -- VIX actuel en-dessous de son niveau moyen de long terme
 
-_Statut **OK** · observation 2026-10-06 · moteur `series-temporelles` · [donnees](../donnees/ornstein_uhlenbeck_vix.csv) · [graphique](../graphiques/ornstein_uhlenbeck_vix/apercu.png)_
+_Statut **OK** · observation 2026-10-07 · moteur `series-temporelles` · [donnees](../donnees/ornstein_uhlenbeck_vix.csv) · [graphique](../graphiques/ornstein_uhlenbeck_vix/apercu.png)_
 
 
 ### Changepoint volatilite
@@ -50,9 +50,9 @@ _Statut **OK** · observation 2026-10-06 · moteur `series-temporelles` · [donn
 
 ### Kalman niveau local
 
-VIX observe=15.01, filtre Kalman=15.08 (ecart-type=0.62), ratio signal/bruit=0.2052 -- le filtre lisse fortement le bruit, reagit lentement (ecart obs.-filtre=-0.07)
+VIX observe=15.26, filtre Kalman=15.23 (ecart-type=0.62), ratio signal/bruit=0.2052 -- le filtre lisse fortement le bruit, reagit lentement (ecart obs.-filtre=+0.03)
 
-_Statut **OK** · observation 2026-10-06 · moteur `series-temporelles` · [donnees](../donnees/kalman_niveau_local.csv)_
+_Statut **OK** · observation 2026-10-07 · moteur `series-temporelles` · [donnees](../donnees/kalman_niveau_local.csv)_
 
 
 ### Var sp500 vix
@@ -64,9 +64,9 @@ _Statut **OK** · observation 2026-10-06 · moteur `series-temporelles` · [donn
 
 ### Analyse spectrale
 
-3 periodes dominantes (jours de bourse) : [2.2, 4.0, 5.4] -- cycle(s) connu(s) qui ressortent : 4.0j~hebdomadaire, 5.4j~hebdomadaire
+3 periodes dominantes (jours de bourse) : [2.2, 4.0, 5.3] -- cycle(s) connu(s) qui ressortent : 4.0j~hebdomadaire, 5.3j~hebdomadaire
 
-_Statut **OK** · observation 2026-10-06 · moteur `series-temporelles` · [donnees](../donnees/analyse_spectrale.csv)_
+_Statut **OK** · observation 2026-10-07 · moteur `series-temporelles` · [donnees](../donnees/analyse_spectrale.csv)_
 
 
 ### Var drawdown
@@ -134,7 +134,7 @@ _Statut **OK** · observation 2026-10-05 · moteur `risque` · [donnees](../donn
 
 ### Qualite regime macro
 
-instabilite taux=0.0087, instabilite VIX=0.0654 -- score qualite du regime=-0.0370 (plus haut = regime plus stable/previsible)
+instabilite taux=0.0087, instabilite VIX=0.0648 -- score qualite du regime=-0.0368 (plus haut = regime plus stable/previsible)
 
 _Statut **OK** · observation 2026-10-05 · moteur `factorielle` · [donnees](../donnees/qualite_regime_macro.csv)_
 
@@ -148,9 +148,9 @@ _Statut **OK** · observation 2026-10-06 · moteur `risque` · [donnees](../donn
 
 ### Decomposition stl
 
-VIX : tendance=15.77, composante saisonniere (periode 5j)=-0.054, residu=-0.705 -- la saisonnalite explique 0.71% de la variance totale (negligeable)
+VIX : tendance=15.62, composante saisonniere (periode 5j)=+0.322, residu=-0.687 -- la saisonnalite explique 0.71% de la variance totale (negligeable)
 
-_Statut **OK** · observation 2026-10-06 · moteur `series-temporelles` · [donnees](../donnees/decomposition_stl.csv) · [graphique](../graphiques/decomposition_stl/apercu.png)_
+_Statut **OK** · observation 2026-10-07 · moteur `series-temporelles` · [donnees](../donnees/decomposition_stl.csv) · [graphique](../graphiques/decomposition_stl/apercu.png)_
 
 
 ### Ratios conditionnels regime
