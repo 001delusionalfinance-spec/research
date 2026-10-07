@@ -208,13 +208,12 @@ fred/IUDSOIA.csv,2026-10-05,2,1,42,3000,OK
 souverains/UK_10A.csv,2026-10-05,2,1,42,9290,OK
 souverains/UK_20A.csv,2026-10-05,2,1.0,42,6761,OK
 souverains/UK_5A.csv,2026-10-05,2,1,42,8298,OK
-souverains/ZONE_EURO_AAA_10A.csv,2026-10-05,2,1.0,42,5645,OK
-souverains/ZONE_EURO_AAA_1A.csv,2026-10-05,2,1.0,42,5645,OK
-souverains/ZONE_EURO_AAA_2A.csv,2026-10-05,2,1.0,42,5645,OK
 tresor_us/dette_quotidienne.csv,2026-10-05,2,1,42,2000,OK
 tresor_us/solde_tresorerie.csv,2026-10-05,2,1,42,500,OK
 fred/RRPONTSYD.csv,2026-10-06,1,1,42,3000,OK
 fred/T10YIE.csv,2026-10-06,1,1,42,3000,OK
+marches/indices/KOSPI.csv,2026-10-06,1,1.0,42,3681,OK
+marches/indices/NIKKEI225.csv,2026-10-06,1,1,42,3666,OK
 souverains/CANADA_10A.csv,2026-10-06,1,1,42,6442,OK
 souverains/CANADA_2A.csv,2026-10-06,1,1.0,42,6441,OK
 souverains/CANADA_5A.csv,2026-10-06,1,1.0,42,6441,OK
@@ -222,7 +221,10 @@ souverains/CANADA_LONG.csv,2026-10-06,1,1.0,42,6441,OK
 souverains/SUEDE_10A.csv,2026-10-06,1,1.0,42,9209,OK
 souverains/SUEDE_2A.csv,2026-10-06,1,1.0,42,9209,OK
 souverains/SUEDE_5A.csv,2026-10-06,1,1.0,42,9211,OK
+souverains/ZONE_EURO_AAA_10A.csv,2026-10-06,1,1,42,5646,OK
+souverains/ZONE_EURO_AAA_1A.csv,2026-10-06,1,1,42,5646,OK
 souverains/ZONE_EURO_AAA_20A.csv,2026-10-06,1,1,42,5646,OK
+souverains/ZONE_EURO_AAA_2A.csv,2026-10-06,1,1,42,5646,OK
 souverains/ZONE_EURO_AAA_30A.csv,2026-10-06,1,1,42,5646,OK
 souverains/ZONE_EURO_AAA_3A.csv,2026-10-06,1,1,42,5646,OK
 souverains/ZONE_EURO_AAA_5A.csv,2026-10-06,1,1,42,5646,OK
@@ -249,8 +251,6 @@ marches/indices/DAX.csv,2026-10-07,0,1.0,42,3803,OK
 marches/indices/EUROSTOXX50.csv,2026-10-07,0,1.0,42,3759,OK
 marches/indices/FTSE100.csv,2026-10-07,0,1,42,3788,OK
 marches/indices/HANGSENG.csv,2026-10-07,0,1,42,3690,OK
-marches/indices/KOSPI.csv,2026-10-07,0,1,42,3682,OK
-marches/indices/NIKKEI225.csv,2026-10-07,0,1.0,42,3667,OK
 marches/matieres/BRENT.csv,2026-10-07,0,1,42,3752,OK
 marches/matieres/CUIVRE.csv,2026-10-07,0,1.0,42,3771,OK
 marches/matieres/GAZ_HENRY_HUB.csv,2026-10-07,0,1,42,3772,OK
