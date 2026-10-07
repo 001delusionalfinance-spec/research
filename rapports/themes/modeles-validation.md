@@ -2,7 +2,7 @@
 
 Relations statistiques, previsions, tests hors echantillon et robustesse des modeles.
 
-Mis a jour : **2026-10-07 02:23 UTC** · 17 lectures.
+Mis a jour : **2026-10-07 06:40 UTC** · 17 lectures.
 
 [Retour au tableau de bord](../README.md)
 
