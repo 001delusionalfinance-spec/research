@@ -2,7 +2,7 @@
 
 Change, actions, secteurs, facteurs, rotations et signaux d'allocation.
 
-Mis a jour : **2026-10-06 23:12 UTC** · 16 lectures.
+Mis a jour : **2026-10-07 00:53 UTC** · 16 lectures.
 
 [Retour au tableau de bord](../README.md)
 
@@ -22,9 +22,9 @@ _Statut **OK** · observation 2026-10-05 · moteur `statistique` · [donnees](..
 
 ### Indices mondiaux
 
-7 indices (devise locale) : Coree (KOSPI) +97.3% en tete sur 12 mois, Hong Kong (Hang Seng) -11.4% en queue -- ecart tres large entre blocs sur 12 mois (109pt) -- les cycles economiques ou les flux divergent nettement. ROTATION en cours : Coree (KOSPI) mene sur 12 mois mais Etats-Unis (S&P 500) a repris la tete sur 3 mois
+7 indices (devise locale) : Coree (KOSPI) +95.7% en tete sur 12 mois, Hong Kong (Hang Seng) -9.9% en queue -- ecart tres large entre blocs sur 12 mois (106pt) -- les cycles economiques ou les flux divergent nettement. ROTATION en cours : Coree (KOSPI) mene sur 12 mois mais Japon (Nikkei 225) a repris la tete sur 3 mois
 
-_Statut **OK** · observation 2026-10-06 · moteur `factorielle` · [donnees](../donnees/indices_mondiaux.csv) · [graphique](../graphiques/indices_mondiaux/apercu.png)_
+_Statut **OK** · observation 2026-10-07 · moteur `factorielle` · [donnees](../donnees/indices_mondiaux.csv) · [graphique](../graphiques/indices_mondiaux/apercu.png)_
 
 
 ### Correlation glissante
@@ -85,21 +85,21 @@ _Statut **OK** · observation 2026-10-06 · moteur `factorielle` · [donnees](..
 
 ### Dispersion sectorielle
 
-10 secteurs, rendement moyen 3m=-0.88%, dispersion (ecart-type)=8.38pt, etendue=26.61pt -- dispersion intermediaire
+10 secteurs, rendement moyen 3m=-0.85%, dispersion (ecart-type)=8.35pt, etendue=26.61pt -- dispersion intermediaire
 
 _Statut **OK** · observation 2026-10-06 · moteur `factorielle` · [donnees](../donnees/dispersion_sectorielle.csv)_
 
 
 ### Low volatility
 
-tercile bas-vol ['XLF', 'XLRE', 'XLP'] Sharpe=-0.318 vs tercile haut-vol ['XLY', 'XLE', 'XLK'] Sharpe=0.307 -- anomalie low-vol non confirmee sur cet echantillon (puissance statistique faible, n petit -- limite assumee)
+tercile bas-vol ['XLF', 'XLRE', 'XLP'] Sharpe=-0.422 vs tercile haut-vol ['XLY', 'XLE', 'XLK'] Sharpe=0.307 -- anomalie low-vol non confirmee sur cet echantillon (puissance statistique faible, n petit -- limite assumee)
 
 _Statut **OK** · observation 2026-10-06 · moteur `factorielle` · [donnees](../donnees/low_volatility.csv)_
 
 
 ### Momentum cross sectional
 
-panier gagnant ['XLE', 'XLK', 'XLV'] (+10.34%) vs panier perdant ['XLI', 'XLRE', 'XLU'] (-8.10%) -- spread momentum=+18.44pt
+panier gagnant ['XLE', 'XLK', 'XLV'] (+10.34%) vs panier perdant ['XLI', 'XLRE', 'XLU'] (-8.01%) -- spread momentum=+18.35pt
 
 _Statut **OK** · observation 2026-10-06 · moteur `factorielle` · [donnees](../donnees/momentum_cross_sectional.csv)_
 
@@ -113,7 +113,7 @@ _Statut **OK** · observation 2026-10-06 · moteur `statistique` · [donnees](..
 
 ### Correlation facteurs
 
-correlation entre momentum 3m et beta-VIX, 10 secteurs : -0.041 (facteurs largement independants)
+correlation entre momentum 3m et beta-VIX, 10 secteurs : -0.048 (facteurs largement independants)
 
 _Statut **OK** · observation 2026-10-06 · moteur `factorielle` · [donnees](../donnees/correlation_facteurs.csv)_
 

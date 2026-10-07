@@ -2,7 +2,7 @@
 
 Courbes souveraines, conditions financieres, credit, emission et taux reels.
 
-Mis a jour : **2026-10-06 23:12 UTC** · 13 lectures.
+Mis a jour : **2026-10-07 00:53 UTC** · 13 lectures.
 
 [Retour au tableau de bord](../README.md)
 
@@ -36,7 +36,7 @@ _Statut **OK** · observation 2026-10-05 · moteur `macro` · [donnees](../donne
 
 ### Emission tresor us
 
-84 derniers jours, 7967 Mds$ offerts : court (moins d'un an) 6879 Mds$ (86%), intermediaire (2 a 10 ans) 969 Mds$ (12%), long (20 a 30 ans) 119 Mds$ (2%) -- financement concentre sur le court et l'intermediaire, part longue a 2% -- peu de pression par la duration
+84 derniers jours, 7872 Mds$ offerts : court (moins d'un an) 6784 Mds$ (86%), intermediaire (2 a 10 ans) 969 Mds$ (12%), long (20 a 30 ans) 119 Mds$ (2%) -- financement concentre sur le court et l'intermediaire, part longue a 2% -- peu de pression par la duration
 
 _Statut **OK** · observation non exposee par la sortie · moteur `macro` · [donnees](../donnees/emission_tresor_us.csv)_
 
