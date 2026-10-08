@@ -2,7 +2,7 @@
 
 Relations statistiques, previsions, tests hors echantillon et robustesse des modeles.
 
-Mis a jour : **2026-10-07 20:06 UTC** · 17 lectures.
+Mis a jour : **2026-10-08 00:18 UTC** · 17 lectures.
 
 [Retour au tableau de bord](../README.md)
 
@@ -29,7 +29,7 @@ _Statut **OK** · observation 2026-10-07 · moteur `ml` · [donnees](../donnees/
 
 ### Anomalie multivariee
 
-distance de Mahalanobis=0.600 (seuil 3.0) -- jour ordinaire
+distance de Mahalanobis=0.527 (seuil 3.0) -- jour ordinaire
 
 _Statut **OK** · observation 2026-10-07 · moteur `ml` · [donnees](../donnees/anomalie_multivariee.csv)_
 
@@ -50,9 +50,9 @@ _Statut **OK** · observation 2026-10-07 · moteur `ml` · [donnees](../donnees/
 
 ### Kmeans regimes
 
-2048 points, k=3 -- point actuel (VIX=15.5, spread=+0.47, taux=3.88%) -> cluster 1 (tailles : {0: 358, 1: 1366, 2: 324}) -- regime calme (VIX du cluster en-dessous de la moyenne historique)
+2048 points, k=3 -- point actuel (VIX=15.0, spread=+0.48, taux=3.88%) -> cluster 1 (tailles : {0: 357, 1: 1367, 2: 324}) -- regime calme (VIX du cluster en-dessous de la moyenne historique)
 
-_Statut **OK** · observation 2026-10-05 · moteur `ml` · [donnees](../donnees/kmeans_regimes.csv)_
+_Statut **OK** · observation 2026-10-06 · moteur `ml` · [donnees](../donnees/kmeans_regimes.csv)_
 
 
 ### Ensemble signaux
@@ -85,16 +85,16 @@ _Statut **OK** · observation 2026-10-07 · moteur `ml` · [donnees](../donnees/
 
 ### Decomposition variance
 
-R² SP500~DGS10 (60j) = 0.2454 -- 24.5% de la variance des rendements SP500 expliquee par les variations du taux 10 ans (le reste = idiosyncratique/autres facteurs)
+R² SP500~DGS10 (60j) = 0.2413 -- 24.1% de la variance des rendements SP500 expliquee par les variations du taux 10 ans (le reste = idiosyncratique/autres facteurs)
 
-_Statut **OK** · observation 2026-10-05 · moteur `statistique` · [donnees](../donnees/decomposition_variance.csv)_
+_Statut **OK** · observation 2026-10-06 · moteur `statistique` · [donnees](../donnees/decomposition_variance.csv)_
 
 
 ### Test chow
 
-test de Chow (taux 10 ans, 1ere vs 2eme moitie des 12 derniers mois) : F=519.503, p=0.0000 -- RUPTURE structurelle significative
+test de Chow (taux 10 ans, 1ere vs 2eme moitie des 12 derniers mois) : F=516.010, p=0.0000 -- RUPTURE structurelle significative
 
-_Statut **OK** · observation 2026-10-05 · moteur `statistique` · [donnees](../donnees/test_chow.csv)_
+_Statut **OK** · observation 2026-10-06 · moteur `statistique` · [donnees](../donnees/test_chow.csv)_
 
 
 ### Arima
