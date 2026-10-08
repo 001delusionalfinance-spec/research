@@ -2,7 +2,7 @@
 
 Decisions, fonctions de reaction, bilan, communication et trajectoires de taux.
 
-Mis a jour : **2026-10-08 13:42 UTC** · 19 lectures.
+Mis a jour : **2026-10-08 19:32 UTC** · 19 lectures.
 
 [Retour au tableau de bord](../README.md)
 
@@ -22,7 +22,7 @@ _Statut **OK** · observation 2026-10-06 · moteur `macro` · [donnees](../donne
 
 ### Chemin taux fed
 
-chemin de taux (pas des probabilites) : DFF=3.88%, prochaine reunion 2026-10-27 (11 a venir dans le calendrier) -- mois_en_cours: +35pb (hausse, confiance moyenne) | 0-1 mois: +18pb (hausse, confiance faible) | 1-3 mois: +40pb (hausse, confiance faible) | 3-6 mois: +47pb (hausse, confiance faible) | 6-12 mois: +76pb (hausse, confiance faible)
+chemin de taux (pas des probabilites) : DFF=3.88%, prochaine reunion 2026-10-27 (11 a venir dans le calendrier) -- mois_en_cours: +2pb (statu quo, confiance moyenne) | 0-1 mois: +18pb (hausse, confiance faible) | 1-3 mois: +40pb (hausse, confiance faible) | 3-6 mois: +47pb (hausse, confiance faible) | 6-12 mois: +76pb (hausse, confiance faible)
 
 _Statut **OK** · observation 2026-10-06 · moteur `macro` · [donnees](../donnees/chemin_taux_fed.csv)_
 

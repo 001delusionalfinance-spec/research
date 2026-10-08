@@ -2,7 +2,7 @@
 
 COT, crowding, devises, courbe, extremes et divergences entre prix et positions.
 
-Mis a jour : **2026-10-08 13:42 UTC** · 15 lectures.
+Mis a jour : **2026-10-08 19:32 UTC** · 15 lectures.
 
 [Retour au tableau de bord](../README.md)
 
@@ -43,7 +43,7 @@ _Statut **OK** · observation 2026-09-29 · moteur `positionnement-comportementa
 
 ### Divergence cot prix
 
-SP500 +1.37% sur 30j, COT net -67994 -> -142499 -- DIVERGENCE (prix monte, positionnement recule)
+SP500 +1.19% sur 30j, COT net -67994 -> -142499 -- DIVERGENCE (prix monte, positionnement recule)
 
 _Statut **OK** · observation 2026-10-08 · moteur `positionnement-comportemental` · [donnees](../donnees/divergence_cot_prix.csv)_
 

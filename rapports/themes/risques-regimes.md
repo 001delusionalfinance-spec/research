@@ -2,20 +2,20 @@
 
 Volatilite, queues, drawdowns, stress, contagion et changements de regime.
 
-Mis a jour : **2026-10-08 13:42 UTC** · 23 lectures.
+Mis a jour : **2026-10-08 19:32 UTC** · 23 lectures.
 
 [Retour au tableau de bord](../README.md)
 
 ### Vol cross asset
 
-6 mesures de volatilite : Or (GVZ) 82e pct, Petrole (OVX) 75e pct, Taux US (MOVE) 52e pct, Nasdaq (VXN) 38e pct, Actions US (VIX) 27e pct, Vol de la vol (VVIX) 13e pct -- stress LOCALISE sur Or (GVZ) pendant que le reste ne l'est pas -- episode propre a cette classe d'actifs, pas une aversion au risque d'ensemble
+6 mesures de volatilite : Or (GVZ) 80e pct, Petrole (OVX) 75e pct, Nasdaq (VXN) 49e pct, Taux US (MOVE) 49e pct, Vol de la vol (VVIX) 29e pct, Actions US (VIX) 28e pct -- stress LOCALISE sur Or (GVZ) pendant que le reste ne l'est pas -- episode propre a cette classe d'actifs, pas une aversion au risque d'ensemble
 
 _Statut **OK** · observation 2026-10-08 · moteur `risque` · [donnees](../donnees/vol_cross_asset.csv) · [graphique](../graphiques/vol_cross_asset/apercu.png)_
 
 
 ### Volatilite ewma
 
-vol realisee 60j=0.1109386390252622, EWMA=0.0960 (tendance 10 runs: baisse)
+vol realisee 60j=0.11123035283765188, EWMA=0.0970 (tendance 10 runs: baisse)
 
 _Statut **OK** · observation 2026-10-08 · moteur `series-temporelles` · [donnees](../donnees/volatilite_ewma.csv) · [graphique](../graphiques/volatilite_ewma/volatilite_ewma.png)_
 
@@ -36,7 +36,7 @@ _Statut **OK** · observation 2026-10-08 · moteur `series-temporelles` · [donn
 
 ### Ornstein uhlenbeck vix
 
-VIX actuel=15.51, niveau moyen estime (mu)=20.20, demi-vie=28.8j, ecart actuel=-4.69 -- VIX actuel en-dessous de son niveau moyen de long terme
+VIX actuel=15.61, niveau moyen estime (mu)=20.20, demi-vie=28.8j, ecart actuel=-4.59 -- VIX actuel en-dessous de son niveau moyen de long terme
 
 _Statut **OK** · observation 2026-10-08 · moteur `series-temporelles` · [donnees](../donnees/ornstein_uhlenbeck_vix.csv) · [graphique](../graphiques/ornstein_uhlenbeck_vix/apercu.png)_
 
@@ -50,14 +50,14 @@ _Statut **OK** · observation 2026-10-08 · moteur `series-temporelles` · [donn
 
 ### Kalman niveau local
 
-VIX observe=15.51, filtre Kalman=15.45 (ecart-type=0.62), ratio signal/bruit=0.2052 -- le filtre lisse fortement le bruit, reagit lentement (ecart obs.-filtre=+0.06)
+VIX observe=15.61, filtre Kalman=15.53 (ecart-type=0.62), ratio signal/bruit=0.2052 -- le filtre lisse fortement le bruit, reagit lentement (ecart obs.-filtre=+0.08)
 
 _Statut **OK** · observation 2026-10-08 · moteur `series-temporelles` · [donnees](../donnees/kalman_niveau_local.csv)_
 
 
 ### Var sp500 vix
 
-VAR ordre choisi par AIC=10 -- coef SP500(t-1)->VIX(t)=0.34157014792794094 (SP500(t-1) en hausse -> VIX(t) tend aussi a monter), coef VIX(t-1)->SP500(t)=-0.05214774270611218 (VIX(t-1) en hausse -> SP500(t) tend a baisser)
+VAR ordre choisi par AIC=10 -- coef SP500(t-1)->VIX(t)=0.34108099793776425 (SP500(t-1) en hausse -> VIX(t) tend aussi a monter), coef VIX(t-1)->SP500(t)=-0.052139101074099165 (VIX(t-1) en hausse -> SP500(t) tend a baisser)
 
 _Statut **OK** · observation 2026-10-08 · moteur `series-temporelles` · [donnees](../donnees/var_sp500_vix.csv)_
 
@@ -78,14 +78,14 @@ _Statut **OK** · observation 2026-10-08 · moteur `risque` · [donnees](../donn
 
 ### Skew kurtosis
 
-skewness=-0.190 (asymetrie negative (pertes extremes > gains extremes)), kurtosis exces=+0.985 (queues epaisses (risque extreme sous-estime par une hypothese normale))
+skewness=-0.188 (asymetrie negative (pertes extremes > gains extremes)), kurtosis exces=+0.978 (queues epaisses (risque extreme sous-estime par une hypothese normale))
 
 _Statut **OK** · observation 2026-10-08 · moteur `risque` · [donnees](../donnees/skew_kurtosis.csv)_
 
 
 ### Ratios performance
 
-Sharpe=1.089 (bon), Sortino=1.086 (bon), Calmar=1.559 (bon) -- lecture sur fenetre 252j (~1 an, echantillon limite), seuils academiques standards, taux sans risque suppose nul
+Sharpe=1.075 (bon), Sortino=1.071 (bon), Calmar=1.540 (bon) -- lecture sur fenetre 252j (~1 an, echantillon limite), seuils academiques standards, taux sans risque suppose nul
 
 _Statut **OK** · observation 2026-10-08 · moteur `risque` · [donnees](../donnees/ratios_performance.csv)_
 
@@ -99,14 +99,14 @@ _Statut **OK** · observation 2026-10-08 · moteur `risque` · [donnees](../donn
 
 ### Stress test historique
 
-COVID_2020 (2020-02-19 -> 2020-03-23) : chute historique=-33.9% -- rejouee sur le niveau actuel (7779) -> 5140  _(sans synthese)_
+COVID_2020 (2020-02-19 -> 2020-03-23) : chute historique=-33.9% -- rejouee sur le niveau actuel (7765) -> 5131  _(sans synthese)_
 
 _Statut **OK** · observation 2026-10-08 · moteur `risque` · [donnees](../donnees/stress_test_historique.csv) · [graphique](../graphiques/stress_test_historique/apercu.png)_
 
 
 ### Sizing robuste
 
-vol point estimate=0.1301, IC90%=[0.1190, 0.1420] (1000 tirages bootstrap) -- intervalle etroit (18% du point estimate) -- estimation relativement fiable
+vol point estimate=0.1302, IC90%=[0.1190, 0.1420] (1000 tirages bootstrap) -- intervalle etroit (18% du point estimate) -- estimation relativement fiable
 
 _Statut **OK** · observation 2026-10-08 · moteur `risque` · [donnees](../donnees/sizing_robuste.csv)_
 
@@ -120,7 +120,7 @@ _Statut **OK** · observation 2026-09-29 · moteur `risque` · [donnees](../donn
 
 ### Detection saut
 
-Z-stat BNS (fenetre 22j)=1.327 (seuil ±1.96) -- pas de saut isole detecte
+Z-stat BNS (fenetre 22j)=1.380 (seuil ±1.96) -- pas de saut isole detecte
 
 _Statut **OK** · observation 2026-10-08 · moteur `risque` · [donnees](../donnees/detection_saut.csv)_
 
@@ -134,7 +134,7 @@ _Statut **OK** · observation 2026-10-06 · moteur `risque` · [donnees](../donn
 
 ### Qualite regime macro
 
-instabilite taux=0.0087, instabilite VIX=0.0628 -- score qualite du regime=-0.0357 (plus haut = regime plus stable/previsible)
+instabilite taux=0.0087, instabilite VIX=0.0628 -- score qualite du regime=-0.0358 (plus haut = regime plus stable/previsible)
 
 _Statut **OK** · observation 2026-10-06 · moteur `factorielle` · [donnees](../donnees/qualite_regime_macro.csv)_
 
@@ -148,21 +148,21 @@ _Statut **OK** · observation 2026-10-08 · moteur `risque` · [donnees](../donn
 
 ### Decomposition stl
 
-VIX : tendance=15.51, composante saisonniere (periode 5j)=+0.160, residu=-0.163 -- la saisonnalite explique 0.71% de la variance totale (negligeable)
+VIX : tendance=15.53, composante saisonniere (periode 5j)=+0.181, residu=-0.102 -- la saisonnalite explique 0.71% de la variance totale (negligeable)
 
 _Statut **OK** · observation 2026-10-08 · moteur `series-temporelles` · [donnees](../donnees/decomposition_stl.csv) · [graphique](../graphiques/decomposition_stl/apercu.png)_
 
 
 ### Ratios conditionnels regime
 
-Sharpe regime haut-vol=-1.107, bas-vol=2.398, global=0.420 -- meilleur en regime calme, comme attendu
+Sharpe regime haut-vol=-1.107, bas-vol=2.398, global=0.419 -- meilleur en regime calme, comme attendu
 
 _Statut **OK** · observation 2026-10-08 · moteur `risque` · [donnees](../donnees/ratios_conditionnels_regime.csv)_
 
 
 ### Choc vol parametrique
 
-vol actuelle=13.01%, scenarios x1/x2/x3 calcules -- pire scenario (x3) = -3.99%/jour, soit 3.1x le scenario de base
+vol actuelle=13.02%, scenarios x1/x2/x3 calcules -- pire scenario (x3) = -3.99%/jour, soit 3.1x le scenario de base
 
 _Statut **OK** · observation 2026-10-08 · moteur `risque` · [donnees](../donnees/choc_vol_parametrique.csv)_
 
