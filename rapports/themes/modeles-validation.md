@@ -2,7 +2,7 @@
 
 Relations statistiques, previsions, tests hors echantillon et robustesse des modeles.
 
-Mis a jour : **2026-10-08 06:18 UTC** · 17 lectures.
+Mis a jour : **2026-10-08 13:42 UTC** · 17 lectures.
 
 [Retour au tableau de bord](../README.md)
 
@@ -10,42 +10,42 @@ Mis a jour : **2026-10-08 06:18 UTC** · 17 lectures.
 
 causalite Granger detectee : SP500_cause_VIX (lag=5)
 
-_Statut **OK** · observation 2026-10-07 · moteur `statistique` · [donnees](../donnees/causalite_granger.csv)_
+_Statut **OK** · observation 2026-10-08 · moteur `statistique` · [donnees](../donnees/causalite_granger.csv)_
 
 
 ### Dependance queue
 
-518/7546 jours conjointement extremes (SP500 pire 10% ET VIX pire 10%), P observee=0.0686 vs P sous independance=0.0100 -- coefficient de dependance de queue=6.86 (dependance reelle)
+518/7547 jours conjointement extremes (SP500 pire 10% ET VIX pire 10%), P observee=0.0686 vs P sous independance=0.0100 -- coefficient de dependance de queue=6.86 (dependance reelle)
 
-_Statut **OK** · observation 2026-10-07 · moteur `statistique` · [donnees](../donnees/dependance_queue.csv)_
+_Statut **OK** · observation 2026-10-08 · moteur `statistique` · [donnees](../donnees/dependance_queue.csv)_
 
 
 ### Walkforward direction
 
-7516 predictions walk-forward -- momentum 5j=0.4956 vs baseline majoritaire=0.5371 -- NE BAT PAS la baseline (resultat honnete, pas ajuste pour paraitre mieux)
+7517 predictions walk-forward -- momentum 5j=0.4955 vs baseline majoritaire=0.5370 -- NE BAT PAS la baseline (resultat honnete, pas ajuste pour paraitre mieux)
 
-_Statut **OK** · observation 2026-10-07 · moteur `ml` · [donnees](../donnees/walkforward_direction_sp500.csv)_
+_Statut **OK** · observation 2026-10-08 · moteur `ml` · [donnees](../donnees/walkforward_direction_sp500.csv)_
 
 
 ### Anomalie multivariee
 
-distance de Mahalanobis=0.527 (seuil 3.0) -- jour ordinaire
+distance de Mahalanobis=0.455 (seuil 3.0) -- jour ordinaire
 
-_Statut **OK** · observation 2026-10-07 · moteur `ml` · [donnees](../donnees/anomalie_multivariee.csv)_
+_Statut **OK** · observation 2026-10-08 · moteur `ml` · [donnees](../donnees/anomalie_multivariee.csv)_
 
 
 ### Test overfitting
 
-meilleure fenetre in-sample=23j (accuracy=0.5160) vs meme fenetre en walk-forward=0.5158 -- ecart=+0.0002 (ecart faible)
+meilleure fenetre in-sample=23j (accuracy=0.5159) vs meme fenetre en walk-forward=0.5158 -- ecart=+0.0002 (ecart faible)
 
-_Statut **OK** · observation 2026-10-07 · moteur `ml` · [donnees](../donnees/test_overfitting_momentum.csv)_
+_Statut **OK** · observation 2026-10-08 · moteur `ml` · [donnees](../donnees/test_overfitting_momentum.csv)_
 
 
 ### Prevision vol regression
 
-regression AR(1) (a=0.000116, b=0.2097) MSE=2.9847e-07 vs baseline persistance MSE=3.8344e-07 -- BAT la baseline (resultat honnete, pas ajuste)
+regression AR(1) (a=0.000116, b=0.2097) MSE=2.9834e-07 vs baseline persistance MSE=3.8327e-07 -- BAT la baseline (resultat honnete, pas ajuste)
 
-_Statut **OK** · observation 2026-10-07 · moteur `ml` · [donnees](../donnees/prevision_vol_regression.csv)_
+_Statut **OK** · observation 2026-10-08 · moteur `ml` · [donnees](../donnees/prevision_vol_regression.csv)_
 
 
 ### Kmeans regimes
@@ -57,30 +57,30 @@ _Statut **OK** · observation 2026-10-06 · moteur `ml` · [donnees](../donnees/
 
 ### Ensemble signaux
 
-7516 predictions -- momentum=0.4956, vix=0.4985, ensemble=0.4985, baseline=0.5371 -- ensemble NE BAT PAS la baseline
+7517 predictions -- momentum=0.4955, vix=0.4986, ensemble=0.4986, baseline=0.5370 -- ensemble NE BAT PAS la baseline
 
-_Statut **OK** · observation 2026-10-07 · moteur `ml` · [donnees](../donnees/ensemble_signaux.csv)_
+_Statut **OK** · observation 2026-10-08 · moteur `ml` · [donnees](../donnees/ensemble_signaux.csv)_
 
 
 ### Screening features
 
 2/4 features avec un lien univarie significatif (p<0.05, sans correction multiple-testing ici -- seulement 4 tests)  _(sans synthese)_
 
-_Statut **OK** · observation 2026-10-07 · moteur `ml` · [donnees](../donnees/screening_features.csv)_
+_Statut **OK** · observation 2026-10-08 · moteur `ml` · [donnees](../donnees/screening_features.csv)_
 
 
 ### Couts transaction
 
-7516 predictions, 1514 changements de position (5pb/changement) -- rendement cumule brut=-93.35%, cout total=53.10%, net=-96.88% -- les frais mangent une part importante du rendement (>50% du brut)
+7517 predictions, 1514 changements de position (5pb/changement) -- rendement cumule brut=-93.37%, cout total=53.10%, net=-96.89% -- les frais mangent une part importante du rendement (>50% du brut)
 
-_Statut **OK** · observation 2026-10-07 · moteur `ml` · [donnees](../donnees/couts_transaction.csv)_
+_Statut **OK** · observation 2026-10-08 · moteur `ml` · [donnees](../donnees/couts_transaction.csv)_
 
 
 ### Regression multifeatures
 
-coefs (intercept=0.00029, momentum5j=-0.0325, var_vix=0.00027) -- R2 out-of-sample=0.0103 (modele bat la moyenne)
+coefs (intercept=0.00029, momentum5j=-0.0325, var_vix=0.00027) -- R2 out-of-sample=0.0104 (modele bat la moyenne)
 
-_Statut **OK** · observation 2026-10-07 · moteur `ml` · [donnees](../donnees/regression_multifeatures.csv)_
+_Statut **OK** · observation 2026-10-08 · moteur `ml` · [donnees](../donnees/regression_multifeatures.csv)_
 
 
 ### Decomposition variance
@@ -99,28 +99,28 @@ _Statut **OK** · observation 2026-10-06 · moteur `statistique` · [donnees](..
 
 ### Arima
 
-ARIMA(1,1,1) sur 100 previsions 1-jour test : RMSE=2.475 vs baseline naive MSE=6.244 -- ARIMA bat la persistance simple
+ARIMA(1,1,1) sur 100 previsions 1-jour test : RMSE=2.470 vs baseline naive MSE=6.290 -- ARIMA bat la persistance simple
 
-_Statut **OK** · observation 2026-10-07 · moteur `series-temporelles` · [donnees](../donnees/arima.csv)_
+_Statut **OK** · observation 2026-10-08 · moteur `series-temporelles` · [donnees](../donnees/arima.csv)_
 
 
 ### Stacking
 
-poids appris (momentum=-0.083, baseline=0.088, biais=0.092) -- accuracy stacking=0.5459 vs momentum seul=0.5020, baseline seule=0.5459 sur 2255 points test -- stacking NE BAT PAS la baseline, meilleur=stacking / baseline (ex-aequo)
+poids appris (momentum=-0.083, baseline=0.088, biais=0.092) -- accuracy stacking=0.5457 vs momentum seul=0.5018, baseline seule=0.5457 sur 2256 points test -- stacking NE BAT PAS la baseline, meilleur=stacking / baseline (ex-aequo)
 
-_Statut **OK** · observation 2026-10-07 · moteur `ml` · [donnees](../donnees/stacking.csv)_
+_Statut **OK** · observation 2026-10-08 · moteur `ml` · [donnees](../donnees/stacking.csv)_
 
 
 ### Decision stump
 
-seuil appris=-1.530 (sens=False) -- accuracy stump=0.5446 vs baseline=0.5464 sur 2264 points test -- stump NE BAT PAS la baseline
+seuil appris=-1.530 (sens=False) -- accuracy stump=0.5442 vs baseline=0.5459 sur 2264 points test -- stump NE BAT PAS la baseline
 
-_Statut **OK** · observation 2026-10-07 · moteur `ml` · [donnees](../donnees/decision_stump.csv)_
+_Statut **OK** · observation 2026-10-08 · moteur `ml` · [donnees](../donnees/decision_stump.csv)_
 
 
 ### Importance permutation
 
-R2 base=0.0103 -- importance momentum5j=0.00511, importance variation_vix=0.01008 -- VIX plus important
+R2 base=0.0104 -- importance momentum5j=0.00374, importance variation_vix=0.01572 -- VIX plus important
 
-_Statut **OK** · observation 2026-10-07 · moteur `ml` · [donnees](../donnees/importance_permutation.csv)_
+_Statut **OK** · observation 2026-10-08 · moteur `ml` · [donnees](../donnees/importance_permutation.csv)_
 

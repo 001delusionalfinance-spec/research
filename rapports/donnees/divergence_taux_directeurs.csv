@@ -1,13 +1,13 @@
 bloc,code,date,taux_directeur_pct,variation_6m_pt,variation_12m_pt,phase_de_cycle
-Norvege,NO,2026-09-25,4.5,0.5,0.5,resserrement
+Norvege,NO,2026-10-02,4.5,nan,0.5,pause
 Australie,AU,2026-09-24,4.35,0.25,0.75,resserrement
-Etats-Unis,US,2026-09-28,3.875,0.25,-0.25,resserrement
-Royaume-Uni,GB,2026-09-28,3.75,0.0,-0.25,pause
+Etats-Unis,US,2026-10-06,3.875,0.25,-0.25,resserrement
+Royaume-Uni,GB,2026-10-05,3.75,nan,-0.25,pause
 Coree,KR,2026-08-28,3.0,0.5,0.5,resserrement
-Chine,CN,2026-09-29,3.0,0.0,0.0,pause
-Nouvelle-Zelande,NZ,2026-09-25,2.75,0.5,-0.25,resserrement
-Zone euro,XM,2026-09-29,2.5,0.5,0.5,resserrement
-Canada,CA,2026-09-28,2.25,0.0,-0.25,pause
-Suede,SE,2026-09-29,1.75,0.0,-0.25,pause
-Japon,JP,2026-09-29,1.25,0.5,0.75,resserrement
-Suisse,CH,2026-09-29,0.0,0.0,0.0,pause
+Chine,CN,2026-10-06,3.0,0.0,0.0,pause
+Nouvelle-Zelande,NZ,2026-10-02,2.75,0.5,-0.25,resserrement
+Zone euro,XM,2026-10-06,2.5,0.5,0.5,resserrement
+Canada,CA,2026-10-05,2.25,0.0,-0.25,pause
+Suede,SE,2026-10-06,1.75,0.0,0.0,pause
+Japon,JP,2026-10-06,1.25,0.5,0.75,resserrement
+Suisse,CH,2026-10-06,0.0,0.0,0.0,pause
