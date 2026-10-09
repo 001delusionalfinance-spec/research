@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-09T00:03:32.139877+00:00",
+  "generated_at": "2026-10-09T03:12:26.099145+00:00",
   "status": "attention",
   "models": [
     {
@@ -183,11 +183,11 @@
       "titre": "Matieres premieres macro",
       "theme": "cycle-macro",
       "lane": "macro",
-      "lecture": "ratio cuivre/or stable -- pas de signal net sur la croissance (+5.0% sur 3 mois). Brent 103.9$ (+36.1% sur 3 mois, +56.8% sur 12 mois), gaz +3.9% sur 3 mois, ecart Brent-WTI +12.7$ -- energie nettement plus chere sur un an -- pression inflationniste a venir que les prix a la consommation ne montrent pas encore",
+      "lecture": "ratio cuivre/or stable -- pas de signal net sur la croissance (+4.3% sur 3 mois). Brent 103.4$ (+36.1% sur 3 mois, +58.6% sur 12 mois), gaz +6.7% sur 3 mois, ecart Brent-WTI +12.5$ -- energie nettement plus chere sur un an -- pression inflationniste a venir que les prix a la consommation ne montrent pas encore",
       "ok": true,
       "synthese": true,
       "sortie": "matieres_premieres_macro.csv",
-      "derniere_observation": "2026-10-08"
+      "derniere_observation": "2026-10-09"
     },
     {
       "nom": "emission_tresor_us",
@@ -205,7 +205,7 @@
       "titre": "Pentes courbes",
       "theme": "taux-credit-liquidite",
       "lane": "series-temporelles",
-      "lecture": "7 courbes : pente de +0.40pt (Australie) a +1.10pt (Japon) -- aucune courbe inversee -- pas de signal recessif par la pente",
+      "lecture": "7 courbes : pente de +0.46pt (Australie) a +1.10pt (Japon) -- aucune courbe inversee -- pas de signal recessif par la pente",
       "ok": true,
       "synthese": true,
       "sortie": "pentes_courbes.csv",
@@ -227,11 +227,11 @@
       "titre": "Indices mondiaux",
       "theme": "marches-allocation",
       "lane": "factorielle",
-      "lecture": "7 indices (devise locale) : Coree (KOSPI) +91.7% en tete sur 12 mois, Hong Kong (Hang Seng) -10.5% en queue -- ecart tres large entre blocs sur 12 mois (102pt) -- les cycles economiques ou les flux divergent nettement. ROTATION en cours : Coree (KOSPI) mene sur 12 mois mais Japon (Nikkei 225) a repris la tete sur 3 mois",
+      "lecture": "7 indices (devise locale) : Coree (KOSPI) +86.7% en tete sur 12 mois, Hong Kong (Hang Seng) -9.8% en queue -- ecart tres large entre blocs sur 12 mois (97pt) -- les cycles economiques ou les flux divergent nettement. ROTATION en cours : Coree (KOSPI) mene sur 12 mois mais Etats-Unis (S&P 500) a repris la tete sur 3 mois",
       "ok": true,
       "synthese": true,
       "sortie": "indices_mondiaux.csv",
-      "derniere_observation": "2026-10-08"
+      "derniere_observation": "2026-10-09"
     },
     {
       "nom": "vol_cross_asset",
@@ -557,7 +557,7 @@
       "titre": "Var sp500 vix",
       "theme": "risques-regimes",
       "lane": "series-temporelles",
-      "lecture": "VAR ordre choisi par AIC=10 -- coef SP500(t-1)->VIX(t)=0.34267978130412224 (SP500(t-1) en hausse -> VIX(t) tend aussi a monter), coef VIX(t-1)->SP500(t)=-0.05213265325195275 (VIX(t-1) en hausse -> SP500(t) tend a baisser)",
+      "lecture": "VAR ordre choisi par AIC=10 -- coef SP500(t-1)->VIX(t)=0.3426797813039304 (SP500(t-1) en hausse -> VIX(t) tend aussi a monter), coef VIX(t-1)->SP500(t)=-0.05213265325195074 (VIX(t-1) en hausse -> SP500(t) tend a baisser)",
       "ok": true,
       "synthese": true,
       "sortie": "var_sp500_vix.csv",
