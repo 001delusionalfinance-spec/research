@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-08T23:53:45.597282+00:00",
+  "generated_at": "2026-10-09T00:03:32.139877+00:00",
   "status": "attention",
   "models": [
     {
@@ -183,7 +183,7 @@
       "titre": "Matieres premieres macro",
       "theme": "cycle-macro",
       "lane": "macro",
-      "lecture": "le ratio cuivre/or monte -- la croissance domine la peur (+5.0% sur 3 mois). Brent 103.8$ (+36.0% sur 3 mois, +56.7% sur 12 mois), gaz +4.0% sur 3 mois, ecart Brent-WTI +12.6$ -- energie nettement plus chere sur un an -- pression inflationniste a venir que les prix a la consommation ne montrent pas encore",
+      "lecture": "ratio cuivre/or stable -- pas de signal net sur la croissance (+5.0% sur 3 mois). Brent 103.9$ (+36.1% sur 3 mois, +56.8% sur 12 mois), gaz +3.9% sur 3 mois, ecart Brent-WTI +12.7$ -- energie nettement plus chere sur un an -- pression inflationniste a venir que les prix a la consommation ne montrent pas encore",
       "ok": true,
       "synthese": true,
       "sortie": "matieres_premieres_macro.csv",
@@ -194,7 +194,7 @@
       "titre": "Emission tresor us",
       "theme": "taux-credit-liquidite",
       "lane": "macro",
-      "lecture": "84 derniers jours, 8072 Mds$ offerts : court (moins d'un an) 6984 Mds$ (86%), intermediaire (2 a 10 ans) 969 Mds$ (12%), long (20 a 30 ans) 119 Mds$ (2%) -- financement concentre sur le court et l'intermediaire, part longue a 2% -- peu de pression par la duration",
+      "lecture": "84 derniers jours, 7862 Mds$ offerts : court (moins d'un an) 6774 Mds$ (86%), intermediaire (2 a 10 ans) 969 Mds$ (12%), long (20 a 30 ans) 119 Mds$ (2%) -- financement concentre sur le court et l'intermediaire, part longue a 2% -- peu de pression par la duration",
       "ok": true,
       "synthese": true,
       "sortie": "emission_tresor_us.csv",
@@ -557,7 +557,7 @@
       "titre": "Var sp500 vix",
       "theme": "risques-regimes",
       "lane": "series-temporelles",
-      "lecture": "VAR ordre choisi par AIC=10 -- coef SP500(t-1)->VIX(t)=0.3426797813039304 (SP500(t-1) en hausse -> VIX(t) tend aussi a monter), coef VIX(t-1)->SP500(t)=-0.05213265325195074 (VIX(t-1) en hausse -> SP500(t) tend a baisser)",
+      "lecture": "VAR ordre choisi par AIC=10 -- coef SP500(t-1)->VIX(t)=0.34267978130412224 (SP500(t-1) en hausse -> VIX(t) tend aussi a monter), coef VIX(t-1)->SP500(t)=-0.05213265325195275 (VIX(t-1) en hausse -> SP500(t) tend a baisser)",
       "ok": true,
       "synthese": true,
       "sortie": "var_sp500_vix.csv",
