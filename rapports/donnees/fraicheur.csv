@@ -208,6 +208,9 @@ fred/DGS3MO.csv,2026-10-08,1,1,42,3000,OK
 fred/DGS5.csv,2026-10-08,1,1,42,3000,OK
 fred/DGS6MO.csv,2026-10-08,1,1,42,3000,OK
 fred/MORTGAGE30US.csv,2026-10-08,1,7,63.0,2898,OK
+marches/indices/DAX.csv,2026-10-08,1,1.0,42,3803,OK
+marches/indices/EUROSTOXX50.csv,2026-10-08,1,1.0,42,3759,OK
+marches/indices/FTSE100.csv,2026-10-08,1,1,42,3788,OK
 marches/indices/HANGSENG.csv,2026-10-08,1,1,42,3690,OK
 marches/indices/KOSPI.csv,2026-10-08,1,1,42,3682,OK
 marches/indices/NIKKEI225.csv,2026-10-08,1,1.0,42,3667,OK
@@ -248,9 +251,6 @@ marches/fx/USDJPY.csv,2026-10-09,0,1.0,42,3907,OK
 marches/fx/USDKRW.csv,2026-10-09,0,1,42,3906,OK
 marches/fx/USDNOK.csv,2026-10-09,0,1.0,42,3907,OK
 marches/fx/USDSEK.csv,2026-10-09,0,1.0,42,3907,OK
-marches/indices/DAX.csv,2026-10-09,0,1,42,3804,OK
-marches/indices/EUROSTOXX50.csv,2026-10-09,0,1,42,3760,OK
-marches/indices/FTSE100.csv,2026-10-09,0,1.0,42,3789,OK
 marches/matieres/BRENT.csv,2026-10-09,0,1.0,42,3753,OK
 marches/matieres/CUIVRE.csv,2026-10-09,0,1,42,3772,OK
 marches/matieres/GAZ_HENRY_HUB.csv,2026-10-09,0,1.0,42,3773,OK
