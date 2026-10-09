@@ -2,20 +2,20 @@
 
 Volatilite, queues, drawdowns, stress, contagion et changements de regime.
 
-Mis a jour : **2026-10-09 17:09 UTC** · 23 lectures.
+Mis a jour : **2026-10-09 19:07 UTC** · 23 lectures.
 
 [Retour au tableau de bord](../README.md)
 
 ### Vol cross asset
 
-6 mesures de volatilite : Or (GVZ) 80e pct, Petrole (OVX) 74e pct, Taux US (MOVE) 48e pct, Nasdaq (VXN) 36e pct, Vol de la vol (VVIX) 21e pct, Actions US (VIX) 20e pct -- aucune classe d'actifs en tension marquee
+6 mesures de volatilite : Or (GVZ) 80e pct, Petrole (OVX) 76e pct, Taux US (MOVE) 46e pct, Nasdaq (VXN) 35e pct, Vol de la vol (VVIX) 22e pct, Actions US (VIX) 20e pct -- stress LOCALISE sur Or (GVZ) pendant que le reste ne l'est pas -- episode propre a cette classe d'actifs, pas une aversion au risque d'ensemble
 
 _Statut **OK** · observation 2026-10-09 · moteur `risque` · [donnees](../donnees/vol_cross_asset.csv) · [graphique](../graphiques/vol_cross_asset/apercu.png)_
 
 
 ### Volatilite ewma
 
-vol realisee 60j=0.11113621358815504, EWMA=0.0966 (tendance 10 runs: baisse)
+vol realisee 60j=0.11132100933508914, EWMA=0.0975 (tendance 10 runs: stable)
 
 _Statut **OK** · observation 2026-10-09 · moteur `series-temporelles` · [donnees](../donnees/volatilite_ewma.csv) · [graphique](../graphiques/volatilite_ewma/volatilite_ewma.png)_
 
@@ -57,7 +57,7 @@ _Statut **OK** · observation 2026-10-09 · moteur `series-temporelles` · [donn
 
 ### Var sp500 vix
 
-VAR ordre choisi par AIC=10 -- coef SP500(t-1)->VIX(t)=0.3474729157383951 (SP500(t-1) en hausse -> VIX(t) tend aussi a monter), coef VIX(t-1)->SP500(t)=-0.052186190799071455 (VIX(t-1) en hausse -> SP500(t) tend a baisser)
+VAR ordre choisi par AIC=10 -- coef SP500(t-1)->VIX(t)=0.3474729157383365 (SP500(t-1) en hausse -> VIX(t) tend aussi a monter), coef VIX(t-1)->SP500(t)=-0.05219433720940264 (VIX(t-1) en hausse -> SP500(t) tend a baisser)
 
 _Statut **OK** · observation 2026-10-09 · moteur `series-temporelles` · [donnees](../donnees/var_sp500_vix.csv)_
 
@@ -78,14 +78,14 @@ _Statut **OK** · observation 2026-10-09 · moteur `risque` · [donnees](../donn
 
 ### Skew kurtosis
 
-skewness=-0.188 (asymetrie negative (pertes extremes > gains extremes)), kurtosis exces=+0.979 (queues epaisses (risque extreme sous-estime par une hypothese normale))
+skewness=-0.188 (asymetrie negative (pertes extremes > gains extremes)), kurtosis exces=+0.975 (queues epaisses (risque extreme sous-estime par une hypothese normale))
 
 _Statut **OK** · observation 2026-10-09 · moteur `risque` · [donnees](../donnees/skew_kurtosis.csv)_
 
 
 ### Ratios performance
 
-Sharpe=1.140 (bon), Sortino=1.133 (bon), Calmar=1.634 (bon) -- lecture sur fenetre 252j (~1 an, echantillon limite), seuils academiques standards, taux sans risque suppose nul
+Sharpe=1.147 (bon), Sortino=1.139 (bon), Calmar=1.644 (bon) -- lecture sur fenetre 252j (~1 an, echantillon limite), seuils academiques standards, taux sans risque suppose nul
 
 _Statut **OK** · observation 2026-10-09 · moteur `risque` · [donnees](../donnees/ratios_performance.csv)_
 
@@ -99,7 +99,7 @@ _Statut **OK** · observation 2026-10-09 · moteur `risque` · [donnees](../donn
 
 ### Stress test historique
 
-COVID_2020 (2020-02-19 -> 2020-03-23) : chute historique=-33.9% -- rejouee sur le niveau actuel (7810) -> 5161  _(sans synthese)_
+COVID_2020 (2020-02-19 -> 2020-03-23) : chute historique=-33.9% -- rejouee sur le niveau actuel (7817) -> 5165  _(sans synthese)_
 
 _Statut **OK** · observation 2026-10-09 · moteur `risque` · [donnees](../donnees/stress_test_historique.csv) · [graphique](../graphiques/stress_test_historique/apercu.png)_
 
@@ -120,7 +120,7 @@ _Statut **OK** · observation 2026-09-29 · moteur `risque` · [donnees](../donn
 
 ### Detection saut
 
-Z-stat BNS (fenetre 22j)=1.485 (seuil ±1.96) -- pas de saut isole detecte
+Z-stat BNS (fenetre 22j)=1.509 (seuil ±1.96) -- pas de saut isole detecte
 
 _Statut **OK** · observation 2026-10-09 · moteur `risque` · [donnees](../donnees/detection_saut.csv)_
 
@@ -155,7 +155,7 @@ _Statut **OK** · observation 2026-10-09 · moteur `series-temporelles` · [donn
 
 ### Ratios conditionnels regime
 
-Sharpe regime haut-vol=-1.107, bas-vol=2.403, global=0.421 -- meilleur en regime calme, comme attendu
+Sharpe regime haut-vol=-1.107, bas-vol=2.403, global=0.422 -- meilleur en regime calme, comme attendu
 
 _Statut **OK** · observation 2026-10-09 · moteur `risque` · [donnees](../donnees/ratios_conditionnels_regime.csv)_
 

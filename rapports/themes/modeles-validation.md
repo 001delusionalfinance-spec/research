@@ -2,7 +2,7 @@
 
 Relations statistiques, previsions, tests hors echantillon et robustesse des modeles.
 
-Mis a jour : **2026-10-09 17:09 UTC** · 17 lectures.
+Mis a jour : **2026-10-09 19:07 UTC** · 17 lectures.
 
 [Retour au tableau de bord](../README.md)
 
@@ -29,7 +29,7 @@ _Statut **OK** · observation 2026-10-09 · moteur `ml` · [donnees](../donnees/
 
 ### Anomalie multivariee
 
-distance de Mahalanobis=0.687 (seuil 3.0) -- jour ordinaire
+distance de Mahalanobis=0.848 (seuil 3.0) -- jour ordinaire
 
 _Statut **OK** · observation 2026-10-09 · moteur `ml` · [donnees](../donnees/anomalie_multivariee.csv)_
 
@@ -71,7 +71,7 @@ _Statut **OK** · observation 2026-10-09 · moteur `ml` · [donnees](../donnees/
 
 ### Couts transaction
 
-7517 predictions, 1514 changements de position (5pb/changement) -- rendement cumule brut=-93.36%, cout total=53.10%, net=-96.89% -- les frais mangent une part importante du rendement (>50% du brut)
+7517 predictions, 1514 changements de position (5pb/changement) -- rendement cumule brut=-93.35%, cout total=53.10%, net=-96.88% -- les frais mangent une part importante du rendement (>50% du brut)
 
 _Statut **OK** · observation 2026-10-09 · moteur `ml` · [donnees](../donnees/couts_transaction.csv)_
 
@@ -120,7 +120,7 @@ _Statut **OK** · observation 2026-10-09 · moteur `ml` · [donnees](../donnees/
 
 ### Importance permutation
 
-R2 base=0.0103 -- importance momentum5j=0.00353, importance variation_vix=0.01272 -- VIX plus important
+R2 base=0.0103 -- importance momentum5j=0.00353, importance variation_vix=0.01273 -- VIX plus important
 
 _Statut **OK** · observation 2026-10-09 · moteur `ml` · [donnees](../donnees/importance_permutation.csv)_
 
