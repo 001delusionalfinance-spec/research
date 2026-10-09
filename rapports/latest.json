@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-09T06:19:40.232544+00:00",
+  "generated_at": "2026-10-09T10:29:49.038436+00:00",
   "status": "attention",
   "models": [
     {
@@ -62,7 +62,7 @@
       "titre": "Chemin taux fed",
       "theme": "banques-centrales",
       "lane": "macro",
-      "lecture": "chemin de taux (pas des probabilites) : DFF=3.88%, prochaine reunion 2026-10-27 (11 a venir dans le calendrier) -- mois_en_cours: +4pb (statu quo, confiance moyenne) | 0-1 mois: +19pb (hausse, confiance faible) | 1-3 mois: +42pb (hausse, confiance faible) | 3-6 mois: +46pb (hausse, confiance faible) | 6-12 mois: +68pb (hausse, confiance faible)",
+      "lecture": "chemin de taux (pas des probabilites) : DFF=3.88%, prochaine reunion 2026-10-27 (11 a venir dans le calendrier) -- mois_en_cours: +205pb (hausse, confiance moyenne) | 0-1 mois: +19pb (hausse, confiance faible) | 1-3 mois: +42pb (hausse, confiance faible) | 3-6 mois: +46pb (hausse, confiance faible) | 6-12 mois: +68pb (hausse, confiance faible)",
       "ok": true,
       "synthese": true,
       "sortie": "chemin_taux_fed.csv",
@@ -84,7 +84,7 @@
       "titre": "Conditions financieres",
       "theme": "taux-credit-liquidite",
       "lane": "macro",
-      "lecture": "indice conditions financieres=-0.027 (3 composantes: {'taux_directeur': 0.5939350126481486, 'courbe_inversee': -0.08129725820835337, 'vix': -0.5929085985940058}) -- conditions proches de la normale",
+      "lecture": "indice conditions financieres=-0.035 (3 composantes: {'taux_directeur': 0.5939350126481486, 'courbe_inversee': -0.08129725820835337, 'vix': -0.6164003819583947}) -- conditions proches de la normale",
       "ok": true,
       "synthese": true,
       "sortie": "conditions_financieres.csv",
@@ -161,7 +161,7 @@
       "titre": "Activite zone euro",
       "theme": "cycle-macro",
       "lane": "macro",
-      "lecture": "zone euro : Production industrielle -0.2 % sur 12 mois, Ventes de detail +0.9 % sur 12 mois, Taux de chomage +0.1 pt sur 12 mois, Confiance industrielle +2.7 pt vs moyenne longue -- production industrielle DIVERGENTE entre grands pays -- en hausse : Allemagne, France, Espagne ; en baisse : Italie",
+      "lecture": "zone euro : Production industrielle -0.2 % sur 12 mois, Ventes de detail +0.9 % sur 12 mois, Taux de chomage +0.1 pt sur 12 mois, Confiance industrielle +2.7 pt vs moyenne longue -- production industrielle en hausse dans tous les grands pays membres",
       "ok": true,
       "synthese": true,
       "sortie": "activite_zone_euro.csv",
@@ -172,7 +172,7 @@
       "titre": "Soutenabilite dette",
       "theme": "cycle-macro",
       "lane": "macro",
-      "lecture": "8 pays. charge la plus lourde : Canada a 25.5% du revenu. taux 10 ans AU-DESSUS de l'inflation dans 5 pays -- Royaume-Uni (+2.3pt), Etats-Unis (+1.9pt), Japon (+1.2pt), Zone euro (+0.9pt), Canada (+0.9pt). Configuration ou le ratio d'endettement monte meme a budget primaire equilibre (approximation : croissance nominale reduite a l'inflation)",
+      "lecture": "8 pays. charge la plus lourde : Canada a 25.5% du revenu. taux 10 ans AU-DESSUS de l'inflation dans 5 pays -- Royaume-Uni (+2.4pt), Etats-Unis (+1.9pt), Japon (+1.2pt), Canada (+0.9pt), Zone euro (+0.9pt). Configuration ou le ratio d'endettement monte meme a budget primaire equilibre (approximation : croissance nominale reduite a l'inflation)",
       "ok": true,
       "synthese": true,
       "sortie": "soutenabilite_dette.csv",
@@ -183,7 +183,7 @@
       "titre": "Matieres premieres macro",
       "theme": "cycle-macro",
       "lane": "macro",
-      "lecture": "ratio cuivre/or stable -- pas de signal net sur la croissance (+4.1% sur 3 mois). Brent 103.1$ (+35.6% sur 3 mois, +58.0% sur 12 mois), gaz +6.9% sur 3 mois, ecart Brent-WTI +12.6$ -- energie nettement plus chere sur un an -- pression inflationniste a venir que les prix a la consommation ne montrent pas encore",
+      "lecture": "ratio cuivre/or stable -- pas de signal net sur la croissance (+4.6% sur 3 mois). Brent 102.9$ (+35.4% sur 3 mois, +57.8% sur 12 mois), gaz +6.0% sur 3 mois, ecart Brent-WTI +12.3$ -- energie nettement plus chere sur un an -- pression inflationniste a venir que les prix a la consommation ne montrent pas encore",
       "ok": true,
       "synthese": true,
       "sortie": "matieres_premieres_macro.csv",
@@ -227,7 +227,7 @@
       "titre": "Indices mondiaux",
       "theme": "marches-allocation",
       "lane": "factorielle",
-      "lecture": "7 indices (devise locale) : Coree (KOSPI) +86.7% en tete sur 12 mois, Hong Kong (Hang Seng) -9.6% en queue -- ecart tres large entre blocs sur 12 mois (96pt) -- les cycles economiques ou les flux divergent nettement. ROTATION en cours : Coree (KOSPI) mene sur 12 mois mais Etats-Unis (S&P 500) a repris la tete sur 3 mois",
+      "lecture": "7 indices (devise locale) : Coree (KOSPI) +86.7% en tete sur 12 mois, Hong Kong (Hang Seng) -9.5% en queue -- ecart tres large entre blocs sur 12 mois (96pt) -- les cycles economiques ou les flux divergent nettement. ROTATION en cours : Coree (KOSPI) mene sur 12 mois mais Etats-Unis (S&P 500) a repris la tete sur 3 mois",
       "ok": true,
       "synthese": true,
       "sortie": "indices_mondiaux.csv",
@@ -238,11 +238,11 @@
       "titre": "Vol cross asset",
       "theme": "risques-regimes",
       "lane": "risque",
-      "lecture": "6 mesures de volatilite : Or (GVZ) 80e pct, Petrole (OVX) 75e pct, Taux US (MOVE) 49e pct, Nasdaq (VXN) 47e pct, Vol de la vol (VVIX) 27e pct, Actions US (VIX) 26e pct -- stress LOCALISE sur Or (GVZ) pendant que le reste ne l'est pas -- episode propre a cette classe d'actifs, pas une aversion au risque d'ensemble",
+      "lecture": "6 mesures de volatilite : Or (GVZ) 80e pct, Petrole (OVX) 75e pct, Taux US (MOVE) 49e pct, Nasdaq (VXN) 47e pct, Vol de la vol (VVIX) 27e pct, Actions US (VIX) 24e pct -- stress LOCALISE sur Or (GVZ) pendant que le reste ne l'est pas -- episode propre a cette classe d'actifs, pas une aversion au risque d'ensemble",
       "ok": true,
       "synthese": true,
       "sortie": "vol_cross_asset.csv",
-      "derniere_observation": "2026-10-08"
+      "derniere_observation": "2026-10-09"
     },
     {
       "nom": "positionnement_courbe_taux",
@@ -513,11 +513,11 @@
       "titre": "Ornstein uhlenbeck vix",
       "theme": "risques-regimes",
       "lane": "series-temporelles",
-      "lecture": "VIX actuel=15.41, niveau moyen estime (mu)=20.20, demi-vie=28.8j, ecart actuel=-4.79 -- VIX actuel en-dessous de son niveau moyen de long terme",
+      "lecture": "VIX actuel=15.22, niveau moyen estime (mu)=20.20, demi-vie=28.8j, ecart actuel=-4.98 -- VIX actuel en-dessous de son niveau moyen de long terme",
       "ok": true,
       "synthese": true,
       "sortie": "ornstein_uhlenbeck_vix.csv",
-      "derniere_observation": "2026-10-08"
+      "derniere_observation": "2026-10-09"
     },
     {
       "nom": "changepoint_volatilite",
@@ -535,11 +535,11 @@
       "titre": "Kalman niveau local",
       "theme": "risques-regimes",
       "lane": "series-temporelles",
-      "lecture": "VIX observe=15.41, filtre Kalman=15.36 (ecart-type=0.62), ratio signal/bruit=0.2052 -- le filtre lisse fortement le bruit, reagit lentement (ecart obs.-filtre=+0.05)",
+      "lecture": "VIX observe=15.22, filtre Kalman=15.24 (ecart-type=0.62), ratio signal/bruit=0.2052 -- le filtre lisse fortement le bruit, reagit lentement (ecart obs.-filtre=-0.02)",
       "ok": true,
       "synthese": true,
       "sortie": "kalman_niveau_local.csv",
-      "derniere_observation": "2026-10-08"
+      "derniere_observation": "2026-10-09"
     },
     {
       "nom": "hp_filter_taux",
@@ -557,7 +557,7 @@
       "titre": "Var sp500 vix",
       "theme": "risques-regimes",
       "lane": "series-temporelles",
-      "lecture": "VAR ordre choisi par AIC=10 -- coef SP500(t-1)->VIX(t)=0.3426797813039304 (SP500(t-1) en hausse -> VIX(t) tend aussi a monter), coef VIX(t-1)->SP500(t)=-0.05213265325195074 (VIX(t-1) en hausse -> SP500(t) tend a baisser)",
+      "lecture": "VAR ordre choisi par AIC=10 -- coef SP500(t-1)->VIX(t)=0.34267978130412224 (SP500(t-1) en hausse -> VIX(t) tend aussi a monter), coef VIX(t-1)->SP500(t)=-0.05213265325195275 (VIX(t-1) en hausse -> SP500(t) tend a baisser)",
       "ok": true,
       "synthese": true,
       "sortie": "var_sp500_vix.csv",
@@ -572,7 +572,7 @@
       "ok": true,
       "synthese": true,
       "sortie": "analyse_spectrale.csv",
-      "derniere_observation": "2026-10-08"
+      "derniere_observation": "2026-10-09"
     },
     {
       "nom": "momentum_prix",
@@ -1074,18 +1074,18 @@
       "titre": "Arima",
       "theme": "modeles-validation",
       "lane": "series-temporelles",
-      "lecture": "ARIMA(1,1,1) sur 100 previsions 1-jour test : RMSE=2.470 vs baseline naive MSE=6.290 -- ARIMA bat la persistance simple",
+      "lecture": "ARIMA(1,1,1) sur 100 previsions 1-jour test : RMSE=2.480 vs baseline naive MSE=6.297 -- ARIMA bat la persistance simple",
       "ok": true,
       "synthese": true,
       "sortie": "arima.csv",
-      "derniere_observation": "2026-10-08"
+      "derniere_observation": "2026-10-09"
     },
     {
       "nom": "qualite_regime_macro",
       "titre": "Qualite regime macro",
       "theme": "risques-regimes",
       "lane": "factorielle",
-      "lecture": "instabilite taux=0.0087, instabilite VIX=0.0627 -- score qualite du regime=-0.0357 (plus haut = regime plus stable/previsible)",
+      "lecture": "instabilite taux=0.0087, instabilite VIX=0.0630 -- score qualite du regime=-0.0358 (plus haut = regime plus stable/previsible)",
       "ok": true,
       "synthese": true,
       "sortie": "qualite_regime_macro.csv",
@@ -1118,11 +1118,11 @@
       "titre": "Decomposition stl",
       "theme": "risques-regimes",
       "lane": "series-temporelles",
-      "lecture": "VIX : tendance=15.50, composante saisonniere (periode 5j)=+0.138, residu=-0.224 -- la saisonnalite explique 0.71% de la variance totale (negligeable)",
+      "lecture": "VIX : tendance=15.46, composante saisonniere (periode 5j)=-0.473, residu=+0.230 -- la saisonnalite explique 0.71% de la variance totale (negligeable)",
       "ok": true,
       "synthese": true,
       "sortie": "decomposition_stl.csv",
-      "derniere_observation": "2026-10-08"
+      "derniere_observation": "2026-10-09"
     },
     {
       "nom": "ornstein_uhlenbeck_credit",

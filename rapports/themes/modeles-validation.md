@@ -2,7 +2,7 @@
 
 Relations statistiques, previsions, tests hors echantillon et robustesse des modeles.
 
-Mis a jour : **2026-10-09 06:19 UTC** · 17 lectures.
+Mis a jour : **2026-10-09 10:29 UTC** · 17 lectures.
 
 [Retour au tableau de bord](../README.md)
 
@@ -99,9 +99,9 @@ _Statut **OK** · observation 2026-10-07 · moteur `statistique` · [donnees](..
 
 ### Arima
 
-ARIMA(1,1,1) sur 100 previsions 1-jour test : RMSE=2.470 vs baseline naive MSE=6.290 -- ARIMA bat la persistance simple
+ARIMA(1,1,1) sur 100 previsions 1-jour test : RMSE=2.480 vs baseline naive MSE=6.297 -- ARIMA bat la persistance simple
 
-_Statut **OK** · observation 2026-10-08 · moteur `series-temporelles` · [donnees](../donnees/arima.csv)_
+_Statut **OK** · observation 2026-10-09 · moteur `series-temporelles` · [donnees](../donnees/arima.csv)_
 
 
 ### Stacking
