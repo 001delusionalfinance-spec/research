@@ -2,7 +2,7 @@
 
 Courbes souveraines, conditions financieres, credit, emission et taux reels.
 
-Mis a jour : **2026-10-09 10:29 UTC** · 13 lectures.
+Mis a jour : **2026-10-09 13:29 UTC** · 13 lectures.
 
 [Retour au tableau de bord](../README.md)
 
@@ -29,7 +29,7 @@ _Statut **OK** · observation 2026-09-23 · moteur `macro` · [donnees](../donne
 
 ### Conditions financieres
 
-indice conditions financieres=-0.035 (3 composantes: {'taux_directeur': 0.5939350126481486, 'courbe_inversee': -0.08129725820835337, 'vix': -0.6164003819583947}) -- conditions proches de la normale
+indice conditions financieres=-0.038 (3 composantes: {'taux_directeur': 0.5939350126481486, 'courbe_inversee': -0.08129725820835337, 'vix': -0.6262931965070083}) -- conditions proches de la normale
 
 _Statut **OK** · observation 2026-10-07 · moteur `macro` · [donnees](../donnees/conditions_financieres.csv) · [graphique](../graphiques/conditions_financieres/apercu.png)_
 
@@ -78,21 +78,21 @@ _Statut **OK** · observation 2026-10-07 · moteur `series-temporelles` · [donn
 
 ### Facteur qualite credit
 
-spread HY=3.09, IG=0.82, ecart=2.27pt (niveau contenu), variation 6m=+7.6% -- s'ecarte (risque credit percu en hausse)
+spread HY=3.15, IG=0.82, ecart=2.33pt (niveau contenu), variation 6m=+12.6% -- s'ecarte (risque credit percu en hausse)
 
-_Statut **OK** · observation 2026-10-07 · moteur `factorielle` · [donnees](../donnees/facteur_qualite_credit.csv) · [graphique](../graphiques/facteur_qualite_credit/apercu.png)_
+_Statut **OK** · observation 2026-10-08 · moteur `factorielle` · [donnees](../donnees/facteur_qualite_credit.csv) · [graphique](../graphiques/facteur_qualite_credit/apercu.png)_
 
 
 ### Ornstein uhlenbeck credit
 
-spread HY actuel=3.09, niveau moyen estime=3.02, demi-vie=32.6j, ecart actuel=+0.07 -- spread HY actuel au-dessus de son niveau moyen de long terme
+spread HY actuel=3.15, niveau moyen estime=3.03, demi-vie=33.4j, ecart actuel=+0.12 -- spread HY actuel au-dessus de son niveau moyen de long terme
 
-_Statut **OK** · observation 2026-10-07 · moteur `series-temporelles` · [donnees](../donnees/ornstein_uhlenbeck_credit.csv)_
+_Statut **OK** · observation 2026-10-08 · moteur `series-temporelles` · [donnees](../donnees/ornstein_uhlenbeck_credit.csv)_
 
 
 ### Momentum credit
 
-momentum credit 12-1 mois=-0.14pt -- spread qui se resserre (risque credit percu en baisse)
+momentum credit 12-1 mois=-0.17pt -- spread qui se resserre (risque credit percu en baisse)
 
-_Statut **OK** · observation 2026-10-07 · moteur `factorielle` · [donnees](../donnees/momentum_credit.csv)_
+_Statut **OK** · observation 2026-10-08 · moteur `factorielle` · [donnees](../donnees/momentum_credit.csv)_
 

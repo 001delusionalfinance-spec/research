@@ -1,4 +1,4 @@
-# Rapport global — 2026-10-09 10:29 UTC
+# Rapport global — 2026-10-09 13:29 UTC
 
 **Etat global : ATTENTION** · 112/112 modeles reussis · 2 source(s) suspecte(s) · 0 source(s) gelee(s).
 
@@ -14,7 +14,7 @@ Decisions, fonctions de reaction, bilan, communication et trajectoires de taux.
 
 - **Regime monetaire emploi** — Chine : taux 1.54% (stable, niveau bas) -- chomage non_couvert  _(sans synthese)_ _(observation : 2026-10-07)_
 - **Regle taylor** — Taylor (2 termes, sans output gap)=6.03%, Fed reel=3.88%, ecart=-2.15pt -- accommodant (Fed en-dessous de la regle) _(observation : 2026-10-07)_
-- **Chemin taux fed** — chemin de taux (pas des probabilites) : DFF=3.88%, prochaine reunion 2026-10-27 (11 a venir dans le calendrier) -- mois_en_cours: +205pb (hausse, confiance moyenne) | 0-1 mois: +19pb (hausse, confiance faible) | 1-3 mois: +42pb (hausse, confiance faible) | 3-6 mois: +46pb (hausse, confiance faible) | 6-12 mois: +68pb (hausse, confiance faible) _(observation : 2026-10-07)_
+- **Chemin taux fed** — chemin de taux (pas des probabilites) : DFF=3.88%, prochaine reunion 2026-10-27 (11 a venir dans le calendrier) -- mois_en_cours: +39pb (hausse, confiance moyenne) | 0-1 mois: +19pb (hausse, confiance faible) | 1-3 mois: +42pb (hausse, confiance faible) | 3-6 mois: +46pb (hausse, confiance faible) | 6-12 mois: +68pb (hausse, confiance faible) _(observation : 2026-10-07)_
 - **Divergence taux directeurs** — 12 banques centrales : ecart de taux max 4.50pt (Norvege 4.50% contre Suisse 0.00%), mediane 2.88% -- cycles alignes dans le meme sens (resserrement) -- divergence limitee _(observation : 2026-10-06)_
 - **Bilans banques centrales** — 9 bilans suivis sur 12 mois : de -18.0% (RBA -- titres locaux) a +8.8% (Fed -- titres du Tresor) -- regimes OPPOSES -- 5 bilan(s) en reduction pendant que 4 s'etendent, la liquidite mondiale ne va pas dans un sens unique _(observation : 2026-10-07)_
 - **Liquidite nette fed** — liquidite nette 5.53 T$ au 2026-10-07 (-1.4% sur 3 mois, +2.5% sur 12 mois) -- liquidite en retrait sur 3 mois -- conditions de financement qui se durcissent. Detail : actif 6.75 T$, compte du Tresor 0.88 T$, reverse repo 0.33 T$ _(observation : 2026-10-07)_
@@ -41,7 +41,7 @@ Activite, emploi, inflation, immobilier, commerce et finances publiques.
 - **Inflation comparee** — inflation annuelle sur 12 blocs : mediane 3.06%, dispersion 3.75pt (Nouvelle-Zelande +4.06% au plus haut, Suede +0.31% au plus bas) -- dispersion forte -- les banques centrales sont poussees a diverger, ce qui deplace les differentiels de taux et le change _(observation : date non exposee)_
 - **Activite zone euro** — zone euro : Production industrielle -0.2 % sur 12 mois, Ventes de detail +0.9 % sur 12 mois, Taux de chomage +0.1 pt sur 12 mois, Confiance industrielle +2.7 pt vs moyenne longue -- production industrielle en hausse dans tous les grands pays membres _(observation : date non exposee)_
 - **Soutenabilite dette** — 8 pays. charge la plus lourde : Canada a 25.5% du revenu. taux 10 ans AU-DESSUS de l'inflation dans 5 pays -- Royaume-Uni (+2.4pt), Etats-Unis (+1.9pt), Japon (+1.2pt), Canada (+0.9pt), Zone euro (+0.9pt). Configuration ou le ratio d'endettement monte meme a budget primaire equilibre (approximation : croissance nominale reduite a l'inflation) _(observation : date non exposee)_
-- **Matieres premieres macro** — ratio cuivre/or stable -- pas de signal net sur la croissance (+4.6% sur 3 mois). Brent 102.9$ (+35.4% sur 3 mois, +57.8% sur 12 mois), gaz +6.0% sur 3 mois, ecart Brent-WTI +12.3$ -- energie nettement plus chere sur un an -- pression inflationniste a venir que les prix a la consommation ne montrent pas encore _(observation : 2026-10-09)_
+- **Matieres premieres macro** — le ratio cuivre/or monte -- la croissance domine la peur (+5.3% sur 3 mois). Brent 103.1$ (+35.7% sur 3 mois, +58.1% sur 12 mois), gaz +7.4% sur 3 mois, ecart Brent-WTI +12.3$ -- energie nettement plus chere sur un an -- pression inflationniste a venir que les prix a la consommation ne montrent pas encore _(observation : 2026-10-09)_
 - **Surprise macro composite** — indice de surprise macro=-1.00 ({'chomage': -1, 'credit_bancaire': -1, 'inflation': -1}) -- negatif (surprises defavorables dominent) _(observation : 2026-09-01)_
 - **Balance commerciale** — balance commerciale=-105,572M$ (rang percentile=1), deficit se creuse _(observation : 2026-08-01)_
 - **Surprise inflation** — CPI MoM=+0.396%, prevision naive=+0.316%, surprise=+0.080pt -- surprise haussiere (inflation plus forte qu'attendu) _(observation : 2026-08-01)_
@@ -53,16 +53,16 @@ Courbes souveraines, conditions financieres, credit, emission et taux reels.
 - **Taux reel us** — nominal=3.88%, inflation YoY=3.35%, reel=0.53% -- restrictif (taux reel positif et eleve) _(observation : 2026-10-07)_
 - **Courbe taux us** — 10 ans=5.28%, 2 ans=4.77%, spread=+0.51pt -- normale (0 run(s) consecutif(s) dans l'historique accumule) _(observation : 2026-10-07)_
 - **Cycle credit** — credit bancaire total croissance YoY=+6.02%, rang percentile historique=38.006230529595015, lecture=normal _(observation : 2026-09-23)_
-- **Conditions financieres** — indice conditions financieres=-0.035 (3 composantes: {'taux_directeur': 0.5939350126481486, 'courbe_inversee': -0.08129725820835337, 'vix': -0.6164003819583947}) -- conditions proches de la normale _(observation : 2026-10-07)_
+- **Conditions financieres** — indice conditions financieres=-0.038 (3 composantes: {'taux_directeur': 0.5939350126481486, 'courbe_inversee': -0.08129725820835337, 'vix': -0.6262931965070083}) -- conditions proches de la normale _(observation : 2026-10-07)_
 - **Emission tresor us** — 84 derniers jours, 7862 Mds$ offerts : court (moins d'un an) 6774 Mds$ (86%), intermediaire (2 a 10 ans) 969 Mds$ (12%), long (20 a 30 ans) 119 Mds$ (2%) -- financement concentre sur le court et l'intermediaire, part longue a 2% -- peu de pression par la duration _(observation : date non exposee)_
 - **Pentes courbes** — 7 courbes : pente de +0.46pt (Australie) a +1.10pt (Japon) -- aucune courbe inversee -- pas de signal recessif par la pente _(observation : 2026-10-08)_
 - **Stationnarite taux** — 1/5 series stationnaires (niveau, pas en difference) -- a garder en tete avant toute correlation/regression sur ces series telles quelles  _(sans synthese)_ _(observation : 2026-10-07)_
 - **Cointegration taux** — 1/10 paires cointegrees  _(sans synthese)_ _(observation : 2026-10-07)_
 - **Pca taux** — 61 dates communes -- PC1 explique 94.7% de la variance conjointe (vs 20% attendu si les 5 blocs etaient independants) -- synchronisation forte -- un facteur commun domine largement le mouvement conjoint, poids PC1={'Chine': -0.095, 'Japon': 0.035, 'Royaume-Uni': 0.616, 'US': 0.592, 'Zone_euro': 0.51} _(observation : 2026-07-01)_
 - **Hp filter taux** — taux 10 ans observe=5.280%, tendance HP=5.182%, ecart cyclique=+0.098pt -- proche de sa tendance _(observation : 2026-10-07)_
-- **Facteur qualite credit** — spread HY=3.09, IG=0.82, ecart=2.27pt (niveau contenu), variation 6m=+7.6% -- s'ecarte (risque credit percu en hausse) _(observation : 2026-10-07)_
-- **Ornstein uhlenbeck credit** — spread HY actuel=3.09, niveau moyen estime=3.02, demi-vie=32.6j, ecart actuel=+0.07 -- spread HY actuel au-dessus de son niveau moyen de long terme _(observation : 2026-10-07)_
-- **Momentum credit** — momentum credit 12-1 mois=-0.14pt -- spread qui se resserre (risque credit percu en baisse) _(observation : 2026-10-07)_
+- **Facteur qualite credit** — spread HY=3.15, IG=0.82, ecart=2.33pt (niveau contenu), variation 6m=+12.6% -- s'ecarte (risque credit percu en hausse) _(observation : 2026-10-08)_
+- **Ornstein uhlenbeck credit** — spread HY actuel=3.15, niveau moyen estime=3.03, demi-vie=33.4j, ecart actuel=+0.12 -- spread HY actuel au-dessus de son niveau moyen de long terme _(observation : 2026-10-08)_
+- **Momentum credit** — momentum credit 12-1 mois=-0.17pt -- spread qui se resserre (risque credit percu en baisse) _(observation : 2026-10-08)_
 
 ## [Marches, facteurs et allocation](themes/marches-allocation.md)
 
@@ -109,13 +109,13 @@ COT, crowding, devises, courbe, extremes et divergences entre prix et positions.
 
 Volatilite, queues, drawdowns, stress, contagion et changements de regime.
 
-- **Vol cross asset** — 6 mesures de volatilite : Or (GVZ) 80e pct, Petrole (OVX) 75e pct, Taux US (MOVE) 49e pct, Nasdaq (VXN) 47e pct, Vol de la vol (VVIX) 27e pct, Actions US (VIX) 24e pct -- stress LOCALISE sur Or (GVZ) pendant que le reste ne l'est pas -- episode propre a cette classe d'actifs, pas une aversion au risque d'ensemble _(observation : 2026-10-09)_
+- **Vol cross asset** — 6 mesures de volatilite : Or (GVZ) 80e pct, Petrole (OVX) 75e pct, Taux US (MOVE) 47e pct, Nasdaq (VXN) 47e pct, Vol de la vol (VVIX) 27e pct, Actions US (VIX) 24e pct -- stress LOCALISE sur Or (GVZ) pendant que le reste ne l'est pas -- episode propre a cette classe d'actifs, pas une aversion au risque d'ensemble _(observation : 2026-10-09)_
 - **Volatilite ewma** — vol realisee 60j=0.11121715957214853, EWMA=0.0970 (tendance 10 runs: baisse) _(observation : 2026-10-08)_
 - **Garch** — vol GARCH(1,1) annualisee=0.1077 (alpha=0.114, beta=0.868, persistance=0.983 -- tres proche de 1 -- chocs de volatilite tres durables) _(observation : 2026-10-08)_
 - **Hurst** — Hurst=0.5466 (R2 regression=0.999) -- proche de la marche aleatoire (H~0.5) _(observation : 2026-10-08)_
-- **Ornstein uhlenbeck vix** — VIX actuel=15.22, niveau moyen estime (mu)=20.20, demi-vie=28.8j, ecart actuel=-4.98 -- VIX actuel en-dessous de son niveau moyen de long terme _(observation : 2026-10-09)_
+- **Ornstein uhlenbeck vix** — VIX actuel=15.14, niveau moyen estime (mu)=20.20, demi-vie=28.8j, ecart actuel=-5.06 -- VIX actuel en-dessous de son niveau moyen de long terme _(observation : 2026-10-09)_
 - **Changepoint volatilite** — rupture detectee le 2011-12-21 -- vol avant=0.2131, vol apres=0.1665 (reduction SSE=0.5%) -- baisse de la vol au point de rupture (-21.9%) _(observation : 2026-10-08)_
-- **Kalman niveau local** — VIX observe=15.22, filtre Kalman=15.24 (ecart-type=0.62), ratio signal/bruit=0.2052 -- le filtre lisse fortement le bruit, reagit lentement (ecart obs.-filtre=-0.02) _(observation : 2026-10-09)_
+- **Kalman niveau local** — VIX observe=15.14, filtre Kalman=15.17 (ecart-type=0.62), ratio signal/bruit=0.2052 -- le filtre lisse fortement le bruit, reagit lentement (ecart obs.-filtre=-0.03) _(observation : 2026-10-09)_
 - **Var sp500 vix** — VAR ordre choisi par AIC=10 -- coef SP500(t-1)->VIX(t)=0.34267978130412224 (SP500(t-1) en hausse -> VIX(t) tend aussi a monter), coef VIX(t-1)->SP500(t)=-0.05213265325195275 (VIX(t-1) en hausse -> SP500(t) tend a baisser) _(observation : 2026-10-08)_
 - **Analyse spectrale** — 3 periodes dominantes (jours de bourse) : [2.2, 4.0, 5.3] -- cycle(s) connu(s) qui ressortent : 4.0j~hebdomadaire, 5.3j~hebdomadaire _(observation : 2026-10-09)_
 - **Var drawdown** — VaR95=-1.45% CVaR95=-1.80% VaR99=-2.08% CVaR99=-2.50% drawdown_max_252j=-9.10% -- soit l'equivalent de ~6 jours de VaR95 d'affilee _(observation : 2026-10-08)_
@@ -129,7 +129,7 @@ Volatilite, queues, drawdowns, stress, contagion et changements de regime.
 - **Choc taux** — beta SP500/DGS10=-0.0736 -- choc +100pb : -7.36% (SP500 7802 -> 7227) ; choc -100pb : +7.36% (-> 8376) _(observation : 2026-10-07)_
 - **Qualite regime macro** — instabilite taux=0.0087, instabilite VIX=0.0630 -- score qualite du regime=-0.0358 (plus haut = regime plus stable/previsible) _(observation : 2026-10-07)_
 - **Var conditionnelle regime** — regime VIX actuel=bas (rang percentile=32) -- VaR95 applicable maintenant=-1.14% (vs VaR95 globale non-conditionnelle=-1.84%) _(observation : 2026-10-08)_
-- **Decomposition stl** — VIX : tendance=15.46, composante saisonniere (periode 5j)=-0.473, residu=+0.230 -- la saisonnalite explique 0.71% de la variance totale (negligeable) _(observation : 2026-10-09)_
+- **Decomposition stl** — VIX : tendance=15.45, composante saisonniere (periode 5j)=-0.488, residu=+0.177 -- la saisonnalite explique 0.71% de la variance totale (negligeable) _(observation : 2026-10-09)_
 - **Ratios conditionnels regime** — Sharpe regime haut-vol=-1.107, bas-vol=2.400, global=0.420 -- meilleur en regime calme, comme attendu _(observation : 2026-10-08)_
 - **Choc vol parametrique** — vol actuelle=13.02%, scenarios x1/x2/x3 calcules -- pire scenario (x3) = -3.99%/jour, soit 3.1x le scenario de base _(observation : 2026-10-08)_
 

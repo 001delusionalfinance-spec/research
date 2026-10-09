@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-09T10:29:49.038436+00:00",
+  "generated_at": "2026-10-09T13:29:27.872089+00:00",
   "status": "attention",
   "models": [
     {
@@ -62,7 +62,7 @@
       "titre": "Chemin taux fed",
       "theme": "banques-centrales",
       "lane": "macro",
-      "lecture": "chemin de taux (pas des probabilites) : DFF=3.88%, prochaine reunion 2026-10-27 (11 a venir dans le calendrier) -- mois_en_cours: +205pb (hausse, confiance moyenne) | 0-1 mois: +19pb (hausse, confiance faible) | 1-3 mois: +42pb (hausse, confiance faible) | 3-6 mois: +46pb (hausse, confiance faible) | 6-12 mois: +68pb (hausse, confiance faible)",
+      "lecture": "chemin de taux (pas des probabilites) : DFF=3.88%, prochaine reunion 2026-10-27 (11 a venir dans le calendrier) -- mois_en_cours: +39pb (hausse, confiance moyenne) | 0-1 mois: +19pb (hausse, confiance faible) | 1-3 mois: +42pb (hausse, confiance faible) | 3-6 mois: +46pb (hausse, confiance faible) | 6-12 mois: +68pb (hausse, confiance faible)",
       "ok": true,
       "synthese": true,
       "sortie": "chemin_taux_fed.csv",
@@ -84,7 +84,7 @@
       "titre": "Conditions financieres",
       "theme": "taux-credit-liquidite",
       "lane": "macro",
-      "lecture": "indice conditions financieres=-0.035 (3 composantes: {'taux_directeur': 0.5939350126481486, 'courbe_inversee': -0.08129725820835337, 'vix': -0.6164003819583947}) -- conditions proches de la normale",
+      "lecture": "indice conditions financieres=-0.038 (3 composantes: {'taux_directeur': 0.5939350126481486, 'courbe_inversee': -0.08129725820835337, 'vix': -0.6262931965070083}) -- conditions proches de la normale",
       "ok": true,
       "synthese": true,
       "sortie": "conditions_financieres.csv",
@@ -183,7 +183,7 @@
       "titre": "Matieres premieres macro",
       "theme": "cycle-macro",
       "lane": "macro",
-      "lecture": "ratio cuivre/or stable -- pas de signal net sur la croissance (+4.6% sur 3 mois). Brent 102.9$ (+35.4% sur 3 mois, +57.8% sur 12 mois), gaz +6.0% sur 3 mois, ecart Brent-WTI +12.3$ -- energie nettement plus chere sur un an -- pression inflationniste a venir que les prix a la consommation ne montrent pas encore",
+      "lecture": "le ratio cuivre/or monte -- la croissance domine la peur (+5.3% sur 3 mois). Brent 103.1$ (+35.7% sur 3 mois, +58.1% sur 12 mois), gaz +7.4% sur 3 mois, ecart Brent-WTI +12.3$ -- energie nettement plus chere sur un an -- pression inflationniste a venir que les prix a la consommation ne montrent pas encore",
       "ok": true,
       "synthese": true,
       "sortie": "matieres_premieres_macro.csv",
@@ -238,7 +238,7 @@
       "titre": "Vol cross asset",
       "theme": "risques-regimes",
       "lane": "risque",
-      "lecture": "6 mesures de volatilite : Or (GVZ) 80e pct, Petrole (OVX) 75e pct, Taux US (MOVE) 49e pct, Nasdaq (VXN) 47e pct, Vol de la vol (VVIX) 27e pct, Actions US (VIX) 24e pct -- stress LOCALISE sur Or (GVZ) pendant que le reste ne l'est pas -- episode propre a cette classe d'actifs, pas une aversion au risque d'ensemble",
+      "lecture": "6 mesures de volatilite : Or (GVZ) 80e pct, Petrole (OVX) 75e pct, Taux US (MOVE) 47e pct, Nasdaq (VXN) 47e pct, Vol de la vol (VVIX) 27e pct, Actions US (VIX) 24e pct -- stress LOCALISE sur Or (GVZ) pendant que le reste ne l'est pas -- episode propre a cette classe d'actifs, pas une aversion au risque d'ensemble",
       "ok": true,
       "synthese": true,
       "sortie": "vol_cross_asset.csv",
@@ -513,7 +513,7 @@
       "titre": "Ornstein uhlenbeck vix",
       "theme": "risques-regimes",
       "lane": "series-temporelles",
-      "lecture": "VIX actuel=15.22, niveau moyen estime (mu)=20.20, demi-vie=28.8j, ecart actuel=-4.98 -- VIX actuel en-dessous de son niveau moyen de long terme",
+      "lecture": "VIX actuel=15.14, niveau moyen estime (mu)=20.20, demi-vie=28.8j, ecart actuel=-5.06 -- VIX actuel en-dessous de son niveau moyen de long terme",
       "ok": true,
       "synthese": true,
       "sortie": "ornstein_uhlenbeck_vix.csv",
@@ -535,7 +535,7 @@
       "titre": "Kalman niveau local",
       "theme": "risques-regimes",
       "lane": "series-temporelles",
-      "lecture": "VIX observe=15.22, filtre Kalman=15.24 (ecart-type=0.62), ratio signal/bruit=0.2052 -- le filtre lisse fortement le bruit, reagit lentement (ecart obs.-filtre=-0.02)",
+      "lecture": "VIX observe=15.14, filtre Kalman=15.17 (ecart-type=0.62), ratio signal/bruit=0.2052 -- le filtre lisse fortement le bruit, reagit lentement (ecart obs.-filtre=-0.03)",
       "ok": true,
       "synthese": true,
       "sortie": "kalman_niveau_local.csv",
@@ -656,11 +656,11 @@
       "titre": "Facteur qualite credit",
       "theme": "taux-credit-liquidite",
       "lane": "factorielle",
-      "lecture": "spread HY=3.09, IG=0.82, ecart=2.27pt (niveau contenu), variation 6m=+7.6% -- s'ecarte (risque credit percu en hausse)",
+      "lecture": "spread HY=3.15, IG=0.82, ecart=2.33pt (niveau contenu), variation 6m=+12.6% -- s'ecarte (risque credit percu en hausse)",
       "ok": true,
       "synthese": true,
       "sortie": "facteur_qualite_credit.csv",
-      "derniere_observation": "2026-10-07"
+      "derniere_observation": "2026-10-08"
     },
     {
       "nom": "momentum_cross_sectional",
@@ -1118,7 +1118,7 @@
       "titre": "Decomposition stl",
       "theme": "risques-regimes",
       "lane": "series-temporelles",
-      "lecture": "VIX : tendance=15.46, composante saisonniere (periode 5j)=-0.473, residu=+0.230 -- la saisonnalite explique 0.71% de la variance totale (negligeable)",
+      "lecture": "VIX : tendance=15.45, composante saisonniere (periode 5j)=-0.488, residu=+0.177 -- la saisonnalite explique 0.71% de la variance totale (negligeable)",
       "ok": true,
       "synthese": true,
       "sortie": "decomposition_stl.csv",
@@ -1129,22 +1129,22 @@
       "titre": "Ornstein uhlenbeck credit",
       "theme": "taux-credit-liquidite",
       "lane": "series-temporelles",
-      "lecture": "spread HY actuel=3.09, niveau moyen estime=3.02, demi-vie=32.6j, ecart actuel=+0.07 -- spread HY actuel au-dessus de son niveau moyen de long terme",
+      "lecture": "spread HY actuel=3.15, niveau moyen estime=3.03, demi-vie=33.4j, ecart actuel=+0.12 -- spread HY actuel au-dessus de son niveau moyen de long terme",
       "ok": true,
       "synthese": true,
       "sortie": "ornstein_uhlenbeck_credit.csv",
-      "derniere_observation": "2026-10-07"
+      "derniere_observation": "2026-10-08"
     },
     {
       "nom": "momentum_credit",
       "titre": "Momentum credit",
       "theme": "taux-credit-liquidite",
       "lane": "factorielle",
-      "lecture": "momentum credit 12-1 mois=-0.14pt -- spread qui se resserre (risque credit percu en baisse)",
+      "lecture": "momentum credit 12-1 mois=-0.17pt -- spread qui se resserre (risque credit percu en baisse)",
       "ok": true,
       "synthese": true,
       "sortie": "momentum_credit.csv",
-      "derniere_observation": "2026-10-07"
+      "derniere_observation": "2026-10-08"
     },
     {
       "nom": "correlation_facteurs",
