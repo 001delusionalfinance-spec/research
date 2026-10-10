@@ -2,7 +2,7 @@
 
 Change, actions, secteurs, facteurs, rotations et signaux d'allocation.
 
-Mis a jour : **2026-10-09 23:23 UTC** · 16 lectures.
+Mis a jour : **2026-10-10 01:16 UTC** · 16 lectures.
 
 [Retour au tableau de bord](../README.md)
 
@@ -71,7 +71,7 @@ _Statut **OK** · observation 2026-10-09 · moteur `factorielle` · [donnees](..
 
 ### Rotation sectorielle
 
-classement momentum 3 mois (10 secteurs) : 1. Energie (XLE) : +18.16% | 2. Technologie (XLK) : +7.00% | 3. Sante (XLV) : +6.20% | 4. Consommation de base (XLP) : -0.82% | 5. Finance (XLF) : -1.76%
+classement momentum 3 mois (10 secteurs) : 1. Energie (XLE) : +19.01% | 2. Technologie (XLK) : +6.71% | 3. Sante (XLV) : +3.69% | 4. Consommation de base (XLP) : +0.26% | 5. Materiaux (XLB) : -1.97%
 
 _Statut **OK** · observation 2026-10-09 · moteur `factorielle` · [donnees](../donnees/rotation_sectorielle.csv) · [graphique](../graphiques/rotation_sectorielle/apercu.png)_
 
@@ -85,21 +85,21 @@ _Statut **OK** · observation 2026-10-09 · moteur `factorielle` · [donnees](..
 
 ### Dispersion sectorielle
 
-10 secteurs, rendement moyen 3m=-0.00%, dispersion (ecart-type)=7.81pt, etendue=26.96pt -- dispersion intermediaire
+10 secteurs, rendement moyen 3m=-0.27%, dispersion (ecart-type)=7.98pt, etendue=28.00pt -- dispersion intermediaire
 
 _Statut **OK** · observation 2026-10-09 · moteur `factorielle` · [donnees](../donnees/dispersion_sectorielle.csv)_
 
 
 ### Low volatility
 
-tercile bas-vol ['XLF', 'XLRE', 'XLU'] Sharpe=-0.214 vs tercile haut-vol ['XLY', 'XLE', 'XLK'] Sharpe=0.307 -- anomalie low-vol non confirmee sur cet echantillon (puissance statistique faible, n petit -- limite assumee)
+tercile bas-vol ['XLF', 'XLRE', 'XLU'] Sharpe=-0.297 vs tercile haut-vol ['XLY', 'XLE', 'XLK'] Sharpe=0.315 -- anomalie low-vol non confirmee sur cet echantillon (puissance statistique faible, n petit -- limite assumee)
 
 _Statut **OK** · observation 2026-10-09 · moteur `factorielle` · [donnees](../donnees/low_volatility.csv)_
 
 
 ### Momentum cross sectional
 
-panier gagnant ['XLE', 'XLK', 'XLV'] (+10.45%) vs panier perdant ['XLRE', 'XLI', 'XLU'] (-7.39%) -- spread momentum=+17.84pt
+panier gagnant ['XLE', 'XLK', 'XLV'] (+9.80%) vs panier perdant ['XLI', 'XLRE', 'XLU'] (-7.89%) -- spread momentum=+17.69pt
 
 _Statut **OK** · observation 2026-10-09 · moteur `factorielle` · [donnees](../donnees/momentum_cross_sectional.csv)_
 
@@ -113,7 +113,7 @@ _Statut **OK** · observation 2026-10-09 · moteur `statistique` · [donnees](..
 
 ### Correlation facteurs
 
-correlation entre momentum 3m et beta-VIX, 10 secteurs : +0.241 (facteurs largement independants)
+correlation entre momentum 3m et beta-VIX, 10 secteurs : +0.212 (facteurs largement independants)
 
 _Statut **OK** · observation 2026-10-09 · moteur `factorielle` · [donnees](../donnees/correlation_facteurs.csv)_
 
