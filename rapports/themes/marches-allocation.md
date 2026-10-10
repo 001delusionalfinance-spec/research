@@ -2,7 +2,7 @@
 
 Change, actions, secteurs, facteurs, rotations et signaux d'allocation.
 
-Mis a jour : **2026-10-10 07:05 UTC** · 16 lectures.
+Mis a jour : **2026-10-10 09:58 UTC** · 16 lectures.
 
 [Retour au tableau de bord](../README.md)
 
