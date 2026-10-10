@@ -1,4 +1,4 @@
-# Rapport global — 2026-10-10 02:52 UTC
+# Rapport global — 2026-10-10 07:05 UTC
 
 **Etat global : ATTENTION** · 112/112 modeles reussis · 2 source(s) suspecte(s) · 0 source(s) gelee(s).
 
@@ -14,7 +14,7 @@ Decisions, fonctions de reaction, bilan, communication et trajectoires de taux.
 
 - **Regime monetaire emploi** — Chine : taux 1.54% (stable, niveau bas) -- chomage non_couvert  _(sans synthese)_ _(observation : 2026-10-08)_
 - **Regle taylor** — Taylor (2 termes, sans output gap)=6.03%, Fed reel=3.88%, ecart=-2.15pt -- accommodant (Fed en-dessous de la regle) _(observation : 2026-10-08)_
-- **Chemin taux fed** — chemin de taux (pas des probabilites) : DFF=3.88%, prochaine reunion 2026-10-27 (11 a venir dans le calendrier) -- mois_en_cours: +35pb (hausse, confiance moyenne) | 0-1 mois: +26pb (hausse, confiance faible) | 1-3 mois: +40pb (hausse, confiance faible) | 3-6 mois: +49pb (hausse, confiance faible) | 6-12 mois: +70pb (hausse, confiance faible) _(observation : 2026-10-08)_
+- **Chemin taux fed** — chemin de taux (pas des probabilites) : DFF=3.88%, prochaine reunion 2026-10-27 (11 a venir dans le calendrier) -- mois_en_cours: +4pb (statu quo, confiance moyenne) | 0-1 mois: +26pb (hausse, confiance faible) | 1-3 mois: +40pb (hausse, confiance faible) | 3-6 mois: +49pb (hausse, confiance faible) | 6-12 mois: +70pb (hausse, confiance faible) _(observation : 2026-10-08)_
 - **Divergence taux directeurs** — 12 banques centrales : ecart de taux max 4.50pt (Norvege 4.50% contre Suisse 0.00%), mediane 2.88% -- cycles alignes dans le meme sens (resserrement) -- divergence limitee _(observation : 2026-10-06)_
 - **Bilans banques centrales** — 9 bilans suivis sur 12 mois : de -18.0% (RBA -- titres locaux) a +8.8% (Fed -- titres du Tresor) -- regimes OPPOSES -- 5 bilan(s) en reduction pendant que 4 s'etendent, la liquidite mondiale ne va pas dans un sens unique _(observation : 2026-10-07)_
 - **Liquidite nette fed** — liquidite nette 5.53 T$ au 2026-10-07 (-1.4% sur 3 mois, +2.5% sur 12 mois) -- liquidite en retrait sur 3 mois -- conditions de financement qui se durcissent. Detail : actif 6.75 T$, compte du Tresor 0.88 T$, reverse repo 0.33 T$ _(observation : 2026-10-07)_
@@ -41,7 +41,7 @@ Activite, emploi, inflation, immobilier, commerce et finances publiques.
 - **Inflation comparee** — inflation annuelle sur 12 blocs : mediane 3.06%, dispersion 3.75pt (Nouvelle-Zelande +4.06% au plus haut, Suede +0.31% au plus bas) -- dispersion forte -- les banques centrales sont poussees a diverger, ce qui deplace les differentiels de taux et le change _(observation : date non exposee)_
 - **Activite zone euro** — zone euro : Production industrielle -0.2 % sur 12 mois, Ventes de detail +0.9 % sur 12 mois, Taux de chomage +0.1 pt sur 12 mois, Confiance industrielle +2.7 pt vs moyenne longue -- production industrielle en hausse dans tous les grands pays membres _(observation : date non exposee)_
 - **Soutenabilite dette** — 8 pays. charge la plus lourde : Canada a 25.5% du revenu. taux 10 ans AU-DESSUS de l'inflation dans 5 pays -- Royaume-Uni (+2.4pt), Etats-Unis (+1.8pt), Japon (+1.2pt), Canada (+0.9pt), Zone euro (+0.9pt). Configuration ou le ratio d'endettement monte meme a budget primaire equilibre (approximation : croissance nominale reduite a l'inflation) _(observation : date non exposee)_
-- **Matieres premieres macro** — ratio cuivre/or stable -- pas de signal net sur la croissance (+4.9% sur 3 mois). Brent 104.4$ (+37.4% sur 3 mois, +60.1% sur 12 mois), gaz +9.0% sur 3 mois, ecart Brent-WTI +12.8$ -- energie nettement plus chere sur un an -- pression inflationniste a venir que les prix a la consommation ne montrent pas encore _(observation : 2026-10-09)_
+- **Matieres premieres macro** — ratio cuivre/or stable -- pas de signal net sur la croissance (+4.0% sur 3 mois). Brent 104.7$ (+37.8% sur 3 mois, +60.6% sur 12 mois), gaz +9.5% sur 3 mois, ecart Brent-WTI +12.9$ -- energie nettement plus chere sur un an -- pression inflationniste a venir que les prix a la consommation ne montrent pas encore _(observation : 2026-10-09)_
 - **Surprise macro composite** — indice de surprise macro=-1.00 ({'chomage': -1, 'credit_bancaire': -1, 'inflation': -1}) -- negatif (surprises defavorables dominent) _(observation : 2026-09-01)_
 - **Balance commerciale** — balance commerciale=-105,572M$ (rang percentile=1), deficit se creuse _(observation : 2026-08-01)_
 - **Surprise inflation** — CPI MoM=+0.396%, prevision naive=+0.316%, surprise=+0.080pt -- surprise haussiere (inflation plus forte qu'attendu) _(observation : 2026-08-01)_
@@ -116,7 +116,7 @@ Volatilite, queues, drawdowns, stress, contagion et changements de regime.
 - **Ornstein uhlenbeck vix** — VIX actuel=14.84, niveau moyen estime (mu)=20.20, demi-vie=28.8j, ecart actuel=-5.36 -- VIX actuel en-dessous de son niveau moyen de long terme _(observation : 2026-10-09)_
 - **Changepoint volatilite** — rupture detectee le 2011-12-21 -- vol avant=0.2132, vol apres=0.1665 (reduction SSE=0.5%) -- baisse de la vol au point de rupture (-21.9%) _(observation : 2026-10-09)_
 - **Kalman niveau local** — VIX observe=14.84, filtre Kalman=14.92 (ecart-type=0.62), ratio signal/bruit=0.2052 -- le filtre lisse fortement le bruit, reagit lentement (ecart obs.-filtre=-0.08) _(observation : 2026-10-09)_
-- **Var sp500 vix** — VAR ordre choisi par AIC=10 -- coef SP500(t-1)->VIX(t)=0.34555548482004994 (SP500(t-1) en hausse -> VIX(t) tend aussi a monter), coef VIX(t-1)->SP500(t)=-0.0521610135289166 (VIX(t-1) en hausse -> SP500(t) tend a baisser) _(observation : 2026-10-09)_
+- **Var sp500 vix** — VAR ordre choisi par AIC=10 -- coef SP500(t-1)->VIX(t)=0.3455554848200162 (SP500(t-1) en hausse -> VIX(t) tend aussi a monter), coef VIX(t-1)->SP500(t)=-0.05216101352891664 (VIX(t-1) en hausse -> SP500(t) tend a baisser) _(observation : 2026-10-09)_
 - **Analyse spectrale** — 3 periodes dominantes (jours de bourse) : [2.2, 4.0, 5.3] -- cycle(s) connu(s) qui ressortent : 4.0j~hebdomadaire, 5.3j~hebdomadaire _(observation : 2026-10-09)_
 - **Var drawdown** — VaR95=-1.45% CVaR95=-1.80% VaR99=-2.08% CVaR99=-2.50% drawdown_max_252j=-9.10% -- soit l'equivalent de ~6 jours de VaR95 d'affilee _(observation : 2026-10-09)_
 - **Skew kurtosis** — skewness=-0.188 (asymetrie negative (pertes extremes > gains extremes)), kurtosis exces=+0.978 (queues epaisses (risque extreme sous-estime par une hypothese normale)) _(observation : 2026-10-09)_
