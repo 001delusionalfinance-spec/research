@@ -1,4 +1,4 @@
-# Rapport global — 2026-10-10 01:16 UTC
+# Rapport global — 2026-10-10 02:52 UTC
 
 **Etat global : ATTENTION** · 112/112 modeles reussis · 2 source(s) suspecte(s) · 0 source(s) gelee(s).
 
@@ -70,20 +70,20 @@ Change, actions, secteurs, facteurs, rotations et signaux d'allocation.
 
 - **Reer us** — REER US=108.25 (rang percentile=94, variation YoY=+0.90%) -- dollar reel fort (competitivite reduite) _(observation : 2026-07-01)_
 - **Differentiel taux change** — 8 paires testees sur variations a 21 jours -- le lien taux/change tient sur 6 paire(s) apres correction pour tests multiples : EURUSD, USDJPY, USDCAD, USDSEK, EURJPY, EURGBP _(observation : 2026-10-08)_
-- **Indices mondiaux** — 7 indices (devise locale) : Coree (KOSPI) +86.7% en tete sur 12 mois, Hong Kong (Hang Seng) -11.3% en queue -- ecart tres large entre blocs sur 12 mois (98pt) -- les cycles economiques ou les flux divergent nettement. ROTATION en cours : Coree (KOSPI) mene sur 12 mois mais Etats-Unis (S&P 500) a repris la tete sur 3 mois _(observation : 2026-10-09)_
+- **Indices mondiaux** — 7 indices (devise locale) : Coree (KOSPI) +86.7% en tete sur 12 mois, Hong Kong (Hang Seng) -9.5% en queue -- ecart tres large entre blocs sur 12 mois (96pt) -- les cycles economiques ou les flux divergent nettement. ROTATION en cours : Coree (KOSPI) mene sur 12 mois mais Etats-Unis (S&P 500) a repris la tete sur 3 mois _(observation : 2026-10-09)_
 - **Correlation glissante** — correlation glissante 60j SP500/VIX = -0.738 (min=-0.955, max=-0.429 sur la fenetre d'historique disponible) -- dans la zone intermediaire de sa fourchette historique _(observation : 2026-10-09)_
 - **Clustering marches** — 32 marches, 4 clusters (average linkage, distance=1-|r|) : cluster 1 : ['AUD_FX', 'BRENT_CRUDE', 'CAD_FX', 'CHF_FX', 'COPPER', 'GOLD', 'JPY_FX', 'MXN_FX', 'NASDAQ_MINI', 'NZD_FX', 'RUSSELL_MINI', 'SILVER', 'USD_INDEX', 'UST_10Y', 'UST_2Y', 'UST_5Y', 'UST_ULTRA_10Y', 'UST_ULTRA_BOND', 'VIX_FUT', 'WHEAT', 'WTI_CRUDE'] | cluster 2 : ['CORN', 'GBP_FX', 'NAT_GAS', 'PALLADIUM', 'PLATINUM', 'SOFR_3M', 'SOYBEANS'] | cluster 3 : ['EUR_FX', 'SP500_EMINI'] | cluster 4 : ['FED_FUNDS', 'UST_BOND'] _(observation : 2026-10-06)_
 - **Beta facteur macro** — beta SP500/DGS10 (60j) = -0.0678 (rendement SP500 pour +1pt de taux 10 ans, 57/60 jours avec variation reelle) -- sensibilite elevee au facteur macro (choc de +100pb extrapole = -6.6%) _(observation : 2026-10-08)_
 - **Momentum prix** — SP500 momentum 12-1 mois = 13.38% -- haussier (momentum positif), detail 1/3/6/12m = [2.29, 3.12, 14.59, 15.98] _(observation : 2026-10-09)_
 - **Carry proxy** — Chine : 1.54% vs US 3.88% -- diff=-2.34pt (carry negatif (taux < US))  _(sans synthese)_ _(observation : 2026-10-08)_
 - **Beta vol** — beta SP500/VIX (60j) = -0.00495 (rendement SP500 pour +1pt VIX) -- sensibilite normale, relation inverse attendue (normale) _(observation : 2026-10-09)_
-- **Rotation sectorielle** — classement momentum 3 mois (10 secteurs) : 1. Energie (XLE) : +19.01% | 2. Technologie (XLK) : +6.71% | 3. Sante (XLV) : +3.69% | 4. Consommation de base (XLP) : +0.26% | 5. Materiaux (XLB) : -1.97% _(observation : 2026-10-09)_
+- **Rotation sectorielle** — classement momentum 3 mois (10 secteurs) : 1. Energie (XLE) : +18.16% | 2. Technologie (XLK) : +7.00% | 3. Sante (XLV) : +6.20% | 4. Consommation de base (XLP) : -0.82% | 5. Finance (XLF) : -1.76% _(observation : 2026-10-09)_
 - **Saisonnalite** — rendement journalier moyen ete=+0.0181%, hiver=+0.0465% (t=-1.02, p=0.3064) -- non significatif (attendu vu la faible puissance sur seulement ~2 ans) _(observation : 2026-10-09)_
-- **Dispersion sectorielle** — 10 secteurs, rendement moyen 3m=-0.27%, dispersion (ecart-type)=7.98pt, etendue=28.00pt -- dispersion intermediaire _(observation : 2026-10-09)_
-- **Low volatility** — tercile bas-vol ['XLF', 'XLRE', 'XLU'] Sharpe=-0.297 vs tercile haut-vol ['XLY', 'XLE', 'XLK'] Sharpe=0.315 -- anomalie low-vol non confirmee sur cet echantillon (puissance statistique faible, n petit -- limite assumee) _(observation : 2026-10-09)_
-- **Momentum cross sectional** — panier gagnant ['XLE', 'XLK', 'XLV'] (+9.80%) vs panier perdant ['XLI', 'XLRE', 'XLU'] (-7.89%) -- spread momentum=+17.69pt _(observation : 2026-10-09)_
+- **Dispersion sectorielle** — 10 secteurs, rendement moyen 3m=-0.00%, dispersion (ecart-type)=7.81pt, etendue=26.96pt -- dispersion intermediaire _(observation : 2026-10-09)_
+- **Low volatility** — tercile bas-vol ['XLF', 'XLRE', 'XLU'] Sharpe=-0.214 vs tercile haut-vol ['XLY', 'XLE', 'XLK'] Sharpe=0.307 -- anomalie low-vol non confirmee sur cet echantillon (puissance statistique faible, n petit -- limite assumee) _(observation : 2026-10-09)_
+- **Momentum cross sectional** — panier gagnant ['XLE', 'XLK', 'XLV'] (+10.45%) vs panier perdant ['XLRE', 'XLI', 'XLU'] (-7.39%) -- spread momentum=+17.84pt _(observation : 2026-10-09)_
 - **Cointegration secteurs** — 0/10 secteurs cointegres avec SP500 -- decouples : ['XLK', 'XLF', 'XLE', 'XLV', 'XLI', 'XLY', 'XLP', 'XLU', 'XLB', 'XLRE']  _(sans synthese)_ _(observation : 2026-10-09)_
-- **Correlation facteurs** — correlation entre momentum 3m et beta-VIX, 10 secteurs : +0.212 (facteurs largement independants) _(observation : 2026-10-09)_
+- **Correlation facteurs** — correlation entre momentum 3m et beta-VIX, 10 secteurs : +0.241 (facteurs largement independants) _(observation : 2026-10-09)_
 
 ## [Positionnement et comportement](themes/positionnement.md)
 
@@ -116,7 +116,7 @@ Volatilite, queues, drawdowns, stress, contagion et changements de regime.
 - **Ornstein uhlenbeck vix** — VIX actuel=14.84, niveau moyen estime (mu)=20.20, demi-vie=28.8j, ecart actuel=-5.36 -- VIX actuel en-dessous de son niveau moyen de long terme _(observation : 2026-10-09)_
 - **Changepoint volatilite** — rupture detectee le 2011-12-21 -- vol avant=0.2132, vol apres=0.1665 (reduction SSE=0.5%) -- baisse de la vol au point de rupture (-21.9%) _(observation : 2026-10-09)_
 - **Kalman niveau local** — VIX observe=14.84, filtre Kalman=14.92 (ecart-type=0.62), ratio signal/bruit=0.2052 -- le filtre lisse fortement le bruit, reagit lentement (ecart obs.-filtre=-0.08) _(observation : 2026-10-09)_
-- **Var sp500 vix** — VAR ordre choisi par AIC=10 -- coef SP500(t-1)->VIX(t)=0.3455554848200162 (SP500(t-1) en hausse -> VIX(t) tend aussi a monter), coef VIX(t-1)->SP500(t)=-0.05216101352891664 (VIX(t-1) en hausse -> SP500(t) tend a baisser) _(observation : 2026-10-09)_
+- **Var sp500 vix** — VAR ordre choisi par AIC=10 -- coef SP500(t-1)->VIX(t)=0.34555548482004994 (SP500(t-1) en hausse -> VIX(t) tend aussi a monter), coef VIX(t-1)->SP500(t)=-0.0521610135289166 (VIX(t-1) en hausse -> SP500(t) tend a baisser) _(observation : 2026-10-09)_
 - **Analyse spectrale** — 3 periodes dominantes (jours de bourse) : [2.2, 4.0, 5.3] -- cycle(s) connu(s) qui ressortent : 4.0j~hebdomadaire, 5.3j~hebdomadaire _(observation : 2026-10-09)_
 - **Var drawdown** — VaR95=-1.45% CVaR95=-1.80% VaR99=-2.08% CVaR99=-2.50% drawdown_max_252j=-9.10% -- soit l'equivalent de ~6 jours de VaR95 d'affilee _(observation : 2026-10-09)_
 - **Skew kurtosis** — skewness=-0.188 (asymetrie negative (pertes extremes > gains extremes)), kurtosis exces=+0.978 (queues epaisses (risque extreme sous-estime par une hypothese normale)) _(observation : 2026-10-09)_
