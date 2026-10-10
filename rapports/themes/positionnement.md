@@ -2,7 +2,7 @@
 
 COT, crowding, devises, courbe, extremes et divergences entre prix et positions.
 
-Mis a jour : **2026-10-10 20:11 UTC** · 15 lectures.
+Mis a jour : **2026-10-10 23:39 UTC** · 15 lectures.
 
 [Retour au tableau de bord](../README.md)
 
